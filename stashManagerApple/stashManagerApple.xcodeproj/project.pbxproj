@@ -9,21 +9,125 @@
 /* Begin PBXBuildFile section */
 		CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC6E2BD9805400D0F4BC /* AppDelegate.swift */; };
 		CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC702BD9805400D0F4BC /* SceneDelegate.swift */; };
-		CC14BC732BD9805400D0F4BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC722BD9805400D0F4BC /* ViewController.swift */; };
-		CC14BC762BD9805400D0F4BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC752BD9805400D0F4BC /* Base */; };
 		CC14BC782BD9805500D0F4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC772BD9805500D0F4BC /* Assets.xcassets */; };
 		CC14BC7B2BD9805500D0F4BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC7A2BD9805500D0F4BC /* Base */; };
+		CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */; };
+		CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */; };
+		CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */; };
+		CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */; };
+		CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */; };
+		CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */; };
+		CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */; };
+		CC14BCAE2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */; };
+		CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */; };
+		CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */; };
+		CC14BCB42BD9980500D0F4BC /* StashesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */; };
+		CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB52BD9982300D0F4BC /* ArticlesRepository.swift */; };
+		CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB72BD9984800D0F4BC /* UsersRepositoryProtocol.swift */; };
+		CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB92BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift */; };
+		CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCBB2BD998B100D0F4BC /* StashesRepositoryProtocol.swift */; };
+		CC14BCBE2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCBD2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift */; };
+		CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCC32BD99A2100D0F4BC /* UsersUseCaseProtocol.swift */; };
+		CC14BCC62BD99A7A00D0F4BC /* UsersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCC52BD99A7A00D0F4BC /* UsersUseCase.swift */; };
+		CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCC72BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift */; };
+		CC14BCCA2BD99AB800D0F4BC /* RoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCC92BD99AB800D0F4BC /* RoomsUseCase.swift */; };
+		CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCCB2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift */; };
+		CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCCD2BD99AE300D0F4BC /* StashesUseCase.swift */; };
+		CC14BCD02BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCCF2BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift */; };
+		CC14BCD22BD99C3C00D0F4BC /* ArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCD12BD99C3C00D0F4BC /* ArticlesUseCase.swift */; };
+		CC14BCD42BD99C5000D0F4BC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCD32BD99C5000D0F4BC /* User.swift */; };
+		CC14BCD62BD99C5C00D0F4BC /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCD52BD99C5C00D0F4BC /* Room.swift */; };
+		CC14BCD82BD99C6E00D0F4BC /* Stash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCD72BD99C6E00D0F4BC /* Stash.swift */; };
+		CC14BCDA2BD99CB300D0F4BC /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCD92BD99CB300D0F4BC /* Article.swift */; };
+		CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCDD2BD99DB000D0F4BC /* TabBarController.swift */; };
+		CC14BCE12BD99E3600D0F4BC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC14BCE02BD99E3600D0F4BC /* LoginViewController.xib */; };
+		CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCDF2BD99E3600D0F4BC /* LoginViewController.swift */; };
+		CC14BCE52BD99E5900D0F4BC /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC14BCE42BD99E5900D0F4BC /* HomeViewController.xib */; };
+		CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCE32BD99E5900D0F4BC /* HomeViewController.swift */; };
+		CC14BCE92BD99E9100D0F4BC /* StashesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC14BCE82BD99E9100D0F4BC /* StashesViewController.xib */; };
+		CC14BCEA2BD99E9100D0F4BC /* StashesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCE72BD99E9100D0F4BC /* StashesViewController.swift */; };
+		CC14BCED2BD99EA100D0F4BC /* ArticlesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC14BCEC2BD99EA100D0F4BC /* ArticlesViewController.xib */; };
+		CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCEB2BD99EA100D0F4BC /* ArticlesViewController.swift */; };
+		CC14BCF12BD99EB600D0F4BC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC14BCF02BD99EB600D0F4BC /* ProfileViewController.xib */; };
+		CC14BCF22BD99EB600D0F4BC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCEF2BD99EB600D0F4BC /* ProfileViewController.swift */; };
+		CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCF32BD99F2000D0F4BC /* LoginViewModel.swift */; };
+		CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCF52BD99F3500D0F4BC /* LoginRouter.swift */; };
+		CC14BCF82BD99F6500D0F4BC /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCF72BD99F6500D0F4BC /* LoginBuilder.swift */; };
+		CC14BCFA2BD99FC700D0F4BC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCF92BD99FC700D0F4BC /* HomeViewModel.swift */; };
+		CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCFB2BD99FD900D0F4BC /* HomeRouter.swift */; };
+		CC14BCFE2BD99FF400D0F4BC /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCFD2BD99FF400D0F4BC /* HomeBuilder.swift */; };
+		CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCFF2BD9A04400D0F4BC /* StashesViewModel.swift */; };
+		CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD012BD9A07000D0F4BC /* StashesRouter.swift */; };
+		CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD032BD9A08300D0F4BC /* StashesBuilder.swift */; };
+		CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD052BD9A09F00D0F4BC /* ArticlesViewModel.swift */; };
+		CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD072BD9A0AD00D0F4BC /* ArticlesRouter.swift */; };
+		CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD092BD9A0C500D0F4BC /* ArticlesBuilder.swift */; };
+		CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD0B2BD9A0E900D0F4BC /* ProfileViewModel.swift */; };
+		CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD0D2BD9A0F700D0F4BC /* ProfileRouter.swift */; };
+		CC14BD102BD9A11B00D0F4BC /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BD0F2BD9A11B00D0F4BC /* ProfileBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC14BC6B2BD9805400D0F4BC /* StashManagerApple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StashManagerApple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC14BC6E2BD9805400D0F4BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC14BC702BD9805400D0F4BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC14BC722BD9805400D0F4BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC14BC752BD9805400D0F4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC14BC772BD9805500D0F4BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC14BC7A2BD9805500D0F4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC14BC7C2BD9805500D0F4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
+		CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRepository.swift; sourceTree = "<group>"; };
+		CC14BCB52BD9982300D0F4BC /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
+		CC14BCB72BD9984800D0F4BC /* UsersRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CC14BCB92BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CC14BCBB2BD998B100D0F4BC /* StashesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CC14BCBD2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CC14BCC32BD99A2100D0F4BC /* UsersUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CC14BCC52BD99A7A00D0F4BC /* UsersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersUseCase.swift; sourceTree = "<group>"; };
+		CC14BCC72BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CC14BCC92BD99AB800D0F4BC /* RoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsUseCase.swift; sourceTree = "<group>"; };
+		CC14BCCB2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CC14BCCD2BD99AE300D0F4BC /* StashesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesUseCase.swift; sourceTree = "<group>"; };
+		CC14BCCF2BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CC14BCD12BD99C3C00D0F4BC /* ArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUseCase.swift; sourceTree = "<group>"; };
+		CC14BCD32BD99C5000D0F4BC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CC14BCD52BD99C5C00D0F4BC /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		CC14BCD72BD99C6E00D0F4BC /* Stash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stash.swift; sourceTree = "<group>"; };
+		CC14BCD92BD99CB300D0F4BC /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		CC14BCDD2BD99DB000D0F4BC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CC14BCDF2BD99E3600D0F4BC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC14BCE02BD99E3600D0F4BC /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CC14BCE32BD99E5900D0F4BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CC14BCE42BD99E5900D0F4BC /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CC14BCE72BD99E9100D0F4BC /* StashesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesViewController.swift; sourceTree = "<group>"; };
+		CC14BCE82BD99E9100D0F4BC /* StashesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StashesViewController.xib; sourceTree = "<group>"; };
+		CC14BCEB2BD99EA100D0F4BC /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
+		CC14BCEC2BD99EA100D0F4BC /* ArticlesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesViewController.xib; sourceTree = "<group>"; };
+		CC14BCEF2BD99EB600D0F4BC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CC14BCF02BD99EB600D0F4BC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		CC14BCF32BD99F2000D0F4BC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		CC14BCF52BD99F3500D0F4BC /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		CC14BCF72BD99F6500D0F4BC /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		CC14BCF92BD99FC700D0F4BC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CC14BCFB2BD99FD900D0F4BC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CC14BCFD2BD99FF400D0F4BC /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		CC14BCFF2BD9A04400D0F4BC /* StashesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesViewModel.swift; sourceTree = "<group>"; };
+		CC14BD012BD9A07000D0F4BC /* StashesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRouter.swift; sourceTree = "<group>"; };
+		CC14BD032BD9A08300D0F4BC /* StashesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesBuilder.swift; sourceTree = "<group>"; };
+		CC14BD052BD9A09F00D0F4BC /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
+		CC14BD072BD9A0AD00D0F4BC /* ArticlesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRouter.swift; sourceTree = "<group>"; };
+		CC14BD092BD9A0C500D0F4BC /* ArticlesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesBuilder.swift; sourceTree = "<group>"; };
+		CC14BD0B2BD9A0E900D0F4BC /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CC14BD0D2BD9A0F700D0F4BC /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		CC14BD0F2BD9A11B00D0F4BC /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +160,331 @@
 		CC14BC6D2BD9805400D0F4BC /* StashManagerApple */ = {
 			isa = PBXGroup;
 			children = (
-				CC14BC6E2BD9805400D0F4BC /* AppDelegate.swift */,
-				CC14BC702BD9805400D0F4BC /* SceneDelegate.swift */,
-				CC14BC722BD9805400D0F4BC /* ViewController.swift */,
-				CC14BC742BD9805400D0F4BC /* Main.storyboard */,
-				CC14BC772BD9805500D0F4BC /* Assets.xcassets */,
-				CC14BC792BD9805500D0F4BC /* LaunchScreen.storyboard */,
+				CC14BCDB2BD99D3600D0F4BC /* Helpers */,
+				CC14BC862BD981BA00D0F4BC /* Data */,
+				CC14BC872BD981C100D0F4BC /* Domain */,
+				CC14BC852BD980FD00D0F4BC /* Resources */,
+				CC14BC822BD980DA00D0F4BC /* Presentation */,
 				CC14BC7C2BD9805500D0F4BC /* Info.plist */,
 			);
 			path = StashManagerApple;
+			sourceTree = "<group>";
+		};
+		CC14BC822BD980DA00D0F4BC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC842BD980E800D0F4BC /* Modules */,
+				CC14BC832BD980E100D0F4BC /* App */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC14BC832BD980E100D0F4BC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC6E2BD9805400D0F4BC /* AppDelegate.swift */,
+				CC14BC702BD9805400D0F4BC /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CC14BC842BD980E800D0F4BC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC932BD9831700D0F4BC /* TabBar */,
+				CC14BC8E2BD982DC00D0F4BC /* Login */,
+				CC14BC8F2BD982E300D0F4BC /* Home */,
+				CC14BC902BD982EA00D0F4BC /* Stashes */,
+				CC14BC912BD982FC00D0F4BC /* Articles */,
+				CC14BC922BD9830B00D0F4BC /* Profile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CC14BC852BD980FD00D0F4BC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC8D2BD9828400D0F4BC /* Fonts */,
+				CC14BC772BD9805500D0F4BC /* Assets.xcassets */,
+				CC14BC792BD9805500D0F4BC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC14BC862BD981BA00D0F4BC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC882BD981D400D0F4BC /* Datasources */,
+				CC14BC892BD981E100D0F4BC /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC14BC872BD981C100D0F4BC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC8C2BD9821C00D0F4BC /* RepositoryProtocols */,
+				CC14BC8B2BD9820D00D0F4BC /* UseCases */,
+				CC14BC8A2BD9820000D0F4BC /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CC14BC882BD981D400D0F4BC /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC952BD9958A00D0F4BC /* DatasourceProtocols */,
+				CC14BC982BD995DE00D0F4BC /* Users */,
+				CC14BC972BD995CD00D0F4BC /* Rooms */,
+				CC14BC992BD995FE00D0F4BC /* Stashes */,
+				CC14BC962BD995BF00D0F4BC /* Articles */,
+			);
+			path = Datasources;
+			sourceTree = "<group>";
+		};
+		CC14BC892BD981E100D0F4BC /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */,
+				CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */,
+				CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */,
+				CC14BCB52BD9982300D0F4BC /* ArticlesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		CC14BC8A2BD9820000D0F4BC /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCD32BD99C5000D0F4BC /* User.swift */,
+				CC14BCD52BD99C5C00D0F4BC /* Room.swift */,
+				CC14BCD72BD99C6E00D0F4BC /* Stash.swift */,
+				CC14BCD92BD99CB300D0F4BC /* Article.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CC14BC8B2BD9820D00D0F4BC /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCBF2BD998F000D0F4BC /* UsersUseCase */,
+				CC14BCC02BD9990500D0F4BC /* RoomsUseCase */,
+				CC14BCC12BD9990D00D0F4BC /* StashesUseCase */,
+				CC14BCC22BD9991B00D0F4BC /* ArticlesUseCase */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		CC14BC8C2BD9821C00D0F4BC /* RepositoryProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCB72BD9984800D0F4BC /* UsersRepositoryProtocol.swift */,
+				CC14BCB92BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift */,
+				CC14BCBB2BD998B100D0F4BC /* StashesRepositoryProtocol.swift */,
+				CC14BCBD2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift */,
+			);
+			path = RepositoryProtocols;
+			sourceTree = "<group>";
+		};
+		CC14BC8D2BD9828400D0F4BC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CC14BC8E2BD982DC00D0F4BC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCDF2BD99E3600D0F4BC /* LoginViewController.swift */,
+				CC14BCE02BD99E3600D0F4BC /* LoginViewController.xib */,
+				CC14BCF32BD99F2000D0F4BC /* LoginViewModel.swift */,
+				CC14BCF52BD99F3500D0F4BC /* LoginRouter.swift */,
+				CC14BCF72BD99F6500D0F4BC /* LoginBuilder.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CC14BC8F2BD982E300D0F4BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCE32BD99E5900D0F4BC /* HomeViewController.swift */,
+				CC14BCE42BD99E5900D0F4BC /* HomeViewController.xib */,
+				CC14BCF92BD99FC700D0F4BC /* HomeViewModel.swift */,
+				CC14BCFB2BD99FD900D0F4BC /* HomeRouter.swift */,
+				CC14BCFD2BD99FF400D0F4BC /* HomeBuilder.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CC14BC902BD982EA00D0F4BC /* Stashes */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCE72BD99E9100D0F4BC /* StashesViewController.swift */,
+				CC14BCE82BD99E9100D0F4BC /* StashesViewController.xib */,
+				CC14BCFF2BD9A04400D0F4BC /* StashesViewModel.swift */,
+				CC14BD012BD9A07000D0F4BC /* StashesRouter.swift */,
+				CC14BD032BD9A08300D0F4BC /* StashesBuilder.swift */,
+			);
+			path = Stashes;
+			sourceTree = "<group>";
+		};
+		CC14BC912BD982FC00D0F4BC /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCEB2BD99EA100D0F4BC /* ArticlesViewController.swift */,
+				CC14BCEC2BD99EA100D0F4BC /* ArticlesViewController.xib */,
+				CC14BD052BD9A09F00D0F4BC /* ArticlesViewModel.swift */,
+				CC14BD072BD9A0AD00D0F4BC /* ArticlesRouter.swift */,
+				CC14BD092BD9A0C500D0F4BC /* ArticlesBuilder.swift */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		CC14BC922BD9830B00D0F4BC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCEF2BD99EB600D0F4BC /* ProfileViewController.swift */,
+				CC14BCF02BD99EB600D0F4BC /* ProfileViewController.xib */,
+				CC14BD0B2BD9A0E900D0F4BC /* ProfileViewModel.swift */,
+				CC14BD0D2BD9A0F700D0F4BC /* ProfileRouter.swift */,
+				CC14BD0F2BD9A11B00D0F4BC /* ProfileBuilder.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CC14BC932BD9831700D0F4BC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCDD2BD99DB000D0F4BC /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		CC14BC952BD9958A00D0F4BC /* DatasourceProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */,
+				CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */,
+				CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */,
+				CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */,
+			);
+			path = DatasourceProtocols;
+			sourceTree = "<group>";
+		};
+		CC14BC962BD995BF00D0F4BC /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */,
+				CC14BC9E2BD9967A00D0F4BC /* DTO */,
+			);
+			path = Articles;
+			sourceTree = "<group>";
+		};
+		CC14BC972BD995CD00D0F4BC /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */,
+				CC14BC9C2BD9966C00D0F4BC /* DTO */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		CC14BC982BD995DE00D0F4BC /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */,
+				CC14BC9B2BD9966400D0F4BC /* DTO */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		CC14BC992BD995FE00D0F4BC /* Stashes */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */,
+				CC14BC9D2BD9967400D0F4BC /* DTO */,
+			);
+			path = Stashes;
+			sourceTree = "<group>";
+		};
+		CC14BC9B2BD9966400D0F4BC /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC14BC9C2BD9966C00D0F4BC /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC14BC9D2BD9967400D0F4BC /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC14BC9E2BD9967A00D0F4BC /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC14BCBF2BD998F000D0F4BC /* UsersUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCC32BD99A2100D0F4BC /* UsersUseCaseProtocol.swift */,
+				CC14BCC52BD99A7A00D0F4BC /* UsersUseCase.swift */,
+			);
+			path = UsersUseCase;
+			sourceTree = "<group>";
+		};
+		CC14BCC02BD9990500D0F4BC /* RoomsUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCC72BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift */,
+				CC14BCC92BD99AB800D0F4BC /* RoomsUseCase.swift */,
+			);
+			path = RoomsUseCase;
+			sourceTree = "<group>";
+		};
+		CC14BCC12BD9990D00D0F4BC /* StashesUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCCB2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift */,
+				CC14BCCD2BD99AE300D0F4BC /* StashesUseCase.swift */,
+			);
+			path = StashesUseCase;
+			sourceTree = "<group>";
+		};
+		CC14BCC22BD9991B00D0F4BC /* ArticlesUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCCF2BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift */,
+				CC14BCD12BD99C3C00D0F4BC /* ArticlesUseCase.swift */,
+			);
+			path = ArticlesUseCase;
+			sourceTree = "<group>";
+		};
+		CC14BCDB2BD99D3600D0F4BC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCDC2BD99D3E00D0F4BC /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CC14BCDC2BD99D3E00D0F4BC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +497,7 @@
 				CC14BC672BD9805400D0F4BC /* Sources */,
 				CC14BC682BD9805400D0F4BC /* Frameworks */,
 				CC14BC692BD9805400D0F4BC /* Resources */,
+				CC14BC942BD9837A00D0F4BC /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -125,36 +546,101 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC14BCF12BD99EB600D0F4BC /* ProfileViewController.xib in Resources */,
 				CC14BC782BD9805500D0F4BC /* Assets.xcassets in Resources */,
+				CC14BCED2BD99EA100D0F4BC /* ArticlesViewController.xib in Resources */,
 				CC14BC7B2BD9805500D0F4BC /* Base in Resources */,
-				CC14BC762BD9805400D0F4BC /* Base in Resources */,
+				CC14BCE12BD99E3600D0F4BC /* LoginViewController.xib in Resources */,
+				CC14BCE92BD99E9100D0F4BC /* StashesViewController.xib in Resources */,
+				CC14BCE52BD99E5900D0F4BC /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CC14BC942BD9837A00D0F4BC /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CC14BC672BD9805400D0F4BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC14BC732BD9805400D0F4BC /* ViewController.swift in Sources */,
+				CC14BCC62BD99A7A00D0F4BC /* UsersUseCase.swift in Sources */,
+				CC14BCB42BD9980500D0F4BC /* StashesRepository.swift in Sources */,
+				CC14BCD62BD99C5C00D0F4BC /* Room.swift in Sources */,
+				CC14BCFA2BD99FC700D0F4BC /* HomeViewModel.swift in Sources */,
+				CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */,
+				CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */,
+				CC14BCD82BD99C6E00D0F4BC /* Stash.swift in Sources */,
+				CC14BCF22BD99EB600D0F4BC /* ProfileViewController.swift in Sources */,
+				CC14BCD22BD99C3C00D0F4BC /* ArticlesUseCase.swift in Sources */,
+				CC14BCD42BD99C5000D0F4BC /* User.swift in Sources */,
+				CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */,
+				CC14BCD02BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift in Sources */,
 				CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */,
+				CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */,
+				CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */,
+				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
+				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
+				CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */,
+				CC14BCAE2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift in Sources */,
+				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
+				CC14BCDA2BD99CB300D0F4BC /* Article.swift in Sources */,
+				CC14BCF82BD99F6500D0F4BC /* LoginBuilder.swift in Sources */,
+				CC14BCEA2BD99E9100D0F4BC /* StashesViewController.swift in Sources */,
+				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
+				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
+				CC14BCBE2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift in Sources */,
+				CC14BCFE2BD99FF400D0F4BC /* HomeBuilder.swift in Sources */,
+				CC14BD102BD9A11B00D0F4BC /* ProfileBuilder.swift in Sources */,
+				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
+				CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */,
+				CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */,
+				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
+				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
+				CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */,
+				CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */,
+				CC14BCCA2BD99AB800D0F4BC /* RoomsUseCase.swift in Sources */,
+				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
+				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
+				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
+				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
+				CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */,
+				CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */,
+				CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */,
+				CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */,
+				CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */,
+				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
+				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
+				CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */,
+				CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */,
+				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CC14BC742BD9805400D0F4BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC14BC752BD9805400D0F4BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC14BC792BD9805500D0F4BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,11 +778,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StashManagerApple/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stash Manager";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,11 +806,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StashManagerApple/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stash Manager";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
