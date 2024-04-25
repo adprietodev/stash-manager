@@ -10,7 +10,8 @@ import UIKit
 class LoginBuilder {
     func build() -> LoginViewController {
         let viewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        // TODO: - build:  viewModel, Datasource, Repository, UseCase
+        let router = LoginRouter(viewController: viewController)
+        viewController.viewModel = LoginViewModel(router: router)
         return viewController
     }
 }
