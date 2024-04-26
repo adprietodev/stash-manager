@@ -97,6 +97,10 @@
 		CCDB79032BDBFA1300B551D3 /* LinkDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */; };
 		CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */; };
 		CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */; };
+		CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79092BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift */; };
+		CCDB790C2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDB790A2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib */; };
+		CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB790D2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift */; };
+		CCDB79102BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDB790E2BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +196,10 @@
 		CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDatasource.swift; sourceTree = "<group>"; };
 		CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDTO.swift; sourceTree = "<group>"; };
 		CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCDB79092BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCDB790A2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
+		CCDB790D2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCDB790E2BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +383,7 @@
 		CC14BC8F2BD982E300D0F4BC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CCDB79082BDBFF1900B551D3 /* Cells */,
 				CC14BCE32BD99E5900D0F4BC /* HomeViewController.swift */,
 				CC14BCE42BD99E5900D0F4BC /* HomeViewController.xib */,
 				CC14BCF92BD99FC700D0F4BC /* HomeViewModel.swift */,
@@ -616,6 +625,17 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
+		CCDB79082BDBFF1900B551D3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCDB79092BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift */,
+				CCDB790A2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib */,
+				CCDB790D2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift */,
+				CCDB790E2BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -682,6 +702,7 @@
 				CC193F542BDACA2200CC6676 /* Montserrat-ExtraBold.ttf in Resources */,
 				CC193F592BDACA2300CC6676 /* Montserrat-Light.ttf in Resources */,
 				CC193F572BDACA2200CC6676 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				CCDB790C2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib in Resources */,
 				CC193F582BDACA2300CC6676 /* Montserrat-Italic.ttf in Resources */,
 				CC193F512BDACA2200CC6676 /* Montserrat-BlackItalic.ttf in Resources */,
 				CC193F562BDACA2200CC6676 /* Montserrat-ExtraLight.ttf in Resources */,
@@ -694,6 +715,7 @@
 				CC193F5E2BDACA2300CC6676 /* Montserrat-SemiBold.ttf in Resources */,
 				CC193F502BDACA2200CC6676 /* Montserrat-Black.ttf in Resources */,
 				CC193F532BDACA2200CC6676 /* Montserrat-BoldItalic.ttf in Resources */,
+				CCDB79102BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib in Resources */,
 				CC193F632BDACA2300CC6676 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				CC193F622BDACA2300CC6676 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
 				CC14BC782BD9805500D0F4BC /* Assets.xcassets in Resources */,
@@ -754,6 +776,7 @@
 				CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */,
 				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
+				CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */,
 				CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */,
 				CC14BCAE2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift in Sources */,
 				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
@@ -797,6 +820,7 @@
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
 				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
 				CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */,
+				CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */,
 				CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */,
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
 			);

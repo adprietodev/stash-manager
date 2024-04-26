@@ -14,7 +14,7 @@ struct ArticleDTO: Codable {
     let image: String?
     let description, color, expirationDate: String?
     let isAlcoholic: Bool?
-    let mL, weight: Int?
+    let mililitres, weight: Int?
     let brand: String?
     let isSpice, isSpicy: Bool?
     let material: String?
@@ -22,7 +22,8 @@ struct ArticleDTO: Codable {
     let typeArticle: TypeArticleDTO
 
     enum CodingKeys: String, CodingKey {
-        case id, name, image, description, color, expirationDate, isAlcoholic, mL, weight, brand, isSpice, isSpicy, material, idTypeArticle, idUser
+        case id, name, image, description, color, expirationDate, isAlcoholic, weight, brand, isSpice, isSpicy, material, idTypeArticle, idUser
         case typeArticle = "types_article"
+        case mililitres = "mL"
     }
 }
