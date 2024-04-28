@@ -28,10 +28,11 @@ class LoginViewModel: LoginViewModelProtocol {
 
     func login(with email: String, at password: String) {
         Task {
-            let response = try await authUseCase.signInWithEmailAndPassword(email, password)
-            if response {
+            do {
+                let session = try await authUseCase.signInWithEmailAndPassword(email, password)
+                print(session.user.id)
                 goToTabBar()
-            } else {
+            } catch {
                 loginError()
             }
         }

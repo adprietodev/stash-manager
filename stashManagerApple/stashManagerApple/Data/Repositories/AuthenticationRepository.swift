@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Supabase
 
 class AuthenticationRepository {
     // MARK: - Properties
@@ -17,7 +18,7 @@ class AuthenticationRepository {
 }
 
 extension AuthenticationRepository: AuthenticationRepositoryProtocol {
-    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Bool {
+    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session {
         try await datasource.signInWithEmailAndPassword(email, password)
     }
 }

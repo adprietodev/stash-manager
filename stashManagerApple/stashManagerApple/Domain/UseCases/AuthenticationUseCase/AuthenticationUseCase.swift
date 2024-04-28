@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Supabase
 
 class AuthenticationUseCase {
     let repository: AuthenticationRepositoryProtocol
@@ -16,7 +17,7 @@ class AuthenticationUseCase {
 }
 
 extension AuthenticationUseCase: AuthenticationUseCaseProtocol {
-    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Bool {
+    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session {
         try await repository.signInWithEmailAndPassword(email, password)
     }
 }

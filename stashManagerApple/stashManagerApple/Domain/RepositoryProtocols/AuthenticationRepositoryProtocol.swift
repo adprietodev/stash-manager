@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import Supabase
 
 protocol AuthenticationRepositoryProtocol {
-    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Bool
+    func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session
 }
