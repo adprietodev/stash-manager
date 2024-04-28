@@ -28,6 +28,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signinView: UIView!
     @IBOutlet weak var errorEmailLabel: UILabel!
     @IBOutlet weak var errorPasswordLabel: UILabel!
+    @IBOutlet weak var loginErrorView: UIView!
+    @IBOutlet weak var loginErrorLabel: UILabel!
 
     // MARK: - Properties
     var viewModel: LoginViewModelProtocol!
@@ -42,7 +44,18 @@ class LoginViewController: UIViewController {
     @IBAction func loginAccess(_ sender: Any) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
-        viewModel.login(with: email, at: password)
+        if email.isValidMail(), password.isValidPassword() {
+            viewModel.login(with: email, at: password)
+            setupBinding()
+        } else {
+            loginErrorView.isHidden = true
+            errorEmailLabel.isHidden = email.isValidMail()
+            errorPasswordLabel.isHidden = password.isValidPassword()
+            errorEmailLabel.text = email.isValidMail() ? "" : "Email no válido"
+            lineEmailView.backgroundColor = email.isValidMail() ? .blueGreen : .red
+            errorPasswordLabel.text = password.isValidPassword() ? "" : "Contraseña no válida"
+            linePasswordView.backgroundColor = password.isValidPassword() ? .blueGreen : .red
+        }
     }
 
     // MARK: - Functions
@@ -68,5 +81,19 @@ class LoginViewController: UIViewController {
         errorPasswordLabel.textColor = .red
         errorEmailLabel.font = UIFont().montserratRegular(with: 12)
         errorPasswordLabel.font = UIFont().montserratRegular(with: 12)
+    }
+
+    func setupBinding() {
+        viewModel.loginError = {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                errorEmailLabel.isHidden = true
+                passwordTextField.isHidden = true
+                loginErrorView.isHidden = false
+                loginErrorLabel.textColor = .red
+                loginErrorLabel.font = UIFont().montserratRegular(with: 12)
+                loginErrorLabel.text = "Error de acceso por favor intentelo de nuevo"
+            }
+        }
     }
 }

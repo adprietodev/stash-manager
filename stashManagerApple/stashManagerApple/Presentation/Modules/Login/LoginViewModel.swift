@@ -11,6 +11,7 @@ class LoginViewModel: LoginViewModelProtocol {
     // MARK: - Properties
     let router: LoginRouterProtocol
     let authUseCase: AuthenticationUseCaseProtocol
+    var loginError: (() -> Void)?
 
     init(router: LoginRouterProtocol, useCase: AuthenticationUseCaseProtocol) {
         self.router = router
@@ -22,18 +23,13 @@ class LoginViewModel: LoginViewModelProtocol {
         router.goToTabBar()
     }
 
-    func loginError() {
-        print("Error de acceso")
-    }
-
     func login(with email: String, at password: String) {
         Task {
             do {
-                let session = try await authUseCase.signInWithEmailAndPassword(email, password)
-                print(session.user.id)
+                _ = try await authUseCase.signInWithEmailAndPassword(email, password)
                 goToTabBar()
             } catch {
-                loginError()
+                loginError?()
             }
         }
     }

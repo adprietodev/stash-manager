@@ -8,7 +8,8 @@
 import Foundation
 
 protocol LoginViewModelProtocol {
-    func login(with email: String, at password: String) 
+    var loginError: (()-> Void)? { get set }
+    func login(with email: String, at password: String)
 }
 
 protocol LoginRouterProtocol {

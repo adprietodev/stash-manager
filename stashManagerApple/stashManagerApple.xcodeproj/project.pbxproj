@@ -101,6 +101,8 @@
 		CCD8D8AF2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8AE2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift */; };
 		CCD8D8B22BDE5D03008EBDE4 /* AuthenticationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B12BDE5D03008EBDE4 /* AuthenticationUseCase.swift */; };
 		CCD8D8B42BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B32BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift */; };
+		CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B52BDE9C8B008EBDE4 /* SupabaseConfig.swift */; };
+		CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B72BDEA1AE008EBDE4 /* String.swift */; };
 		CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */; };
 		CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */; };
 		CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */; };
@@ -208,6 +210,8 @@
 		CCD8D8AE2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryProtocol.swift; sourceTree = "<group>"; };
 		CCD8D8B12BDE5D03008EBDE4 /* AuthenticationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCase.swift; sourceTree = "<group>"; };
 		CCD8D8B32BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CCD8D8B52BDE9C8B008EBDE4 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
+		CCD8D8B72BDEA1AE008EBDE4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
 		CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeArticleDTO.swift; sourceTree = "<group>"; };
@@ -594,6 +598,7 @@
 		CC14BCDB2BD99D3600D0F4BC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CCD8D8B52BDE9C8B008EBDE4 /* SupabaseConfig.swift */,
 				CC14BCDC2BD99D3E00D0F4BC /* Extensions */,
 			);
 			path = Helpers;
@@ -604,6 +609,7 @@
 			children = (
 				CC193F362BDAC9B100CC6676 /* UIFonts.swift */,
 				CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */,
+				CCD8D8B72BDEA1AE008EBDE4 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
 				CCD8D8B22BDE5D03008EBDE4 /* AuthenticationUseCase.swift in Sources */,
 				CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */,
+				CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */,
 				CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */,
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
 				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
@@ -881,6 +888,7 @@
 				CCDB78F92BDBF40800B551D3 /* StashesDTO.swift in Sources */,
 				CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */,
 				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
+				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
