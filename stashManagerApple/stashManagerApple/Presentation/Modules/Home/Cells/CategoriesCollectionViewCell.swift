@@ -8,10 +8,11 @@
 import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
-
     // MARK: - IBOutlet
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+
+    // MARK: - Properties
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,8 +24,6 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         nameLabel.text = name
         nameLabel.textColor = .prussianBlue
         nameLabel.font = UIFont().montserratRegular(with: 14)
-        categoryView.layer.cornerRadius = 14
-        self.layer.cornerRadius = 14
-        self.layer.borderWidth = 1.0
+        categoryView.layer.cornerRadius = 12
     }
 }

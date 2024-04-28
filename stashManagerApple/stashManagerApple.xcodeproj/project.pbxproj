@@ -87,6 +87,8 @@
 		CC193F612BDACA2300CC6676 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F492BDACA2200CC6676 /* Montserrat-ThinItalic.ttf */; };
 		CC193F622BDACA2300CC6676 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		CC193F632BDACA2300CC6676 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */; };
+		CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */; };
+		CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */; };
 		CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */; };
 		CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */; };
 		CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */; };
@@ -186,6 +188,8 @@
 		CC193F492BDACA2200CC6676 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
 		CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeArticleDTO.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 				CC14BCF92BD99FC700D0F4BC /* HomeViewModel.swift */,
 				CC14BCFB2BD99FD900D0F4BC /* HomeRouter.swift */,
 				CC14BCFD2BD99FF400D0F4BC /* HomeBuilder.swift */,
+				CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				CC193F362BDAC9B100CC6676 /* UIFonts.swift */,
+				CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -762,6 +768,7 @@
 				CC14BCB42BD9980500D0F4BC /* StashesRepository.swift in Sources */,
 				CC14BCD62BD99C5C00D0F4BC /* Room.swift in Sources */,
 				CC14BCFA2BD99FC700D0F4BC /* HomeViewModel.swift in Sources */,
+				CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */,
 				CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */,
 				CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */,
 				CC14BCD82BD99C6E00D0F4BC /* Stash.swift in Sources */,
@@ -816,6 +823,7 @@
 				CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */,
 				CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */,
 				CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */,
+				CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */,
 				CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */,
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
 				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
