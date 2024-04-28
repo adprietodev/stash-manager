@@ -8,4 +8,5 @@
 import Foundation
 
 protocol UsersUseCaseProtocol {
+    func getUser(at authIDUser: UUID) async throws -> User
 }

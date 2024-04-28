@@ -16,9 +16,26 @@ class UsersRepository {
 }
 
 extension UsersRepository: UsersRepositoryProtocol {
-    func getUsers() throws {
-        // TODO: - UserDTO at User(Entity) conversion
+    func getUser(at authIDUser: UUID) async throws -> User {
+        let userDTO = try await datasource.getUser(at: authIDUser)
+        return userDTO.toDomain()
     }
 }
 
-// TODO: - Logic to conversión ( fileprivate extension UserDTO )
+fileprivate extension UserDTO {
+    func toDomain() -> User {
+        User(id: self.id, name: self.name, lastname: self.lastname, image: self.image, email: self.email, articles: self.articles.map { $0.toDomain()})
+    }
+}
+
+fileprivate extension ArticleDTO {
+    func toDomain() -> Article {
+        Article(id: self.id, name: self.name, image: self.image, description: self.description, color: self.color, expirationDate: self.expirationDate, isAlcoholic: self.isAlcoholic, mililitres: self.mililitres, weight: self.weight, brand: self.brand, isSpice: self.isSpice, isSpicy: self.isSpicy, material: self.material, idTypeArticle: self.idTypeArticle, idUser: self.idUser, typeArticle: self.typeArticle.toDomain())
+    }
+}
+
+fileprivate extension TypeArticleDTO {
+    func toDomain() -> TypeArticle {
+        TypeArticle(name: self.name)
+    }
+}

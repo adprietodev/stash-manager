@@ -16,7 +16,7 @@ class UsersUseCase {
 }
 
 extension UsersUseCase: UsersUseCaseProtocol {
-    func getUsers() throws {
-        // TODO: - Call repository for take entity
+    func getUser(at authIDUser: UUID) async throws -> User {
+        try await repository.getUser(at: authIDUser)
     }
 }

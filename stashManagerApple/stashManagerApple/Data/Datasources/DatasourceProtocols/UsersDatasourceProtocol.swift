@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UsersDatasourceProtocol {
-    func getUsers() throws
+    func getUser(at authIDUser: UUID) async throws -> UserDTO
 }

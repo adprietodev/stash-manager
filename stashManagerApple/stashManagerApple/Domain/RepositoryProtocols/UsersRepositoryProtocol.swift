@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UsersRepositoryProtocol {
-    func getUsers() throws
+    func getUser(at authIDUser: UUID) async throws -> User 
 }

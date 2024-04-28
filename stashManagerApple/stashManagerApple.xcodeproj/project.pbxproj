@@ -103,6 +103,15 @@
 		CCD8D8B42BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B32BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift */; };
 		CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B52BDE9C8B008EBDE4 /* SupabaseConfig.swift */; };
 		CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8B72BDEA1AE008EBDE4 /* String.swift */; };
+		CCD8D8BC2BDEB16E008EBDE4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8BA2BDEB16E008EBDE4 /* SplashViewController.swift */; };
+		CCD8D8BD2BDEB16E008EBDE4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCD8D8BB2BDEB16E008EBDE4 /* SplashViewController.xib */; };
+		CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8BE2BDEB30B008EBDE4 /* SplashViewModel.swift */; };
+		CCD8D8C12BDEB31D008EBDE4 /* SplashProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8C02BDEB31D008EBDE4 /* SplashProtocols.swift */; };
+		CCD8D8C32BDEB337008EBDE4 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8C22BDEB336008EBDE4 /* SplashRouter.swift */; };
+		CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8C42BDEB3DF008EBDE4 /* SplashBuilder.swift */; };
+		CCD8D8C72BDEBF7B008EBDE4 /* TypeArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8C62BDEBF7B008EBDE4 /* TypeArticle.swift */; };
+		CCD8D8C92BDEBFA3008EBDE4 /* TypeRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8C82BDEBFA3008EBDE4 /* TypeRoom.swift */; };
+		CCD8D8CB2BDEBFB3008EBDE4 /* TypeStash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8CA2BDEBFB3008EBDE4 /* TypeStash.swift */; };
 		CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */; };
 		CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */; };
 		CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */; };
@@ -212,6 +221,15 @@
 		CCD8D8B32BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUseCaseProtocol.swift; sourceTree = "<group>"; };
 		CCD8D8B52BDE9C8B008EBDE4 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
 		CCD8D8B72BDEA1AE008EBDE4 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		CCD8D8BA2BDEB16E008EBDE4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CCD8D8BB2BDEB16E008EBDE4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		CCD8D8BE2BDEB30B008EBDE4 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		CCD8D8C02BDEB31D008EBDE4 /* SplashProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocols.swift; sourceTree = "<group>"; };
+		CCD8D8C22BDEB336008EBDE4 /* SplashRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
+		CCD8D8C42BDEB3DF008EBDE4 /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
+		CCD8D8C62BDEBF7B008EBDE4 /* TypeArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeArticle.swift; sourceTree = "<group>"; };
+		CCD8D8C82BDEBFA3008EBDE4 /* TypeRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRoom.swift; sourceTree = "<group>"; };
+		CCD8D8CA2BDEBFB3008EBDE4 /* TypeStash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStash.swift; sourceTree = "<group>"; };
 		CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
 		CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeArticleDTO.swift; sourceTree = "<group>"; };
@@ -298,6 +316,7 @@
 			children = (
 				CC14BC932BD9831700D0F4BC /* TabBar */,
 				CC14BC8E2BD982DC00D0F4BC /* Login */,
+				CCD8D8B92BDEB148008EBDE4 /* Splash */,
 				CC14BC8F2BD982E300D0F4BC /* Home */,
 				CC14BC902BD982EA00D0F4BC /* Stashes */,
 				CC14BC912BD982FC00D0F4BC /* Articles */,
@@ -368,6 +387,9 @@
 				CC14BCD52BD99C5C00D0F4BC /* Room.swift */,
 				CC14BCD72BD99C6E00D0F4BC /* Stash.swift */,
 				CC14BCD92BD99CB300D0F4BC /* Article.swift */,
+				CCD8D8C62BDEBF7B008EBDE4 /* TypeArticle.swift */,
+				CCD8D8C82BDEBFA3008EBDE4 /* TypeRoom.swift */,
+				CCD8D8CA2BDEBFB3008EBDE4 /* TypeStash.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -674,6 +696,19 @@
 			path = AuthenticationUseCase;
 			sourceTree = "<group>";
 		};
+		CCD8D8B92BDEB148008EBDE4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CCD8D8BA2BDEB16E008EBDE4 /* SplashViewController.swift */,
+				CCD8D8BB2BDEB16E008EBDE4 /* SplashViewController.xib */,
+				CCD8D8BE2BDEB30B008EBDE4 /* SplashViewModel.swift */,
+				CCD8D8C02BDEB31D008EBDE4 /* SplashProtocols.swift */,
+				CCD8D8C22BDEB336008EBDE4 /* SplashRouter.swift */,
+				CCD8D8C42BDEB3DF008EBDE4 /* SplashBuilder.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		CCDB79002BDBF9D000B551D3 /* Links */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +820,7 @@
 				CC193F612BDACA2300CC6676 /* Montserrat-ThinItalic.ttf in Resources */,
 				CC193F5D2BDACA2300CC6676 /* Montserrat-Regular.ttf in Resources */,
 				CC193F5B2BDACA2300CC6676 /* Montserrat-Medium.ttf in Resources */,
+				CCD8D8BD2BDEB16E008EBDE4 /* SplashViewController.xib in Resources */,
 				CC193F5C2BDACA2300CC6676 /* Montserrat-MediumItalic.ttf in Resources */,
 				CC193F5E2BDACA2300CC6676 /* Montserrat-SemiBold.ttf in Resources */,
 				CC193F502BDACA2200CC6676 /* Montserrat-Black.ttf in Resources */,
@@ -850,6 +886,7 @@
 				CC14BCD02BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift in Sources */,
 				CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */,
 				CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */,
+				CCD8D8C12BDEB31D008EBDE4 /* SplashProtocols.swift in Sources */,
 				CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */,
 				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
@@ -866,6 +903,7 @@
 				CC14BCEA2BD99E9100D0F4BC /* StashesViewController.swift in Sources */,
 				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
 				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
+				CCD8D8C72BDEBF7B008EBDE4 /* TypeArticle.swift in Sources */,
 				CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
 				CC14BCBE2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift in Sources */,
@@ -879,6 +917,7 @@
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
 				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
+				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
 				CCDB78FF2BDBF64000B551D3 /* TypeRooms.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
 				CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */,
@@ -891,6 +930,7 @@
 				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
+				CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
@@ -903,9 +943,13 @@
 				CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */,
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
 				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
+				CCD8D8BC2BDEB16E008EBDE4 /* SplashViewController.swift in Sources */,
 				CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */,
 				CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */,
+				CCD8D8CB2BDEBFB3008EBDE4 /* TypeStash.swift in Sources */,
+				CCD8D8C92BDEBFA3008EBDE4 /* TypeRoom.swift in Sources */,
 				CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */,
+				CCD8D8C32BDEB337008EBDE4 /* SplashRouter.swift in Sources */,
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

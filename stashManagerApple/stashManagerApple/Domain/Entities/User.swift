@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct User {
+    let id: Int
+    let name: String
+    let lastname: String
+    let image: String
+    let email: String
+    let articles: [Article]
+}

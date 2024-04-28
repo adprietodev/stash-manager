@@ -47,6 +47,8 @@ class LoginViewController: UIViewController {
         if email.isValidMail(), password.isValidPassword() {
             viewModel.login(with: email, at: password)
             setupBinding()
+            lineEmailView.backgroundColor = email.isValidMail() ? .blueGreen : .red
+            linePasswordView.backgroundColor = password.isValidPassword() ? .blueGreen : .red
         } else {
             loginErrorView.isHidden = true
             errorEmailLabel.isHidden = email.isValidMail()
@@ -88,7 +90,7 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 errorEmailLabel.isHidden = true
-                passwordTextField.isHidden = true
+                errorPasswordLabel.isHidden = true
                 loginErrorView.isHidden = false
                 loginErrorLabel.textColor = .red
                 loginErrorLabel.font = UIFont().montserratRegular(with: 12)
