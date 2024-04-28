@@ -11,7 +11,10 @@ class LoginBuilder {
     func build() -> LoginViewController {
         let viewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
         let router = LoginRouter(viewController: viewController)
-        viewController.viewModel = LoginViewModel(router: router)
+        let authDatasource = AuthenticationDataSource()
+        let authRepository = AuthenticationRepository(datasource: authDatasource)
+        let authUseCase = AuthenticationUseCase(repository: authRepository)
+        viewController.viewModel = LoginViewModel(router: router, useCase: authUseCase)
         return viewController
     }
 }

@@ -40,7 +40,9 @@ class LoginViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func loginAccess(_ sender: Any) {
-        viewModel.goToTabBar()
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        viewModel.login(with: email, at: password)
     }
 
     // MARK: - Functions

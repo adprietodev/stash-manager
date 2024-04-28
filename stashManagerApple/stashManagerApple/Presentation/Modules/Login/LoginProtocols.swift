@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoginViewModelProtocol {
-    func goToTabBar()
+    func login(with email: String, at password: String) 
 }
 
 protocol LoginRouterProtocol {

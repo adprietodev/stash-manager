@@ -17,9 +17,11 @@ class LoginRouter: LoginRouterProtocol {
 
     // MARK: - Functions
     func goToTabBar() {
-        let tabBarViewController = TabBarController().build()
-        guard let sceneDelegate =  UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
-        sceneDelegate.window?.rootViewController = tabBarViewController
-        sceneDelegate.window?.makeKeyAndVisible()
+        DispatchQueue.main.async {
+            let tabBarViewController = TabBarController().build()
+            guard let sceneDelegate =  UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            sceneDelegate.window?.rootViewController = tabBarViewController
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
     }
 }
