@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol RoomsUseCaseProtocol {
+    func getRooms(at userID: Int) async throws -> [Room]
+    func getTypesRoom() async throws -> [TypeRoom]
+}

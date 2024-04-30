@@ -11,12 +11,11 @@ struct RoomDTO: Codable {
     let id: Int
     let name: String
     let image: String
-    let idUser, idTypeRoom: Int
     let description: String?
-    let typeRoom: TypeRoom
+    let typeRoom: TypesRoomDTO
 
     enum CodingKeys: String, CodingKey {
-        case id, name, image, idUser, idTypeRoom, description
+        case id, name, image, description
         case typeRoom = "types_room"
     }
 }

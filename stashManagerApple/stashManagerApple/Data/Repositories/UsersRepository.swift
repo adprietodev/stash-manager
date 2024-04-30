@@ -8,34 +8,44 @@
 import Foundation
 
 class UsersRepository {
-    let datasource: UsersDatasourceProtocol
+    let remoteDatasource: UsersRemoteDatasourceProtocol
+    let localDatasource: UsersLocalDatasourceProtocol
 
-    init(datasource: UsersDatasourceProtocol) {
-        self.datasource = datasource
+    init(remoteDatasource: UsersRemoteDatasourceProtocol, localDatasource: UsersLocalDatasourceProtocol) {
+        self.remoteDatasource = remoteDatasource
+        self.localDatasource = localDatasource
     }
 }
 
 extension UsersRepository: UsersRepositoryProtocol {
-    func getUser(at authIDUser: UUID) async throws -> User {
-        let userDTO = try await datasource.getUser(at: authIDUser)
+    func getRemoteUser(at authIDUser: UUID) async throws -> User {
+        let userDTO = try await remoteDatasource.getUser(at: authIDUser)
         return userDTO.toDomain()
+    }
+
+    func getLocalCurrentUser() throws -> User {
+        let userDTO = try localDatasource.getLocalCurrentUser()
+        guard let userDTO else { return User(id: 0,idAuth: "", name: "", lastname: "", image: "", email: "")}
+        return userDTO.toDomain()
+    }
+
+    func setLocalCurrentUser(_ user: User) throws {
+        try localDatasource.setLocalCurrentUser(user.toDTO())
+    }
+
+    func removeCurrentUser() {
+        localDatasource.removeLocalCurrentUser()
     }
 }
 
 fileprivate extension UserDTO {
     func toDomain() -> User {
-        User(id: self.id, name: self.name, lastname: self.lastname, image: self.image, email: self.email, articles: self.articles.map { $0.toDomain()})
+        User(id: self.id,idAuth: self.idAuthUser, name: self.name, lastname: self.lastname, image: self.image, email: self.email)
     }
 }
 
-fileprivate extension ArticleDTO {
-    func toDomain() -> Article {
-        Article(id: self.id, name: self.name, image: self.image, description: self.description, color: self.color, expirationDate: self.expirationDate, isAlcoholic: self.isAlcoholic, mililitres: self.mililitres, weight: self.weight, brand: self.brand, isSpice: self.isSpice, isSpicy: self.isSpicy, material: self.material, idTypeArticle: self.idTypeArticle, idUser: self.idUser, typeArticle: self.typeArticle.toDomain())
-    }
-}
-
-fileprivate extension TypeArticleDTO {
-    func toDomain() -> TypeArticle {
-        TypeArticle(name: self.name)
+fileprivate extension User {
+    func toDTO() -> UserDTO {
+        UserDTO(id: self.id, idAuthUser: self.idAuth, name: self.name, lastname: self.lastname, image: self.image, email: self.email)
     }
 }

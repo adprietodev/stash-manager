@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TypeRoom: Codable {
+struct TypesRoomDTO: Codable {
     let id: Int
     let name: String
 }

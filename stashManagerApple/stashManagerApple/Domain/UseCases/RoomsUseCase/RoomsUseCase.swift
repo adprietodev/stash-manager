@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+class RoomsUseCase: RoomsUseCaseProtocol {
+    // MARK: - Properties
+    let repository: RoomsRepositoryProtocol
+
+    init(repository: RoomsRepositoryProtocol) {
+        self.repository = repository
+    }
+
+    // MARK: - Functions
+    func getRooms(at userID: Int) async throws -> [Room] {
+        try await repository.getRooms(at: userID)
+    }
+
+    func getTypesRoom() async throws -> [TypeRoom] {
+        try await repository.getTypesRoom()
+    }
+}

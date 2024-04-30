@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol UsersDatasourceProtocol {
+protocol UsersRemoteDatasourceProtocol {
     func getUser(at authIDUser: UUID) async throws -> UserDTO
 }

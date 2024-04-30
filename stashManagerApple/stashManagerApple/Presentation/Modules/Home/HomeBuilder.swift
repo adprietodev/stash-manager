@@ -10,7 +10,17 @@ import Foundation
 class HomeBuilder {
     func build() -> HomeViewController {
         let viewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        viewController.viewModel = HomeViewModel()
+
+        let usersLocalDatasource = UsersLocalDatasource()
+        let usersRemoteDatasource = UsersRemoteDatasource()
+        let usersRepository = UsersRepository(remoteDatasource: usersRemoteDatasource, localDatasource: usersLocalDatasource)
+        let usersUseCase = UsersUseCase(repository: usersRepository)
+
+        let roomsDatasource = RoomsDatasource()
+        let roomsRepository = RoomsRepository(datasource: roomsDatasource)
+        let roomsUseCase = RoomsUseCase(repository: roomsRepository)
+
+        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUsecase: roomsUseCase)
         return viewController
     }
 }

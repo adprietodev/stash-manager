@@ -8,6 +8,4 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
-    var typesRoomMockUp: [String] { get }
-    var roomsMockUp: [Room] { get }
 }

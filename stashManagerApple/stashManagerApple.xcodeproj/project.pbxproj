@@ -11,14 +11,14 @@
 		CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC702BD9805400D0F4BC /* SceneDelegate.swift */; };
 		CC14BC782BD9805500D0F4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC772BD9805500D0F4BC /* Assets.xcassets */; };
 		CC14BC7B2BD9805500D0F4BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC7A2BD9805500D0F4BC /* Base */; };
-		CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */; };
+		CC14BCA02BD9969800D0F4BC /* UsersRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC9F2BD9969800D0F4BC /* UsersRemoteDatasource.swift */; };
 		CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */; };
 		CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */; };
 		CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */; };
 		CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */; };
 		CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */; };
 		CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */; };
-		CC14BCAE2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */; };
+		CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAD2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift */; };
 		CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */; };
 		CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */; };
 		CC14BCB42BD9980500D0F4BC /* StashesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */; };
@@ -88,6 +88,8 @@
 		CC193F622BDACA2300CC6676 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		CC193F632BDACA2300CC6676 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */; };
 		CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */; };
+		CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */; };
+		CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */; };
 		CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */; };
 		CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D89B2BDE52EE008EBDE4 /* AuthenticationDataSource.swift */; };
 		CCD8D89E2BDE5519008EBDE4 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = CCD8D89D2BDE5519008EBDE4 /* Auth */; };
@@ -118,7 +120,7 @@
 		CCDB78F92BDBF40800B551D3 /* StashesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F82BDBF40800B551D3 /* StashesDTO.swift */; };
 		CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */; };
 		CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */; };
-		CCDB78FF2BDBF64000B551D3 /* TypeRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FE2BDBF64000B551D3 /* TypeRooms.swift */; };
+		CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */; };
 		CCDB79032BDBFA1300B551D3 /* LinkDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */; };
 		CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */; };
 		CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */; };
@@ -135,14 +137,14 @@
 		CC14BC772BD9805500D0F4BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC14BC7A2BD9805500D0F4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC14BC7C2BD9805500D0F4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatasource.swift; sourceTree = "<group>"; };
+		CC14BC9F2BD9969800D0F4BC /* UsersRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasourceProtocol.swift; sourceTree = "<group>"; };
-		CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCAD2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
 		CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRepository.swift; sourceTree = "<group>"; };
@@ -212,6 +214,8 @@
 		CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
+		CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasource.swift; sourceTree = "<group>"; };
 		CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CCD8D89B2BDE52EE008EBDE4 /* AuthenticationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataSource.swift; sourceTree = "<group>"; };
 		CCD8D8AA2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDatasourceProtocol.swift; sourceTree = "<group>"; };
@@ -236,7 +240,7 @@
 		CCDB78F82BDBF40800B551D3 /* StashesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDTO.swift; sourceTree = "<group>"; };
 		CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStashDTO.swift; sourceTree = "<group>"; };
 		CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
-		CCDB78FE2BDBF64000B551D3 /* TypeRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRooms.swift; sourceTree = "<group>"; };
+		CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesRoomDTO.swift; sourceTree = "<group>"; };
 		CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDatasource.swift; sourceTree = "<group>"; };
 		CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDTO.swift; sourceTree = "<group>"; };
 		CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksDatasourceProtocol.swift; sourceTree = "<group>"; };
@@ -357,7 +361,6 @@
 		CC14BC882BD981D400D0F4BC /* Datasources */ = {
 			isa = PBXGroup;
 			children = (
-				CC14BC952BD9958A00D0F4BC /* DatasourceProtocols */,
 				CCD8D89A2BDE52CD008EBDE4 /* Authentification */,
 				CC14BC982BD995DE00D0F4BC /* Users */,
 				CC14BC972BD995CD00D0F4BC /* Rooms */,
@@ -497,22 +500,10 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		CC14BC952BD9958A00D0F4BC /* DatasourceProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				CC14BCAD2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift */,
-				CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */,
-				CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */,
-				CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */,
-				CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */,
-				CCD8D8AA2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift */,
-			);
-			path = DatasourceProtocols;
-			sourceTree = "<group>";
-		};
 		CC14BC962BD995BF00D0F4BC /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */,
 				CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */,
 				CC14BC9E2BD9967A00D0F4BC /* DTO */,
 			);
@@ -522,6 +513,7 @@
 		CC14BC972BD995CD00D0F4BC /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
+				CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */,
 				CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */,
 				CC14BC9C2BD9966C00D0F4BC /* DTO */,
 			);
@@ -531,7 +523,8 @@
 		CC14BC982BD995DE00D0F4BC /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				CC14BC9F2BD9969800D0F4BC /* UsersDatasource.swift */,
+				CCBBB15D2BE15CCD00A889C5 /* Local */,
+				CCBBB15C2BE15CC500A889C5 /* Remote */,
 				CC14BC9B2BD9966400D0F4BC /* DTO */,
 			);
 			path = Users;
@@ -540,6 +533,7 @@
 		CC14BC992BD995FE00D0F4BC /* Stashes */ = {
 			isa = PBXGroup;
 			children = (
+				CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */,
 				CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */,
 				CC14BC9D2BD9967400D0F4BC /* DTO */,
 			);
@@ -558,7 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */,
-				CCDB78FE2BDBF64000B551D3 /* TypeRooms.swift */,
+				CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -672,9 +666,28 @@
 			path = "../../../../../../../../Downloads/Lato,Montserrat/Montserrat";
 			sourceTree = "<group>";
 		};
+		CCBBB15C2BE15CC500A889C5 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCAD2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift */,
+				CC14BC9F2BD9969800D0F4BC /* UsersRemoteDatasource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CCBBB15D2BE15CCD00A889C5 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */,
+				CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		CCD8D89A2BDE52CD008EBDE4 /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
+				CCD8D8AA2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift */,
 				CCD8D89B2BDE52EE008EBDE4 /* AuthenticationDataSource.swift */,
 			);
 			path = Authentification;
@@ -712,6 +725,7 @@
 		CCDB79002BDBF9D000B551D3 /* Links */ = {
 			isa = PBXGroup;
 			children = (
+				CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */,
 				CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */,
 				CCDB79012BDBF9FC00B551D3 /* DTO */,
 			);
@@ -887,12 +901,12 @@
 				CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */,
 				CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */,
 				CCD8D8C12BDEB31D008EBDE4 /* SplashProtocols.swift in Sources */,
-				CC14BCA02BD9969800D0F4BC /* UsersDatasource.swift in Sources */,
+				CC14BCA02BD9969800D0F4BC /* UsersRemoteDatasource.swift in Sources */,
 				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
 				CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */,
 				CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */,
-				CC14BCAE2BD9973F00D0F4BC /* UsersDatasourceProtocol.swift in Sources */,
+				CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */,
 				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
 				CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */,
 				CC14BCDA2BD99CB300D0F4BC /* Article.swift in Sources */,
@@ -918,7 +932,7 @@
 				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
 				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
-				CCDB78FF2BDBF64000B551D3 /* TypeRooms.swift in Sources */,
+				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
 				CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */,
 				CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */,
@@ -944,6 +958,7 @@
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
 				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
 				CCD8D8BC2BDEB16E008EBDE4 /* SplashViewController.swift in Sources */,
+				CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */,
 				CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */,
 				CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */,
 				CCD8D8CB2BDEBFB3008EBDE4 /* TypeStash.swift in Sources */,
@@ -951,6 +966,7 @@
 				CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */,
 				CCD8D8C32BDEB337008EBDE4 /* SplashRouter.swift in Sources */,
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
+				CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1110,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9T33U53Y7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StashManagerApple/Info.plist;
@@ -1122,6 +1139,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9T33U53Y7;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StashManagerApple/Info.plist;

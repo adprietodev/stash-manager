@@ -7,6 +7,7 @@
 
 import Foundation
 
-struct TypeArticle {
+struct TypeArticle: Codable {
+    let id: Int
     let name: String
 }

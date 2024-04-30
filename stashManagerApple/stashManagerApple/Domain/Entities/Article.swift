@@ -17,6 +17,5 @@ struct Article {
     let brand: String?
     let isSpice, isSpicy: Bool?
     let material: String?
-    let idTypeArticle, idUser: Int
     let typeArticle: TypeArticle
 }

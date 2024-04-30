@@ -12,11 +12,10 @@ struct StashesDTO: Codable {
     let name: String
     let description: String?
     let image: String?
-    let idTypeStash: Int
     let typeStash: TypeStashDTO
 
     enum CodingKeys: String, CodingKey {
-        case id, name,description, image, idTypeStash
+        case id, name,description, image
         case typeStash = "types_stash"
     }
 }
