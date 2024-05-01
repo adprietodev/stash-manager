@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol StashesUseCaseProtocol {
+    func getStashes() async throws -> [Stash]
+    func getTypesStash() async throws -> [TypeStash]
+}

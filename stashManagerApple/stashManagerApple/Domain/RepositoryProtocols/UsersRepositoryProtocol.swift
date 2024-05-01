@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UsersRepositoryProtocol {
-    func getRemoteUser(at authIDUser: UUID) async throws -> User
+    func getRemoteUser(at authIDUser: UUID) async throws -> [User]
     func getLocalCurrentUser() throws -> User
     func setLocalCurrentUser(_ user: User) throws
     func removeCurrentUser()

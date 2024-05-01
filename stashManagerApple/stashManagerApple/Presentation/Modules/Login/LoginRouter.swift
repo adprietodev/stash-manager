@@ -16,13 +16,11 @@ class LoginRouter: LoginRouterProtocol {
     }
 
     // MARK: - Functions
-    func goToTabBar() {
+    func goToSplashLoadData(uuid: UUID) {
         DispatchQueue.main.async { [weak self] in
-            guard let self =  self else { return }
-            let tabBarViewController = TabBarController().build()
-            guard let sceneDelegate =  UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
-            sceneDelegate.window?.rootViewController = tabBarViewController
-            sceneDelegate.window?.makeKeyAndVisible()
+            guard let self else { return }
+            let splashViewController = SplashBuilder().build(uuid: uuid)
+            viewController.navigationController?.pushViewController(splashViewController, animated: true)
         }
     }
 }

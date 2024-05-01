@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ArticlesUseCaseProtocol {
+    func getArticles(at userID: Int) async throws -> [Article]
+    func getTypesArticle() async throws -> [TypeArticle]
+}

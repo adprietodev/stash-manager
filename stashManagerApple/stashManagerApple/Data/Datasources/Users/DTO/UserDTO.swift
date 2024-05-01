@@ -12,12 +12,12 @@ struct UserDTO: Codable {
     let idAuthUser: String
     let name: String
     let lastname: String
-    let image: String
+    let base64image: String
     let email: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case idAuthUser = "id_authUser"
-        case name, lastname, image, email
+        case name, lastname, base64image, email
     }
 }

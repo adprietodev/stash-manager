@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Stash {
+    let id: Int
+    let name: String
+    let description: String
+    let base64image: String
+    let idTypeStash: Int
+}

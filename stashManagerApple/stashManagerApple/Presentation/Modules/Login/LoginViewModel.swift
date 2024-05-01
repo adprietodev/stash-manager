@@ -18,16 +18,16 @@ class LoginViewModel: LoginViewModelProtocol {
         self.authUseCase = useCase
     }
 
-    // MARK: - Functions
-    func goToTabBar() {
-        router.goToTabBar()
+    func goToSplashLoadData(uuid: UUID) {
+        router.goToSplashLoadData(uuid: uuid)
     }
 
+    // MARK: - Functions
     func login(with email: String, at password: String) {
         Task {
             do {
-                _ = try await authUseCase.signInWithEmailAndPassword(email, password)
-                goToTabBar()
+                let login = try await authUseCase.signInWithEmailAndPassword(email, password)
+                goToSplashLoadData(uuid: login.user.id)
             } catch {
                 loginError?()
             }

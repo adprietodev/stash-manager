@@ -5,12 +5,22 @@
 //  Created by Adrian Prieto Villena on 28/4/24.
 //
 
-import Foundation
+import UIKit
 
 class SplashRouter: SplashRouterProtocol {
     var viewController: SplashViewController
 
     init(viewController: SplashViewController) {
         self.viewController = viewController
+    }
+
+    func goToTabBar(with rooms: [ContentRoom]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self =  self else { return }
+            let tabBarViewController = TabBarController().build(rooms)
+            guard let sceneDelegate =  UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else { return }
+            sceneDelegate.window?.rootViewController = tabBarViewController
+            sceneDelegate.window?.makeKeyAndVisible()
+        }
     }
 }

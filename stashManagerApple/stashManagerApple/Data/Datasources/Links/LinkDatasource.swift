@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class LinkDatasource: LinksDatasourceProtocol {
+    let supabase = SupabaseConfig.shared.supabase
+
+    func getLinks(at roomID: Int) async throws -> [LinkDTO] {
+        try await supabase.from("links").select().eq("idRoom", value: roomID).execute().value
+    }
+}

@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Room: Codable {
+struct Room {
     let id: Int
     let name: String
-    let image: String
-    let description: String?
-    let typeRoom: TypeRoom
+    let base64image: String
+    let description: String
+    let idTypeRoom: Int
 }

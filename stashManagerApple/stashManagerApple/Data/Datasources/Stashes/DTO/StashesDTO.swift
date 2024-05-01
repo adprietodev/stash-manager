@@ -11,11 +11,6 @@ struct StashesDTO: Codable {
     let id: Int
     let name: String
     let description: String?
-    let image: String?
-    let typeStash: TypeStashDTO
-
-    enum CodingKeys: String, CodingKey {
-        case id, name,description, image
-        case typeStash = "types_stash"
-    }
+    let base64image: String?
+    let idTypeStash: Int
 }

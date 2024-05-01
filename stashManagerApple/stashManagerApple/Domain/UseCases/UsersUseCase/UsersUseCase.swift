@@ -16,7 +16,7 @@ class UsersUseCase {
 }
 
 extension UsersUseCase: UsersUseCaseProtocol {
-    func getUser(at authIDUser: UUID) async throws -> User {
+    func getUser(at authIDUser: UUID) async throws -> [User] {
         try await repository.getRemoteUser(at: authIDUser)
     }
 }

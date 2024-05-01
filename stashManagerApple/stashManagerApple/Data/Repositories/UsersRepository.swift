@@ -18,14 +18,14 @@ class UsersRepository {
 }
 
 extension UsersRepository: UsersRepositoryProtocol {
-    func getRemoteUser(at authIDUser: UUID) async throws -> User {
+    func getRemoteUser(at authIDUser: UUID) async throws -> [User] {
         let userDTO = try await remoteDatasource.getUser(at: authIDUser)
-        return userDTO.toDomain()
+        return userDTO.map { $0.toDomain() }
     }
 
     func getLocalCurrentUser() throws -> User {
         let userDTO = try localDatasource.getLocalCurrentUser()
-        guard let userDTO else { return User(id: 0,idAuth: "", name: "", lastname: "", image: "", email: "")}
+        guard let userDTO else { return User(id: 0,idAuth: "", name: "", lastname: "", base64image: "", email: "")}
         return userDTO.toDomain()
     }
 
@@ -40,12 +40,12 @@ extension UsersRepository: UsersRepositoryProtocol {
 
 fileprivate extension UserDTO {
     func toDomain() -> User {
-        User(id: self.id,idAuth: self.idAuthUser, name: self.name, lastname: self.lastname, image: self.image, email: self.email)
+        User(id: self.id,idAuth: self.idAuthUser, name: self.name, lastname: self.lastname, base64image: self.base64image, email: self.email)
     }
 }
 
 fileprivate extension User {
     func toDTO() -> UserDTO {
-        UserDTO(id: self.id, idAuthUser: self.idAuth, name: self.name, lastname: self.lastname, image: self.image, email: self.email)
+        UserDTO(id: self.id, idAuthUser: self.idAuth, name: self.name, lastname: self.lastname, base64image: self.base64image, email: self.email)
     }
 }

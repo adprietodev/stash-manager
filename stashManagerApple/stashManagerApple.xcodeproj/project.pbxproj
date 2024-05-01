@@ -87,6 +87,14 @@
 		CC193F612BDACA2300CC6676 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F492BDACA2200CC6676 /* Montserrat-ThinItalic.ttf */; };
 		CC193F622BDACA2300CC6676 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */; };
 		CC193F632BDACA2300CC6676 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */; };
+		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
+		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
+		CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */; };
+		CCA252872BE219A900CFF515 /* LinkUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252862BE219A900CFF515 /* LinkUseCaseProtocol.swift */; };
+		CCA252892BE219B400CFF515 /* LinkUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252882BE219B400CFF515 /* LinkUseCase.swift */; };
+		CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528A2BE2264400CFF515 /* ContentRoom.swift */; };
+		CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */; };
+		CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528E2BE2281E00CFF515 /* ContentStash.swift */; };
 		CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */; };
 		CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */; };
 		CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */; };
@@ -213,6 +221,14 @@
 		CC193F492BDACA2200CC6676 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
 		CC193F4B2BDACA2200CC6676 /* Montserrat-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		CC193F4C2BDACA2200CC6676 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
+		CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepositoryProtocol.swift; sourceTree = "<group>"; };
+		CCA252862BE219A900CFF515 /* LinkUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUseCaseProtocol.swift; sourceTree = "<group>"; };
+		CCA252882BE219B400CFF515 /* LinkUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkUseCase.swift; sourceTree = "<group>"; };
+		CCA2528A2BE2264400CFF515 /* ContentRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRoom.swift; sourceTree = "<group>"; };
+		CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWithStock.swift; sourceTree = "<group>"; };
+		CCA2528E2BE2281E00CFF515 /* ContentStash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStash.swift; sourceTree = "<group>"; };
 		CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -379,6 +395,7 @@
 				CC14BCB32BD9980500D0F4BC /* StashesRepository.swift */,
 				CC14BCB52BD9982300D0F4BC /* ArticlesRepository.swift */,
 				CCD8D8AC2BDE5BC7008EBDE4 /* AuthenticationRepository.swift */,
+				CCA252812BE2196D00CFF515 /* LinksRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -393,6 +410,10 @@
 				CCD8D8C62BDEBF7B008EBDE4 /* TypeArticle.swift */,
 				CCD8D8C82BDEBFA3008EBDE4 /* TypeRoom.swift */,
 				CCD8D8CA2BDEBFB3008EBDE4 /* TypeStash.swift */,
+				CCA2527F2BE214EB00CFF515 /* Link.swift */,
+				CCA2528A2BE2264400CFF515 /* ContentRoom.swift */,
+				CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */,
+				CCA2528E2BE2281E00CFF515 /* ContentStash.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -400,6 +421,7 @@
 		CC14BC8B2BD9820D00D0F4BC /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				CCA252852BE2198D00CFF515 /* LinksUseCase */,
 				CCD8D8B02BDE5CE5008EBDE4 /* AuthenticationUseCase */,
 				CC14BCBF2BD998F000D0F4BC /* UsersUseCase */,
 				CC14BCC02BD9990500D0F4BC /* RoomsUseCase */,
@@ -417,6 +439,7 @@
 				CC14BCBB2BD998B100D0F4BC /* StashesRepositoryProtocol.swift */,
 				CC14BCBD2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift */,
 				CCD8D8AE2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift */,
+				CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */,
 			);
 			path = RepositoryProtocols;
 			sourceTree = "<group>";
@@ -666,6 +689,15 @@
 			path = "../../../../../../../../Downloads/Lato,Montserrat/Montserrat";
 			sourceTree = "<group>";
 		};
+		CCA252852BE2198D00CFF515 /* LinksUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				CCA252862BE219A900CFF515 /* LinkUseCaseProtocol.swift */,
+				CCA252882BE219B400CFF515 /* LinkUseCase.swift */,
+			);
+			path = LinksUseCase;
+			sourceTree = "<group>";
+		};
 		CCBBB15C2BE15CC500A889C5 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -906,14 +938,17 @@
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
 				CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */,
 				CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */,
+				CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */,
 				CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */,
 				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
 				CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */,
+				CCA252872BE219A900CFF515 /* LinkUseCaseProtocol.swift in Sources */,
 				CC14BCDA2BD99CB300D0F4BC /* Article.swift in Sources */,
 				CCDB79032BDBFA1300B551D3 /* LinkDatasource.swift in Sources */,
 				CCD8D8AB2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift in Sources */,
 				CC14BCF82BD99F6500D0F4BC /* LoginBuilder.swift in Sources */,
 				CCD8D8AF2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift in Sources */,
+				CCA252892BE219B400CFF515 /* LinkUseCase.swift in Sources */,
 				CC14BCEA2BD99E9100D0F4BC /* StashesViewController.swift in Sources */,
 				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
 				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
@@ -921,6 +956,7 @@
 				CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
 				CC14BCBE2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift in Sources */,
+				CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */,
 				CC14BCFE2BD99FF400D0F4BC /* HomeBuilder.swift in Sources */,
 				CC14BD102BD9A11B00D0F4BC /* ProfileBuilder.swift in Sources */,
 				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
@@ -931,6 +967,7 @@
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
 				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
+				CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */,
 				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
 				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
@@ -940,6 +977,7 @@
 				CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */,
 				CCDB78F92BDBF40800B551D3 /* StashesDTO.swift in Sources */,
 				CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */,
+				CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */,
 				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
 				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
@@ -947,12 +985,14 @@
 				CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
+				CCA252802BE214EB00CFF515 /* Link.swift in Sources */,
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
 				CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */,
 				CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */,
 				CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */,
 				CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */,
 				CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */,
+				CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */,
 				CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */,
 				CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */,
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,

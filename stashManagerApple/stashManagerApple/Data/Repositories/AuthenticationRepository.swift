@@ -11,7 +11,7 @@ import Supabase
 class AuthenticationRepository {
     // MARK: - Properties
     var datasource:  AuthenticationDatasourceProtocol
-    
+
     init(datasource: AuthenticationDatasourceProtocol) {
         self.datasource = datasource
     }

@@ -13,4 +13,8 @@ class StashesDatasource: StashesDatasourceProtocol {
     func getStashes() async throws -> [StashesDTO] {
         try await supabase.from("stashes").select().execute().value
     }
+
+    func getTypesStash() async throws -> [TypeStashDTO] {
+        try await supabase.from("types_stash").select().execute().value
+    }
 }

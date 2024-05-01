@@ -8,9 +8,10 @@
 import Foundation
 
 protocol SplashViewModelProtocol {
-    
+    var finishLoad : (() -> Void)? { get set }
+    func chargeData()
 }
 
 protocol SplashRouterProtocol {
-    
+    func goToTabBar(with rooms: [ContentRoom])
 }

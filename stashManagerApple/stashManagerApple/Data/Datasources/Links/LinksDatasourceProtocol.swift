@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol LinksDatasourceProtocol {
+    func getLinks(at roomID: Int) async throws -> [LinkDTO]
+}

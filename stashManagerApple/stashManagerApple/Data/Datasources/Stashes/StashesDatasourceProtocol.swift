@@ -8,4 +8,6 @@
 import Foundation
 
 protocol StashesDatasourceProtocol {
+    func getStashes() async throws -> [StashesDTO]
+    func getTypesStash() async throws -> [TypeStashDTO]
 }

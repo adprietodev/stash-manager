@@ -8,4 +8,8 @@
 import Foundation
 
 protocol HomeViewModelProtocol {
+    var rooms: [ContentRoom] { get set}
+    var typesRoom: [TypeRoom] { get set}
+    var refreshCollectionView: (() -> Void)? { get set}
+    func getTypesRoom()
 }

@@ -13,5 +13,5 @@ protocol LoginViewModelProtocol {
 }
 
 protocol LoginRouterProtocol {
-    func goToTabBar()
+    func goToSplashLoadData(uuid: UUID)
 }

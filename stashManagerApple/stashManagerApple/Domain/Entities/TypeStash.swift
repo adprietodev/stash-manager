@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct TypeStash: Codable {
+    let id: Int
+    let name: String
+}

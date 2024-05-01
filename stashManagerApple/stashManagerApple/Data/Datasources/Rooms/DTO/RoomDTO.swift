@@ -10,12 +10,7 @@ import Foundation
 struct RoomDTO: Codable {
     let id: Int
     let name: String
-    let image: String
+    let base64image: String?
     let description: String?
-    let typeRoom: TypesRoomDTO
-
-    enum CodingKeys: String, CodingKey {
-        case id, name, image, description
-        case typeRoom = "types_room"
-    }
+    let idTypeRoom: Int
 }

@@ -20,7 +20,7 @@ class HomeBuilder {
         let roomsRepository = RoomsRepository(datasource: roomsDatasource)
         let roomsUseCase = RoomsUseCase(repository: roomsRepository)
 
-        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUsecase: roomsUseCase)
+        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUseCase: roomsUseCase)
         return viewController
     }
 }

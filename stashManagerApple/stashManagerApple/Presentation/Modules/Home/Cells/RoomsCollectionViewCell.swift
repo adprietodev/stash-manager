@@ -8,13 +8,12 @@
 import UIKit
 
 class RoomsCollectionViewCell: UICollectionViewCell {
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var roomImageView: UIImageView!
     @IBOutlet weak var roomNameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func setupCell(at name: String, with base64: String) {

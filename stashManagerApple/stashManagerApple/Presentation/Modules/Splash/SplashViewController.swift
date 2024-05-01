@@ -13,9 +13,20 @@ class SplashViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: SplashViewModelProtocol!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         splashIndicator.startAnimating()
+        self.navigationController?.navigationBar.isHidden = true
+        viewModel.chargeData()
+    }
+
+    func goToTabBar() {
+        viewModel.finishLoad = {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                splashIndicator.stopAnimating()
+            }
+        }
     }
 }

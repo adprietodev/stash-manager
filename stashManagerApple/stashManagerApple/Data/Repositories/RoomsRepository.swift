@@ -27,7 +27,11 @@ class RoomsRepository:RoomsRepositoryProtocol {
 
 fileprivate extension RoomDTO {
     func toDomain() -> Room {
-        Room(id: self.id, name: self.name, image: self.image, description: self.description, typeRoom: self.typeRoom.toDomain())
+        Room(id: self.id,
+             name: self.name,
+             base64image: self.base64image ?? "",
+             description: self.description ?? "",
+             idTypeRoom: self.idTypeRoom)
     }
 }
 

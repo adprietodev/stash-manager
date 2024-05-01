@@ -8,7 +8,6 @@
 import UIKit
 
 class TabBarController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBarView()
@@ -30,7 +29,7 @@ class TabBarController: UITabBarController {
         let profileViewController = UIViewController()
         let profileNavigationController = UINavigationController(rootViewController: profileViewController)
 
-        let tabBarList = [homeNavigationController, stashesViewController, articlesNavigationController, profileNavigationController]
+        let tabBarList = [homeNavigationController, stashesNavigationController, articlesNavigationController, profileNavigationController]
         self.setViewControllers(tabBarList, animated: true)
 
         guard let items = self.tabBar.items else { return }

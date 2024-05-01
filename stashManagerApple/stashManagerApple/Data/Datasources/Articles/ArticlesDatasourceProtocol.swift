@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ArticlesDatasourceProtocol {
+    func getArticles(at userID: Int) async throws -> [ArticleDTO]
+    func getTypesArticles() async throws -> [TypeArticleDTO]
+}

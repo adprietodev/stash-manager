@@ -12,6 +12,6 @@ struct User {
     let idAuth: String
     let name: String
     let lastname: String
-    let image: String
+    let base64image: String
     let email: String
 }
