@@ -8,6 +8,9 @@
 import Foundation
 
 protocol StashesRepositoryProtocol {
-    func getStashes() async throws -> [Stash]
-    func getTypesStash() async throws -> [TypeStash]
+    func getRemoteStashes() async throws -> [Stash]
+    func getRemoteTypesStash() async throws -> [TypeStash]
+    func getSelectedStash() throws -> Stash?
+    func setSelectedStash(_ stash: Stash) throws
+    func removeSelectedStash()
 }

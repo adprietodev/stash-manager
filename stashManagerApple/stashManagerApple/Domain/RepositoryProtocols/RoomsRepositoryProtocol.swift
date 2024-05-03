@@ -7,7 +7,10 @@
 
 import Foundation
 
-protocol RoomsRepositoryProtocol{
-    func getRooms(at userID: Int) async throws -> [Room]
-    func getTypesRoom() async throws -> [TypeRoom]
+protocol RoomsRepositoryProtocol {
+    func getRemoteRooms(at userID: Int) async throws -> [Room]
+    func getRemoteTypesRoom() async throws -> [TypeRoom]
+    func getLocalSelectedRoom() throws -> Room?
+    func setLocalSelectedRoom(_ room: Room) throws
+    func removeLocalSelectedRoom()
 }

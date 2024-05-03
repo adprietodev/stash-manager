@@ -8,15 +8,17 @@
 import Foundation
 
 class LinksRepository: LinksRepositoryProtocol {
-    let datasource: LinksDatasourceProtocol
+    let remoteDatasource: LinksRemoteDatasourceProtocol
+    let localDatasource: LinksLocalDatasourceProtocol
 
-    init(datasource: LinksDatasourceProtocol) {
-        self.datasource = datasource
+    init(remoteDatasource: LinksRemoteDatasourceProtocol, localDatasource: LinksLocalDatasourceProtocol) {
+        self.remoteDatasource = remoteDatasource
+        self.localDatasource = localDatasource
     }
 
-    func getLink(at roomID: Int) async throws -> Link {
-        let linkDTO = try await datasource.getLinks(at: roomID)
-        guard let link = linkDTO.map { $0.toDomain() }.first else { return Link(id: 0, idRoom: 0, idStash: 0, idArticle: 0, stockArticle: 0)}
+    func getRemoteLink(at roomID: Int) async throws -> Link? {
+        let linkDTO = try await remoteDatasource.getLinks(at: roomID)
+        let link = linkDTO.map({ $0.toDomain() }).first
         return link
     }
 }
@@ -28,5 +30,11 @@ fileprivate extension LinkDTO {
              idStash: self.idStash,
              idArticle: self.idArticle,
              stockArticle: self.stockArticle)
+    }
+}
+
+fileprivate extension Link {
+    func toDTO() -> LinkDTO {
+        LinkDTO(id: self.id, idRoom: self.idRoom, idStash: self.idStash, idArticle: self.idArticle, stockArticle: self.stockArticle)
     }
 }

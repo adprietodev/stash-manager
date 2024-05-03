@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StashesDatasourceProtocol {
-    func getStashes() async throws -> [StashesDTO]
+protocol StashesRemoteDatasourceProtocol {
+    func getStashes() async throws -> [StashDTO]
     func getTypesStash() async throws -> [TypeStashDTO]
 }

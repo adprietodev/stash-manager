@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RoomsDatasourceProtocol {
+protocol RoomsRemoteDatasourceProtocol {
     func getRooms(at userID: Int) async throws -> [RoomDTO]
     func getTypesRoom() async throws -> [TypesRoomDTO]
 }

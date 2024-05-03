@@ -7,10 +7,10 @@
 
 import Foundation
 
-class StashesDatasource: StashesDatasourceProtocol {
+class StashesRemoteDatasource: StashesRemoteDatasourceProtocol {
     let supabase = SupabaseConfig.shared.supabase
 
-    func getStashes() async throws -> [StashesDTO] {
+    func getStashes() async throws -> [StashDTO] {
         try await supabase.from("stashes").select().execute().value
     }
 

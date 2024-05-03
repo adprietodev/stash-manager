@@ -8,20 +8,35 @@
 import Foundation
 
 class RoomsRepository:RoomsRepositoryProtocol {
-    let datasource: RoomsDatasourceProtocol
+    let remoteDatasource: RoomsRemoteDatasourceProtocol
+    let localDatasource: RoomsLocalDatasourceProtocol
 
-    init(datasource: RoomsDatasourceProtocol) {
-        self.datasource = datasource
+    init(remoteDatasource: RoomsRemoteDatasourceProtocol, localDatasource: RoomsLocalDatasourceProtocol) {
+        self.remoteDatasource = remoteDatasource
+        self.localDatasource = localDatasource
     }
 
-    func getRooms(at userID: Int) async throws -> [Room] {
-        let roomsDTO = try await datasource.getRooms(at: userID)
+    func getRemoteRooms(at userID: Int) async throws -> [Room] {
+        let roomsDTO = try await remoteDatasource.getRooms(at: userID)
         return roomsDTO.map { $0.toDomain() }
     }
 
-    func getTypesRoom() async throws -> [TypeRoom] {
-        let typeRoomDTO = try await datasource.getTypesRoom()
+    func getRemoteTypesRoom() async throws -> [TypeRoom] {
+        let typeRoomDTO = try await remoteDatasource.getTypesRoom()
         return typeRoomDTO.map {$0.toDomain()}
+    }
+
+    func getLocalSelectedRoom() throws -> Room? {
+        let roomDTO = try localDatasource.getSelectedRoom()
+        return roomDTO?.toDomain()
+    }
+
+    func setLocalSelectedRoom(_ room: Room) throws {
+        try localDatasource.setSelectedRoom(room.toDTO())
+    }
+
+    func removeLocalSelectedRoom() {
+        localDatasource.removeSelectedRoom()
     }
 }
 
@@ -38,5 +53,15 @@ fileprivate extension RoomDTO {
 fileprivate extension TypesRoomDTO {
     func toDomain() -> TypeRoom {
         TypeRoom(id: self.id, name: self.name)
+    }
+}
+
+fileprivate extension Room {
+    func toDTO() -> RoomDTO {
+        RoomDTO(id: self.id,
+                name: self.name,
+                base64image: self.base64image,
+                description: self.description,
+                idTypeRoom: self.idTypeRoom)
     }
 }

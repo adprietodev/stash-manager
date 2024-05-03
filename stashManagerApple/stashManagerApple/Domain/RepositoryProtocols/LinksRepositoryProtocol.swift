@@ -8,5 +8,6 @@
 import Foundation
 
 protocol LinksRepositoryProtocol{
-    func getLink(at roomID: Int) async throws -> Link
+    func getRemoteLink(at roomID: Int) async throws -> Link?
+    
 }

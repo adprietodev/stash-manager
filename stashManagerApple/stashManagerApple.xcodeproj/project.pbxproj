@@ -12,12 +12,12 @@
 		CC14BC782BD9805500D0F4BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC772BD9805500D0F4BC /* Assets.xcassets */; };
 		CC14BC7B2BD9805500D0F4BC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = CC14BC7A2BD9805500D0F4BC /* Base */; };
 		CC14BCA02BD9969800D0F4BC /* UsersRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BC9F2BD9969800D0F4BC /* UsersRemoteDatasource.swift */; };
-		CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */; };
-		CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */; };
+		CC14BCA22BD996AE00D0F4BC /* RoomsRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA12BD996AE00D0F4BC /* RoomsRemoteDatasource.swift */; };
+		CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA32BD996C300D0F4BC /* StashesRemoteDatasource.swift */; };
 		CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */; };
 		CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */; };
-		CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */; };
-		CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */; };
+		CC14BCAA2BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCA92BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift */; };
+		CC14BCAC2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAB2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift */; };
 		CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAD2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift */; };
 		CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */; };
 		CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */; };
@@ -95,6 +95,15 @@
 		CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528A2BE2264400CFF515 /* ContentRoom.swift */; };
 		CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */; };
 		CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528E2BE2281E00CFF515 /* ContentStash.swift */; };
+		CCB2EF552BE4C3170059CA24 /* ContentRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF542BE4C3170059CA24 /* ContentRoomDTO.swift */; };
+		CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF562BE4C3740059CA24 /* ArticlesWithStockDTO.swift */; };
+		CCB2EF592BE4C3930059CA24 /* ContentStashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF582BE4C3930059CA24 /* ContentStashDTO.swift */; };
+		CCB2EF5D2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF5C2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift */; };
+		CCB2EF5F2BE4C4AF0059CA24 /* LinksLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF5E2BE4C4AF0059CA24 /* LinksLocalDatasource.swift */; };
+		CCB2EF632BE4C5490059CA24 /* RoomsLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF622BE4C5490059CA24 /* RoomsLocalDatasourceProtocol.swift */; };
+		CCB2EF652BE4C5630059CA24 /* RoomsLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF642BE4C5630059CA24 /* RoomsLocalDatasource.swift */; };
+		CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF682BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift */; };
+		CCB2EF6B2BE4C62C0059CA24 /* StashesLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF6A2BE4C62C0059CA24 /* StashesLocalDatasource.swift */; };
 		CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */; };
 		CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */; };
 		CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */; };
@@ -125,13 +134,13 @@
 		CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */; };
 		CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */; };
 		CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */; };
-		CCDB78F92BDBF40800B551D3 /* StashesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F82BDBF40800B551D3 /* StashesDTO.swift */; };
+		CCDB78F92BDBF40800B551D3 /* StashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78F82BDBF40800B551D3 /* StashDTO.swift */; };
 		CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */; };
 		CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */; };
 		CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */; };
-		CCDB79032BDBFA1300B551D3 /* LinkDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */; };
+		CCDB79032BDBFA1300B551D3 /* LinkRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79022BDBFA1300B551D3 /* LinkRemoteDatasource.swift */; };
 		CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */; };
-		CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */; };
+		CCDB79072BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79062BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift */; };
 		CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB79092BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift */; };
 		CCDB790C2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCDB790A2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib */; };
 		CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB790D2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift */; };
@@ -146,12 +155,12 @@
 		CC14BC7A2BD9805500D0F4BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC14BC7C2BD9805500D0F4BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC14BC9F2BD9969800D0F4BC /* UsersRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDatasource.swift; sourceTree = "<group>"; };
-		CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasource.swift; sourceTree = "<group>"; };
-		CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA12BD996AE00D0F4BC /* RoomsRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRemoteDatasource.swift; sourceTree = "<group>"; };
+		CC14BCA32BD996C300D0F4BC /* StashesRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRemoteDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA52BD996D000D0F4BC /* ArticlesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasource.swift; sourceTree = "<group>"; };
 		CC14BCA72BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDatasourceProtocol.swift; sourceTree = "<group>"; };
-		CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDatasourceProtocol.swift; sourceTree = "<group>"; };
-		CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCA92BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesRemoteDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CC14BCAB2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRemoteDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CC14BCAD2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRemoteDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CC14BCAF2BD997D500D0F4BC /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		CC14BCB12BD997EE00D0F4BC /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
@@ -229,6 +238,15 @@
 		CCA2528A2BE2264400CFF515 /* ContentRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRoom.swift; sourceTree = "<group>"; };
 		CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWithStock.swift; sourceTree = "<group>"; };
 		CCA2528E2BE2281E00CFF515 /* ContentStash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStash.swift; sourceTree = "<group>"; };
+		CCB2EF542BE4C3170059CA24 /* ContentRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRoomDTO.swift; sourceTree = "<group>"; };
+		CCB2EF562BE4C3740059CA24 /* ArticlesWithStockDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesWithStockDTO.swift; sourceTree = "<group>"; };
+		CCB2EF582BE4C3930059CA24 /* ContentStashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStashDTO.swift; sourceTree = "<group>"; };
+		CCB2EF5C2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCB2EF5E2BE4C4AF0059CA24 /* LinksLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksLocalDatasource.swift; sourceTree = "<group>"; };
+		CCB2EF622BE4C5490059CA24 /* RoomsLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCB2EF642BE4C5630059CA24 /* RoomsLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsLocalDatasource.swift; sourceTree = "<group>"; };
+		CCB2EF682BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCB2EF6A2BE4C62C0059CA24 /* StashesLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesLocalDatasource.swift; sourceTree = "<group>"; };
 		CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasource.swift; sourceTree = "<group>"; };
@@ -253,13 +271,13 @@
 		CCDB78F22BDBF1B500B551D3 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
 		CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
 		CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeArticleDTO.swift; sourceTree = "<group>"; };
-		CCDB78F82BDBF40800B551D3 /* StashesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesDTO.swift; sourceTree = "<group>"; };
+		CCDB78F82BDBF40800B551D3 /* StashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDTO.swift; sourceTree = "<group>"; };
 		CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStashDTO.swift; sourceTree = "<group>"; };
 		CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDTO.swift; sourceTree = "<group>"; };
 		CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesRoomDTO.swift; sourceTree = "<group>"; };
-		CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDatasource.swift; sourceTree = "<group>"; };
+		CCDB79022BDBFA1300B551D3 /* LinkRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkRemoteDatasource.swift; sourceTree = "<group>"; };
 		CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDTO.swift; sourceTree = "<group>"; };
-		CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksDatasourceProtocol.swift; sourceTree = "<group>"; };
+		CCDB79062BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRemoteDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CCDB79092BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		CCDB790A2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCDB790D2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -536,8 +554,8 @@
 		CC14BC972BD995CD00D0F4BC /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
-				CC14BCAB2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift */,
-				CC14BCA12BD996AE00D0F4BC /* RoomsDatasource.swift */,
+				CCB2EF612BE4C52D0059CA24 /* Local */,
+				CCB2EF602BE4C5240059CA24 /* Remote */,
 				CC14BC9C2BD9966C00D0F4BC /* DTO */,
 			);
 			path = Rooms;
@@ -556,8 +574,8 @@
 		CC14BC992BD995FE00D0F4BC /* Stashes */ = {
 			isa = PBXGroup;
 			children = (
-				CC14BCA92BD9970F00D0F4BC /* StashesDatasourceProtocol.swift */,
-				CC14BCA32BD996C300D0F4BC /* StashesDatasource.swift */,
+				CCB2EF672BE4C5C80059CA24 /* Local */,
+				CCB2EF662BE4C5C10059CA24 /* Remote */,
 				CC14BC9D2BD9967400D0F4BC /* DTO */,
 			);
 			path = Stashes;
@@ -583,7 +601,7 @@
 		CC14BC9D2BD9967400D0F4BC /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				CCDB78F82BDBF40800B551D3 /* StashesDTO.swift */,
+				CCDB78F82BDBF40800B551D3 /* StashDTO.swift */,
 				CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */,
 			);
 			path = DTO;
@@ -698,6 +716,60 @@
 			path = LinksUseCase;
 			sourceTree = "<group>";
 		};
+		CCB2EF5A2BE4C4430059CA24 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CCDB79062BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift */,
+				CCDB79022BDBFA1300B551D3 /* LinkRemoteDatasource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CCB2EF5B2BE4C44B0059CA24 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CCB2EF5C2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift */,
+				CCB2EF5E2BE4C4AF0059CA24 /* LinksLocalDatasource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CCB2EF602BE4C5240059CA24 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCAB2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift */,
+				CC14BCA12BD996AE00D0F4BC /* RoomsRemoteDatasource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CCB2EF612BE4C52D0059CA24 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CCB2EF622BE4C5490059CA24 /* RoomsLocalDatasourceProtocol.swift */,
+				CCB2EF642BE4C5630059CA24 /* RoomsLocalDatasource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		CCB2EF662BE4C5C10059CA24 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				CC14BCA92BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift */,
+				CC14BCA32BD996C300D0F4BC /* StashesRemoteDatasource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		CCB2EF672BE4C5C80059CA24 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				CCB2EF682BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift */,
+				CCB2EF6A2BE4C62C0059CA24 /* StashesLocalDatasource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
 		CCBBB15C2BE15CC500A889C5 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,8 +829,8 @@
 		CCDB79002BDBF9D000B551D3 /* Links */ = {
 			isa = PBXGroup;
 			children = (
-				CCDB79062BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift */,
-				CCDB79022BDBFA1300B551D3 /* LinkDatasource.swift */,
+				CCB2EF5B2BE4C44B0059CA24 /* Local */,
+				CCB2EF5A2BE4C4430059CA24 /* Remote */,
 				CCDB79012BDBF9FC00B551D3 /* DTO */,
 			);
 			path = Links;
@@ -768,6 +840,9 @@
 			isa = PBXGroup;
 			children = (
 				CCDB79042BDBFA2400B551D3 /* LinkDTO.swift */,
+				CCB2EF542BE4C3170059CA24 /* ContentRoomDTO.swift */,
+				CCB2EF562BE4C3740059CA24 /* ArticlesWithStockDTO.swift */,
+				CCB2EF582BE4C3930059CA24 /* ContentStashDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -918,17 +993,22 @@
 				CC14BCB42BD9980500D0F4BC /* StashesRepository.swift in Sources */,
 				CC14BCD62BD99C5C00D0F4BC /* Room.swift in Sources */,
 				CC14BCFA2BD99FC700D0F4BC /* HomeViewModel.swift in Sources */,
+				CCB2EF552BE4C3170059CA24 /* ContentRoomDTO.swift in Sources */,
 				CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */,
 				CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */,
+				CCB2EF652BE4C5630059CA24 /* RoomsLocalDatasource.swift in Sources */,
 				CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */,
 				CCD8D8B42BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift in Sources */,
+				CCB2EF6B2BE4C62C0059CA24 /* StashesLocalDatasource.swift in Sources */,
 				CC14BCD82BD99C6E00D0F4BC /* Stash.swift in Sources */,
 				CC14BCF22BD99EB600D0F4BC /* ProfileViewController.swift in Sources */,
 				CC14BCD22BD99C3C00D0F4BC /* ArticlesUseCase.swift in Sources */,
+				CCB2EF632BE4C5490059CA24 /* RoomsLocalDatasourceProtocol.swift in Sources */,
 				CC193F352BDAC4B600CC6676 /* LoginProtocols.swift in Sources */,
 				CC14BCD42BD99C5000D0F4BC /* User.swift in Sources */,
 				CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */,
 				CCD8D8AD2BDE5BC7008EBDE4 /* AuthenticationRepository.swift in Sources */,
+				CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */,
 				CC14BCD02BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift in Sources */,
 				CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */,
 				CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */,
@@ -937,23 +1017,24 @@
 				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
 				CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */,
-				CC14BCAA2BD9970F00D0F4BC /* StashesDatasourceProtocol.swift in Sources */,
+				CC14BCAA2BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift in Sources */,
 				CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */,
 				CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */,
 				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
 				CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */,
 				CCA252872BE219A900CFF515 /* LinkUseCaseProtocol.swift in Sources */,
 				CC14BCDA2BD99CB300D0F4BC /* Article.swift in Sources */,
-				CCDB79032BDBFA1300B551D3 /* LinkDatasource.swift in Sources */,
+				CCDB79032BDBFA1300B551D3 /* LinkRemoteDatasource.swift in Sources */,
 				CCD8D8AB2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift in Sources */,
 				CC14BCF82BD99F6500D0F4BC /* LoginBuilder.swift in Sources */,
 				CCD8D8AF2BDE5C74008EBDE4 /* AuthenticationRepositoryProtocol.swift in Sources */,
 				CCA252892BE219B400CFF515 /* LinkUseCase.swift in Sources */,
 				CC14BCEA2BD99E9100D0F4BC /* StashesViewController.swift in Sources */,
+				CCB2EF5D2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift in Sources */,
 				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
 				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
 				CCD8D8C72BDEBF7B008EBDE4 /* TypeArticle.swift in Sources */,
-				CCDB79072BDBFA8D00B551D3 /* LinksDatasourceProtocol.swift in Sources */,
+				CCDB79072BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
 				CC14BCBE2BD998C700D0F4BC /* ArticlesRepositoryProtocol.swift in Sources */,
 				CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */,
@@ -965,23 +1046,25 @@
 				CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */,
 				CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */,
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
+				CCB2EF592BE4C3930059CA24 /* ContentStashDTO.swift in Sources */,
 				CC14BCC82BD99AA900D0F4BC /* RoomsUseCaseProtocol.swift in Sources */,
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
 				CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */,
 				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
 				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
-				CC14BCA42BD996C300D0F4BC /* StashesDatasource.swift in Sources */,
+				CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */,
 				CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */,
 				CC14BCCA2BD99AB800D0F4BC /* RoomsUseCase.swift in Sources */,
 				CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */,
-				CCDB78F92BDBF40800B551D3 /* StashesDTO.swift in Sources */,
+				CCDB78F92BDBF40800B551D3 /* StashDTO.swift in Sources */,
 				CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */,
 				CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */,
 				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
 				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
+				CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */,
 				CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
@@ -989,7 +1072,7 @@
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
 				CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */,
 				CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */,
-				CC14BCA22BD996AE00D0F4BC /* RoomsDatasource.swift in Sources */,
+				CC14BCA22BD996AE00D0F4BC /* RoomsRemoteDatasource.swift in Sources */,
 				CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */,
 				CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */,
 				CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */,
@@ -1003,9 +1086,10 @@
 				CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */,
 				CCD8D8CB2BDEBFB3008EBDE4 /* TypeStash.swift in Sources */,
 				CCD8D8C92BDEBFA3008EBDE4 /* TypeRoom.swift in Sources */,
-				CC14BCAC2BD9972800D0F4BC /* RoomsDatasourceProtocol.swift in Sources */,
+				CC14BCAC2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift in Sources */,
 				CCD8D8C32BDEB337008EBDE4 /* SplashRouter.swift in Sources */,
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
+				CCB2EF5F2BE4C4AF0059CA24 /* LinksLocalDatasource.swift in Sources */,
 				CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

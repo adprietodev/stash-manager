@@ -8,24 +8,39 @@
 import Foundation
 
 class StashesRepository: StashesRepositoryProtocol {
-    let datasource: StashesDatasourceProtocol
+    let remoteDatasource: StashesRemoteDatasourceProtocol
+    let localDarasource: StashesLocalDatasourceProtocol
 
-    init(datasource: StashesDatasourceProtocol) {
-        self.datasource = datasource
+    init(remoteDatasource: StashesRemoteDatasourceProtocol, localDatasource: StashesLocalDatasourceProtocol) {
+        self.remoteDatasource = remoteDatasource
+        self.localDarasource = localDatasource
     }
 
-    func getStashes() async throws -> [Stash] {
-        let stashDTO = try await datasource.getStashes()
+    func getRemoteStashes() async throws -> [Stash] {
+        let stashDTO = try await remoteDatasource.getStashes()
         return stashDTO.map { $0.toDomain() }
     }
 
-    func getTypesStash() async throws -> [TypeStash] {
-        let typeStashDTO = try await datasource.getTypesStash()
+    func getRemoteTypesStash() async throws -> [TypeStash] {
+        let typeStashDTO = try await remoteDatasource.getTypesStash()
         return typeStashDTO.map { $0.toDomain() }
+    }
+
+    func getSelectedStash() throws -> Stash? {
+        let stashDTO = try localDarasource.getSelectedStash()
+        return stashDTO?.toDomain()
+    }
+
+    func setSelectedStash(_ stash: Stash) throws {
+        try localDarasource.setSelectedStash(stash.toDTO())
+    }
+
+    func removeSelectedStash() {
+        localDarasource.removeSelectedStash()
     }
 }
 
-fileprivate extension StashesDTO {
+fileprivate extension StashDTO {
     func toDomain() -> Stash {
         Stash(id: self.id,
               name: self.name,
@@ -38,5 +53,15 @@ fileprivate extension StashesDTO {
 fileprivate extension TypeStashDTO {
     func toDomain() -> TypeStash {
         TypeStash(id: self.id, name: self.name)
+    }
+}
+
+fileprivate extension Stash {
+    func toDTO() -> StashDTO {
+        StashDTO(id: self.id,
+              name: self.name,
+              description: self.description,
+              base64image: self.base64image,
+              idTypeStash: self.idTypeStash)
     }
 }

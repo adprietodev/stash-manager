@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StashesDTO: Codable {
+struct StashDTO: Codable {
     let id: Int
     let name: String
     let description: String?

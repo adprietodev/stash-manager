@@ -8,7 +8,7 @@
 import Foundation
 import Supabase
 
-class RoomsDatasource: RoomsDatasourceProtocol {
+class RoomsRemoteDatasource: RoomsRemoteDatasourceProtocol {
     // MARK: - Properties
     let supabase = SupabaseConfig.shared.supabase
 
