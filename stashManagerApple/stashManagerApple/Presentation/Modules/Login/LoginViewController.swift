@@ -11,14 +11,16 @@ class LoginViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var titleLogoLabel: UILabel!
-    @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var emailTitleLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var lineEmailView: UIView!
+    @IBOutlet weak var eyeImageView: UIImageView!
+    @IBOutlet weak var eyeButton: UIButton!
     @IBOutlet weak var passwordTitleLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var linePasswordView: UIView!
+    @IBOutlet weak var errorEmailLabel: UILabel!
+    
     @IBOutlet weak var signinButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -26,8 +28,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signinLabel: UILabel!
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var signinView: UIView!
-    @IBOutlet weak var errorEmailLabel: UILabel!
-    @IBOutlet weak var errorPasswordLabel: UILabel!
     @IBOutlet weak var loginErrorView: UIView!
     @IBOutlet weak var loginErrorLabel: UILabel!
 
@@ -52,22 +52,21 @@ class LoginViewController: UIViewController {
         } else {
             loginErrorView.isHidden = true
             errorEmailLabel.isHidden = email.isValidMail()
-            errorPasswordLabel.isHidden = password.isValidPassword()
             errorEmailLabel.text = email.isValidMail() ? "" : "Email no válido"
             lineEmailView.backgroundColor = email.isValidMail() ? .blueGreen : .red
-            errorPasswordLabel.text = password.isValidPassword() ? "" : "Contraseña no válida"
             linePasswordView.backgroundColor = password.isValidPassword() ? .blueGreen : .red
         }
+    }
+
+    @IBAction func hiddeAndShowPassword(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        eyeImageView.image = passwordTextField.isSecureTextEntry ? UIImage(systemName: "eye") : UIImage(systemName: "eye.slash")
     }
 
     // MARK: - Functions
     func configurationView() {
         titleLogoLabel.font = UIFont().robotoBold(with: 16)
         titleLogoLabel.textColor = .prussianBlue
-        emailView.layer.cornerRadius = 4
-        emailView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        passwordView.layer.cornerRadius = 4
-        passwordView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         emailTitleLabel.font = UIFont().robotoRegular(with: 12)
         emailTextField.font = UIFont().robotoRegular(with: 16)
         passwordTitleLabel.font = UIFont().robotoRegular(with: 12)
@@ -80,9 +79,8 @@ class LoginViewController: UIViewController {
         signinLabel.font = UIFont().robotoBold(with: 14)
         signinLabel.text = "Iniciar sesión"
         errorEmailLabel.textColor = .red
-        errorPasswordLabel.textColor = .red
         errorEmailLabel.font = UIFont().robotoRegular(with: 12)
-        errorPasswordLabel.font = UIFont().robotoRegular(with: 12)
+        eyeImageView.tintColor = .prussianBlue
     }
 
     func setupBinding() {
@@ -90,7 +88,6 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 errorEmailLabel.isHidden = true
-                errorPasswordLabel.isHidden = true
                 loginErrorView.isHidden = false
                 loginErrorLabel.textColor = .red
                 loginErrorLabel.font = UIFont().robotoRegular(with: 12)

@@ -99,6 +99,11 @@
 		CC4208D92BE6498A00383069 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC4208CB2BE6498A00383069 /* Roboto-Regular.ttf */; };
 		CC4208DA2BE6498A00383069 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC4208CC2BE6498A00383069 /* Roboto-Thin.ttf */; };
 		CC4208DB2BE6498A00383069 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC4208CD2BE6498A00383069 /* Roboto-ThinItalic.ttf */; };
+		CC4208DF2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4208DD2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift */; };
+		CC4208E02BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC4208DE2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib */; };
+		CC4208E32BE6793C00383069 /* StashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4208E12BE6793C00383069 /* StashCollectionViewCell.swift */; };
+		CC4208E42BE6793C00383069 /* StashCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */; };
+		CC4208E62BE67BF900383069 /* StashesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4208E52BE67BF900383069 /* StashesProtocols.swift */; };
 		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
 		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
 		CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */; };
@@ -254,6 +259,11 @@
 		CC4208CB2BE6498A00383069 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		CC4208CC2BE6498A00383069 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		CC4208CD2BE6498A00383069 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		CC4208DD2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeStashOrRoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC4208DE2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeStashOrRoomCollectionViewCell.xib; sourceTree = "<group>"; };
+		CC4208E12BE6793C00383069 /* StashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StashCollectionViewCell.xib; sourceTree = "<group>"; };
+		CC4208E52BE67BF900383069 /* StashesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesProtocols.swift; sourceTree = "<group>"; };
 		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
 		CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -525,11 +535,13 @@
 		CC14BC902BD982EA00D0F4BC /* Stashes */ = {
 			isa = PBXGroup;
 			children = (
+				CC4208DC2BE678F200383069 /* Cells */,
 				CC14BCE72BD99E9100D0F4BC /* StashesViewController.swift */,
 				CC14BCE82BD99E9100D0F4BC /* StashesViewController.xib */,
 				CC14BCFF2BD9A04400D0F4BC /* StashesViewModel.swift */,
 				CC14BD012BD9A07000D0F4BC /* StashesRouter.swift */,
 				CC14BD032BD9A08300D0F4BC /* StashesBuilder.swift */,
+				CC4208E52BE67BF900383069 /* StashesProtocols.swift */,
 			);
 			path = Stashes;
 			sourceTree = "<group>";
@@ -750,6 +762,17 @@
 			);
 			name = Roboto;
 			path = ../../../../../../../../Downloads/Roboto;
+			sourceTree = "<group>";
+		};
+		CC4208DC2BE678F200383069 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC4208DD2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift */,
+				CC4208DE2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib */,
+				CC4208E12BE6793C00383069 /* StashCollectionViewCell.swift */,
+				CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		CCA252852BE2198D00CFF515 /* LinksUseCase */ = {
@@ -974,6 +997,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC193F522BDACA2200CC6676 /* Montserrat-Bold.ttf in Resources */,
+				CC4208E02BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib in Resources */,
 				CC4208D42BE6498A00383069 /* Roboto-Italic.ttf in Resources */,
 				CC193F542BDACA2200CC6676 /* Montserrat-ExtraBold.ttf in Resources */,
 				CC193F592BDACA2300CC6676 /* Montserrat-Light.ttf in Resources */,
@@ -994,6 +1018,7 @@
 				CCD8D8BD2BDEB16E008EBDE4 /* SplashViewController.xib in Resources */,
 				CC193F5C2BDACA2300CC6676 /* Montserrat-MediumItalic.ttf in Resources */,
 				CC193F5E2BDACA2300CC6676 /* Montserrat-SemiBold.ttf in Resources */,
+				CC4208E42BE6793C00383069 /* StashCollectionViewCell.xib in Resources */,
 				CC193F502BDACA2200CC6676 /* Montserrat-Black.ttf in Resources */,
 				CC193F532BDACA2200CC6676 /* Montserrat-BoldItalic.ttf in Resources */,
 				CCDB79102BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib in Resources */,
@@ -1090,6 +1115,7 @@
 				CCB2EF5D2BE4C4A00059CA24 /* LinksLocalDatasourceProtocol.swift in Sources */,
 				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
 				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
+				CC4208E62BE67BF900383069 /* StashesProtocols.swift in Sources */,
 				CCD8D8C72BDEBF7B008EBDE4 /* TypeArticle.swift in Sources */,
 				CCDB79072BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
@@ -1125,8 +1151,10 @@
 				CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
+				CC4208DF2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift in Sources */,
 				CCA252802BE214EB00CFF515 /* Link.swift in Sources */,
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
+				CC4208E32BE6793C00383069 /* StashCollectionViewCell.swift in Sources */,
 				CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */,
 				CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */,
 				CC14BCA22BD996AE00D0F4BC /* RoomsRemoteDatasource.swift in Sources */,

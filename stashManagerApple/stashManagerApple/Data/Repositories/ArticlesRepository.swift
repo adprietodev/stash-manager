@@ -39,7 +39,7 @@ fileprivate extension ArticleDTO {
                 brand: self.brand ?? "",
                 isSpice: self.isSpice ?? false,
                 isSpicy: self.isSpicy ?? false,
-                material: self.material,
+                material: self.material ?? "",
                 idUser: self.idUser,
                 idTypeArticle: self.idTypeArticle)
     }

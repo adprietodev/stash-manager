@@ -20,7 +20,7 @@ class LinkUseCase: LinkUseCaseProtocol {
         var links = [Link]()
         for roomId in roomIDs {
             guard let link = try await repository.getRemoteLink(at: roomId) else { continue }
-            links.append(link)
+            links += link
         }
         return createContentRooms(links: links, rooms: rooms, stashes: stashes, articles: articles)
     }

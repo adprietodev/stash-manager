@@ -23,4 +23,16 @@ class RoomsUseCase: RoomsUseCaseProtocol {
     func getTypesRoom() async throws -> [TypeRoom] {
         try await repository.getRemoteTypesRoom()
     }
+
+    func getSelectedRoom() throws -> Room? {
+        try repository.getLocalSelectedRoom()
+    }
+
+    func setSelectedRoom(_ room: Room) throws {
+        try repository.setLocalSelectedRoom(room)
+    }
+
+    func removeSelectedRoom() {
+        repository.removeLocalSelectedRoom()
+    }
 }

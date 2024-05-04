@@ -14,7 +14,7 @@ class SplashRouter: SplashRouterProtocol {
         self.viewController = viewController
     }
 
-    func goToTabBar(with rooms: [ContentRoom]) {
+    func goToTabBar() {
         DispatchQueue.main.async { [weak self] in
             guard let self =  self else { return }
             let tabBarViewController = TabBarController().build()

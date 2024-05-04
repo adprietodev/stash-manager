@@ -16,9 +16,9 @@ class LinksRepository: LinksRepositoryProtocol {
         self.localDatasource = localDatasource
     }
 
-    func getRemoteLink(at roomID: Int) async throws -> Link? {
+    func getRemoteLink(at roomID: Int) async throws -> [Link]? {
         let linkDTO = try await remoteDatasource.getLinks(at: roomID)
-        let link = linkDTO.map({ $0.toDomain() }).first
+        let link = linkDTO.map({ $0.toDomain() })
         return link
     }
 
@@ -142,7 +142,7 @@ fileprivate extension ArticleDTO {
                 brand: self.brand ?? "",
                 isSpice: self.isSpice ?? false,
                 isSpicy: self.isSpicy ?? false,
-                material: self.material,
+                material: self.material ?? "",
                 idUser: self.idUser,
                 idTypeArticle: self.idTypeArticle)
     }

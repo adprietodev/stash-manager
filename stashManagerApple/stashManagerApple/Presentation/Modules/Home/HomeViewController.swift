@@ -18,6 +18,7 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     var viewModel: HomeViewModelProtocol!
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationView()
@@ -31,9 +32,9 @@ class HomeViewController: UIViewController {
     func configurationView() {
         self.navigationItem.title = "HOME"
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightCustomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: nil, action: nil)
-        rightCustomBarButton.tintColor = .prussianBlue
-        navigationItem.rightBarButtonItem = rightCustomBarButton
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        rightAddRoomBarButton.tintColor = .prussianBlue
+        navigationItem.rightBarButtonItem = rightAddRoomBarButton
 
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
@@ -81,7 +82,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             let cell = roomsCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomsCollectionViewCell", for: indexPath) as! RoomsCollectionViewCell
             let rooms =  viewModel.rooms[indexPath.row].room
-            print("Habitación \(rooms)")
             cell.setupCell(at: rooms.name, with: rooms.base64image)
             return cell
         }
@@ -91,8 +91,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == categoriesCollectionView {
             let name = viewModel.typesRoom[indexPath.row]
             let nameLabelSize = (name.name as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont().robotoRegular(with: 14)])
-            let width = nameLabelSize.width + 24
-            return CGSize(width: width, height: 24)
+            let width = nameLabelSize.width + 32
+            return CGSize(width: width, height: 32)
         } else {
             return CGSize(width: collectionView.frame.width, height: 112)
         }

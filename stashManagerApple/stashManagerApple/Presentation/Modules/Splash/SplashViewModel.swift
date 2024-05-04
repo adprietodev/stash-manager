@@ -40,9 +40,8 @@ class SplashViewModel: SplashViewModelProtocol {
                 try userUseCase.setCurrentUser(user)
                 try linksUseCase.setContentRooms(rooms)
                 finishLoad?()
-                router.goToTabBar(with: rooms)
+                router.goToTabBar()
             } catch {
-                print(error)
             }
         }
     }

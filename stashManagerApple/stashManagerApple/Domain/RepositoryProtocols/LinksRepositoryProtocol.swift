@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LinksRepositoryProtocol {
-    func getRemoteLink(at roomID: Int) async throws -> Link?
+    func getRemoteLink(at roomID: Int) async throws -> [Link]?
     func getContentRoom() throws -> [ContentRoom]?
     func setContentRoom(_ contentRoom: [ContentRoom]) throws
     func removeContentRoom()

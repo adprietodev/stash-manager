@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
         tabBar.backgroundColor = .prussianBlue
         let homeViewController = HomeBuilder().build()
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
-        let stashesViewController = UIViewController()
+        let stashesViewController = StashesBuilder().build()
         let stashesNavigationController = UINavigationController(rootViewController: stashesViewController)
         let articlesViewController = UIViewController()
         let articlesNavigationController = UINavigationController(rootViewController: articlesViewController)

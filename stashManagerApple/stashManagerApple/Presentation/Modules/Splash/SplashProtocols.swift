@@ -13,5 +13,5 @@ protocol SplashViewModelProtocol {
 }
 
 protocol SplashRouterProtocol {
-    func goToTabBar(with rooms: [ContentRoom])
+    func goToTabBar()
 }
