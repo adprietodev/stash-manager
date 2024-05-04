@@ -9,4 +9,7 @@ import Foundation
 
 protocol UsersUseCaseProtocol {
     func getUser(at authIDUser: UUID) async throws -> [User]
+    func getCurrentUser() throws -> User
+    func setCurrentUser(_ user: User) throws
+    func removeCurrentUser()
 }

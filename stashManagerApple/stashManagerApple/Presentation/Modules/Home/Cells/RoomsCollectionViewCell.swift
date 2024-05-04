@@ -18,14 +18,14 @@ class RoomsCollectionViewCell: UICollectionViewCell {
 
     func setupCell(at name: String, with base64: String) {
         if base64 == "" {
-            roomImageView.image =  UIImage(named: "roomDefaultImage")
+            roomImageView.image =  UIImage(named: "placeholder-room")
             roomImageView.contentMode = .scaleAspectFit
         } else {
             roomImageView.loadBase64(base64)
             roomImageView.contentMode = .scaleAspectFill
         }
         roomNameLabel.text = name
-        roomNameLabel.font = UIFont().montserratRegular(with: 14)
+        roomNameLabel.font = UIFont().robotoRegular(with: 14)
         self.layer.cornerRadius = 12
     }
 }

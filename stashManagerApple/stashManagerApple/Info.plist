@@ -9,6 +9,12 @@
 		<string>Montserrat-ExtraBold.ttf</string>
 		<string>Montserrat-Regular.ttf</string>
 		<string>Montserrat-Light.ttf</string>
+		<string>Roboto-Black.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Thin.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

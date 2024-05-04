@@ -23,7 +23,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
         categoryView.backgroundColor = .skyBlue
         nameLabel.text = name
         nameLabel.textColor = .prussianBlue
-        nameLabel.font = UIFont().montserratRegular(with: 14)
+        nameLabel.font = UIFont().robotoRegular(with: 14)
         categoryView.layer.cornerRadius = 12
     }
 }

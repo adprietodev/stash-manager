@@ -9,4 +9,7 @@ import Foundation
 
 protocol LinkUseCaseProtocol {
     func getContentRooms(with roomIDs: [Int], of rooms: [Room], of stashes: [Stash], at articles: [Article]) async throws -> [ContentRoom]
+    func setContentRooms(_ contentRoom: [ContentRoom]) throws
+    func removeContentRooms()
+    func getLocalContentRooms() throws -> [ContentRoom]?
 }

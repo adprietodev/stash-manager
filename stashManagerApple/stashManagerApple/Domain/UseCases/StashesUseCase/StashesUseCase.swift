@@ -15,10 +15,10 @@ class StashesUseCase: StashesUseCaseProtocol {
     }
 
     func getStashes() async throws -> [Stash] {
-        try await repository.getStashes()
+        try await repository.getRemoteStashes()
     }
 
     func getTypesStash() async throws -> [TypeStash] {
-        try await repository.getTypesStash()
+        try await repository.getRemoteTypesStash()
     }
 }

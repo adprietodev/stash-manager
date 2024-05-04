@@ -62,27 +62,27 @@ class LoginViewController: UIViewController {
 
     // MARK: - Functions
     func configurationView() {
-        titleLogoLabel.font = UIFont().montserratExtraBold(with: 16)
+        titleLogoLabel.font = UIFont().robotoBold(with: 16)
         titleLogoLabel.textColor = .prussianBlue
         emailView.layer.cornerRadius = 4
         emailView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         passwordView.layer.cornerRadius = 4
         passwordView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        emailTitleLabel.font = UIFont().montserratRegular(with: 12)
-        emailTextField.font = UIFont().montserratRegular(with: 16)
-        passwordTitleLabel.font = UIFont().montserratRegular(with: 12)
-        passwordTextField.font = UIFont().montserratRegular(with: 16)
-        forgotPasswordLabel.font = UIFont().montserratRegular(with: 12)
+        emailTitleLabel.font = UIFont().robotoRegular(with: 12)
+        emailTextField.font = UIFont().robotoRegular(with: 16)
+        passwordTitleLabel.font = UIFont().robotoRegular(with: 12)
+        passwordTextField.font = UIFont().robotoRegular(with: 16)
+        forgotPasswordLabel.font = UIFont().robotoRegular(with: 12)
         forgotPasswordLabel.textColor = .blueGreen
-        registerLabel.font = UIFont().montserratRegular(with: 12)
+        registerLabel.font = UIFont().robotoRegular(with: 12)
         registerLabel.textColor = .blueGreen
-        signinView.layer.cornerRadius = signinButton.bounds.height/2
-        signinLabel.font = UIFont().montserratBold(with: 14)
+        signinView.layer.cornerRadius = 6
+        signinLabel.font = UIFont().robotoBold(with: 14)
         signinLabel.text = "Iniciar sesión"
         errorEmailLabel.textColor = .red
         errorPasswordLabel.textColor = .red
-        errorEmailLabel.font = UIFont().montserratRegular(with: 12)
-        errorPasswordLabel.font = UIFont().montserratRegular(with: 12)
+        errorEmailLabel.font = UIFont().robotoRegular(with: 12)
+        errorPasswordLabel.font = UIFont().robotoRegular(with: 12)
     }
 
     func setupBinding() {
@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
                 errorPasswordLabel.isHidden = true
                 loginErrorView.isHidden = false
                 loginErrorLabel.textColor = .red
-                loginErrorLabel.font = UIFont().montserratRegular(with: 12)
+                loginErrorLabel.font = UIFont().robotoRegular(with: 12)
                 loginErrorLabel.text = "Error de acceso por favor intentelo de nuevo"
             }
         }

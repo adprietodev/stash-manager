@@ -37,6 +37,8 @@ class SplashViewModel: SplashViewModelProtocol {
                 let articlesUser = try await articlesUseCase.getArticles(at: user.id)
                 let roomsIDs = roomsUser.map { $0.id }
                 let rooms = try await linksUseCase.getContentRooms(with: roomsIDs, of: roomsUser, of: stashes, at: articlesUser)
+                try userUseCase.setCurrentUser(user)
+                try linksUseCase.setContentRooms(rooms)
                 finishLoad?()
                 router.goToTabBar(with: rooms)
             } catch {

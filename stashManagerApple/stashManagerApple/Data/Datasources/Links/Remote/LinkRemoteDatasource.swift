@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LinkDatasource: LinksRemoteDatasourceProtocol {
+class LinkRemoteDatasource: LinksRemoteDatasourceProtocol {
     let supabase = SupabaseConfig.shared.supabase
 
     func getLinks(at roomID: Int) async throws -> [LinkDTO] {

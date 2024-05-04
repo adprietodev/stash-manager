@@ -16,11 +16,17 @@ class HomeBuilder {
         let usersRepository = UsersRepository(remoteDatasource: usersRemoteDatasource, localDatasource: usersLocalDatasource)
         let usersUseCase = UsersUseCase(repository: usersRepository)
 
-        let roomsDatasource = RoomsDatasource()
-        let roomsRepository = RoomsRepository(datasource: roomsDatasource)
+        let roomsRemoteDatasource = RoomsRemoteDatasource()
+        let roomsLocalDatasource = RoomsLocalDatasource()
+        let roomsRepository = RoomsRepository(remoteDatasource: roomsRemoteDatasource, localDatasource: roomsLocalDatasource)
         let roomsUseCase = RoomsUseCase(repository: roomsRepository)
 
-        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUseCase: roomsUseCase)
+        let linksRemoteDatasource = LinkRemoteDatasource()
+        let linksLocalDatasource = LinksLocalDatasource()
+        let linksRepository = LinksRepository(remoteDatasource: linksRemoteDatasource, localDatasource: linksLocalDatasource)
+        let linksUseCase = LinkUseCase(repository: linksRepository)
+
+        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, linksUseCase: linksUseCase)
         return viewController
     }
 }

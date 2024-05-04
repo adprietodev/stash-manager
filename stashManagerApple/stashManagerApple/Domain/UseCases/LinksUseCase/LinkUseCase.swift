@@ -19,10 +19,22 @@ class LinkUseCase: LinkUseCaseProtocol {
     func getContentRooms(with roomIDs: [Int], of rooms: [Room], of stashes: [Stash], at articles: [Article]) async throws -> [ContentRoom] {
         var links = [Link]()
         for roomId in roomIDs {
-            let link = try await repository.getLink(at: roomId)
+            guard let link = try await repository.getRemoteLink(at: roomId) else { continue }
             links.append(link)
         }
         return createContentRooms(links: links, rooms: rooms, stashes: stashes, articles: articles)
+    }
+
+    func getLocalContentRooms() throws -> [ContentRoom]? {
+        try repository.getContentRoom()
+    }
+
+    func setContentRooms(_ contentRoom: [ContentRoom]) throws {
+        try repository.setContentRoom(contentRoom)
+    }
+
+    func removeContentRooms(){
+        repository.removeContentRoom()
     }
 
     func createContentRooms(links: [Link], rooms: [Room], stashes: [Stash], articles: [Article]) -> [ContentRoom] {

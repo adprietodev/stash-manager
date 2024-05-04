@@ -23,4 +23,12 @@ extension UIFont {
     func montserratLight(with size: CGFloat) -> UIFont {
         UIFont(name: "Montserrat-Light", size: size)!
     }
+
+    func robotoBold(with size: CGFloat) -> UIFont {
+        UIFont(name: "Roboto-Bold", size: size)!
+    }
+
+    func robotoRegular(with size: CGFloat) -> UIFont {
+        UIFont(name: "Roboto-Regular", size: size)!
+    }
 }

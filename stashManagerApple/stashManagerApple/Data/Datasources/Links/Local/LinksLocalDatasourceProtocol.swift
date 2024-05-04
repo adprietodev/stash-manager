@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LinksLocalDatasourceProtocol {
-    func getSelectedStash() throws -> Stash?
-    func setSelectedStash(_ stash: Stash) throws
-    func removeSelectedStash()
+    func getContentRoom() throws -> [ContentRoomDTO]?
+    func setContentRoom(_ contentRoomDTO: [ContentRoomDTO]) throws
+    func removeContentRoom()
 }
