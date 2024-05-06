@@ -11,15 +11,17 @@ class HomeViewModel: HomeViewModelProtocol {
     let usersUseCase: UsersUseCaseProtocol
     let roomsUseCase: RoomsUseCaseProtocol
     let linksUseCase: LinkUseCaseProtocol
+    let router: HomeRouterProtocol
     var currentUser: User!
     var rooms = [ContentRoom]()
     var typesRoom = [TypeRoom]()
     var refreshCollectionView: (() -> Void)?
 
-    init(usersUseCase: UsersUseCaseProtocol, roomsUseCase: RoomsUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
+    init(router: HomeRouterProtocol, usersUseCase: UsersUseCaseProtocol, roomsUseCase: RoomsUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
         self.usersUseCase = usersUseCase
         self.roomsUseCase = roomsUseCase
         self.linksUseCase = linksUseCase
+        self.router = router
     }
 
     func getTypesRoom() {
@@ -30,5 +32,9 @@ class HomeViewModel: HomeViewModelProtocol {
             currentUser = try usersUseCase.getCurrentUser()
             refreshCollectionView?()
         }
+    }
+
+    func goToRoomDetail(room: Room, typesRoom: [TypeRoom]) {
+        router.goToRoomDetail(room: room, typesRoom: typesRoom)
     }
 }

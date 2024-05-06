@@ -12,4 +12,9 @@ protocol HomeViewModelProtocol {
     var typesRoom: [TypeRoom] { get set}
     var refreshCollectionView: (() -> Void)? { get set}
     func getTypesRoom()
+    func goToRoomDetail(room: Room, typesRoom: [TypeRoom])
+}
+
+protocol HomeRouterProtocol {
+    func goToRoomDetail(room: Room, typesRoom: [TypeRoom])
 }

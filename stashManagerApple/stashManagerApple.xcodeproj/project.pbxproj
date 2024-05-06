@@ -108,6 +108,12 @@
 		CC777EF52BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EF32BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift */; };
 		CC777EF62BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC777EF42BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib */; };
 		CC777EF82BE948570055C0FC /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EF72BE948570055C0FC /* ProfileProtocols.swift */; };
+		CC777EFC2BE95BD40055C0FC /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EFA2BE95BD40055C0FC /* HomeDetailViewController.swift */; };
+		CC777EFD2BE95BD40055C0FC /* HomeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC777EFB2BE95BD40055C0FC /* HomeDetailViewController.xib */; };
+		CC777EFF2BE9679F0055C0FC /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EFE2BE9679F0055C0FC /* HomeDetailViewModel.swift */; };
+		CC777F012BE967BA0055C0FC /* HomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */; };
+		CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */; };
+		CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */; };
 		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
 		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
 		CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */; };
@@ -272,6 +278,12 @@
 		CC777EF32BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC777EF42BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC777EF72BE948570055C0FC /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		CC777EFA2BE95BD40055C0FC /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		CC777EFB2BE95BD40055C0FC /* HomeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailViewController.xib; sourceTree = "<group>"; };
+		CC777EFE2BE9679F0055C0FC /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRouter.swift; sourceTree = "<group>"; };
+		CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailBuilder.swift; sourceTree = "<group>"; };
+		CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailProtocols.swift; sourceTree = "<group>"; };
 		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
 		CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -799,6 +811,12 @@
 		CC777EF92BE95AEF0055C0FC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				CC777EFA2BE95BD40055C0FC /* HomeDetailViewController.swift */,
+				CC777EFB2BE95BD40055C0FC /* HomeDetailViewController.xib */,
+				CC777EFE2BE9679F0055C0FC /* HomeDetailViewModel.swift */,
+				CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */,
+				CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */,
+				CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1040,6 +1058,7 @@
 				CC193F612BDACA2300CC6676 /* Montserrat-ThinItalic.ttf in Resources */,
 				CC4208D02BE6498A00383069 /* Roboto-Black.ttf in Resources */,
 				CC4208DA2BE6498A00383069 /* Roboto-Thin.ttf in Resources */,
+				CC777EFD2BE95BD40055C0FC /* HomeDetailViewController.xib in Resources */,
 				CC193F5D2BDACA2300CC6676 /* Montserrat-Regular.ttf in Resources */,
 				CC193F5B2BDACA2300CC6676 /* Montserrat-Medium.ttf in Resources */,
 				CC4208D92BE6498A00383069 /* Roboto-Regular.ttf in Resources */,
@@ -1108,6 +1127,7 @@
 				CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */,
 				CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */,
 				CCB2EF652BE4C5630059CA24 /* RoomsLocalDatasource.swift in Sources */,
+				CC777EFF2BE9679F0055C0FC /* HomeDetailViewModel.swift in Sources */,
 				CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */,
 				CCD8D8B42BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift in Sources */,
 				CCB2EF6B2BE4C62C0059CA24 /* StashesLocalDatasource.swift in Sources */,
@@ -1156,6 +1176,7 @@
 				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
 				CCD8D8B22BDE5D03008EBDE4 /* AuthenticationUseCase.swift in Sources */,
 				CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */,
+				CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */,
 				CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */,
 				CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */,
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
@@ -1164,6 +1185,7 @@
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
 				CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */,
 				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
+				CC777EFC2BE95BD40055C0FC /* HomeDetailViewController.swift in Sources */,
 				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
 				CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */,
@@ -1183,6 +1205,7 @@
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
 				CC4208DF2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift in Sources */,
+				CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */,
 				CCA252802BE214EB00CFF515 /* Link.swift in Sources */,
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
 				CC4208E32BE6793C00383069 /* StashCollectionViewCell.swift in Sources */,
@@ -1208,6 +1231,7 @@
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
 				CCB2EF5F2BE4C4AF0059CA24 /* LinksLocalDatasource.swift in Sources */,
 				CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */,
+				CC777F012BE967BA0055C0FC /* HomeDetailRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1349,6 +1373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9T33U53Y7;
@@ -1367,6 +1392,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.prieto.StashManagerApple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1378,6 +1404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9T33U53Y7;
@@ -1396,6 +1423,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = es.prieto.StashManagerApple;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

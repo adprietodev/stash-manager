@@ -28,6 +28,11 @@ class HomeViewController: UIViewController {
         setupBindings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
     // MARK: - Functions
     func configurationView() {
         self.navigationItem.title = "HOME"
@@ -35,6 +40,8 @@ class HomeViewController: UIViewController {
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = .prussianBlue
 
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
@@ -85,6 +92,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.setupCell(at: rooms.name, with: rooms.base64image)
             return cell
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let room = viewModel.rooms[indexPath.row].room
+        viewModel.goToRoomDetail(room: room, typesRoom: viewModel.typesRoom)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

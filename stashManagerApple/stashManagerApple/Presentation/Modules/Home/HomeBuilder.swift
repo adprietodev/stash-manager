@@ -26,7 +26,8 @@ class HomeBuilder {
         let linksRepository = LinksRepository(remoteDatasource: linksRemoteDatasource, localDatasource: linksLocalDatasource)
         let linksUseCase = LinkUseCase(repository: linksRepository)
 
-        viewController.viewModel = HomeViewModel(usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, linksUseCase: linksUseCase)
+        let router = HomeRouter(viewController: viewController)
+        viewController.viewModel = HomeViewModel(router: router, usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, linksUseCase: linksUseCase)
         return viewController
     }
 }
