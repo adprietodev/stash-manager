@@ -21,4 +21,16 @@ class StashesUseCase: StashesUseCaseProtocol {
     func getTypesStash() async throws -> [TypeStash] {
         try await repository.getRemoteTypesStash()
     }
+
+    func getSelectedStash() throws -> Stash? {
+        try repository.getSelectedStash()
+    }
+
+    func setSelectedStash(_ stash: Stash) throws {
+        try repository.setSelectedStash(stash)
+    }
+
+    func removeSelectedStash() {
+        repository.removeSelectedStash()
+    }
 }

@@ -24,9 +24,9 @@ class TabBarController: UITabBarController {
         let homeNavigationController = UINavigationController(rootViewController: homeViewController)
         let stashesViewController = StashesBuilder().build()
         let stashesNavigationController = UINavigationController(rootViewController: stashesViewController)
-        let articlesViewController = UIViewController()
+        let articlesViewController = ArticlesBuilder().build()
         let articlesNavigationController = UINavigationController(rootViewController: articlesViewController)
-        let profileViewController = UIViewController()
+        let profileViewController = ProfileBuilder().build()
         let profileNavigationController = UINavigationController(rootViewController: profileViewController)
 
         let tabBarList = [homeNavigationController, stashesNavigationController, articlesNavigationController, profileNavigationController]

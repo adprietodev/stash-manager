@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ArticlesRouter: ArticlesRouterProtocol {
+    let viewController: ArticlesViewController
+
+    init(viewController: ArticlesViewController) {
+        self.viewController = viewController
+    }
+}

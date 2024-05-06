@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class ProfileRouter: ProfileRouterProtocol {
+    let viewController: ProfileViewController
+
+    init(viewController: ProfileViewController) {
+        self.viewController = viewController
+    }
+}

@@ -104,6 +104,10 @@
 		CC4208E32BE6793C00383069 /* StashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4208E12BE6793C00383069 /* StashCollectionViewCell.swift */; };
 		CC4208E42BE6793C00383069 /* StashCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */; };
 		CC4208E62BE67BF900383069 /* StashesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4208E52BE67BF900383069 /* StashesProtocols.swift */; };
+		CC777EED2BE8C1960055C0FC /* ArticlesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EEC2BE8C1960055C0FC /* ArticlesProtocols.swift */; };
+		CC777EF52BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EF32BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift */; };
+		CC777EF62BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC777EF42BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib */; };
+		CC777EF82BE948570055C0FC /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EF72BE948570055C0FC /* ProfileProtocols.swift */; };
 		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
 		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
 		CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */; };
@@ -264,6 +268,10 @@
 		CC4208E12BE6793C00383069 /* StashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StashCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC4208E52BE67BF900383069 /* StashesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashesProtocols.swift; sourceTree = "<group>"; };
+		CC777EEC2BE8C1960055C0FC /* ArticlesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesProtocols.swift; sourceTree = "<group>"; };
+		CC777EF32BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC777EF42BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
+		CC777EF72BE948570055C0FC /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
 		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
 		CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -521,6 +529,7 @@
 		CC14BC8F2BD982E300D0F4BC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CC777EF92BE95AEF0055C0FC /* Detail */,
 				CCDB79082BDBFF1900B551D3 /* Cells */,
 				CC14BCE32BD99E5900D0F4BC /* HomeViewController.swift */,
 				CC14BCE42BD99E5900D0F4BC /* HomeViewController.xib */,
@@ -549,11 +558,13 @@
 		CC14BC912BD982FC00D0F4BC /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				CC777EEE2BE8C4500055C0FC /* Cells */,
 				CC14BCEB2BD99EA100D0F4BC /* ArticlesViewController.swift */,
 				CC14BCEC2BD99EA100D0F4BC /* ArticlesViewController.xib */,
 				CC14BD052BD9A09F00D0F4BC /* ArticlesViewModel.swift */,
 				CC14BD072BD9A0AD00D0F4BC /* ArticlesRouter.swift */,
 				CC14BD092BD9A0C500D0F4BC /* ArticlesBuilder.swift */,
+				CC777EEC2BE8C1960055C0FC /* ArticlesProtocols.swift */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -566,6 +577,7 @@
 				CC14BD0B2BD9A0E900D0F4BC /* ProfileViewModel.swift */,
 				CC14BD0D2BD9A0F700D0F4BC /* ProfileRouter.swift */,
 				CC14BD0F2BD9A11B00D0F4BC /* ProfileBuilder.swift */,
+				CC777EF72BE948570055C0FC /* ProfileProtocols.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -773,6 +785,22 @@
 				CC4208E22BE6793C00383069 /* StashCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CC777EEE2BE8C4500055C0FC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC777EF32BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift */,
+				CC777EF42BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CC777EF92BE95AEF0055C0FC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		CCA252852BE2198D00CFF515 /* LinksUseCase */ = {
@@ -1033,6 +1061,7 @@
 				CC14BCE12BD99E3600D0F4BC /* LoginViewController.xib in Resources */,
 				CC14BCE92BD99E9100D0F4BC /* StashesViewController.xib in Resources */,
 				CC4208D12BE6498A00383069 /* Roboto-BlackItalic.ttf in Resources */,
+				CC777EF62BE8C4FE0055C0FC /* ArticleCollectionViewCell.xib in Resources */,
 				CC193F5F2BDACA2300CC6676 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				CC14BCE52BD99E5900D0F4BC /* HomeViewController.xib in Resources */,
 				CC4208D62BE6498A00383069 /* Roboto-LightItalic.ttf in Resources */,
@@ -1091,6 +1120,7 @@
 				CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */,
 				CCD8D8AD2BDE5BC7008EBDE4 /* AuthenticationRepository.swift in Sources */,
 				CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */,
+				CC777EED2BE8C1960055C0FC /* ArticlesProtocols.swift in Sources */,
 				CC14BCD02BD99C2300D0F4BC /* ArticlesUseCaseProtocol.swift in Sources */,
 				CC14BC6F2BD9805400D0F4BC /* AppDelegate.swift in Sources */,
 				CC14BD042BD9A08300D0F4BC /* StashesBuilder.swift in Sources */,
@@ -1137,6 +1167,7 @@
 				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
 				CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */,
+				CC777EF82BE948570055C0FC /* ProfileProtocols.swift in Sources */,
 				CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */,
 				CC14BCCA2BD99AB800D0F4BC /* RoomsUseCase.swift in Sources */,
 				CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */,
@@ -1158,6 +1189,7 @@
 				CC14BD082BD9A0AD00D0F4BC /* ArticlesRouter.swift in Sources */,
 				CC14BD0C2BD9A0E900D0F4BC /* ProfileViewModel.swift in Sources */,
 				CC14BCA22BD996AE00D0F4BC /* RoomsRemoteDatasource.swift in Sources */,
+				CC777EF52BE8C4FE0055C0FC /* ArticleCollectionViewCell.swift in Sources */,
 				CC14BCB82BD9984800D0F4BC /* UsersRepositoryProtocol.swift in Sources */,
 				CCDB78FD2BDBF62800B551D3 /* RoomDTO.swift in Sources */,
 				CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */,

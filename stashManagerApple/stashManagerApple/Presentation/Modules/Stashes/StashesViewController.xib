@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-NP-j06">
-                    <rect key="frame" x="16" y="77" width="361" height="32"/>
+                    <rect key="frame" x="16" y="76" width="361" height="32"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EU9-D1-exm">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="32"/>
@@ -86,14 +86,14 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2z-5Z-HLQ">
-                    <rect key="frame" x="0.0" y="59" width="393" height="2"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="1"/>
                     <color key="backgroundColor" name="SkyBlue"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="2" id="xkg-VX-w1Z"/>
+                        <constraint firstAttribute="height" constant="1" id="xkg-VX-w1Z"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bQM-FC-Rcy">
-                    <rect key="frame" x="16" y="121" width="377" height="36"/>
+                    <rect key="frame" x="16" y="120" width="377" height="36"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="UaP-tr-fp9"/>
@@ -106,7 +106,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="exd-cS-OZT">
-                    <rect key="frame" x="16" y="169" width="361" height="649"/>
+                    <rect key="frame" x="16" y="168" width="361" height="650"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="26A-0m-U1F">
                         <size key="itemSize" width="128" height="128"/>

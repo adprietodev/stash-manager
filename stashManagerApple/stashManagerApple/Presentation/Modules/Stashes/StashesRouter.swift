@@ -9,7 +9,7 @@ import Foundation
 
 class StashesRouter: StashesRouterProtocol {
     let viewController: StashesViewController
-    
+
     init(viewController: StashesViewController) {
         self.viewController = viewController
     }

@@ -10,4 +10,7 @@ import Foundation
 protocol StashesUseCaseProtocol {
     func getStashes() async throws -> [Stash]
     func getTypesStash() async throws -> [TypeStash]
+    func getSelectedStash() throws -> Stash?
+    func setSelectedStash(_ stash: Stash) throws
+    func removeSelectedStash()
 }
