@@ -33,14 +33,24 @@ class HomeDetailViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
 
+    // MARK: - IBActions
+    @IBAction func goToStashesInRoom(_ sender: Any) {
+        
+    }
+    
+    @IBAction func goToArticlesInRoom(_ sender: Any) {
+    }
+    
     // MARK: - Functions
     func configurationNavigationBar() {
         self.navigationItem.title = "HABITACIÓN"
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(goToEditRoom))
         rightAddRoomBarButton.tintColor = .prussianBlue
         self.navigationController?.navigationBar.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = .prussianBlue
     }
 
     func configurationView() {
@@ -62,5 +72,9 @@ class HomeDetailViewController: UIViewController {
         articlesButtonLabel.text = "ARTICULOS"
         stashesButtonLabel.font = UIFont().robotoBold(with: 16)
         articlesButtonLabel.font = UIFont().robotoBold(with: 16)
+    }
+
+    @objc func goToEditRoom() {
+        viewModel.goToEditRoom()
     }
 }

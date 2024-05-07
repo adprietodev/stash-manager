@@ -122,6 +122,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="goToStashesInRoom:" destination="-1" eventType="touchUpInside" id="mwv-2b-CLi"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.0078431372550000003" green="0.18823529410000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -177,6 +180,9 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="goToArticlesInRoom:" destination="-1" eventType="touchUpInside" id="7CN-2b-tpE"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.0078431372550000003" green="0.18823529410000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

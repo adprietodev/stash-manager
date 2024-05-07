@@ -10,7 +10,8 @@ import Foundation
 class HomeDetailBuilder {
     func build(room: Room, typesRoom: [TypeRoom]) -> HomeDetailViewController {
         let viewController = HomeDetailViewController(nibName: "HomeDetailViewController", bundle: nil)
-        viewController.viewModel = HomeDetailViewModel(room: room, typesRoom: typesRoom)
+        let router = HomeDetailRouter(viewController: viewController)
+        viewController.viewModel = HomeDetailViewModel(router: router, room: room, typesRoom: typesRoom)
         return viewController
     }
 }
