@@ -14,20 +14,23 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     let stashesUseCase: StashesUseCaseProtocol
     let linksUseCase: LinkUseCaseProtocol
     let articleUseCase: ArticlesUseCaseProtocol
+    let router: ArticlesRouterProtocol
     var selectedRoom: ContentRoom!
     var selectedStash: ContentStash!
     var articlesWithStock = [ArticleWithStock]()
     var userArticles = [Article]()
+    var typesArticle: [TypeArticle]!
     var isSelectedRoom: Bool = false
     var isSelectedStash: Bool = false
     var refreshCollectionView: (() -> Void)?
 
-    init(usersUseCase: UsersUseCase, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol, articlesUseCase: ArticlesUseCaseProtocol) {
+    init(router: ArticlesRouterProtocol, usersUseCase: UsersUseCase, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol, articlesUseCase: ArticlesUseCaseProtocol) {
         self.usersUseCase = usersUseCase
         self.roomsUseCase = roomsUseCase
         self.stashesUseCase = stashesUseCase
         self.linksUseCase = linksUseCase
         self.articleUseCase = articlesUseCase
+        self.router = router
     }
 
     // MARK: - Funtions
@@ -48,10 +51,15 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
                     let currentUser = try usersUseCase.getCurrentUser()
                     userArticles = try await articleUseCase.getArticles(at: currentUser.id)
                 }
+                typesArticle = try await articleUseCase.getTypesArticle()
                 refreshCollectionView?()
             } catch {
                 // TODO: - Errors Controls
             }
         }
+    }
+
+    func goToDetail(article: Article, typesArticle: [TypeArticle]) {
+        router.goToDetail(article: article , typesArticle: typesArticle)
     }
 }

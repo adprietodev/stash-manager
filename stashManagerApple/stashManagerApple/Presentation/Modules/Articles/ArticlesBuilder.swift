@@ -35,7 +35,8 @@ class ArticlesBuilder {
         let articlesRepository = ArticlesRepository(datasource: articlesDatasource)
         let articlesUseCase = ArticlesUseCase(repository: articlesRepository)
 
-        viewController.viewModel = ArticlesViewModel(usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, stashesUseCase: stashesUseCase, linksUseCase: linksUseCase, articlesUseCase: articlesUseCase)
+        let router = ArticlesRouter(viewController: viewController)
+        viewController.viewModel = ArticlesViewModel(router: router, usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, stashesUseCase: stashesUseCase, linksUseCase: linksUseCase, articlesUseCase: articlesUseCase)
         return viewController
     }
 }

@@ -27,6 +27,11 @@ class StashesViewController: UIViewController {
         viewModel.getData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
     // MARK: - Functions
     func configurationView() {
         self.navigationItem.title = "STASHES"
@@ -34,6 +39,8 @@ class StashesViewController: UIViewController {
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = .prussianBlue
 
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
@@ -102,6 +109,10 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
             return cell
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.goToDetail(stash: viewModel.stashes[indexPath.row], typesStash: viewModel.typesStash)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

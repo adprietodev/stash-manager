@@ -27,7 +27,7 @@ class StashesBuilder {
         let linksRepository = LinksRepository(remoteDatasource: linksRemoteDatasource, localDatasource: linksLocalDatasource)
         let linksUseCase = LinkUseCase(repository: linksRepository)
 
-        viewController.viewModel = StashesViewModel(roomsUseCase: roomsUseCase, stashesUseCase: stashesUseCase, linksUseCase: linksUseCase)
+        viewController.viewModel = StashesViewModel(router: router, roomsUseCase: roomsUseCase, stashesUseCase: stashesUseCase, linksUseCase: linksUseCase)
         return viewController
     }
 }

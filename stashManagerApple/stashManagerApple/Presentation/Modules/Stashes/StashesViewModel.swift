@@ -12,6 +12,7 @@ class StashesViewModel: StashesViewModelProtocol {
     let roomsUseCase: RoomsUseCaseProtocol
     let stashesUseCase: StashesUseCaseProtocol
     let linksUseCase: LinkUseCaseProtocol
+    let router: StashesRouterProtocol
     var selectedRoom: ContentRoom!
     var stashes = [Stash]()
     var typesStash = [TypeStash]()
@@ -19,10 +20,11 @@ class StashesViewModel: StashesViewModelProtocol {
     var isSelectedRoom = false
     var refreshCollectionView: (() -> Void)?
 
-    init(roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
+    init(router: StashesRouterProtocol, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
         self.roomsUseCase = roomsUseCase
         self.stashesUseCase = stashesUseCase
         self.linksUseCase = linksUseCase
+        self.router = router
     }
 
     func getData() {
@@ -40,5 +42,9 @@ class StashesViewModel: StashesViewModelProtocol {
             } catch {
             }
         }
+    }
+
+    func goToDetail(stash: Stash, typesStash: [TypeStash]) {
+        router.goToDetail(stash: stash, typesStash: typesStash)
     }
 }

@@ -11,7 +11,3 @@ protocol HomeEditViewModelProtocol {
     var room: Room? { get set }
     var typesRoom: [TypeRoom]? { get set }
 }
-
-protocol HomeEditRouterProtocol {
-    
-}

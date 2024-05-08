@@ -16,9 +16,7 @@ class HomeEditBuilder {
         let roomsRepository = RoomsRepository(remoteDatasource: remoteRoomsDatasource, localDatasource: localRoomsDatasource)
         let roomUseCase = RoomsUseCase(repository: roomsRepository)
 
-        let router = HomeEditRouter(viewController: viewController)
-
-        viewController.viewModel = HomeEditViewModel(router: router, roomUseCase: roomUseCase, room: room, typesRoom: typesRoom)
+        viewController.viewModel = HomeEditViewModel(roomUseCase: roomUseCase, room: room, typesRoom: typesRoom)
         return viewController
     }
 }

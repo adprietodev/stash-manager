@@ -15,7 +15,9 @@ protocol StashesViewModelProtocol {
     var contentsRoom: [ContentRoom] { get set}
     var isSelectedRoom: Bool { get set }
     var refreshCollectionView: (() -> Void)? { get set }
+    func goToDetail(stash: Stash, typesStash: [TypeStash])
 }
 
 protocol StashesRouterProtocol {
+    func goToDetail(stash: Stash, typesStash: [TypeStash])
 }

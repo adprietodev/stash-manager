@@ -107,7 +107,6 @@
 		CC6587C32BEA97AB002A33A0 /* HomeEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6587C12BEA97AB002A33A0 /* HomeEditViewController.swift */; };
 		CC6587C42BEA97AB002A33A0 /* HomeEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC6587C22BEA97AB002A33A0 /* HomeEditViewController.xib */; };
 		CC6587C62BEA9814002A33A0 /* HomeEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6587C52BEA9814002A33A0 /* HomeEditViewModel.swift */; };
-		CC6587C82BEA9827002A33A0 /* HomeEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6587C72BEA9827002A33A0 /* HomeEditRouter.swift */; };
 		CC6587CA2BEA9837002A33A0 /* HomeEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6587C92BEA9837002A33A0 /* HomeEditBuilder.swift */; };
 		CC6587CC2BEA9850002A33A0 /* HomeEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6587CB2BEA9850002A33A0 /* HomeEditProtocols.swift */; };
 		CC777EED2BE8C1960055C0FC /* ArticlesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777EEC2BE8C1960055C0FC /* ArticlesProtocols.swift */; };
@@ -140,6 +139,28 @@
 		CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */; };
 		CCBBB15F2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */; };
 		CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */; };
+		CCCD14BE2BEBEBCE003DCBB5 /* StashDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14BC2BEBEBCE003DCBB5 /* StashDetailViewController.swift */; };
+		CCCD14BF2BEBEBCE003DCBB5 /* StashDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCD14BD2BEBEBCE003DCBB5 /* StashDetailViewController.xib */; };
+		CCCD14C22BEBEBE7003DCBB5 /* StashEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14C02BEBEBE7003DCBB5 /* StashEditViewController.swift */; };
+		CCCD14C32BEBEBE7003DCBB5 /* StashEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCD14C12BEBEBE7003DCBB5 /* StashEditViewController.xib */; };
+		CCCD14C82BEBEFD4003DCBB5 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14C62BEBEFD4003DCBB5 /* ArticleDetailViewController.swift */; };
+		CCCD14C92BEBEFD4003DCBB5 /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCD14C72BEBEFD4003DCBB5 /* ArticleDetailViewController.xib */; };
+		CCCD14CC2BEBEFED003DCBB5 /* ArticleEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14CA2BEBEFED003DCBB5 /* ArticleEditViewController.swift */; };
+		CCCD14CD2BEBEFED003DCBB5 /* ArticleEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCCD14CB2BEBEFED003DCBB5 /* ArticleEditViewController.xib */; };
+		CCCD14CF2BEBF500003DCBB5 /* StashDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14CE2BEBF500003DCBB5 /* StashDetailViewModel.swift */; };
+		CCCD14D12BEBF57D003DCBB5 /* StashDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14D02BEBF57D003DCBB5 /* StashDetailRouter.swift */; };
+		CCCD14D32BEBF58D003DCBB5 /* StashDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14D22BEBF58D003DCBB5 /* StashDetailBuilder.swift */; };
+		CCCD14D52BEBF59A003DCBB5 /* StashDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14D42BEBF59A003DCBB5 /* StashDetailProtocol.swift */; };
+		CCCD14D72BEBFCE3003DCBB5 /* StashEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14D62BEBFCE3003DCBB5 /* StashEditBuilder.swift */; };
+		CCCD14D92BEBFCF8003DCBB5 /* StashEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14D82BEBFCF8003DCBB5 /* StashEditViewModel.swift */; };
+		CCCD14DB2BEBFD13003DCBB5 /* StashEditProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14DA2BEBFD13003DCBB5 /* StashEditProtocol.swift */; };
+		CCCD14DD2BEC0B01003DCBB5 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14DC2BEC0B01003DCBB5 /* ArticleDetailViewModel.swift */; };
+		CCCD14DF2BEC0B61003DCBB5 /* ArticleDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14DE2BEC0B61003DCBB5 /* ArticleDetailRouter.swift */; };
+		CCCD14E12BEC0B74003DCBB5 /* ArticleDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14E02BEC0B74003DCBB5 /* ArticleDetailBuilder.swift */; };
+		CCCD14E32BEC0B8F003DCBB5 /* ArticleDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14E22BEC0B8F003DCBB5 /* ArticleDetailProtocols.swift */; };
+		CCCD14E52BEC0E68003DCBB5 /* ArticleEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14E42BEC0E68003DCBB5 /* ArticleEditViewModel.swift */; };
+		CCCD14E92BEC0E8A003DCBB5 /* ArticleEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14E82BEC0E8A003DCBB5 /* ArticleEditBuilder.swift */; };
+		CCCD14EB2BEC0EA9003DCBB5 /* ArticleEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD14EA2BEC0EA9003DCBB5 /* ArticleEditProtocols.swift */; };
 		CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */; };
 		CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD8D89B2BDE52EE008EBDE4 /* AuthenticationDataSource.swift */; };
 		CCD8D89E2BDE5519008EBDE4 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = CCD8D89D2BDE5519008EBDE4 /* Auth */; };
@@ -283,7 +304,6 @@
 		CC6587C12BEA97AB002A33A0 /* HomeEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEditViewController.swift; sourceTree = "<group>"; };
 		CC6587C22BEA97AB002A33A0 /* HomeEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEditViewController.xib; sourceTree = "<group>"; };
 		CC6587C52BEA9814002A33A0 /* HomeEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEditViewModel.swift; sourceTree = "<group>"; };
-		CC6587C72BEA9827002A33A0 /* HomeEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEditRouter.swift; sourceTree = "<group>"; };
 		CC6587C92BEA9837002A33A0 /* HomeEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEditBuilder.swift; sourceTree = "<group>"; };
 		CC6587CB2BEA9850002A33A0 /* HomeEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEditProtocols.swift; sourceTree = "<group>"; };
 		CC777EEC2BE8C1960055C0FC /* ArticlesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesProtocols.swift; sourceTree = "<group>"; };
@@ -316,6 +336,28 @@
 		CCBAF6A32BDCCC2400F4444C /* HomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocols.swift; sourceTree = "<group>"; };
 		CCBBB15E2BE15E2200A889C5 /* UsersLocalDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasourceProtocol.swift; sourceTree = "<group>"; };
 		CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersLocalDatasource.swift; sourceTree = "<group>"; };
+		CCCD14BC2BEBEBCE003DCBB5 /* StashDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDetailViewController.swift; sourceTree = "<group>"; };
+		CCCD14BD2BEBEBCE003DCBB5 /* StashDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StashDetailViewController.xib; sourceTree = "<group>"; };
+		CCCD14C02BEBEBE7003DCBB5 /* StashEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashEditViewController.swift; sourceTree = "<group>"; };
+		CCCD14C12BEBEBE7003DCBB5 /* StashEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StashEditViewController.xib; sourceTree = "<group>"; };
+		CCCD14C62BEBEFD4003DCBB5 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		CCCD14C72BEBEFD4003DCBB5 /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
+		CCCD14CA2BEBEFED003DCBB5 /* ArticleEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEditViewController.swift; sourceTree = "<group>"; };
+		CCCD14CB2BEBEFED003DCBB5 /* ArticleEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleEditViewController.xib; sourceTree = "<group>"; };
+		CCCD14CE2BEBF500003DCBB5 /* StashDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDetailViewModel.swift; sourceTree = "<group>"; };
+		CCCD14D02BEBF57D003DCBB5 /* StashDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDetailRouter.swift; sourceTree = "<group>"; };
+		CCCD14D22BEBF58D003DCBB5 /* StashDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDetailBuilder.swift; sourceTree = "<group>"; };
+		CCCD14D42BEBF59A003DCBB5 /* StashDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashDetailProtocol.swift; sourceTree = "<group>"; };
+		CCCD14D62BEBFCE3003DCBB5 /* StashEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashEditBuilder.swift; sourceTree = "<group>"; };
+		CCCD14D82BEBFCF8003DCBB5 /* StashEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashEditViewModel.swift; sourceTree = "<group>"; };
+		CCCD14DA2BEBFD13003DCBB5 /* StashEditProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StashEditProtocol.swift; sourceTree = "<group>"; };
+		CCCD14DC2BEC0B01003DCBB5 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
+		CCCD14DE2BEC0B61003DCBB5 /* ArticleDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailRouter.swift; sourceTree = "<group>"; };
+		CCCD14E02BEC0B74003DCBB5 /* ArticleDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailBuilder.swift; sourceTree = "<group>"; };
+		CCCD14E22BEC0B8F003DCBB5 /* ArticleDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailProtocols.swift; sourceTree = "<group>"; };
+		CCCD14E42BEC0E68003DCBB5 /* ArticleEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEditViewModel.swift; sourceTree = "<group>"; };
+		CCCD14E82BEC0E8A003DCBB5 /* ArticleEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEditBuilder.swift; sourceTree = "<group>"; };
+		CCCD14EA2BEC0EA9003DCBB5 /* ArticleEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEditProtocols.swift; sourceTree = "<group>"; };
 		CCD8D8982BDE3E72008EBDE4 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CCD8D89B2BDE52EE008EBDE4 /* AuthenticationDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDataSource.swift; sourceTree = "<group>"; };
 		CCD8D8AA2BDE5B75008EBDE4 /* AuthenticationDatasourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationDatasourceProtocol.swift; sourceTree = "<group>"; };
@@ -569,6 +611,8 @@
 		CC14BC902BD982EA00D0F4BC /* Stashes */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD14BB2BEBEBB4003DCBB5 /* Edit */,
+				CCCD14BA2BEBEBAA003DCBB5 /* Detail */,
 				CC4208DC2BE678F200383069 /* Cells */,
 				CC14BCE72BD99E9100D0F4BC /* StashesViewController.swift */,
 				CC14BCE82BD99E9100D0F4BC /* StashesViewController.xib */,
@@ -583,6 +627,8 @@
 		CC14BC912BD982FC00D0F4BC /* Articles */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD14C52BEBEFA5003DCBB5 /* Edit */,
+				CCCD14C42BEBEF9A003DCBB5 /* Detail */,
 				CC777EEE2BE8C4500055C0FC /* Cells */,
 				CC14BCEB2BD99EA100D0F4BC /* ArticlesViewController.swift */,
 				CC14BCEC2BD99EA100D0F4BC /* ArticlesViewController.xib */,
@@ -818,7 +864,6 @@
 				CC6587C12BEA97AB002A33A0 /* HomeEditViewController.swift */,
 				CC6587C22BEA97AB002A33A0 /* HomeEditViewController.xib */,
 				CC6587C52BEA9814002A33A0 /* HomeEditViewModel.swift */,
-				CC6587C72BEA9827002A33A0 /* HomeEditRouter.swift */,
 				CC6587C92BEA9837002A33A0 /* HomeEditBuilder.swift */,
 				CC6587CB2BEA9850002A33A0 /* HomeEditProtocols.swift */,
 			);
@@ -926,6 +971,56 @@
 				CCBBB1602BE15E2F00A889C5 /* UsersLocalDatasource.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		CCCD14BA2BEBEBAA003DCBB5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD14BC2BEBEBCE003DCBB5 /* StashDetailViewController.swift */,
+				CCCD14BD2BEBEBCE003DCBB5 /* StashDetailViewController.xib */,
+				CCCD14CE2BEBF500003DCBB5 /* StashDetailViewModel.swift */,
+				CCCD14D02BEBF57D003DCBB5 /* StashDetailRouter.swift */,
+				CCCD14D22BEBF58D003DCBB5 /* StashDetailBuilder.swift */,
+				CCCD14D42BEBF59A003DCBB5 /* StashDetailProtocol.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CCCD14BB2BEBEBB4003DCBB5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD14C02BEBEBE7003DCBB5 /* StashEditViewController.swift */,
+				CCCD14C12BEBEBE7003DCBB5 /* StashEditViewController.xib */,
+				CCCD14D82BEBFCF8003DCBB5 /* StashEditViewModel.swift */,
+				CCCD14D62BEBFCE3003DCBB5 /* StashEditBuilder.swift */,
+				CCCD14DA2BEBFD13003DCBB5 /* StashEditProtocol.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		CCCD14C42BEBEF9A003DCBB5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD14C62BEBEFD4003DCBB5 /* ArticleDetailViewController.swift */,
+				CCCD14C72BEBEFD4003DCBB5 /* ArticleDetailViewController.xib */,
+				CCCD14DC2BEC0B01003DCBB5 /* ArticleDetailViewModel.swift */,
+				CCCD14DE2BEC0B61003DCBB5 /* ArticleDetailRouter.swift */,
+				CCCD14E02BEC0B74003DCBB5 /* ArticleDetailBuilder.swift */,
+				CCCD14E22BEC0B8F003DCBB5 /* ArticleDetailProtocols.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		CCCD14C52BEBEFA5003DCBB5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD14CA2BEBEFED003DCBB5 /* ArticleEditViewController.swift */,
+				CCCD14CB2BEBEFED003DCBB5 /* ArticleEditViewController.xib */,
+				CCCD14E42BEC0E68003DCBB5 /* ArticleEditViewModel.swift */,
+				CCCD14E82BEC0E8A003DCBB5 /* ArticleEditBuilder.swift */,
+				CCCD14EA2BEC0EA9003DCBB5 /* ArticleEditProtocols.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		CCD8D89A2BDE52CD008EBDE4 /* Authentification */ = {
@@ -1070,11 +1165,14 @@
 			files = (
 				CC193F522BDACA2200CC6676 /* Montserrat-Bold.ttf in Resources */,
 				CC4208E02BE6792500383069 /* TypeStashOrRoomCollectionViewCell.xib in Resources */,
+				CCCD14C92BEBEFD4003DCBB5 /* ArticleDetailViewController.xib in Resources */,
 				CC4208D42BE6498A00383069 /* Roboto-Italic.ttf in Resources */,
 				CC193F542BDACA2200CC6676 /* Montserrat-ExtraBold.ttf in Resources */,
+				CCCD14CD2BEBEFED003DCBB5 /* ArticleEditViewController.xib in Resources */,
 				CC193F592BDACA2300CC6676 /* Montserrat-Light.ttf in Resources */,
 				CC193F572BDACA2200CC6676 /* Montserrat-ExtraLightItalic.ttf in Resources */,
 				CCDB790C2BDBFF4600B551D3 /* CategoriesCollectionViewCell.xib in Resources */,
+				CCCD14C32BEBEBE7003DCBB5 /* StashEditViewController.xib in Resources */,
 				CC193F582BDACA2300CC6676 /* Montserrat-Italic.ttf in Resources */,
 				CC4208D22BE6498A00383069 /* Roboto-Bold.ttf in Resources */,
 				CC193F512BDACA2200CC6676 /* Montserrat-BlackItalic.ttf in Resources */,
@@ -1097,6 +1195,7 @@
 				CC193F532BDACA2200CC6676 /* Montserrat-BoldItalic.ttf in Resources */,
 				CCDB79102BDBFF5D00B551D3 /* RoomsCollectionViewCell.xib in Resources */,
 				CC4208DB2BE6498A00383069 /* Roboto-ThinItalic.ttf in Resources */,
+				CCCD14BF2BEBEBCE003DCBB5 /* StashDetailViewController.xib in Resources */,
 				CC193F632BDACA2300CC6676 /* Montserrat-VariableFont_wght.ttf in Resources */,
 				CC193F622BDACA2300CC6676 /* Montserrat-Italic-VariableFont_wght.ttf in Resources */,
 				CC4208D52BE6498A00383069 /* Roboto-Light.ttf in Resources */,
@@ -1155,10 +1254,15 @@
 				CCBAF6A42BDCCC2400F4444C /* HomeProtocols.swift in Sources */,
 				CC14BCB22BD997EE00D0F4BC /* RoomsRepository.swift in Sources */,
 				CCB2EF652BE4C5630059CA24 /* RoomsLocalDatasource.swift in Sources */,
+				CCCD14CF2BEBF500003DCBB5 /* StashDetailViewModel.swift in Sources */,
 				CC777EFF2BE9679F0055C0FC /* HomeDetailViewModel.swift in Sources */,
 				CC14BCCE2BD99AE300D0F4BC /* StashesUseCase.swift in Sources */,
 				CCD8D8B42BDE5D3F008EBDE4 /* AuthenticationUseCaseProtocol.swift in Sources */,
 				CCB2EF6B2BE4C62C0059CA24 /* StashesLocalDatasource.swift in Sources */,
+				CCCD14DF2BEC0B61003DCBB5 /* ArticleDetailRouter.swift in Sources */,
+				CCCD14EB2BEC0EA9003DCBB5 /* ArticleEditProtocols.swift in Sources */,
+				CCCD14D52BEBF59A003DCBB5 /* StashDetailProtocol.swift in Sources */,
+				CCCD14D72BEBFCE3003DCBB5 /* StashEditBuilder.swift in Sources */,
 				CC14BCD82BD99C6E00D0F4BC /* Stash.swift in Sources */,
 				CC14BCF22BD99EB600D0F4BC /* ProfileViewController.swift in Sources */,
 				CC14BCD22BD99C3C00D0F4BC /* ArticlesUseCase.swift in Sources */,
@@ -1166,6 +1270,7 @@
 				CC193F352BDAC4B600CC6676 /* LoginProtocols.swift in Sources */,
 				CC14BCD42BD99C5000D0F4BC /* User.swift in Sources */,
 				CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */,
+				CCCD14E12BEC0B74003DCBB5 /* ArticleDetailBuilder.swift in Sources */,
 				CCD8D8AD2BDE5BC7008EBDE4 /* AuthenticationRepository.swift in Sources */,
 				CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */,
 				CC777EED2BE8C1960055C0FC /* ArticlesProtocols.swift in Sources */,
@@ -1177,11 +1282,11 @@
 				CC14BCE22BD99E3600D0F4BC /* LoginViewController.swift in Sources */,
 				CC14BCF62BD99F3500D0F4BC /* LoginRouter.swift in Sources */,
 				CCDB790B2BDBFF4600B551D3 /* CategoriesCollectionViewCell.swift in Sources */,
+				CCCD14D32BEBF58D003DCBB5 /* StashDetailBuilder.swift in Sources */,
 				CC14BCAA2BD9970F00D0F4BC /* StashesRemoteDatasourceProtocol.swift in Sources */,
 				CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */,
 				CC14BCAE2BD9973F00D0F4BC /* UsersRemoteDatasourceProtocol.swift in Sources */,
 				CC14BD002BD9A04400D0F4BC /* StashesViewModel.swift in Sources */,
-				CC6587C82BEA9827002A33A0 /* HomeEditRouter.swift in Sources */,
 				CCDB79052BDBFA2400B551D3 /* LinkDTO.swift in Sources */,
 				CCA252872BE219A900CFF515 /* LinkUseCaseProtocol.swift in Sources */,
 				CC6587CC2BEA9850002A33A0 /* HomeEditProtocols.swift in Sources */,
@@ -1197,6 +1302,7 @@
 				CC14BD022BD9A07000D0F4BC /* StashesRouter.swift in Sources */,
 				CC14BCDE2BD99DB000D0F4BC /* TabBarController.swift in Sources */,
 				CC4208E62BE67BF900383069 /* StashesProtocols.swift in Sources */,
+				CCCD14E52BEC0E68003DCBB5 /* ArticleEditViewModel.swift in Sources */,
 				CCD8D8C72BDEBF7B008EBDE4 /* TypeArticle.swift in Sources */,
 				CCDB79072BDBFA8D00B551D3 /* LinksRemoteDatasourceProtocol.swift in Sources */,
 				CC14BC712BD9805400D0F4BC /* SceneDelegate.swift in Sources */,
@@ -1204,12 +1310,14 @@
 				CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */,
 				CC14BCFE2BD99FF400D0F4BC /* HomeBuilder.swift in Sources */,
 				CC14BD102BD9A11B00D0F4BC /* ProfileBuilder.swift in Sources */,
+				CCCD14C22BEBEBE7003DCBB5 /* StashEditViewController.swift in Sources */,
 				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
 				CCD8D8B22BDE5D03008EBDE4 /* AuthenticationUseCase.swift in Sources */,
 				CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */,
 				CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */,
 				CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */,
 				CC14BD0A2BD9A0C500D0F4BC /* ArticlesBuilder.swift in Sources */,
+				CCCD14DD2BEC0B01003DCBB5 /* ArticleDetailViewModel.swift in Sources */,
 				CC193F372BDAC9B100CC6676 /* UIFonts.swift in Sources */,
 				CCB2EF592BE4C3930059CA24 /* ContentStashDTO.swift in Sources */,
 				CC6587CA2BEA9837002A33A0 /* HomeEditBuilder.swift in Sources */,
@@ -1217,7 +1325,9 @@
 				CC14BCB62BD9982300D0F4BC /* ArticlesRepository.swift in Sources */,
 				CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */,
 				CCD8D8C52BDEB3DF008EBDE4 /* SplashBuilder.swift in Sources */,
+				CCCD14D12BEBF57D003DCBB5 /* StashDetailRouter.swift in Sources */,
 				CC777EFC2BE95BD40055C0FC /* HomeDetailViewController.swift in Sources */,
+				CCCD14DB2BEBFD13003DCBB5 /* StashEditProtocol.swift in Sources */,
 				CCDB78FF2BDBF64000B551D3 /* TypesRoomDTO.swift in Sources */,
 				CCDB78F72BDBF3B700B551D3 /* TypeArticleDTO.swift in Sources */,
 				CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */,
@@ -1230,6 +1340,7 @@
 				CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */,
 				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
 				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
+				CCCD14D92BEBFCF8003DCBB5 /* StashEditViewModel.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
 				CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */,
@@ -1238,6 +1349,7 @@
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
 				CC4208DF2BE6792500383069 /* TypeStashOrRoomCollectionViewCell.swift in Sources */,
 				CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */,
+				CCCD14C82BEBEFD4003DCBB5 /* ArticleDetailViewController.swift in Sources */,
 				CCA252802BE214EB00CFF515 /* Link.swift in Sources */,
 				CC14BCBA2BD9989C00D0F4BC /* RoomsRepositoryProtocol.swift in Sources */,
 				CC4208E32BE6793C00383069 /* StashCollectionViewCell.swift in Sources */,
@@ -1250,15 +1362,19 @@
 				CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */,
 				CCD8D8992BDE3E72008EBDE4 /* ImageView.swift in Sources */,
 				CC14BD0E2BD9A0F700D0F4BC /* ProfileRouter.swift in Sources */,
+				CCCD14BE2BEBEBCE003DCBB5 /* StashDetailViewController.swift in Sources */,
 				CC14BD062BD9A09F00D0F4BC /* ArticlesViewModel.swift in Sources */,
 				CC14BCE62BD99E5900D0F4BC /* HomeViewController.swift in Sources */,
 				CCD8D8BC2BDEB16E008EBDE4 /* SplashViewController.swift in Sources */,
+				CCCD14E32BEC0B8F003DCBB5 /* ArticleDetailProtocols.swift in Sources */,
 				CCBBB1612BE15E2F00A889C5 /* UsersLocalDatasource.swift in Sources */,
 				CC14BCA82BD996EE00D0F4BC /* ArticlesDatasourceProtocol.swift in Sources */,
+				CCCD14CC2BEBEFED003DCBB5 /* ArticleEditViewController.swift in Sources */,
 				CCDB790F2BDBFF5D00B551D3 /* RoomsCollectionViewCell.swift in Sources */,
 				CCD8D8CB2BDEBFB3008EBDE4 /* TypeStash.swift in Sources */,
 				CCD8D8C92BDEBFA3008EBDE4 /* TypeRoom.swift in Sources */,
 				CC14BCAC2BD9972800D0F4BC /* RoomsRemoteDatasourceProtocol.swift in Sources */,
+				CCCD14E92BEC0E8A003DCBB5 /* ArticleEditBuilder.swift in Sources */,
 				CCD8D8C32BDEB337008EBDE4 /* SplashRouter.swift in Sources */,
 				CC14BCA62BD996D000D0F4BC /* ArticlesDatasource.swift in Sources */,
 				CCB2EF5F2BE4C4AF0059CA24 /* LinksLocalDatasource.swift in Sources */,

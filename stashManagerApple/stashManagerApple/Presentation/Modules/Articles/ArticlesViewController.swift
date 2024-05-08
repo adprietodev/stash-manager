@@ -28,13 +28,20 @@ class ArticlesViewController: UIViewController {
         setupBindings()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+
     // MARK: - Functions
     func configurationView() {
-        self.navigationItem.title = "ARTICLES"
+        self.navigationItem.title = "ARTICULOS"
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.tintColor = .prussianBlue
 
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
@@ -90,6 +97,15 @@ extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataS
             cell.setupCell(articleName: articleWithStock.article.name, articleStock: articleWithStock.stock, haveArticle: true)
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
+            print(viewModel.userArticles[indexPath.row])
+            viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
+        } else {
+            viewModel.goToDetail(article: viewModel.articlesWithStock[indexPath.row].article, typesArticle: viewModel.typesArticle)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
