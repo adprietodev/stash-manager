@@ -127,6 +127,11 @@
 		CCA2528B2BE2264400CFF515 /* ContentRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528A2BE2264400CFF515 /* ContentRoom.swift */; };
 		CCA2528D2BE2272300CFF515 /* ArticleWithStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */; };
 		CCA2528F2BE2281E00CFF515 /* ContentStash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2528E2BE2281E00CFF515 /* ContentStash.swift */; };
+		CCB197F62BED23BA0097B26E /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB197F42BED23BA0097B26E /* ProfileEditViewController.swift */; };
+		CCB197F72BED23BA0097B26E /* ProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCB197F52BED23BA0097B26E /* ProfileEditViewController.xib */; };
+		CCB197F92BED23E70097B26E /* ProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB197F82BED23E70097B26E /* ProfileEditViewModel.swift */; };
+		CCB197FD2BED24250097B26E /* ProfileEditBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB197FC2BED24250097B26E /* ProfileEditBuilder.swift */; };
+		CCB197FF2BED243C0097B26E /* ProfileEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB197FE2BED243C0097B26E /* ProfileEditProtocols.swift */; };
 		CCB2EF552BE4C3170059CA24 /* ContentRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF542BE4C3170059CA24 /* ContentRoomDTO.swift */; };
 		CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF562BE4C3740059CA24 /* ArticlesWithStockDTO.swift */; };
 		CCB2EF592BE4C3930059CA24 /* ContentStashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB2EF582BE4C3930059CA24 /* ContentStashDTO.swift */; };
@@ -324,6 +329,11 @@
 		CCA2528A2BE2264400CFF515 /* ContentRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRoom.swift; sourceTree = "<group>"; };
 		CCA2528C2BE2272300CFF515 /* ArticleWithStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWithStock.swift; sourceTree = "<group>"; };
 		CCA2528E2BE2281E00CFF515 /* ContentStash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStash.swift; sourceTree = "<group>"; };
+		CCB197F42BED23BA0097B26E /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		CCB197F52BED23BA0097B26E /* ProfileEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditViewController.xib; sourceTree = "<group>"; };
+		CCB197F82BED23E70097B26E /* ProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewModel.swift; sourceTree = "<group>"; };
+		CCB197FC2BED24250097B26E /* ProfileEditBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditBuilder.swift; sourceTree = "<group>"; };
+		CCB197FE2BED243C0097B26E /* ProfileEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditProtocols.swift; sourceTree = "<group>"; };
 		CCB2EF542BE4C3170059CA24 /* ContentRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRoomDTO.swift; sourceTree = "<group>"; };
 		CCB2EF562BE4C3740059CA24 /* ArticlesWithStockDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesWithStockDTO.swift; sourceTree = "<group>"; };
 		CCB2EF582BE4C3930059CA24 /* ContentStashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStashDTO.swift; sourceTree = "<group>"; };
@@ -643,6 +653,7 @@
 		CC14BC922BD9830B00D0F4BC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CCB197F32BED239E0097B26E /* Edit */,
 				CC14BCEF2BD99EB600D0F4BC /* ProfileViewController.swift */,
 				CC14BCF02BD99EB600D0F4BC /* ProfileViewController.xib */,
 				CC14BD0B2BD9A0E900D0F4BC /* ProfileViewModel.swift */,
@@ -899,6 +910,18 @@
 				CCA252882BE219B400CFF515 /* LinkUseCase.swift */,
 			);
 			path = LinksUseCase;
+			sourceTree = "<group>";
+		};
+		CCB197F32BED239E0097B26E /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CCB197F42BED23BA0097B26E /* ProfileEditViewController.swift */,
+				CCB197F52BED23BA0097B26E /* ProfileEditViewController.xib */,
+				CCB197F82BED23E70097B26E /* ProfileEditViewModel.swift */,
+				CCB197FC2BED24250097B26E /* ProfileEditBuilder.swift */,
+				CCB197FE2BED243C0097B26E /* ProfileEditProtocols.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 		CCB2EF5A2BE4C4430059CA24 /* Remote */ = {
@@ -1183,6 +1206,7 @@
 				CC4208D02BE6498A00383069 /* Roboto-Black.ttf in Resources */,
 				CC6587C42BEA97AB002A33A0 /* HomeEditViewController.xib in Resources */,
 				CC4208DA2BE6498A00383069 /* Roboto-Thin.ttf in Resources */,
+				CCB197F72BED23BA0097B26E /* ProfileEditViewController.xib in Resources */,
 				CC777EFD2BE95BD40055C0FC /* HomeDetailViewController.xib in Resources */,
 				CC193F5D2BDACA2300CC6676 /* Montserrat-Regular.ttf in Resources */,
 				CC193F5B2BDACA2300CC6676 /* Montserrat-Medium.ttf in Resources */,
@@ -1313,6 +1337,7 @@
 				CCCD14C22BEBEBE7003DCBB5 /* StashEditViewController.swift in Sources */,
 				CC14BCFC2BD99FD900D0F4BC /* HomeRouter.swift in Sources */,
 				CCD8D8B22BDE5D03008EBDE4 /* AuthenticationUseCase.swift in Sources */,
+				CCB197FD2BED24250097B26E /* ProfileEditBuilder.swift in Sources */,
 				CC14BCC42BD99A2100D0F4BC /* UsersUseCaseProtocol.swift in Sources */,
 				CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */,
 				CCD8D8B82BDEA1AE008EBDE4 /* String.swift in Sources */,
@@ -1333,14 +1358,17 @@
 				CC14BCA42BD996C300D0F4BC /* StashesRemoteDatasource.swift in Sources */,
 				CC777EF82BE948570055C0FC /* ProfileProtocols.swift in Sources */,
 				CC14BCEE2BD99EA100D0F4BC /* ArticlesViewController.swift in Sources */,
+				CCB197F92BED23E70097B26E /* ProfileEditViewModel.swift in Sources */,
 				CC14BCCA2BD99AB800D0F4BC /* RoomsUseCase.swift in Sources */,
 				CCD8D89C2BDE52EE008EBDE4 /* AuthenticationDataSource.swift in Sources */,
 				CCDB78F92BDBF40800B551D3 /* StashDTO.swift in Sources */,
+				CCB197FF2BED243C0097B26E /* ProfileEditProtocols.swift in Sources */,
 				CCDB78FB2BDBF46800B551D3 /* TypeStashDTO.swift in Sources */,
 				CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */,
 				CC14BCBC2BD998B100D0F4BC /* StashesRepositoryProtocol.swift in Sources */,
 				CCD8D8B62BDE9C8B008EBDE4 /* SupabaseConfig.swift in Sources */,
 				CCCD14D92BEBFCF8003DCBB5 /* StashEditViewModel.swift in Sources */,
+				CCB197F62BED23BA0097B26E /* ProfileEditViewController.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
 				CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */,

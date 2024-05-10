@@ -9,11 +9,13 @@ import Foundation
 
 class ProfileViewModel: ProfileViewModelProtocol {
     let userUseCase: UsersUseCaseProtocol
+    let router:  ProfileRouterProtocol
     var user: User!
     var loadView: (() -> Void)?
 
-    init(userUseCase: UsersUseCaseProtocol) {
+    init(router: ProfileRouterProtocol, userUseCase: UsersUseCaseProtocol) {
         self.userUseCase = userUseCase
+        self.router = router
     }
 
     func loadUserData() {
@@ -22,8 +24,11 @@ class ProfileViewModel: ProfileViewModelProtocol {
                 user = try userUseCase.getCurrentUser()
                 loadView?()
             } catch {
-                
             }
         }
+    }
+
+    func goToEditProfile() {
+        router.goToEditProfile(user: user)
     }
 }

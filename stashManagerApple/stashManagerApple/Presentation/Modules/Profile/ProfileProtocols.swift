@@ -11,8 +11,9 @@ protocol ProfileViewModelProtocol {
     var loadView: (() -> Void)? { get set }
     var user: User! { get set }
     func loadUserData()
+    func goToEditProfile()
 }
 
 protocol ProfileRouterProtocol {
-    
+    func goToEditProfile(user: User)
 }

@@ -71,6 +71,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoriesCollectionView {

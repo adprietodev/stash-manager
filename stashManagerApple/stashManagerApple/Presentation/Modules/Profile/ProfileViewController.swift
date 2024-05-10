@@ -35,8 +35,10 @@ class ProfileViewController: UIViewController {
     func configureNavigationBar() {
         self.navigationItem.title = "PROFILE"
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(goToEdit))
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
+        self.navigationController?.navigationBar.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
     }
 
@@ -83,5 +85,9 @@ class ProfileViewController: UIViewController {
             logoutLabel.font = UIFont().robotoBold(with: 18)
             logoutLabel.textColor = .white
         }
+    }
+
+    @objc func goToEdit() {
+        viewModel.goToEditProfile()
     }
 }

@@ -16,7 +16,8 @@ class ProfileBuilder {
         let usersRepository = UsersRepository(remoteDatasource: usersRemoteDatasource, localDatasource: usersLocalDatasource)
         let usersUseCase = UsersUseCase(repository: usersRepository)
 
-        viewController.viewModel = ProfileViewModel(userUseCase: usersUseCase)
+        let router =  ProfileRouter(viewController: viewController)
+        viewController.viewModel = ProfileViewModel(router: router, userUseCase: usersUseCase)
         return viewController
     }
 }

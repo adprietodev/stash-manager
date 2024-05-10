@@ -8,14 +8,16 @@
 import Foundation
 
 class HomeDetailViewModel: HomeDetailViewModelProtocol {
-    var router: HomeDetailRouterProtocol!
+    var router: HomeDetailRouterProtocol
+    var roomsUseCase: RoomsUseCaseProtocol
     var room: Room
     var typesRoom: [TypeRoom]
 
-    init(router: HomeDetailRouterProtocol, room: Room, typesRoom: [TypeRoom]) {
+    init(router: HomeDetailRouterProtocol, roomsUseCase: RoomsUseCase, room: Room, typesRoom: [TypeRoom]) {
         self.router = router
         self.room = room
         self.typesRoom = typesRoom
+        self.roomsUseCase = roomsUseCase
     }
 
     // MARK: - Functions
@@ -23,6 +25,14 @@ class HomeDetailViewModel: HomeDetailViewModelProtocol {
         router.goToEditRoom(room: self.room, typesRoom: self.typesRoom)
     }
 
-    func goToStashesInRoom() {
+    func goToStashesRoom() {
+        Task {
+            do {
+                try roomsUseCase.setSelectedRoom(room)
+            } catch {
+                // TODO: - Error Control
+            }
+        }
+        router.goToStashesRoom()
     }
 }

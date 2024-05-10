@@ -21,7 +21,7 @@ class HomeDetailViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: HomeDetailViewModelProtocol!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationView()
@@ -35,6 +35,7 @@ class HomeDetailViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func goToStashesInRoom(_ sender: Any) {
+        viewModel.goToStashesRoom()
     }
 
     @IBAction func goToArticlesInRoom(_ sender: Any) {

@@ -13,4 +13,9 @@ class ProfileRouter: ProfileRouterProtocol {
     init(viewController: ProfileViewController) {
         self.viewController = viewController
     }
+
+    func goToEditProfile(user: User) {
+        let profileEditViewController = ProfileEditBuilder().build(user)
+        viewController.navigationController?.pushViewController(profileEditViewController, animated: true)
+    }
 }
