@@ -24,7 +24,7 @@ class HomeViewModel: HomeViewModelProtocol {
         self.router = router
     }
 
-    func getTypesRoom() {
+    func getRoomsAndTypesRoom() {
         Task {
             typesRoom = try await roomsUseCase.getTypesRoom()
             guard let contentRooms = try linksUseCase.getLocalContentRooms() else { return }
@@ -36,5 +36,9 @@ class HomeViewModel: HomeViewModelProtocol {
 
     func goToRoomDetail(room: Room, typesRoom: [TypeRoom]) {
         router.goToRoomDetail(room: room, typesRoom: typesRoom)
+    }
+
+    func removeSelectedRoom() {
+        roomsUseCase.removeSelectedRoom()
     }
 }

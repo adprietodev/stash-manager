@@ -14,7 +14,7 @@ class HomeDetailBuilder {
         let roomsLocalDataSource = RoomsLocalDatasource()
         let roomsRemoteDataSource = RoomsRemoteDatasource()
         let roomsRepository = RoomsRepository(remoteDatasource: roomsRemoteDataSource, localDatasource: roomsLocalDataSource)
-        let roomsUseCase = UsersUseCase(repository: roomsRepository)
+        let roomsUseCase = RoomsUseCase(repository: roomsRepository)
 
         let router = HomeDetailRouter(viewController: viewController)
         viewController.viewModel = HomeDetailViewModel(router: router, roomsUseCase: roomsUseCase, room: room, typesRoom: typesRoom)

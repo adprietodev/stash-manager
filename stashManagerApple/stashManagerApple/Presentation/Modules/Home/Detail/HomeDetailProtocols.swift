@@ -12,9 +12,11 @@ protocol HomeDetailViewModelProtocol {
     var typesRoom: [TypeRoom] { get set }
     func goToEditRoom()
     func goToStashesRoom()
+    func goToArticlesInRoom() 
 }
 
 protocol HomeDetailRouterProtocol {
     func goToEditRoom(room: Room, typesRoom: [TypeRoom])
     func goToStashesRoom()
+    func goToArticlesInRoom()
 }

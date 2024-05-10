@@ -24,12 +24,13 @@ class HomeViewController: UIViewController {
         configurationView()
         configurationCategoriesCollectionView()
         configurationRoomsCollectionView()
-        viewModel.getTypesRoom()
-        setupBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.removeSelectedRoom()
+        viewModel.getRoomsAndTypesRoom()
+        setupBindings()
         self.tabBarController?.tabBar.isHidden = false
     }
 

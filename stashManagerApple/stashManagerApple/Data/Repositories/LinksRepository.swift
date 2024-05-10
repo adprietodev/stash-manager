@@ -102,7 +102,8 @@ fileprivate extension StashDTO {
               name: self.name,
               description: self.description ?? "",
               base64image: self.base64image ?? "",
-              idTypeStash: self.idTypeStash)
+              idTypeStash: self.idTypeStash,
+              idRoom: 0)
     }
 }
 

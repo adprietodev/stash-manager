@@ -8,7 +8,7 @@
 import Foundation
 
 class ContentStash {
-    let stash: Stash
+    var stash: Stash
     var articles: [ArticleWithStock]
 
     init(stash: Stash, articles: [ArticleWithStock]) {

@@ -33,7 +33,7 @@ class LinkUseCase: LinkUseCaseProtocol {
         try repository.setContentRoom(contentRoom)
     }
 
-    func removeContentRooms(){
+    func removeContentRooms() {
         repository.removeContentRoom()
     }
 
@@ -78,7 +78,8 @@ class LinkUseCase: LinkUseCaseProtocol {
                     if let existingContentStash = existingContentRoom.stashes.first(where: { $0.stash.id == stashID }) {
                         existingContentStash.articles.append(articleWithStock)
                     } else {
-                        let newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                        var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                        newContentStash.stash.idRoom = roomID
                         existingContentRoom.stashes.append(newContentStash)
                     }
                 } else {
@@ -87,7 +88,8 @@ class LinkUseCase: LinkUseCaseProtocol {
             } else {
                 var contentStashes = [ContentStash]()
                 if let stash = stash {
-                    let newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                    var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                    newContentStash.stash.idRoom = roomID
                     contentStashes.append(newContentStash)
                 } else {
                     let newContentRoom = ContentRoom(room: room, stashes: contentStashes, articles: [articleWithStock])

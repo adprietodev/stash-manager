@@ -22,15 +22,31 @@ class ArticlesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getData()
         configurationView()
         configurationArticlesCollectionView()
-        setupBindings()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        collectionSegmentControl.selectedSegmentIndex = viewModel.currentSegmentSelected
+        viewModel.getData()
+        setupBindings()
+        viewModel.goingIntoDetailOrEdit = false
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        if !viewModel.goingIntoDetailOrEdit {
+            viewModel.clearSelectedRoomAndStash()
+            viewModel.showAllArticles = false
+        }
+    }
+
+    // MARK: - IBActions
+    @IBAction func changeContainer(_ sender: Any) {
+        viewModel.showAllArticles  = collectionSegmentControl.selectedSegmentIndex == 1 ? true : false
+        viewModel.currentSegmentSelected = collectionSegmentControl.selectedSegmentIndex
+        viewModel.getData()
     }
 
     // MARK: - Functions
@@ -80,10 +96,11 @@ class ArticlesViewController: UIViewController {
 
 extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
+        if !viewModel.isSelectedRoom, !viewModel.isSelectedStash{
             return viewModel.userArticles.count
         } else {
-            return viewModel.articlesWithStock.count
+            let count = viewModel.showAllArticles ? viewModel.userArticles.count : viewModel.articlesWithStock.count
+            return count
         }
     }
 
@@ -91,20 +108,28 @@ extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataS
         let cell = articlesCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
         if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
             let article = viewModel.userArticles[indexPath.row]
-            cell.setupCell(articleName: article.name, articleStock: 0, haveArticle: false)
+            cell.setupCell(article: article, delegate: viewModel as! ArticleDelegate, articleStock: 0, haveArticle: false)
         } else {
-            let articleWithStock = viewModel.articlesWithStock[indexPath.row]
-            cell.setupCell(articleName: articleWithStock.article.name, articleStock: articleWithStock.stock, haveArticle: true)
+            if viewModel.showAllArticles {
+                let article = viewModel.userArticles[indexPath.row]
+                cell.setupCell(article: article, delegate: viewModel as! ArticleDelegate, articleStock: 0, haveArticle: false)
+            } else {
+                let articleWithStock = viewModel.articlesWithStock[indexPath.row]
+                cell.setupCell(article: articleWithStock.article, delegate: viewModel as! ArticleDelegate, articleStock: articleWithStock.stock, haveArticle: true)
+            }
         }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
-            print(viewModel.userArticles[indexPath.row])
             viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
         } else {
-            viewModel.goToDetail(article: viewModel.articlesWithStock[indexPath.row].article, typesArticle: viewModel.typesArticle)
+            if viewModel.showAllArticles {
+                viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
+            } else {
+                viewModel.goToDetail(article: viewModel.articlesWithStock[indexPath.row].article, typesArticle: viewModel.typesArticle)
+            } 
         }
     }
 

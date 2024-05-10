@@ -26,13 +26,20 @@ class HomeDetailViewModel: HomeDetailViewModelProtocol {
     }
 
     func goToStashesRoom() {
-        Task {
-            do {
-                try roomsUseCase.setSelectedRoom(room)
-            } catch {
-                // TODO: - Error Control
-            }
+        do {
+            try roomsUseCase.setSelectedRoom(room)
+            router.goToStashesRoom()
+        } catch {
+            // TODO: - Error Control
         }
-        router.goToStashesRoom()
+    }
+
+    func goToArticlesInRoom() {
+        do {
+            try roomsUseCase.setSelectedRoom(room)
+            router.goToArticlesInRoom()
+        } catch {
+            
+        }
     }
 }

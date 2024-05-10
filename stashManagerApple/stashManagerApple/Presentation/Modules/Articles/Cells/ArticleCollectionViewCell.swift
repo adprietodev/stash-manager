@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ArticleDelegate {
+    func goToEditArticle(_ article: Article)
+}
+
 class ArticleCollectionViewCell: UICollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var articleNameLabel: UILabel!
@@ -16,13 +20,16 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var removeArticleImageView: UIImageView!
 
     // MARK: - Properties
+    var delegate: ArticleDelegate?
     var haveArticle: Bool = false
+    var article: Article!
 
     // MARK: - IBActions
     @IBAction func addOrRemoveStock(_ sender: Any) {
     }
 
     @IBAction func goToEditArticle(_ sender: Any) {
+        delegate?.goToEditArticle(article)
     }
 
     @IBAction func removeArticle(_ sender: Any) {
@@ -34,8 +41,10 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     }
 
     // MARK: - Functions
-    func setupCell(articleName: String, articleStock: Int, haveArticle: Bool) {
-        articleNameLabel.text = articleName
+    func setupCell(article: Article, delegate: ArticleDelegate, articleStock: Int, haveArticle: Bool) {
+        self.delegate = delegate
+        self.article = article
+        articleNameLabel.text = article.name
         articleNameLabel.font = UIFont().robotoRegular(with: 12)
         articleNameLabel.textColor = .prussianBlue
         articleStockLabel.text = "\(articleStock)"

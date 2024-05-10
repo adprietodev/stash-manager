@@ -39,6 +39,7 @@ class HomeDetailViewController: UIViewController {
     }
 
     @IBAction func goToArticlesInRoom(_ sender: Any) {
+        viewModel.goToArticlesInRoom()
     }
 
     // MARK: - Functions

@@ -37,7 +37,7 @@ class StashEditViewController: UIViewController {
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     func configureView() {
         if viewModel.stash.base64image == "" {
             stashImageView.image =  UIImage(named: "placeholder-stash")

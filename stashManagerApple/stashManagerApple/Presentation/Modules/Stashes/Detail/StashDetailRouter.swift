@@ -18,4 +18,16 @@ class StashDetailRouter: StashDetailRouterProtocol {
         let stashEditViewController = StashEditBuilder().build(stash: stash, typesStash: typesStash)
         viewController.navigationController?.pushViewController(stashEditViewController, animated: true)
     }
+
+    func goToArticleInStash() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            if let tabBarController = viewController.tabBarController {
+                tabBarController.selectedIndex = 2
+            }
+            if let navigationController = viewController.navigationController {
+                navigationController.popToRootViewController(animated: false)
+            }
+        }
+    }
 }

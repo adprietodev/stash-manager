@@ -29,8 +29,19 @@ class StashDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        viewModel.isGoingToArticle = false
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.removeSelectedStash()
+    }
+
+    // MARK: - IBActions
+    @IBAction func goToArticlesInStash(_ sender: Any) {
+        viewModel.goToArticleInStash()
+    }
+    
     // MARK: - Funtions
     func configureView() {
         let stash = self.viewModel.stash

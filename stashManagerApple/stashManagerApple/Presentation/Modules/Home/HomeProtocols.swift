@@ -11,8 +11,9 @@ protocol HomeViewModelProtocol {
     var rooms: [ContentRoom] { get set}
     var typesRoom: [TypeRoom] { get set}
     var refreshCollectionView: (() -> Void)? { get set}
-    func getTypesRoom()
+    func getRoomsAndTypesRoom()
     func goToRoomDetail(room: Room, typesRoom: [TypeRoom])
+    func removeSelectedRoom()
 }
 
 protocol HomeRouterProtocol {

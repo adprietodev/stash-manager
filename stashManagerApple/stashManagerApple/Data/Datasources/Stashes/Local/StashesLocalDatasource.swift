@@ -10,7 +10,7 @@ import Foundation
 class StashesLocalDatasource: StashesLocalDatasourceProtocol {
     // MARK: - Functions
     func getSelectedStash() throws -> StashDTO? {
-        if let data = UserDefaults.standard.data(forKey: "selectedRoom") {
+        if let data = UserDefaults.standard.data(forKey: "selectedStash") {
             let decoder = JSONDecoder()
             return try decoder.decode(StashDTO.self, from: data)
         }

@@ -14,8 +14,8 @@ class StashesRouter: StashesRouterProtocol {
         self.viewController = viewController
     }
 
-    func goToDetail(stash: Stash, typesStash: [TypeStash]) {
-        let stashDetailViewController = StashDetailBuilder().build(stash: stash, typesStash: typesStash)
+    func goToDetail(room: Room, stash: Stash, typesStash: [TypeStash]) {
+        let stashDetailViewController = StashDetailBuilder().build(room: room, stash: stash, typesStash: typesStash)
         viewController.navigationController?.pushViewController(stashDetailViewController, animated: true)
     }
 }

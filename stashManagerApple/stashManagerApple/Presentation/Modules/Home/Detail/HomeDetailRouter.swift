@@ -20,11 +20,26 @@ class HomeDetailRouter: HomeDetailRouterProtocol {
     }
 
     func goToStashesRoom() {
-        if let tabBarController = viewController.tabBarController {
-            tabBarController.selectedIndex = 1
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            if let tabBarController = viewController.tabBarController {
+                tabBarController.selectedIndex = 1
+            }
+            if let navigationController = viewController.navigationController {
+                navigationController.popToRootViewController(animated: false)
+            }
         }
-        if let navigationController = viewController.navigationController {
-            navigationController.popToRootViewController(animated: false)
+    }
+
+    func goToArticlesInRoom() {
+        DispatchQueue.main.async { [ weak self] in
+            guard let self else { return }
+            if let tabBarController = viewController.tabBarController {
+                tabBarController.selectedIndex = 2
+            }
+            if let navigationController = viewController.navigationController {
+                navigationController.popToRootViewController(animated: false)
+            }
         }
     }
 }

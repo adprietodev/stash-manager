@@ -22,7 +22,10 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     var typesArticle: [TypeArticle]!
     var isSelectedRoom: Bool = false
     var isSelectedStash: Bool = false
+    var showAllArticles: Bool = false
+    var goingIntoDetailOrEdit: Bool = false
     var refreshCollectionView: (() -> Void)?
+    var currentSegmentSelected: Int = 0
 
     init(router: ArticlesRouterProtocol, usersUseCase: UsersUseCase, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol, articlesUseCase: ArticlesUseCaseProtocol) {
         self.usersUseCase = usersUseCase
@@ -38,18 +41,26 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
         Task {
             do {
                 let contentsRoom = try linksUseCase.getLocalContentRooms()!
-                if let room = try roomsUseCase.getSelectedRoom() {
-                    isSelectedRoom = true
-                    selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first
-                    articlesWithStock = selectedRoom.articles
-                    if let stash = try stashesUseCase.getSelectedStash() {
-                        isSelectedStash = true
-                        selectedStash = selectedRoom.stashes.filter { $0.stash.id == stash.id }.first
-                        articlesWithStock = selectedStash.articles
-                    }
-                } else {
+                if showAllArticles {
                     let currentUser = try usersUseCase.getCurrentUser()
                     userArticles = try await articleUseCase.getArticles(at: currentUser.id)
+                } else {
+                    isSelectedRoom = false
+                    isSelectedStash = false
+                    if let room = try roomsUseCase.getSelectedRoom() {
+                        isSelectedRoom = true
+                        selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first
+                        articlesWithStock = selectedRoom.articles
+                        if let stash = try stashesUseCase.getSelectedStash() {
+                            isSelectedStash = true
+                            selectedStash = selectedRoom.stashes.filter { $0.stash.id == stash.id }.first
+                            articlesWithStock = selectedStash.articles
+                        }
+                    } else {
+                        showAllArticles = true
+                        let currentUser = try usersUseCase.getCurrentUser()
+                        userArticles = try await articleUseCase.getArticles(at: currentUser.id)
+                    }
                 }
                 typesArticle = try await articleUseCase.getTypesArticle()
                 refreshCollectionView?()
@@ -60,6 +71,19 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     }
 
     func goToDetail(article: Article, typesArticle: [TypeArticle]) {
+        goingIntoDetailOrEdit = true
         router.goToDetail(article: article , typesArticle: typesArticle)
+    }
+
+    func clearSelectedRoomAndStash() {
+        roomsUseCase.removeSelectedRoom()
+        stashesUseCase.removeSelectedStash()
+    }
+}
+
+extension ArticlesViewModel: ArticleDelegate {
+    func goToEditArticle(_ article: Article) {
+        goingIntoDetailOrEdit = true
+        router.goToEditArticle(article, typesArticle: typesArticle)
     }
 }

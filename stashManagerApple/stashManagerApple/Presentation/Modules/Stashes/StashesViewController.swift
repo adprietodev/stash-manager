@@ -23,13 +23,17 @@ class StashesViewController: UIViewController {
         configurationView()
         configurationTypeStashOrRoomCollectionView()
         configurationStashesCollectionView()
-        setupBindings()
-        viewModel.getData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        setupBindings()
+        viewModel.getData()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        viewModel.checkSelectedStash()
     }
 
     // MARK: - Functions
@@ -112,7 +116,7 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.goToDetail(stash: viewModel.stashes[indexPath.row], typesStash: viewModel.typesStash)
+        viewModel.goToDetail(stash: viewModel.stashes[indexPath.row])
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -18,4 +18,9 @@ class ArticlesRouter: ArticlesRouterProtocol {
         let articleDetailViewController = ArticleDetailBuilder().build(article: article, typesArticle: typesArticle)
         viewController.navigationController?.pushViewController(articleDetailViewController, animated: true)
     }
+
+    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle]) {
+        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle)
+        viewController.navigationController?.pushViewController(articleEditViewController, animated: true)
+    }
 }

@@ -10,6 +10,7 @@ import Foundation
 protocol StashDetailViewModelProtocol {
     var stash: Stash { get set }
     var typesStash: [TypeStash] { get set }
+    var isGoingToArticle: Bool { get set }
     func goToEditStash()
 }
 
