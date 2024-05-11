@@ -9,7 +9,7 @@ import Foundation
 
 protocol StashesViewModelProtocol {
     func getData()
-    var selectedRoom: ContentRoom! { get set }
+    var selectedRoom: ContentRoom? { get set }
     var stashes : [Stash] { get set }
     var typesStash: [TypeStash] { get set}
     var contentsRoom: [ContentRoom] { get set}

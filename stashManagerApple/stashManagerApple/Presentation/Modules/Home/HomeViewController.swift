@@ -34,6 +34,12 @@ class HomeViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
 
+    // MARK: - IBActions
+    @IBAction func filterRoom(_ sender: Any) {
+        viewModel.isFiltering = viewModel.isFilterRoom(by: searchTextField.text ?? "")
+        roomsCollectionView.reloadData()
+    }
+
     // MARK: - Functions
     func configurationView() {
         self.navigationItem.title = "HOME"
@@ -78,7 +84,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == categoriesCollectionView {
             return viewModel.typesRoom.count
         } else {
-            return viewModel.rooms.count
+            let roomCount = viewModel.isFiltering ? viewModel.filteredRooms.count : viewModel.rooms.count
+            return roomCount
         }
     }
 
@@ -90,15 +97,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         } else {
             let cell = roomsCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomsCollectionViewCell", for: indexPath) as! RoomsCollectionViewCell
-            let rooms =  viewModel.rooms[indexPath.row].room
-            cell.setupCell(at: rooms.name, with: rooms.base64image)
+            let room = viewModel.isFiltering ? viewModel.filteredRooms[indexPath.row] : viewModel.rooms[indexPath.row]
+            cell.setupCell(at: room.name, with: room.base64image)
             return cell
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let room = viewModel.rooms[indexPath.row].room
-        viewModel.goToRoomDetail(room: room, typesRoom: viewModel.typesRoom)
+        let room = viewModel.isFiltering ? viewModel.filteredRooms[indexPath.row] : viewModel.rooms[indexPath.row]
+        viewModel.goToRoomDetail(room: room)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

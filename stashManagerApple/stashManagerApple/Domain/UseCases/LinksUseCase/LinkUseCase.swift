@@ -22,7 +22,9 @@ class LinkUseCase: LinkUseCaseProtocol {
             guard let link = try await repository.getRemoteLink(at: roomId) else { continue }
             links += link
         }
-        return createContentRooms(links: links, rooms: rooms, stashes: stashes, articles: articles)
+        var contentRoom = createContentRooms(links: links, rooms: rooms, stashes: stashes, articles: articles)
+        try repository.setContentRoom(contentRoom)
+        return contentRoom
     }
 
     func getLocalContentRooms() throws -> [ContentRoom]? {
@@ -69,6 +71,7 @@ class LinkUseCase: LinkUseCaseProtocol {
             var stash: Stash?
             if let stashID = stashID {
                 stash = stashesDict[stashID]
+                stash?.idRoom = roomID
             }
 
             let articleWithStock = ArticleWithStock(article: article, stock: stockArticle)
@@ -79,7 +82,6 @@ class LinkUseCase: LinkUseCaseProtocol {
                         existingContentStash.articles.append(articleWithStock)
                     } else {
                         var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
-                        newContentStash.stash.idRoom = roomID
                         existingContentRoom.stashes.append(newContentStash)
                     }
                 } else {
@@ -89,7 +91,6 @@ class LinkUseCase: LinkUseCaseProtocol {
                 var contentStashes = [ContentStash]()
                 if let stash = stash {
                     var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
-                    newContentStash.stash.idRoom = roomID
                     contentStashes.append(newContentStash)
                 } else {
                     let newContentRoom = ContentRoom(room: room, stashes: contentStashes, articles: [articleWithStock])

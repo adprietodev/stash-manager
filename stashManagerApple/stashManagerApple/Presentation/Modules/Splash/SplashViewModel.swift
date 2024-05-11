@@ -38,7 +38,6 @@ class SplashViewModel: SplashViewModelProtocol {
                 let roomsIDs = roomsUser.map { $0.id }
                 let rooms = try await linksUseCase.getContentRooms(with: roomsIDs, of: roomsUser, of: stashes, at: articlesUser)
                 try userUseCase.setCurrentUser(user)
-                try linksUseCase.setContentRooms(rooms)
                 roomsUseCase.removeSelectedRoom()
                 stashesUseCase.removeSelectedStash()
                 finishLoad?()

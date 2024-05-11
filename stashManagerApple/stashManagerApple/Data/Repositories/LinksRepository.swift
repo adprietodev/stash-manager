@@ -102,18 +102,18 @@ fileprivate extension StashDTO {
               name: self.name,
               description: self.description ?? "",
               base64image: self.base64image ?? "",
-              idTypeStash: self.idTypeStash,
-              idRoom: 0)
+              idTypeStash: self.idTypeStash, idRoom: self.idRoom)
     }
 }
 
 fileprivate extension Stash {
     func toDTO() -> StashDTO {
         StashDTO(id: self.id,
-              name: self.name,
-              description: self.description,
-              base64image: self.base64image,
-              idTypeStash: self.idTypeStash)
+                 name: self.name,
+                 description: self.description,
+                 base64image: self.base64image,
+                 idTypeStash: self.idTypeStash,
+                 idRoom: self.idRoom)
     }
 }
 

@@ -8,12 +8,13 @@
 import Foundation
 
 class StashesViewModel: StashesViewModelProtocol {
+    
     // MARK: - Properties
     let roomsUseCase: RoomsUseCaseProtocol
     let stashesUseCase: StashesUseCaseProtocol
     let linksUseCase: LinkUseCaseProtocol
     let router: StashesRouterProtocol
-    var selectedRoom: ContentRoom!
+    var selectedRoom: ContentRoom?
     var stashes = [Stash]()
     var typesStash = [TypeStash]()
     var contentsRoom = [ContentRoom]()
@@ -31,14 +32,18 @@ class StashesViewModel: StashesViewModelProtocol {
         isSelectedRoom = false
         Task {
             do {
-                contentsRoom = try linksUseCase.getLocalContentRooms()!
+                contentsRoom = try linksUseCase.getLocalContentRooms() ?? []
                 typesStash = try await stashesUseCase.getTypesStash()
                 if let room = try roomsUseCase.getSelectedRoom() {
                     selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first
-                    stashes = selectedRoom.stashes.map { $0.stash }
+                    stashes = selectedRoom!.stashes.map { $0.stash }
                     isSelectedRoom = true
                 } else {
-                    stashes = try await stashesUseCase.getStashes()
+                    stashes = [Stash]()
+                    for room in contentsRoom {
+                        stashes += room.stashes.map { $0.stash }
+                        let roomsAssigned = room.stashes.map { $0.stash.idRoom }
+                    }
                 }
                 refreshCollectionView?()
             } catch {
@@ -47,7 +52,7 @@ class StashesViewModel: StashesViewModelProtocol {
     }
 
     func goToDetail(stash: Stash) {
-        let room = selectedRoom.room
+        guard let room = selectedRoom?.room ?? contentsRoom.first(where: { $0.room.id == stash.idRoom ?? 0 })?.room else {return}
         router.goToDetail(room: room, stash: stash, typesStash: typesStash)
     }
 

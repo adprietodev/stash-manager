@@ -13,4 +13,5 @@ struct StashDTO: Codable {
     let description: String?
     let base64image: String?
     let idTypeStash: Int
+    let idRoom: Int?
 }

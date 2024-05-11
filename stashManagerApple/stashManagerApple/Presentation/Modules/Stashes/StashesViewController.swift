@@ -84,7 +84,7 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
             }
         } else {
             if viewModel.isSelectedRoom {
-                viewModel.selectedRoom.stashes.count
+                viewModel.selectedRoom!.stashes.count
             } else {
                 viewModel.stashes.count
             }
@@ -103,8 +103,8 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
         } else {
             let cell = stashesCollectionView.dequeueReusableCell(withReuseIdentifier: "StashCollectionViewCell", for: indexPath) as! StashCollectionViewCell
             if viewModel.isSelectedRoom {
-                let stashName = viewModel.selectedRoom.stashes[indexPath.row].stash.name
-                let stashImage = viewModel.selectedRoom.stashes[indexPath.row].stash.base64image
+                let stashName = viewModel.selectedRoom!.stashes[indexPath.row].stash.name
+                let stashImage = viewModel.selectedRoom!.stashes[indexPath.row].stash.base64image
                 cell.setupCell(at: stashName, with: stashImage)
             } else {
                 let stashName = viewModel.stashes[indexPath.row].name

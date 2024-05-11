@@ -20,6 +20,7 @@ class LinksLocalDatasource: LinksLocalDatasourceProtocol {
     func setContentRoom(_ contentRoomDTO: [ContentRoomDTO]) throws {
         let encoder = JSONEncoder()
         let data = try encoder.encode(contentRoomDTO)
+
         UserDefaults.standard.set(data, forKey: "contentRoom")
     }
 
