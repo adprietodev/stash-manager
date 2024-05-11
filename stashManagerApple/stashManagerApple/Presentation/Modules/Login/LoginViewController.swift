@@ -20,11 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var linePasswordView: UIView!
     @IBOutlet weak var errorEmailLabel: UILabel!
-    
     @IBOutlet weak var signinButton: UIButton!
-    @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
-    @IBOutlet weak var forgotPasswordLabel: UILabel!
     @IBOutlet weak var signinLabel: UILabel!
     @IBOutlet weak var registerLabel: UILabel!
     @IBOutlet weak var signinView: UIView!
@@ -52,7 +49,7 @@ class LoginViewController: UIViewController {
         } else {
             loginErrorView.isHidden = true
             errorEmailLabel.isHidden = email.isValidMail()
-            errorEmailLabel.text = email.isValidMail() ? "" : "Email no válido"
+            errorEmailLabel.text = email.isValidMail() ? "" : "invalid_email".localized
             lineEmailView.backgroundColor = email.isValidMail() ? .blueGreen : .red
             linePasswordView.backgroundColor = password.isValidPassword() ? .blueGreen : .red
         }
@@ -67,17 +64,18 @@ class LoginViewController: UIViewController {
     func configurationView() {
         titleLogoLabel.font = UIFont().robotoBold(with: 16)
         titleLogoLabel.textColor = .prussianBlue
+        emailTitleLabel.text = "email".localized
         emailTitleLabel.font = UIFont().robotoRegular(with: 12)
         emailTextField.font = UIFont().robotoRegular(with: 16)
+        passwordTitleLabel.text = "password".localized
         passwordTitleLabel.font = UIFont().robotoRegular(with: 12)
         passwordTextField.font = UIFont().robotoRegular(with: 16)
-        forgotPasswordLabel.font = UIFont().robotoRegular(with: 12)
-        forgotPasswordLabel.textColor = .blueGreen
+        registerLabel.text = "ask_registered".localized
         registerLabel.font = UIFont().robotoRegular(with: 12)
         registerLabel.textColor = .blueGreen
         signinView.layer.cornerRadius = 6
         signinLabel.font = UIFont().robotoBold(with: 14)
-        signinLabel.text = "Iniciar sesión"
+        signinLabel.text = "login".localized
         errorEmailLabel.textColor = .red
         errorEmailLabel.font = UIFont().robotoRegular(with: 12)
         eyeImageView.tintColor = .prussianBlue
@@ -91,7 +89,7 @@ class LoginViewController: UIViewController {
                 loginErrorView.isHidden = false
                 loginErrorLabel.textColor = .red
                 loginErrorLabel.font = UIFont().robotoRegular(with: 12)
-                loginErrorLabel.text = "Error de acceso por favor intentelo de nuevo"
+                loginErrorLabel.text = "login_error".localized
             }
         }
     }

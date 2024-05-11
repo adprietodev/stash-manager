@@ -39,7 +39,6 @@ class HomeDetailViewModel: HomeDetailViewModelProtocol {
             try roomsUseCase.setSelectedRoom(room)
             router.goToArticlesInRoom()
         } catch {
-            
         }
     }
 }

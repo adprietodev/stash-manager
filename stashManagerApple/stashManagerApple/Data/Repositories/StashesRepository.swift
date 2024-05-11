@@ -52,7 +52,7 @@ fileprivate extension StashDTO {
 
 fileprivate extension TypeStashDTO {
     func toDomain() -> TypeStash {
-        TypeStash(id: self.id, name: self.name)
+        TypeStash(id: self.id, name: TypesStash(rawValue: self.name) ?? .none)
     }
 }
 

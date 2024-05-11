@@ -1,0 +1,80 @@
+/* 
+  Localizable.strings
+  StashManagerApple
+
+  Created by Adrian Prieto Villena on 11/5/24.
+  
+*/
+// MARK: - Attributes
+"name" = "Nombre";
+"lastname" = "Apellidos";
+"email" = "Correo electrónico";
+"password" = "Contraseña";
+"ask_registered" = "¿Aún no estás registrado?";
+"login" = "Iniciar sesión";
+"search" = "Buscar";
+"home" = "Inicio";
+"articles" = "Artículos";
+"article" = "Artículo";
+"profile" = "Perfil";
+"description" = "Descripción";
+"type" = "Tipo";
+"in_the_room" = "En la habitación";
+"invalid_email" = "Email no válido";
+"login_error" = "Error de acceso por favor intentelo de nuevo";
+"room" = "Habitación";
+"cancel" = "Cancelar";
+"save" = "Guardar";
+"delete_account" = "Eliminar cuenta";
+"logout" = "Cerrar sessión";
+"edit_or_change_photo" = "Editar o cambiar de foto";
+"none" = "Ninguno asignado";
+"done" = "Hecho";
+
+// MARK: - Types Article
+"electronics" = "Electrónica";
+"clothing" = "Ropa";
+"food" = "Comida";
+"books" = "Libros";
+"home_type" = "Hogar";
+"toys" = "Juguetes";
+"furniture" = "Muebles";
+"sporting_goods" = "Artículos deportivos";
+"cosmetics" = "Cosméticos";
+"tools" = "Herramientas";
+"DIY_tools" = "Herramientas de bricolaje";
+"spices_condiments" = "Especias y condimentos";
+
+// MARK: - Types Stash
+"closet" = "Armario";
+"chest_of_drawers" = "Cómoda";
+"cabinet" = "Gabinete";
+"shelving_unit_with_doors" = "Estantería con puertas";
+"trunk" = "Baúl";
+"storage_cabinet_with_baskets" = "Armario con cestas";
+"storage_cabinet_with_drawers" = "Armario con cajones";
+"mirrored_wardrobe" = "Armario con espejo";
+"shoe_storage_cabinet" = "Armario para zapatos";
+"coffee_table_with_storage" = "Mesa de café con almacenamiento";
+"display_cabinet" = "Vitrina";
+"TV_stand_with_storage" = "Mueble para TV con almacenamiento";
+"storage_tower" = "Torre de almacenamiento";
+"built-in_wardrobe" = "Armario empotrado";
+"console_table_with_drawers" = "Consola con cajones";
+"kitchen_cart_with_storage" = "Carrito de cocina con almacenamiento";
+"bookcase_with_doors" = "Estantería con puertas";
+"storage_box_with_lid" = "Caja de almacenamiento con tapa";
+"desk_with_drawers" = "Escritorio con cajones";
+"bathroom_cabinet" = "Armario de baño";
+
+// MARK: - Types Room
+"bedroom" = "Dormitorio";
+"living_room" = "Sala de estar";
+"kitchen" = "Cocina";
+"bathroom" = "Baño";
+"dining_room" = "Comedor";
+"home_office" = "Oficina en casa";
+"guest_room" = "Habitación de invitados";
+"laundry_room" = "Lavadero";
+"basement" = "Sótano";
+"attic" = "Ático";

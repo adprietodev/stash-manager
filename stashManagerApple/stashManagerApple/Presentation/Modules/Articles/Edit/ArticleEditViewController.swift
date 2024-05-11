@@ -37,7 +37,7 @@ class ArticleEditViewController: UIViewController {
 
     // MARK: - Functions
     func configurationNavigationBar() {
-        self.navigationItem.title = "ARTICULOS"
+        self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
@@ -52,17 +52,17 @@ class ArticleEditViewController: UIViewController {
         } else {
             articleImageView.loadBase64(viewModel.article.base64image)
         }
-        nameTitleLabel.text = "Nombre:"
+        nameTitleLabel.text = "name".localized
         nameTitleLabel.font = UIFont().robotoRegular(with: 14)
         nameTitleLabel.textColor = .blueGreen
         articleNameTextField.text = viewModel.article.name
         articleNameTextField.font = UIFont().robotoRegular(with: 16)
-        typeTitleLabel.text = "Tipo:"
+        typeTitleLabel.text = "type".localized
         typeTitleLabel.textColor = .blueGreen
         typeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == viewModel.article.idTypeArticle }.first?.name
+        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == viewModel.article.idTypeArticle }.first?.name.rawValue.localized
         articleTypeLabel.font = UIFont().robotoRegular(with: 16)
-        descriptionTitleLabel.text = "Descripción:"
+        descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
         descriptionTitleLabel.textColor = .blueGreen
         articleDescriptionTextView.text = viewModel.article.description
@@ -71,13 +71,13 @@ class ArticleEditViewController: UIViewController {
         cancelEditView.layer.borderColor = UIColor.utOrange.cgColor
         cancelEditView.layer.cornerRadius = 4
         cancelEditView.layer.borderWidth = 1
-        cancelEditLabel.text = "Cancelar"
+        cancelEditLabel.text = "cancel".localized
         cancelEditLabel.font = UIFont().robotoBold(with: 20)
         cancelEditLabel.textColor = .utOrange
 
         saveEditView.layer.cornerRadius = 4
         saveEditView.backgroundColor = .prussianBlue
-        saveEditLabel.text = "Guardar"
+        saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
     }

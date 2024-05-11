@@ -34,13 +34,13 @@ class TabBarController: UITabBarController {
 
         guard let items = self.tabBar.items else { return }
         items[0].image = UIImage(systemName: "house")
-        items[0].title = "Home"
+        items[0].title = "home".localized
         items[1].image = UIImage(systemName: "shippingbox")
         items[1].title = "Stashes"
         items[2].image = UIImage(systemName: "puzzlepiece")
-        items[2].title = "Articles"
+        items[2].title = "articles".localized
         items[3].image = UIImage(systemName: "person.crop.circle")
-        items[3].title = "Perfil"
+        items[3].title = "profile".localized
 
         self.tabBar.tintColor = .skyBlue
         self.tabBar.unselectedItemTintColor = .skyBlueFiftyPercent

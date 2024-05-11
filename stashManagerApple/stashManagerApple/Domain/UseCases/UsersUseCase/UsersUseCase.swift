@@ -20,7 +20,7 @@ extension UsersUseCase: UsersUseCaseProtocol {
         try await repository.getRemoteUser(at: authIDUser)
     }
 
-    func getCurrentUser() throws -> User{
+    func getCurrentUser() throws -> User {
         try repository.getLocalCurrentUser()
     }
 

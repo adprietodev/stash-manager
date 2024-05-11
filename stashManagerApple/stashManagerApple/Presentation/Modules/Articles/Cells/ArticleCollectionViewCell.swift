@@ -35,11 +35,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBAction func removeArticle(_ sender: Any) {
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
     // MARK: - Functions
     func setupCell(article: Article, delegate: ArticleDelegate, articleStock: Int, haveArticle: Bool) {
         self.delegate = delegate

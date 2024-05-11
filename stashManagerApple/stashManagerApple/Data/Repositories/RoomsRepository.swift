@@ -52,7 +52,7 @@ fileprivate extension RoomDTO {
 
 fileprivate extension TypesRoomDTO {
     func toDomain() -> TypeRoom {
-        TypeRoom(id: self.id, name: self.name)
+        TypeRoom(id: self.id, name: TypesRoom(rawValue: self.name) ?? .none)
     }
 }
 

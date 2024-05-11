@@ -17,23 +17,28 @@ class StashEditViewController: UIViewController {
     @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var stashNameTextField: UITextField!
     @IBOutlet weak var typeTitleLabel: UILabel!
-    @IBOutlet weak var stashTypeLabel: UILabel!
+    @IBOutlet weak var stashTypeTextField: UITextField!
     @IBOutlet weak var descriptionTitleLabel: UILabel!
     @IBOutlet weak var stashDescriptionTextView: UITextView!
 
     // MARK: - Properties
-    var viewModel: StashEditViewModel!
+    var viewModel: StashEditViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
         configurationNavigationBar()
+        viewModel.setCurrentType()
+    }
+
+    // MARK: - IBActions
+    @IBAction func changeType(_ sender: Any) {
+        viewModel.showCustomPickerType()
     }
 
     @IBAction func saveEdit(_ sender: Any) {
     }
 
-    
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -44,17 +49,17 @@ class StashEditViewController: UIViewController {
         } else {
             stashImageView.loadBase64(viewModel.stash.base64image)
         }
-        nameTitleLabel.text = "Nombre:"
+        nameTitleLabel.text = "name".localized
         nameTitleLabel.font = UIFont().robotoRegular(with: 14)
         nameTitleLabel.textColor = .blueGreen
         stashNameTextField.text = viewModel.stash.name
         stashNameTextField.font = UIFont().robotoRegular(with: 16)
-        typeTitleLabel.text = "Tipo:"
+        typeTitleLabel.text = "type".localized
         typeTitleLabel.textColor = .blueGreen
         typeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        stashTypeLabel.text = viewModel.typesStash.filter { $0.id == viewModel.stash.idTypeStash }.first?.name
-        stashTypeLabel.font = UIFont().robotoRegular(with: 16)
-        descriptionTitleLabel.text = "Descripción:"
+        stashTypeTextField.text = viewModel.typesStash.filter { $0.id == viewModel.stash.idTypeStash }.first?.name.rawValue.localized
+        stashTypeTextField.font = UIFont().robotoRegular(with: 16)
+        descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
         descriptionTitleLabel.textColor = .blueGreen
         stashDescriptionTextView.text = viewModel.stash.description
@@ -63,13 +68,13 @@ class StashEditViewController: UIViewController {
         cancelEditView.layer.borderColor = UIColor.utOrange.cgColor
         cancelEditView.layer.cornerRadius = 4
         cancelEditView.layer.borderWidth = 1
-        cancelEditLabel.text = "Cancelar"
+        cancelEditLabel.text = "cancel".localized
         cancelEditLabel.font = UIFont().robotoBold(with: 20)
         cancelEditLabel.textColor = .utOrange
 
         saveEditView.layer.cornerRadius = 4
         saveEditView.backgroundColor = .prussianBlue
-        saveEditLabel.text = "Guardar"
+        saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
     }
@@ -83,4 +88,12 @@ class StashEditViewController: UIViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = .prussianBlue
     }
+}
+
+extension StashEditViewController: CustomPickerViewControllerDelegate {
+    func changeType(customPicker: UIPickerView, typeText: String) {
+        stashTypeTextField.inputView = customPicker
+        stashTypeTextField.text = typeText
+    }
+
 }

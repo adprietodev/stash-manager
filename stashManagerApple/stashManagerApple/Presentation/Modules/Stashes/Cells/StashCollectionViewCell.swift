@@ -10,10 +10,6 @@ import UIKit
 class StashCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var stashImageView: UIImageView!
     @IBOutlet weak var stashNameLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     func setupCell(at name: String, with base64: String) {
         if base64 == "" {

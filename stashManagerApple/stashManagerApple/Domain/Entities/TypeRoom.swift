@@ -9,5 +9,5 @@ import Foundation
 
 struct TypeRoom {
     let id: Int
-    let name: String
+    let name: TypesRoom
 }

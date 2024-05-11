@@ -47,6 +47,6 @@ fileprivate extension ArticleDTO {
 
 fileprivate extension TypeArticleDTO {
     func toDomain() -> TypeArticle {
-        TypeArticle(id: self.id, name: self.name)
+        TypeArticle(id: self.id, name: TypesArticle(rawValue: self.name) ?? .none)
     }
 }

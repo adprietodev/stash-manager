@@ -32,6 +32,7 @@ class StashesViewModel: StashesViewModelProtocol {
         isSelectedRoom = false
         Task {
             do {
+                selectedRoom = nil
                 contentsRoom = try linksUseCase.getLocalContentRooms() ?? []
                 typesStash = try await stashesUseCase.getTypesStash()
                 if let room = try roomsUseCase.getSelectedRoom() {

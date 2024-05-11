@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TypeArticle: Codable {
+struct TypeArticle {
     let id: Int
-    let name: String
+    let name: TypesArticle
 }

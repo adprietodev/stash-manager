@@ -18,7 +18,7 @@ class StashDetailViewController: UIViewController {
     @IBOutlet weak var articlesStashButtonLabel: UILabel!
     @IBOutlet weak var insideRoomTitleLabel: UILabel!
     @IBOutlet weak var roomNameLabel: UILabel!
-    
+
     // MARK: - Properties
     var viewModel: StashDetailViewModel!
 
@@ -52,7 +52,7 @@ class StashDetailViewController: UIViewController {
         } else {
             stashImageView.loadBase64(stash.base64image)
         }
-        insideRoomTitleLabel.text = "En la habitación:"
+        insideRoomTitleLabel.text = "in_the_room".localized
         insideRoomTitleLabel.font = UIFont().robotoRegular(with: 16)
         insideRoomTitleLabel.textColor = .blueGreen
         roomNameLabel.text = viewModel.room.name
@@ -60,16 +60,16 @@ class StashDetailViewController: UIViewController {
         roomNameLabel.textColor = .prussianBlue
         stashNameLabel.text = stash.name
         stashNameLabel.font = UIFont().robotoRegular(with: 18)
-        stashTypeLabel.text = viewModel.typesStash.filter { $0.id == stash.idTypeStash }.first?.name
+        stashTypeLabel.text = viewModel.typesStash.filter { $0.id == stash.idTypeStash }.first?.name.rawValue.localized
         stashTypeLabel.font = UIFont().robotoRegular(with: 18)
-        descriptionTitleLabel.text = "Descripción"
+        descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.textColor = .blueGreen
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 16)
         stashDescriptionLabel.text = stash.description
         stashDescriptionLabel.font = UIFont().robotoRegular(with: 18)
 
         articlesView.layer.cornerRadius = 4
-        articlesStashButtonLabel.text = "ARTICULOS"
+        articlesStashButtonLabel.text = "articles".localized
         articlesStashButtonLabel.font = UIFont().robotoBold(with: 16)
     }
 

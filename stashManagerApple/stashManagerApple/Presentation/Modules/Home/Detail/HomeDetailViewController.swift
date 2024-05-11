@@ -44,7 +44,7 @@ class HomeDetailViewController: UIViewController {
 
     // MARK: - Functions
     func configurationNavigationBar() {
-        self.navigationItem.title = "HABITACIÓN"
+        self.navigationItem.title = "room".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(goToEditRoom))
         rightAddRoomBarButton.tintColor = .prussianBlue
@@ -62,14 +62,16 @@ class HomeDetailViewController: UIViewController {
             roomImageView.loadBase64(room.base64image)
         }
         roomNameLabel.text = room.name
-        roomTypeLabel.text = type
-        descriptionTitleLabel.text = "Descripción:"
+        roomNameLabel.textColor = .prussianBlue
+        roomTypeLabel.text = type?.rawValue.localized
+        roomTypeLabel.textColor = .prussianBlue
+        descriptionTitleLabel.text = "description".localized
         roomDescriptionLabel.text = room.description
 
         stashesView.layer.cornerRadius = 4
         articlesView.layer.cornerRadius = 4
         stashesButtonLabel.text = "STASHES"
-        articlesButtonLabel.text = "ARTICULOS"
+        articlesButtonLabel.text = "articles".localized.uppercased()
         stashesButtonLabel.font = UIFont().robotoBold(with: 16)
         articlesButtonLabel.font = UIFont().robotoBold(with: 16)
     }

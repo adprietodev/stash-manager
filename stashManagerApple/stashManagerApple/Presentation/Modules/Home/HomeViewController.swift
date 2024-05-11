@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
 
     // MARK: - Functions
     func configurationView() {
-        self.navigationItem.title = "HOME"
+        self.navigationItem.title = "home".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
@@ -51,6 +51,7 @@ class HomeViewController: UIViewController {
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
         searcherImageView.tintColor = .prussianBlue
+        searchTextField.placeholder = "search".localized
     }
 
     func configurationRoomsCollectionView() {

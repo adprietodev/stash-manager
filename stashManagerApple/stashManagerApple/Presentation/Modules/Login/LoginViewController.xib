@@ -16,8 +16,6 @@
                 <outlet property="errorEmailLabel" destination="dcj-MQ-DhZ" id="XGP-YP-Mds"/>
                 <outlet property="eyeButton" destination="JGe-RN-SFW" id="WlC-7i-kXV"/>
                 <outlet property="eyeImageView" destination="Q59-3k-zOw" id="ODP-yg-yqc"/>
-                <outlet property="forgotPasswordButton" destination="UHB-dR-rhP" id="Gvj-33-kEV"/>
-                <outlet property="forgotPasswordLabel" destination="mma-A7-BLK" id="Of0-YF-uPz"/>
                 <outlet property="lineEmailView" destination="3H4-oX-bLs" id="M3t-B3-Ydc"/>
                 <outlet property="linePasswordView" destination="FuG-EJ-5R9" id="GwO-ui-vZB"/>
                 <outlet property="loginErrorLabel" destination="QtG-vt-Tme" id="QaC-XH-qv8"/>
@@ -152,65 +150,15 @@
                         </view>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZX-Hj-eX4">
-                    <rect key="frame" x="108.33333333333333" y="545.33333333333337" width="176.33333333333337" height="16"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mma-A7-BLK">
-                            <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="16"/>
-                            <attributedString key="attributedText">
-                                <fragment content="¿Has olvidado tu contraseña?">
-                                    <attributes>
-                                        <font key="NSFont" size="12" name="MontserratRoman-Regular"/>
-                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        <integer key="NSUnderline" value="1"/>
-                                    </attributes>
-                                </fragment>
-                            </attributedString>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHB-dR-rhP">
-                            <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="16"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal">
-                                <attributedString key="attributedTitle">
-                                    <fragment content="¿Has olvidado tu contraseña?">
-                                        <attributes>
-                                            <color key="NSColor" red="0.12941176470588234" green="0.61960784313725492" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="12" name="MontserratRoman-Regular"/>
-                                            <font key="NSOriginalFont" size="12" name="MontserratRoman-Regular"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                            </state>
-                            <buttonConfiguration key="configuration" style="plain"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="UHB-dR-rhP" secondAttribute="trailing" id="0pg-gS-iTD"/>
-                        <constraint firstItem="mma-A7-BLK" firstAttribute="top" secondItem="LZX-Hj-eX4" secondAttribute="top" id="6pb-Yy-Pxr"/>
-                        <constraint firstItem="mma-A7-BLK" firstAttribute="leading" secondItem="LZX-Hj-eX4" secondAttribute="leading" id="9qf-Di-fB7"/>
-                        <constraint firstAttribute="bottom" secondItem="mma-A7-BLK" secondAttribute="bottom" id="Fv3-4i-K82"/>
-                        <constraint firstAttribute="bottom" secondItem="mma-A7-BLK" secondAttribute="bottom" id="Ugh-YM-atN"/>
-                        <constraint firstItem="UHB-dR-rhP" firstAttribute="top" secondItem="LZX-Hj-eX4" secondAttribute="top" id="Ukm-9Y-rHL"/>
-                        <constraint firstAttribute="height" constant="16" id="bvV-ZJ-fld"/>
-                        <constraint firstItem="mma-A7-BLK" firstAttribute="leading" secondItem="LZX-Hj-eX4" secondAttribute="leading" id="cax-0I-Kr3"/>
-                        <constraint firstAttribute="trailing" secondItem="mma-A7-BLK" secondAttribute="trailing" id="d8O-cO-RMq"/>
-                        <constraint firstAttribute="bottom" secondItem="UHB-dR-rhP" secondAttribute="bottom" id="dus-5Y-PbQ"/>
-                        <constraint firstItem="UHB-dR-rhP" firstAttribute="leading" secondItem="LZX-Hj-eX4" secondAttribute="leading" id="ghE-EG-NQT"/>
-                        <constraint firstAttribute="trailing" secondItem="mma-A7-BLK" secondAttribute="trailing" id="nFb-Ne-u11"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Sd-1Z-jxq">
-                    <rect key="frame" x="0.0" y="633.33333333333337" width="393" height="2"/>
+                    <rect key="frame" x="0.0" y="593.33333333333337" width="393" height="2"/>
                     <color key="backgroundColor" name="SkyBlue"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="ILw-S7-paG"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2Dk-yg-V9m">
-                    <rect key="frame" x="16" y="577.33333333333337" width="361" height="40"/>
+                    <rect key="frame" x="16" y="537.33333333333337" width="361" height="40"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVE-kl-7xs">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
@@ -264,7 +212,7 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xx-va-8fe">
-                    <rect key="frame" x="119" y="651.33333333333337" width="155" height="34"/>
+                    <rect key="frame" x="119" y="611.33333333333337" width="155" height="34"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krT-jh-uW3">
                             <rect key="frame" x="0.0" y="0.0" width="155" height="34"/>
@@ -312,17 +260,15 @@
                 <constraint firstItem="wew-kM-pPl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CLg-Me-Nms"/>
                 <constraint firstItem="6xx-va-8fe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ENo-xw-W5O"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FdH-cW-NvT" secondAttribute="trailing" constant="16" id="FM5-jb-GGI"/>
-                <constraint firstItem="LZX-Hj-eX4" firstAttribute="top" secondItem="FdH-cW-NvT" secondAttribute="bottom" constant="32" id="TLn-QK-ojp"/>
                 <constraint firstItem="6xx-va-8fe" firstAttribute="top" secondItem="5Sd-1Z-jxq" secondAttribute="bottom" constant="16" id="TOe-rM-KvB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2Dk-yg-V9m" secondAttribute="trailing" constant="16" id="TlW-9z-68o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qyC-DG-C8B" secondAttribute="trailing" constant="16" id="WPV-fJ-uOK"/>
                 <constraint firstItem="FdH-cW-NvT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Wot-1A-IjL"/>
-                <constraint firstItem="LZX-Hj-eX4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cyM-8c-tEZ"/>
+                <constraint firstItem="2Dk-yg-V9m" firstAttribute="top" secondItem="FdH-cW-NvT" secondAttribute="bottom" constant="24" id="WxT-sD-JkI"/>
                 <constraint firstItem="1bg-P7-q2Y" firstAttribute="top" secondItem="wew-kM-pPl" secondAttribute="bottom" constant="16" id="ebW-d3-WdO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1bg-P7-q2Y" secondAttribute="trailing" constant="16" id="gHr-nS-bbx"/>
                 <constraint firstItem="5Sd-1Z-jxq" firstAttribute="top" secondItem="2Dk-yg-V9m" secondAttribute="bottom" constant="16" id="jo3-VF-B6k"/>
                 <constraint firstItem="qyC-DG-C8B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nO0-cH-1cD"/>
-                <constraint firstItem="2Dk-yg-V9m" firstAttribute="top" secondItem="LZX-Hj-eX4" secondAttribute="bottom" constant="16" id="o1Y-NH-pE5"/>
                 <constraint firstItem="1bg-P7-q2Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="plI-r2-arI"/>
                 <constraint firstItem="2Dk-yg-V9m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vCH-AA-Ciz"/>
             </constraints>

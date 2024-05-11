@@ -30,7 +30,7 @@ class ArticleDetailViewController: UIViewController {
     }
 
     func configurationNavigationBar() {
-        self.navigationItem.title = "ARTICULO"
+        self.navigationItem.title = "article".localized
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(goToEdit))
         rightAddRoomBarButton.tintColor = .prussianBlue
@@ -48,9 +48,9 @@ class ArticleDetailViewController: UIViewController {
         }
         articleNameLabel.text = article.name
         articleNameLabel.font = UIFont().robotoRegular(with: 18)
-        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == article.idTypeArticle }.first?.name
+        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == article.idTypeArticle }.first?.name.rawValue.localized
         articleTypeLabel.font = UIFont().robotoRegular(with: 18)
-        descriptionTitleLabel.text = "Descripción"
+        descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.textColor = .blueGreen
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 16)
         articleDescriptionLabel.text = article.description

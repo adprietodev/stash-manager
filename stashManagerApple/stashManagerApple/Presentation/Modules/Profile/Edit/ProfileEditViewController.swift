@@ -41,24 +41,24 @@ class ProfileEditViewController: UIViewController {
         } else {
             userImageView.loadBase64(viewModel.user.base64image)
         }
-        editOrChangeImageButton.titleLabel?.text = "Editar o cambiar de foto"
+        editOrChangeImageButton.titleLabel?.text = "edit_or_change_photo"
         editOrChangeImageButton.titleLabel?.font = UIFont().robotoRegular(with: 12)
 
-        userNameTitleLabel.text = "Nombre:"
+        userNameTitleLabel.text = "name".localized
         userNameTitleLabel.font = UIFont().robotoRegular(with: 12)
         userNameTitleLabel.textColor = .blueGreen
         userNameTextField.text = viewModel.user.name
         userNameTextField.font = UIFont().robotoRegular(with: 16)
         userNameTextField.textColor = .prussianBlue
 
-        userLastnameTitleLabel.text = "Apellidos:"
+        userLastnameTitleLabel.text = "lastname".localized
         userLastnameTitleLabel.font = UIFont().robotoRegular(with: 12)
         userLastnameTitleLabel.textColor = .blueGreen
         userLastnameTextFiled.text = viewModel.user.lastname
         userLastnameTextFiled.font = UIFont().robotoRegular(with: 16)
         userLastnameTextFiled.textColor = .prussianBlue
 
-        userEmailTitleLabel.text = "Email:"
+        userEmailTitleLabel.text = "email".localized
         userEmailTitleLabel.font = UIFont().robotoRegular(with: 12)
         userEmailTitleLabel.textColor = .blueGreen
         userEmailTextField.text = viewModel.user.email
@@ -68,19 +68,19 @@ class ProfileEditViewController: UIViewController {
         cancelEditView.layer.borderColor = UIColor.utOrange.cgColor
         cancelEditView.layer.cornerRadius = 4
         cancelEditView.layer.borderWidth = 1
-        cancelEditLabel.text = "Cancelar"
+        cancelEditLabel.text = "cancel".localized
         cancelEditLabel.font = UIFont().robotoBold(with: 20)
         cancelEditLabel.textColor = .utOrange
 
         saveEditView.layer.cornerRadius = 4
         saveEditView.backgroundColor = .prussianBlue
-        saveEditLabel.text = "Guardar"
+        saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
     }
 
     func configurationNavigationBar() {
-        self.navigationItem.title = "PERFIL"
+        self.navigationItem.title = "profile".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = .prussianBlue

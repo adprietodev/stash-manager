@@ -64,7 +64,7 @@ class ProfileViewController: UIViewController {
             profileLastNameLabel.font = UIFont().robotoRegular(with: 16)
             profileLastNameLabel.textColor = .prussianBlue
 
-            profileTitleEmailLabel.text = "EMAIL:"
+            profileTitleEmailLabel.text = "email".localized.uppercased()
             profileTitleEmailLabel.font = UIFont().robotoBold(with: 16)
             profileTitleEmailLabel.textColor = .prussianBlue
 
@@ -72,7 +72,7 @@ class ProfileViewController: UIViewController {
             profileEmailLabel.font = UIFont().robotoRegular(with: 16)
             profileEmailLabel.textColor = .prussianBlue
 
-            removeAccountLabel.text = "Eliminar cuenta"
+            removeAccountLabel.text = "delete_account".localized
             removeAccountLabel.font = UIFont().robotoBold(with: 18)
             removeAccountLabel.textColor = .utOrange
             removeAccountView.layer.borderWidth = 1
@@ -81,7 +81,7 @@ class ProfileViewController: UIViewController {
 
             logoutView.backgroundColor = .utOrange
             logoutView.layer.cornerRadius = 4
-            logoutLabel.text = "Cerrar sesión"
+            logoutLabel.text = "logout".localized
             logoutLabel.font = UIFont().robotoBold(with: 18)
             logoutLabel.textColor = .white
         }

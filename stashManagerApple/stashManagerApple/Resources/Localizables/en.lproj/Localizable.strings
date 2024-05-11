@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  StashManagerApple
+
+  Created by Adrian Prieto Villena on 11/5/24.
+  
+*/
+// MARK: - Attributes
+"name" = "Name";
+"lastname" = "Lastname";
+"email" = "Email";
+"password" = "Password";
+"ask_registered" = "Not registered?";
+"login" = "Login";
+"search" = "Search";
+"home" = "Home";
+"articles" = "Articles";
+"article" = "Article";
+"profile" = "Profile";
+"description" = "Description";
+"type" = "Type";
+"in_the_room" = "In the room";
+"invalid_email" = "Invalid email";
+"login_error" = "Login error please try again";
+"room" = "Room";
+"cancel" = "Cancel";
+"save" = "Save";
+"delete_account" = "Delete account";
+"logout" = "Logout";
+"edit_or_change_photo" = "Edit or change photo";
+"done" = "Done";
+
+// MARK: - Types Article
+"electronics" = "Electronics";
+"clothing" = "Cloting";
+"food" = "Food";
+"books" = "Books";
+"home" = "Home";
+"toys" = "Toys";
+"furniture" = "Furniture";
+"sporting_goods" = "Sporting goods";
+"cosmetics" = "Cosmetics";
+"tools" = "Tools";
+"DIY_tools" = "DIY Tools";
+"spices_condiments" = "Spices and condiments";
+
+// MARK: - Types Stash
+"closet" = "Closet";
+"chest_of_drawers" = "Chest od drawers";
+"cabinet" = "Cabinet";
+"shelving_unit_with_doors" = "Shelving unit with doors";
+"trunk" = "Trunk";
+"storage_cabinet_with_baskets" = "Storage cabinet with baskets";
+"storage_cabinet_with_drawers" = "Storage cabinet with drawers";
+"mirrored_wardrobe" = "Mirrored wardrobe";
+"shoe_storage_cabinet" = "Shoe storage cabinet";
+"coffee_table_with_storage" = "Coffe table with storage";
+"display_cabinet" = "Display cabinet";
+"TV_stand_with_storage" = "TV Stand with storage";
+"storage_tower" = "Storage tower";
+"built-in_wardrobe" = "Built-in wardrobe";
+"console_table_with_drawers" = "Console table with drawers";
+"kitchen_cart_with_storage" = "Kitche cart with storage";
+"bookcase_with_doors" = "Bookcase with doors";
+"storage_box_with_lid" = "Storage box with lid";
+"desk_with_drawers" = "Desk with drawers";
+"bathroom_cabinet" = "Bathroom cabinet";
+
+// MARK: - Types Room
+"bedroom" = "Bedroom";
+"living_room" = "Living room";
+"kitchen" = "Kitchen";
+"bathroom" = "Bathroom";
+"dining_room" = "Dining room";
+"home_office" = "Home office";
+"guest_room" = "Gest room";
+"laundry_room" = "Laundry room";
+"basement" = "Basement";
+"attic" = "Attic";

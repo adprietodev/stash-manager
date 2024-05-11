@@ -51,7 +51,7 @@ class ArticlesViewController: UIViewController {
 
     // MARK: - Functions
     func configurationView() {
-        self.navigationItem.title = "ARTICULOS"
+        self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
         let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
@@ -70,7 +70,7 @@ class ArticlesViewController: UIViewController {
         allArticlesTittleLabel.font = UIFont().robotoRegular(with: 14)
         allArticlesTittleLabel.textColor = .prussianBlue
         if viewModel.isSelectedRoom, !viewModel.isSelectedStash {
-            collectionSegmentControl.setTitle("Habitación", forSegmentAt: 0)
+            collectionSegmentControl.setTitle("room".localized, forSegmentAt: 0)
         }
         if viewModel.isSelectedRoom, viewModel.isSelectedStash {
             collectionSegmentControl.setTitle("Stash", forSegmentAt: 0)
@@ -129,7 +129,7 @@ extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataS
                 viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
             } else {
                 viewModel.goToDetail(article: viewModel.articlesWithStock[indexPath.row].article, typesArticle: viewModel.typesArticle)
-            } 
+            }
         }
     }
 

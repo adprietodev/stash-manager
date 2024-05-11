@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TypeStash: Codable {
+struct TypeStash {
     let id: Int
-    let name: String
+    let name: TypesStash
 }

@@ -7,13 +7,26 @@
 
 import Foundation
 
-class StashEditViewModel{
+class StashEditViewModel: StashEditViewModelProtocol {
     // MARK: - Properties
     var stash: Stash
     var typesStash: [TypeStash]
+    var router: StashEditRouterProtocol
+    var currentType: String = TypesStash.cabinet.rawValue
 
-    init(stash: Stash, typesStash: [TypeStash]) {
+    init(router: StashEditRouterProtocol, stash: Stash, typesStash: [TypeStash]) {
         self.stash = stash
         self.typesStash = typesStash
+        self.router = router
+    }
+
+    func setCurrentType() {
+        guard let type = typesStash.filter({ $0.id == stash.idTypeStash }).first?.name.rawValue else { return }
+        currentType = type
+        print(currentType)
+    }
+
+    func showCustomPickerType() {
+        router.showCustomPickerType(typeScreen: .stash, typeSelected: currentType)
     }
 }
