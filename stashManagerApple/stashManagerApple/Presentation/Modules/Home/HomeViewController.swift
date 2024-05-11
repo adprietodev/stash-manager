@@ -9,7 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     // MARK: - IBOutlet
-    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var roomsCollectionView: UICollectionView!
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -22,7 +21,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationView()
-        configurationCategoriesCollectionView()
         configurationRoomsCollectionView()
     }
 
@@ -55,12 +53,6 @@ class HomeViewController: UIViewController {
         searcherImageView.tintColor = .prussianBlue
     }
 
-    func configurationCategoriesCollectionView() {
-        categoriesCollectionView.delegate = self
-        categoriesCollectionView.dataSource = self
-        categoriesCollectionView.register(UINib(nibName: "CategoriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
-    }
-
     func configurationRoomsCollectionView() {
         roomsCollectionView.delegate = self
         roomsCollectionView.dataSource = self
@@ -71,7 +63,6 @@ class HomeViewController: UIViewController {
         viewModel.refreshCollectionView = {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
-                categoriesCollectionView.reloadData()
                 roomsCollectionView.reloadData()
             }
         }
@@ -81,26 +72,15 @@ class HomeViewController: UIViewController {
 // MARK: - Extensions
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == categoriesCollectionView {
-            return viewModel.typesRoom.count
-        } else {
-            let roomCount = viewModel.isFiltering ? viewModel.filteredRooms.count : viewModel.rooms.count
-            return roomCount
-        }
+        let roomCount = viewModel.isFiltering ? viewModel.filteredRooms.count : viewModel.rooms.count
+        return roomCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == categoriesCollectionView {
-            let cell = categoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
-            let typeRoom = viewModel.typesRoom[indexPath.row]
-            cell.setupCell(with: typeRoom.name)
-            return cell
-        } else {
-            let cell = roomsCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomsCollectionViewCell", for: indexPath) as! RoomsCollectionViewCell
-            let room = viewModel.isFiltering ? viewModel.filteredRooms[indexPath.row] : viewModel.rooms[indexPath.row]
-            cell.setupCell(at: room.name, with: room.base64image)
-            return cell
-        }
+        let cell = roomsCollectionView.dequeueReusableCell(withReuseIdentifier: "RoomsCollectionViewCell", for: indexPath) as! RoomsCollectionViewCell
+        let room = viewModel.isFiltering ? viewModel.filteredRooms[indexPath.row] : viewModel.rooms[indexPath.row]
+        cell.setupCell(at: room.name, with: room.base64image)
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -109,13 +89,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == categoriesCollectionView {
-            let name = viewModel.typesRoom[indexPath.row]
-            let nameLabelSize = (name.name as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont().robotoRegular(with: 14)])
-            let width = nameLabelSize.width + 32
-            return CGSize(width: width, height: 32)
-        } else {
-            return CGSize(width: collectionView.frame.width, height: 112)
-        }
+        return CGSize(width: collectionView.frame.width, height: 112)
     }
 }

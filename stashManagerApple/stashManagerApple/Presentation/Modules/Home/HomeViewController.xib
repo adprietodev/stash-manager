@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="StashManagerApple" customModuleProvider="target">
             <connections>
-                <outlet property="categoriesCollectionView" destination="HnB-8F-EIN" id="SLX-1L-2lF"/>
                 <outlet property="roomsCollectionView" destination="e5J-U0-iMz" id="Nyb-o2-axW"/>
                 <outlet property="searchTextField" destination="184-XN-A5z" id="QQH-rx-Sbe"/>
                 <outlet property="searchView" destination="A09-bk-mSO" id="PuU-RM-GeH"/>
@@ -95,21 +94,8 @@
                         <constraint firstItem="W1V-r0-ypq" firstAttribute="top" secondItem="A09-bk-mSO" secondAttribute="top" id="rnf-YR-I4x"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-8F-EIN">
-                    <rect key="frame" x="16" y="120" width="377" height="36"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="s6R-7m-Kbz"/>
-                    </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="noG-Hb-OgS">
-                        <size key="itemSize" width="128" height="32"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="e5J-U0-iMz">
-                    <rect key="frame" x="16" y="168" width="361" height="650"/>
+                    <rect key="frame" x="16" y="132" width="361" height="686"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="12" minimumInteritemSpacing="12" id="OL7-Ep-rs0">
                         <size key="itemSize" width="128" height="128"/>
@@ -122,19 +108,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="e5J-U0-iMz" firstAttribute="top" secondItem="HnB-8F-EIN" secondAttribute="bottom" constant="12" id="9o7-O0-8zv"/>
                 <constraint firstItem="A09-bk-mSO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="APR-UV-RCd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HnB-8F-EIN" secondAttribute="trailing" id="EWT-eE-e9z"/>
                 <constraint firstItem="e5J-U0-iMz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Ffx-JX-TUA"/>
                 <constraint firstItem="v0O-Gb-Rzw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Iyp-7X-mQl"/>
-                <constraint firstItem="HnB-8F-EIN" firstAttribute="top" secondItem="A09-bk-mSO" secondAttribute="bottom" constant="12" id="MDv-VH-OC8"/>
+                <constraint firstItem="e5J-U0-iMz" firstAttribute="top" secondItem="A09-bk-mSO" secondAttribute="bottom" constant="24" id="USs-7Z-pP2"/>
                 <constraint firstItem="A09-bk-mSO" firstAttribute="top" secondItem="v0O-Gb-Rzw" secondAttribute="bottom" constant="16" id="ZWi-Wj-Sg4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e5J-U0-iMz" secondAttribute="trailing" constant="16" id="aEs-pz-0gI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="e5J-U0-iMz" secondAttribute="bottom" id="d1I-eK-B2F"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v0O-Gb-Rzw" secondAttribute="trailing" id="g0W-V0-sSU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A09-bk-mSO" secondAttribute="trailing" constant="16" id="qda-Z0-UoG"/>
                 <constraint firstItem="v0O-Gb-Rzw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vUF-Sb-oZL"/>
-                <constraint firstItem="HnB-8F-EIN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="zfh-kh-ulK"/>
             </constraints>
             <point key="canvasLocation" x="160" y="-20"/>
         </view>

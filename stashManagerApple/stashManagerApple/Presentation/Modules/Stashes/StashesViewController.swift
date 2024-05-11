@@ -11,7 +11,6 @@ class StashesViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var typeStashOrRoomCollectionView: UICollectionView!
     @IBOutlet weak var stashesCollectionView: UICollectionView!
     @IBOutlet weak var searcherImageView: UIImageView!
 
@@ -21,7 +20,6 @@ class StashesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurationView()
-        configurationTypeStashOrRoomCollectionView()
         configurationStashesCollectionView()
     }
 
@@ -51,12 +49,6 @@ class StashesViewController: UIViewController {
         searcherImageView.tintColor = .prussianBlue
     }
 
-    func configurationTypeStashOrRoomCollectionView() {
-        typeStashOrRoomCollectionView.dataSource = self
-        typeStashOrRoomCollectionView.delegate = self
-        typeStashOrRoomCollectionView.register(UINib(nibName: "TypeStashOrRoomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TypeStashOrRoomCollectionViewCell")
-    }
-
     func configurationStashesCollectionView() {
         stashesCollectionView.delegate = self
         stashesCollectionView.dataSource = self
@@ -67,7 +59,6 @@ class StashesViewController: UIViewController {
         viewModel.refreshCollectionView = {
             DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
-                typeStashOrRoomCollectionView.reloadData()
                 stashesCollectionView.reloadData()
             }
         }
@@ -76,43 +67,22 @@ class StashesViewController: UIViewController {
 
 extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == typeStashOrRoomCollectionView {
-            if viewModel.isSelectedRoom {
-                viewModel.typesStash.count
-            } else {
-                viewModel.contentsRoom.count
-            }
-        } else {
-            if viewModel.isSelectedRoom {
-                viewModel.selectedRoom!.stashes.count
-            } else {
-                viewModel.stashes.count
-            }
-        }
+        let count = viewModel.isSelectedRoom ?  viewModel.selectedRoom!.stashes.count : viewModel.stashes.count
+        return count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == typeStashOrRoomCollectionView {
-            let cell = typeStashOrRoomCollectionView.dequeueReusableCell(withReuseIdentifier: "TypeStashOrRoomCollectionViewCell", for: indexPath) as! TypeStashOrRoomCollectionViewCell
-            if viewModel.isSelectedRoom {
-                cell.setupCell(with: viewModel.typesStash[indexPath.row].name)
-            } else {
-                cell.setupCell(with: viewModel.contentsRoom[indexPath.row].room.name)
-            }
-            return cell
+        let cell = stashesCollectionView.dequeueReusableCell(withReuseIdentifier: "StashCollectionViewCell", for: indexPath) as! StashCollectionViewCell
+        if viewModel.isSelectedRoom {
+            let stashName = viewModel.selectedRoom!.stashes[indexPath.row].stash.name
+            let stashImage = viewModel.selectedRoom!.stashes[indexPath.row].stash.base64image
+            cell.setupCell(at: stashName, with: stashImage)
         } else {
-            let cell = stashesCollectionView.dequeueReusableCell(withReuseIdentifier: "StashCollectionViewCell", for: indexPath) as! StashCollectionViewCell
-            if viewModel.isSelectedRoom {
-                let stashName = viewModel.selectedRoom!.stashes[indexPath.row].stash.name
-                let stashImage = viewModel.selectedRoom!.stashes[indexPath.row].stash.base64image
-                cell.setupCell(at: stashName, with: stashImage)
-            } else {
-                let stashName = viewModel.stashes[indexPath.row].name
-                let stashImage = viewModel.stashes[indexPath.row].base64image
-                cell.setupCell(at: stashName, with: stashImage)
-            }
-            return cell
+            let stashName = viewModel.stashes[indexPath.row].name
+            let stashImage = viewModel.stashes[indexPath.row].base64image
+            cell.setupCell(at: stashName, with: stashImage)
         }
+        return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -120,18 +90,6 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == typeStashOrRoomCollectionView {
-            var name = ""
-            if viewModel.isSelectedRoom {
-                name = viewModel.typesStash[indexPath.row].name
-            } else {
-                name = viewModel.contentsRoom[indexPath.row].room.name
-            }
-            let nameLabelSize = (name as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont().robotoRegular(with: 14)])
-            let width = nameLabelSize.width + 32
-            return CGSize(width: width, height: 32)
-        } else {
-            return CGSize(width: collectionView.frame.width/2 - 16, height: 112)
-        }
+        return CGSize(width: collectionView.frame.width/2 - 16, height: 112)
     }
 }

@@ -16,7 +16,9 @@ class StashDetailViewController: UIViewController {
     @IBOutlet weak var stashDescriptionLabel: UILabel!
     @IBOutlet weak var articlesView: UIView!
     @IBOutlet weak var articlesStashButtonLabel: UILabel!
-
+    @IBOutlet weak var insideRoomTitleLabel: UILabel!
+    @IBOutlet weak var roomNameLabel: UILabel!
+    
     // MARK: - Properties
     var viewModel: StashDetailViewModel!
 
@@ -41,7 +43,7 @@ class StashDetailViewController: UIViewController {
     @IBAction func goToArticlesInStash(_ sender: Any) {
         viewModel.goToArticleInStash()
     }
-    
+
     // MARK: - Funtions
     func configureView() {
         let stash = self.viewModel.stash
@@ -50,6 +52,12 @@ class StashDetailViewController: UIViewController {
         } else {
             stashImageView.loadBase64(stash.base64image)
         }
+        insideRoomTitleLabel.text = "En la habitación:"
+        insideRoomTitleLabel.font = UIFont().robotoRegular(with: 16)
+        insideRoomTitleLabel.textColor = .blueGreen
+        roomNameLabel.text = viewModel.room.name
+        roomNameLabel.font = UIFont().robotoRegular(with: 18)
+        roomNameLabel.textColor = .prussianBlue
         stashNameLabel.text = stash.name
         stashNameLabel.font = UIFont().robotoRegular(with: 18)
         stashTypeLabel.text = viewModel.typesStash.filter { $0.id == stash.idTypeStash }.first?.name
