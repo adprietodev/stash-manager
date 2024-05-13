@@ -12,7 +12,7 @@ enum TypesArticle: String {
     case clothing = "clothing"
     case food = "food"
     case books = "books"
-    case home = "home"
+    case home = "home_type"
     case toys = "toys"
     case furniture = "furniture"
     case sportingGoods = "sporting_goods"

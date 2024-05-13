@@ -15,6 +15,9 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
     var typeArticleSelected: TypesArticle?
     var typeStashSelected: TypesStash?
     var typeRoomSelected: TypesRoom?
+    var typeAction: TypeAction
+    let rooms: [Room]?
+    let stashes: [Stash]?
     let typesArticleArray: [TypesArticle] = [
         .electronics,
         .clothing,
@@ -64,7 +67,7 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
         .bathroomCabinet
     ]
 
-    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeSelected: String) {
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeSelected: String, typeAction: TypeAction) {
         self.router = router
         self.typeScreen = typeScreen
         self.typeSelected = typeSelected
@@ -75,9 +78,30 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
             self.typeRoomSelected = TypesRoom(rawValue: typeSelected)
         case .stash:
             self.typeStashSelected = TypesStash(rawValue: typeSelected)
-        case .profile:
-            return
+        default:
+            break
         }
+        self.typeAction = typeAction
+        self.rooms = nil
+        self.stashes = nil
+    }
+
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, rooms: [Room]){
+        self.router = router
+        self.typeScreen = typeScreen
+        self.typeAction = typeAction
+        self.typeSelected = ""
+        self.rooms = rooms
+        self.stashes = nil
+    }
+
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, stashes: [Stash]){
+        self.router = router
+        self.typeScreen = typeScreen
+        self.typeAction = typeAction
+        self.typeSelected = ""
+        self.stashes = stashes
+        self.rooms = nil
     }
 
     // MARK: - Functions
@@ -89,7 +113,7 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
             return typesRoomArray.map { $0.rawValue.localized }
         case .stash:
             return typesStashArray.map { $0.rawValue.localized }
-        case .profile:
+        default:
             return []
         }
     }

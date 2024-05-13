@@ -30,12 +30,23 @@
 "edit_or_change_photo" = "Edit or change photo";
 "done" = "Done";
 
+// MARK: - Special Properties Article
+"weight" = "Weight";
+"brand" = "Brand";
+"color" = "Color";
+"material" = "Material";
+"expiration_date" = "Expiration date";
+"spice" = "Spice";
+"spicy" = "Spicy";
+"yes" = "Yes";
+"no" = "No";
+
 // MARK: - Types Article
 "electronics" = "Electronics";
 "clothing" = "Cloting";
 "food" = "Food";
 "books" = "Books";
-"home" = "Home";
+"home_type" = "Home";
 "toys" = "Toys";
 "furniture" = "Furniture";
 "sporting_goods" = "Sporting goods";
@@ -43,6 +54,7 @@
 "tools" = "Tools";
 "DIY_tools" = "DIY Tools";
 "spices_condiments" = "Spices and condiments";
+
 
 // MARK: - Types Stash
 "closet" = "Closet";

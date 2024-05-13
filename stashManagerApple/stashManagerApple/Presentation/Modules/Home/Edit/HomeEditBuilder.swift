@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeEditBuilder {
-    func build(room: Room, typesRoom: [TypeRoom]) -> HomeEditViewController {
+    func build(room: Room, typesRoom: [TypeRoom], typeScreen: TypeAction) -> HomeEditViewController {
         let viewController = HomeEditViewController(nibName: "HomeEditViewController", bundle: nil)
 
         let remoteRoomsDatasource = RoomsRemoteDatasource()
@@ -16,7 +16,14 @@ class HomeEditBuilder {
         let roomsRepository = RoomsRepository(remoteDatasource: remoteRoomsDatasource, localDatasource: localRoomsDatasource)
         let roomUseCase = RoomsUseCase(repository: roomsRepository)
 
-        viewController.viewModel = HomeEditViewModel(roomUseCase: roomUseCase, room: room, typesRoom: typesRoom)
+        let router = HomeEditRouter(viewController: viewController)
+        switch typeScreen {
+        case .edit:
+            viewController.viewModel = HomeEditViewModel(router: router, roomUseCase: roomUseCase, room: room, typesRoom: typesRoom, typeScreen: typeScreen)
+        case .add:
+            viewController.viewModel = HomeEditViewModel(router: router, typesRoom: typesRoom, typeScreen: typeScreen)
+        }
+
         return viewController
     }
 }

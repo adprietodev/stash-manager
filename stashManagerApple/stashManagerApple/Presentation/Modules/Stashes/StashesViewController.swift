@@ -34,6 +34,12 @@ class StashesViewController: UIViewController {
         viewModel.checkSelectedStash()
     }
 
+    // MARK: - IBActions
+    @IBAction func filterStashByName(_ sender: Any) {
+        viewModel.isFiltering = viewModel.isFilterStashes(by: searchTextField.text ?? "")
+        stashesCollectionView.reloadData()
+    }
+
     // MARK: - Functions
     func configurationView() {
         self.navigationItem.title = "STASHES"
@@ -67,15 +73,15 @@ class StashesViewController: UIViewController {
 
 extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = viewModel.isSelectedRoom ?  viewModel.selectedRoom!.stashes.count : viewModel.stashes.count
+        let count = viewModel.isFiltering ?  viewModel.filteredStashes.count : viewModel.stashes.count
         return count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = stashesCollectionView.dequeueReusableCell(withReuseIdentifier: "StashCollectionViewCell", for: indexPath) as! StashCollectionViewCell
-        if viewModel.isSelectedRoom {
-            let stashName = viewModel.selectedRoom!.stashes[indexPath.row].stash.name
-            let stashImage = viewModel.selectedRoom!.stashes[indexPath.row].stash.base64image
+        if viewModel.isFiltering{
+            let stashName = viewModel.filteredStashes[indexPath.row].name
+            let stashImage = viewModel.filteredStashes[indexPath.row].base64image
             cell.setupCell(at: stashName, with: stashImage)
         } else {
             let stashName = viewModel.stashes[indexPath.row].name
@@ -86,7 +92,8 @@ extension StashesViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.goToDetail(stash: viewModel.stashes[indexPath.row])
+        let stash = viewModel.isFiltering ? viewModel.filteredStashes[indexPath.row] : viewModel.stashes[indexPath.row]
+        viewModel.goToDetail(stash: stash)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

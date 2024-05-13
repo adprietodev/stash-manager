@@ -15,8 +15,11 @@ protocol StashesViewModelProtocol {
     var contentsRoom: [ContentRoom] { get set}
     var isSelectedRoom: Bool { get set }
     var refreshCollectionView: (() -> Void)? { get set }
+    var isFiltering: Bool { get set }
+    var filteredStashes: [Stash] { get set }
     func goToDetail(stash: Stash)
     func checkSelectedStash()
+    func isFilterStashes(by name: String) -> Bool
 }
 
 protocol StashesRouterProtocol {

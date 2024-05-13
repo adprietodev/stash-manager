@@ -26,6 +26,9 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     var goingIntoDetailOrEdit: Bool = false
     var refreshCollectionView: (() -> Void)?
     var currentSegmentSelected: Int = 0
+    var filteredArticles = [Article]()
+    var filteredArticlesWithStock = [ArticleWithStock]()
+    var isFiltering: Bool = false
 
     init(router: ArticlesRouterProtocol, usersUseCase: UsersUseCase, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol, articlesUseCase: ArticlesUseCaseProtocol) {
         self.usersUseCase = usersUseCase
@@ -67,6 +70,19 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
             } catch {
                 // TODO: - Errors Controls
             }
+        }
+    }
+
+    func isFilterArticle(by name: String) -> Bool {
+        if !name.isEmpty {
+            if showAllArticles || !isSelectedRoom || !isSelectedStash {
+                filteredArticles = userArticles.filter { $0.name.lowercased().contains(name.lowercased()) }
+            } else {
+                filteredArticlesWithStock = articlesWithStock.filter { $0.article.name.lowercased().contains(name.lowercased()) }
+            }
+            return true
+        } else {
+            return false
         }
     }
 

@@ -31,6 +31,17 @@
 "none" = "Ninguno asignado";
 "done" = "Hecho";
 
+// MARK: - Special Properties Article
+"weight" = "Peso";
+"brand" = "Marca";
+"color" = "Color";
+"material" = "Material";
+"expiration_date" = "Fecha de caducidad";
+"spice" = "Especia";
+"spicy" = "Picante";
+"yes" = "Yes";
+"no" = "No";
+
 // MARK: - Types Article
 "electronics" = "Electrónica";
 "clothing" = "Ropa";

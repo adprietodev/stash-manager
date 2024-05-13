@@ -12,4 +12,6 @@ enum TypesScreens {
     case stash
     case article
     case profile
+    case detail
+    case unknown
 }

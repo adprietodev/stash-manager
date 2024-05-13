@@ -42,6 +42,10 @@ class ArticlesViewController: UIViewController {
         }
     }
 
+    @IBAction func filterArticles(_ sender: Any) {
+        viewModel.isFiltering = viewModel.isFilterArticle(by: searchTextField.text ?? "")
+        articlesCollectionView.reloadData()
+    }
     // MARK: - IBActions
     @IBAction func changeContainer(_ sender: Any) {
         viewModel.showAllArticles  = collectionSegmentControl.selectedSegmentIndex == 1 ? true : false
@@ -96,25 +100,28 @@ class ArticlesViewController: UIViewController {
 
 extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !viewModel.isSelectedRoom, !viewModel.isSelectedStash{
-            return viewModel.userArticles.count
+        if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
+            return viewModel.isFiltering ? viewModel.filteredArticles.count : viewModel.userArticles.count
         } else {
-            let count = viewModel.showAllArticles ? viewModel.userArticles.count : viewModel.articlesWithStock.count
-            return count
+            if viewModel.showAllArticles {
+                return viewModel.isFiltering ? viewModel.filteredArticles.count : viewModel.userArticles.count
+            } else {
+                return viewModel.isFiltering ? viewModel.filteredArticlesWithStock.count : viewModel.articlesWithStock.count
+            }
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = articlesCollectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
         if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
-            let article = viewModel.userArticles[indexPath.row]
+            let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
             cell.setupCell(article: article, delegate: viewModel as! ArticleDelegate, articleStock: 0, haveArticle: false)
         } else {
             if viewModel.showAllArticles {
-                let article = viewModel.userArticles[indexPath.row]
+                let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
                 cell.setupCell(article: article, delegate: viewModel as! ArticleDelegate, articleStock: 0, haveArticle: false)
             } else {
-                let articleWithStock = viewModel.articlesWithStock[indexPath.row]
+                let articleWithStock = viewModel.isFiltering ? viewModel.filteredArticlesWithStock[indexPath.row] : viewModel.articlesWithStock[indexPath.row]
                 cell.setupCell(article: articleWithStock.article, delegate: viewModel as! ArticleDelegate, articleStock: articleWithStock.stock, haveArticle: true)
             }
         }
@@ -123,12 +130,15 @@ extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
-            viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
+            let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
+            viewModel.goToDetail(article: article, typesArticle: viewModel.typesArticle)
         } else {
             if viewModel.showAllArticles {
-                viewModel.goToDetail(article: viewModel.userArticles[indexPath.row], typesArticle: viewModel.typesArticle)
+                let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
+                viewModel.goToDetail(article: article, typesArticle: viewModel.typesArticle)
             } else {
-                viewModel.goToDetail(article: viewModel.articlesWithStock[indexPath.row].article, typesArticle: viewModel.typesArticle)
+                let articleWithStock = viewModel.isFiltering ? viewModel.filteredArticlesWithStock[indexPath.row] : viewModel.articlesWithStock[indexPath.row]
+                viewModel.goToDetail(article: articleWithStock.article, typesArticle: viewModel.typesArticle)
             }
         }
     }

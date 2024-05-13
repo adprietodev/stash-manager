@@ -39,6 +39,9 @@
                                     <rect key="frame" x="16" y="0.0" width="297" height="32"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="filterStashByName:" destination="-1" eventType="editingChanged" id="0hU-AY-fgj"/>
+                                    </connections>
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNR-7h-Z1k">
                                     <rect key="frame" x="317" y="0.0" width="32" height="32"/>

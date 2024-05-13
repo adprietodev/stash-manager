@@ -23,7 +23,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
     func setCurrentType() {
         guard let type = typesStash.filter({ $0.id == stash.idTypeStash }).first?.name.rawValue else { return }
         currentType = type
-        print(currentType)
     }
 
     func showCustomPickerType() {

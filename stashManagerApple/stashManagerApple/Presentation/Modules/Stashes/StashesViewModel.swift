@@ -16,9 +16,11 @@ class StashesViewModel: StashesViewModelProtocol {
     let router: StashesRouterProtocol
     var selectedRoom: ContentRoom?
     var stashes = [Stash]()
+    var filteredStashes = [Stash]()
     var typesStash = [TypeStash]()
     var contentsRoom = [ContentRoom]()
     var isSelectedRoom = false
+    var isFiltering: Bool = false
     var refreshCollectionView: (() -> Void)?
 
     init(router: StashesRouterProtocol, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
@@ -34,7 +36,9 @@ class StashesViewModel: StashesViewModelProtocol {
             do {
                 selectedRoom = nil
                 contentsRoom = try linksUseCase.getLocalContentRooms() ?? []
-                typesStash = try await stashesUseCase.getTypesStash()
+                if typesStash.isEmpty {
+                    typesStash = try await stashesUseCase.getTypesStash()
+                }
                 if let room = try roomsUseCase.getSelectedRoom() {
                     selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first
                     stashes = selectedRoom!.stashes.map { $0.stash }
@@ -49,6 +53,15 @@ class StashesViewModel: StashesViewModelProtocol {
                 refreshCollectionView?()
             } catch {
             }
+        }
+    }
+
+    func isFilterStashes(by name: String) -> Bool {
+        if !name.isEmpty {
+            filteredStashes = stashes.filter { $0.name.lowercased().contains(name.lowercased()) }
+            return true
+        } else {
+            return false
         }
     }
 

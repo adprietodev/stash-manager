@@ -12,8 +12,12 @@ protocol ArticlesViewModelProtocol {
     var showAllArticles: Bool { get set }
     var goingIntoDetailOrEdit: Bool { get set }
     var currentSegmentSelected: Int { get set }
+    var filteredArticles: [Article] { get set }
+    var filteredArticlesWithStock: [ArticleWithStock] { get set }
+    var isFiltering: Bool { get set}
     func clearSelectedRoomAndStash()
     func goToDetail(article: Article, typesArticle: [TypeArticle])
+    func isFilterArticle(by name: String) -> Bool
 }
 
 protocol ArticlesRouterProtocol {

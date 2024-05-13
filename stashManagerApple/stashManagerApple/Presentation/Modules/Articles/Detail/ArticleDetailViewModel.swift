@@ -21,4 +21,9 @@ class ArticleDetailViewModel: ArticleDetailViewModelProtocol {
     func goToEdit() {
         router.goToEdit(article: article, typesArticle: typesArticle)
     }
+
+    func getTypeArticle() -> TypesArticle {
+        guard let type = typesArticle.filter({ $0.id == article.idTypeArticle}).first?.name else { return TypesArticle.none }
+        return type
+    }
 }

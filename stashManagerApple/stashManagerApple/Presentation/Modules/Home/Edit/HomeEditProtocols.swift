@@ -9,5 +9,13 @@ import Foundation
 
 protocol HomeEditViewModelProtocol {
     var room: Room? { get set }
-    var typesRoom: [TypeRoom]? { get set }
+    var typesRoom: [TypeRoom] { get set }
+    var currentType: String { get set }
+    var typeScreen: TypeAction { get set }
+    func setCurrentType()
+    func showCustomPickerType()
+}
+
+protocol HomeEditRouterProtocol {
+    func showCustomPickerType(typeScreen: TypesScreens, typeSelected: String)
 }

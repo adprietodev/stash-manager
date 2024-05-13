@@ -14,7 +14,7 @@ class HomeEditViewController: UIViewController {
     @IBOutlet weak var roomNameTitleLabel: UILabel!
     @IBOutlet weak var roomNameTextField: UITextField!
     @IBOutlet weak var roomTypeTitleLabel: UILabel!
-    @IBOutlet weak var roomTypeLabel: UILabel!
+    @IBOutlet weak var roomTypeTextField: UITextField!
     @IBOutlet weak var roomDescriptionTitleLabel: UILabel!
     @IBOutlet weak var roomDescriptionTextView: UITextView!
     @IBOutlet weak var cancelEditView: UIView!
@@ -27,11 +27,16 @@ class HomeEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setCurrentType()
         configurationNavigationBar()
         configureView()
     }
 
     // MARK: - IBActions
+    @IBAction func changeType(_ sender: Any) {
+        viewModel.showCustomPickerType()
+    }
+
     @IBAction func saveRoom(_ sender: Any) {
     }
 
@@ -50,6 +55,10 @@ class HomeEditViewController: UIViewController {
     }
 
     func configureView() {
+        if viewModel.typeScreen == .add {
+            roomImageView.image =  UIImage(named: "placeholder-room")
+        }
+
         if let room =  viewModel.room {
             if room.base64image == "" {
                 roomImageView.image =  UIImage(named: "placeholder-room")
@@ -57,20 +66,20 @@ class HomeEditViewController: UIViewController {
                 roomImageView.loadBase64(room.base64image)
             }
         }
-        roomNameTitleLabel.text = "name".localized
+        roomNameTitleLabel.text =  "name".localized
         roomNameTitleLabel.font = UIFont().robotoRegular(with: 14)
         roomNameTitleLabel.textColor = .blueGreen
-        roomNameTextField.text = viewModel.room?.name
+        roomNameTextField.text = viewModel.typeScreen == .edit ? viewModel.room?.name : ""
         roomNameTextField.font = UIFont().robotoRegular(with: 16)
         roomTypeTitleLabel.text = "type".localized
         roomTypeTitleLabel.textColor = .blueGreen
         roomTypeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        roomTypeLabel.text = viewModel.typesRoom?.filter { $0.id == viewModel.room?.idTypeRoom }.first?.name.rawValue.localized
-        roomTypeLabel.font = UIFont().robotoRegular(with: 16)
+        roomTypeTextField.text = viewModel.typeScreen == .edit ? viewModel.currentType.localized : "none".localized
+        roomTypeTextField.font = UIFont().robotoRegular(with: 16)
         roomDescriptionTitleLabel.text = "description".localized
         roomDescriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
         roomDescriptionTitleLabel.textColor = .blueGreen
-        roomDescriptionTextView.text = viewModel.room?.description
+        roomDescriptionTextView.text = viewModel.typeScreen == .edit ? viewModel.room?.description : ""
         roomDescriptionTextView.font = UIFont().robotoRegular(with: 16)
 
         cancelEditView.layer.borderColor = UIColor.utOrange.cgColor
@@ -86,4 +95,12 @@ class HomeEditViewController: UIViewController {
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
     }
+}
+
+extension HomeEditViewController: CustomPickerViewControllerDelegate {
+    func changeType(customPicker: UIPickerView, typeText: String) {
+        roomTypeTextField.inputView = customPicker
+        roomTypeTextField.text = typeText
+    }
+
 }

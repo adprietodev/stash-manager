@@ -13,7 +13,7 @@ class ArticleEditViewController: UIViewController {
     @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var articleNameTextField: UITextField!
     @IBOutlet weak var typeTitleLabel: UILabel!
-    @IBOutlet weak var articleTypeLabel: UILabel!
+    @IBOutlet weak var articleTypeTextField: UITextField!
     @IBOutlet weak var descriptionTitleLabel: UILabel!
     @IBOutlet weak var articleDescriptionTextView: UITextView!
     @IBOutlet weak var saveEditView: UIView!
@@ -28,9 +28,14 @@ class ArticleEditViewController: UIViewController {
         super.viewDidLoad()
         configurationNavigationBar()
         configureView()
+        viewModel.setCurrentType()
     }
 
     // MARK: - IBActions
+    @IBAction func changeType(_ sender: Any) {
+        viewModel.showCustomPickerType()
+    }
+
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -60,8 +65,8 @@ class ArticleEditViewController: UIViewController {
         typeTitleLabel.text = "type".localized
         typeTitleLabel.textColor = .blueGreen
         typeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == viewModel.article.idTypeArticle }.first?.name.rawValue.localized
-        articleTypeLabel.font = UIFont().robotoRegular(with: 16)
+        articleTypeTextField.text = viewModel.typesArticle.filter { $0.id == viewModel.article.idTypeArticle }.first?.name.rawValue.localized
+        articleTypeTextField.font = UIFont().robotoRegular(with: 16)
         descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
         descriptionTitleLabel.textColor = .blueGreen
@@ -80,5 +85,12 @@ class ArticleEditViewController: UIViewController {
         saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
+    }
+}
+
+extension ArticleEditViewController: CustomPickerViewControllerDelegate {
+    func changeType(customPicker: UIPickerView, typeText: String) {
+        articleTypeTextField.inputView = customPicker
+        articleTypeTextField.text = typeText
     }
 }

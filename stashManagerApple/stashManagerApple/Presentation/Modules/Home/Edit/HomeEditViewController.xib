@@ -19,7 +19,7 @@
                 <outlet property="roomImageView" destination="sWW-Ch-JRU" id="wB5-36-yVW"/>
                 <outlet property="roomNameTextField" destination="zem-La-fwS" id="Ufq-wp-zlR"/>
                 <outlet property="roomNameTitleLabel" destination="m1w-f6-jfi" id="x08-Kp-HPB"/>
-                <outlet property="roomTypeLabel" destination="w2t-wP-RBF" id="Be8-tU-43M"/>
+                <outlet property="roomTypeTextField" destination="cf8-xs-mqU" id="cvs-wy-0Rn"/>
                 <outlet property="roomTypeTitleLabel" destination="ROu-ML-N3a" id="5MB-Af-cMe"/>
                 <outlet property="saveEditLabel" destination="etb-BO-Tf3" id="BLi-ba-45C"/>
                 <outlet property="saveEditView" destination="cdK-KF-zBd" id="eAE-ij-sEa"/>
@@ -122,12 +122,11 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAe-ka-YyT">
                                             <rect key="frame" x="0.0" y="23" width="361" height="24"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2t-wP-RBF">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-xs-mqU">
                                                     <rect key="frame" x="0.0" y="0.0" width="337" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="17K-KT-aW6">
                                                     <rect key="frame" x="337" y="5.3333333333333321" width="24" height="14"/>
                                                     <color key="tintColor" red="0.0078431372550000003" green="0.18823529410000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -151,6 +150,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="56"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain"/>
+                                    <connections>
+                                        <action selector="changeType:" destination="-1" eventType="touchUpInside" id="iWo-Uf-aLH"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
