@@ -13,11 +13,13 @@ class StashEditViewModel: StashEditViewModelProtocol {
     var typesStash: [TypeStash]
     var router: StashEditRouterProtocol
     var currentType: String = TypesStash.cabinet.rawValue
+    var typeAction: TypeAction
 
-    init(router: StashEditRouterProtocol, stash: Stash, typesStash: [TypeStash]) {
+    init(router: StashEditRouterProtocol, stash: Stash, typesStash: [TypeStash], typeAction:  TypeAction) {
         self.stash = stash
         self.typesStash = typesStash
         self.router = router
+        self.typeAction = typeAction
     }
 
     func setCurrentType() {
@@ -26,6 +28,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
     }
 
     func showCustomPickerType() {
-        router.showCustomPickerType(typeScreen: .stash, typeSelected: currentType)
+        router.showCustomPickerType(typeScreen: .stash, typeSelected: currentType ,typeAction: typeAction, typeButtonPressed: .type)
     }
 }

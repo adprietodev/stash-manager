@@ -16,11 +16,11 @@ protocol ArticlesViewModelProtocol {
     var filteredArticlesWithStock: [ArticleWithStock] { get set }
     var isFiltering: Bool { get set}
     func clearSelectedRoomAndStash()
-    func goToDetail(article: Article, typesArticle: [TypeArticle])
+    func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash) 
     func isFilterArticle(by name: String) -> Bool
 }
 
 protocol ArticlesRouterProtocol {
-    func goToDetail(article: Article, typesArticle: [TypeArticle])
-    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle])
+    func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash)
+    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash)
 }

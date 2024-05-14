@@ -55,7 +55,7 @@ class HomeEditViewController: UIViewController {
     }
 
     func configureView() {
-        if viewModel.typeScreen == .add {
+        if viewModel.typeAction == .add {
             roomImageView.image =  UIImage(named: "placeholder-room")
         }
 
@@ -69,17 +69,17 @@ class HomeEditViewController: UIViewController {
         roomNameTitleLabel.text =  "name".localized
         roomNameTitleLabel.font = UIFont().robotoRegular(with: 14)
         roomNameTitleLabel.textColor = .blueGreen
-        roomNameTextField.text = viewModel.typeScreen == .edit ? viewModel.room?.name : ""
+        roomNameTextField.text = viewModel.typeAction == .edit ? viewModel.room?.name : ""
         roomNameTextField.font = UIFont().robotoRegular(with: 16)
         roomTypeTitleLabel.text = "type".localized
         roomTypeTitleLabel.textColor = .blueGreen
         roomTypeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        roomTypeTextField.text = viewModel.typeScreen == .edit ? viewModel.currentType.localized : "none".localized
+        roomTypeTextField.text = viewModel.typeAction == .edit ? viewModel.currentType.localized : "none".localized
         roomTypeTextField.font = UIFont().robotoRegular(with: 16)
         roomDescriptionTitleLabel.text = "description".localized
         roomDescriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
         roomDescriptionTitleLabel.textColor = .blueGreen
-        roomDescriptionTextView.text = viewModel.typeScreen == .edit ? viewModel.room?.description : ""
+        roomDescriptionTextView.text = viewModel.typeAction == .edit ? viewModel.room?.description : ""
         roomDescriptionTextView.font = UIFont().robotoRegular(with: 16)
 
         cancelEditView.layer.borderColor = UIColor.utOrange.cgColor

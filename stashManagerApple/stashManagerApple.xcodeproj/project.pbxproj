@@ -117,6 +117,7 @@
 		CC777F012BE967BA0055C0FC /* HomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */; };
 		CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */; };
 		CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */; };
+		CC828A7F2BF3C42F0022257D /* TypeButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC828A7E2BF3C42F0022257D /* TypeButtonPressed.swift */; };
 		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
 		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
 		CCA252842BE2197E00CFF515 /* LinksRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */; };
@@ -330,6 +331,7 @@
 		CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRouter.swift; sourceTree = "<group>"; };
 		CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailBuilder.swift; sourceTree = "<group>"; };
 		CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailProtocols.swift; sourceTree = "<group>"; };
+		CC828A7E2BF3C42F0022257D /* TypeButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButtonPressed.swift; sourceTree = "<group>"; };
 		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
 		CCA252832BE2197E00CFF515 /* LinksRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -958,6 +960,7 @@
 				CCB198052BEF9D230097B26E /* TypesStash.swift */,
 				CCB198202BEFC37B0097B26E /* TypesScreens.swift */,
 				CCE14A6F2BF2A1850002751D /* TypeAction.swift */,
+				CC828A7E2BF3C42F0022257D /* TypeButtonPressed.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1446,6 +1449,7 @@
 				CCCD14D92BEBFCF8003DCBB5 /* StashEditViewModel.swift in Sources */,
 				CCB197F62BED23BA0097B26E /* ProfileEditViewController.swift in Sources */,
 				CC14BCCC2BD99AD300D0F4BC /* StashesUseCaseProtocol.swift in Sources */,
+				CC828A7F2BF3C42F0022257D /* TypeButtonPressed.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
 				CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */,
 				CCB1981D2BEFC3230097B26E /* CustomPickerBuild.swift in Sources */,

@@ -14,5 +14,5 @@ protocol ArticleDetailViewModelProtocol  {
 }
 
 protocol ArticleDetailRouterProtocol {
-    func goToEdit(article: Article, typesArticle: [TypeArticle])
+    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash)
 }

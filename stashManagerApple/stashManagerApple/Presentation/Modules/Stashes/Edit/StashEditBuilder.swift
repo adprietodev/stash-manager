@@ -8,10 +8,10 @@
 import Foundation
 
 class StashEditBuilder {
-    func build(stash: Stash, typesStash: [TypeStash]) -> StashEditViewController {
+    func build(stash: Stash, typesStash: [TypeStash], typeAction: TypeAction) -> StashEditViewController {
         let viewController = StashEditViewController()
         let router = StashEditRouter(viewController: viewController)
-        viewController.viewModel = StashEditViewModel(router: router, stash: stash, typesStash: typesStash)
+        viewController.viewModel = StashEditViewModel(router: router, stash: stash, typesStash: typesStash, typeAction: typeAction)
         return viewController
     }
 }

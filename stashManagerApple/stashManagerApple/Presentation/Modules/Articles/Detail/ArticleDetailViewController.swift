@@ -70,7 +70,7 @@ class ArticleDetailViewController: UIViewController {
         }
         articleNameLabel.text = article.name
         articleNameLabel.font = UIFont().robotoRegular(with: 18)
-        articleTypeLabel.text = viewModel.typesArticle.filter { $0.id == article.idTypeArticle }.first?.name.rawValue.localized
+        articleTypeLabel.text = viewModel.getTypeArticle().rawValue.localized
         articleTypeLabel.font = UIFont().robotoRegular(with: 18)
         descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.textColor = .blueGreen
@@ -162,14 +162,14 @@ class ArticleDetailViewController: UIViewController {
         case .spicesCondiments:
             isSpiceView.isHidden = false
             isSpicyView.isHidden = false
-            
+
             isSpiceTitleLabel.text = "spice".localized
             isSpiceTitleLabel.font = UIFont().robotoRegular(with: 14)
             isSpiceTitleLabel.textColor = .blueGreen
             isSpiceLabel.text = viewModel.article.isSpice ? "yes".localized : "no".localized
             isSpiceLabel.font = UIFont().robotoRegular(with: 16)
             isSpiceLabel.textColor = .prussianBlue
-            
+
             isSpicyTitleLabel.text = "spicy".localized
             isSpicyTitleLabel.font = UIFont().robotoRegular(with: 14)
             isSpicyTitleLabel.textColor = .blueGreen

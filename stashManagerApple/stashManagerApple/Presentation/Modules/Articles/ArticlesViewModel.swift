@@ -86,9 +86,9 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
         }
     }
 
-    func goToDetail(article: Article, typesArticle: [TypeArticle]) {
+    func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash)  {
         goingIntoDetailOrEdit = true
-        router.goToDetail(article: article , typesArticle: typesArticle)
+        router.goToDetail(article: article , typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
 
     func clearSelectedRoomAndStash() {
@@ -100,6 +100,9 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
 extension ArticlesViewModel: ArticleDelegate {
     func goToEditArticle(_ article: Article) {
         goingIntoDetailOrEdit = true
-        router.goToEditArticle(article, typesArticle: typesArticle)
+        if selectedStash == nil {
+            selectedStash = ContentStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0), articles: [])
+        }
+        router.goToEditArticle(article, typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
 }

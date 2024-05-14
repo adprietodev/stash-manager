@@ -15,7 +15,7 @@ class HomeDetailRouter: HomeDetailRouterProtocol {
     }
 
     func goToEditRoom(room: Room, typesRoom: [TypeRoom]) {
-        let homeEditViewController = HomeEditBuilder().build(room: room, typesRoom: typesRoom)
+        let homeEditViewController = HomeEditBuilder().build(room: room, typesRoom: typesRoom, typeAction: .edit)
         self.viewController.navigationController?.pushViewController(homeEditViewController, animated: true)
     }
 

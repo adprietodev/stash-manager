@@ -16,8 +16,11 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
     var typeStashSelected: TypesStash?
     var typeRoomSelected: TypesRoom?
     var typeAction: TypeAction
+    var typeButtonPressed: TypeButtonPressed
     let rooms: [Room]?
+    var roomSelectedName: String?
     let stashes: [Stash]?
+    var stashSelectedName: String?
     let typesArticleArray: [TypesArticle] = [
         .electronics,
         .clothing,
@@ -67,7 +70,7 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
         .bathroomCabinet
     ]
 
-    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeSelected: String, typeAction: TypeAction) {
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeSelected: String, typeAction: TypeAction, typeButtonPressed: TypeButtonPressed) {
         self.router = router
         self.typeScreen = typeScreen
         self.typeSelected = typeSelected
@@ -84,45 +87,72 @@ class CustomPickerViewModel: CustomPickerViewModelProtocol {
         self.typeAction = typeAction
         self.rooms = nil
         self.stashes = nil
+        self.typeButtonPressed = typeButtonPressed
     }
 
-    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, rooms: [Room]){
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, rooms: [Room], typeButtonPressed: TypeButtonPressed, roomSelectedName: String){
         self.router = router
         self.typeScreen = typeScreen
         self.typeAction = typeAction
         self.typeSelected = ""
         self.rooms = rooms
         self.stashes = nil
+        self.typeButtonPressed = typeButtonPressed
+        self.roomSelectedName = roomSelectedName
     }
 
-    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, stashes: [Stash]){
+    init(router: CustomPickerRouterProtocol, typeScreen: TypesScreens, typeAction: TypeAction, stashes: [Stash], typeButtonPressed: TypeButtonPressed, stashSelectedName: String){
         self.router = router
         self.typeScreen = typeScreen
         self.typeAction = typeAction
         self.typeSelected = ""
         self.stashes = stashes
         self.rooms = nil
+        self.typeButtonPressed = typeButtonPressed
+        self.stashSelectedName = stashSelectedName
     }
 
     // MARK: - Functions
     func getTypes() -> [String] {
-        switch typeScreen {
-        case .article:
-            return typesArticleArray.map { $0.rawValue.localized }
+        switch typeButtonPressed {
+        case .type:
+            switch typeScreen {
+            case .article:
+                return typesArticleArray.map { $0.rawValue.localized }
+            case .room:
+                return typesRoomArray.map { $0.rawValue.localized }
+            case .stash:
+                return typesStashArray.map { $0.rawValue.localized }
+            default:
+                return []
+            }
         case .room:
-            return typesRoomArray.map { $0.rawValue.localized }
+            return rooms?.compactMap { $0.name } ?? []
         case .stash:
-            return typesStashArray.map { $0.rawValue.localized }
-        default:
-            return []
+            return stashes?.compactMap { $0.name } ?? []
         }
     }
 
     func getIndexSelected() -> Int {
         var position = 0
-        for (index, type) in  getTypes().enumerated() {
-            if type ==  typeSelected.localized {
-                position = index
+        switch typeButtonPressed {
+        case .type:
+            for (index, type) in  getTypes().enumerated() {
+                if type ==  typeSelected.localized {
+                    position = index
+                }
+            }
+        case .room:
+            for (index, room) in getTypes().enumerated() {
+                if room == roomSelectedName {
+                    position = index
+                }
+            }
+        case .stash:
+            for (index, stash) in getTypes().enumerated() {
+                if stash == stashSelectedName {
+                    position = index
+                }
             }
         }
         return position

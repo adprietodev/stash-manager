@@ -11,15 +11,19 @@ class ArticleDetailViewModel: ArticleDetailViewModelProtocol {
     let router: ArticleDetailRouterProtocol
     var article: Article
     var typesArticle: [TypeArticle]
+    var selectedRoom: ContentRoom
+    var selectedStash: ContentStash
 
-    init(router: ArticleDetailRouterProtocol, article: Article, typesArticle: [TypeArticle]) {
+    init(router: ArticleDetailRouterProtocol, article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash) {
         self.router = router
         self.article = article
         self.typesArticle = typesArticle
+        self.selectedRoom = selectedRoom
+        self.selectedStash = selectedStash
     }
 
     func goToEdit() {
-        router.goToEdit(article: article, typesArticle: typesArticle)
+        router.goToEditArticle(article, typesArticle: typesArticle,selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
 
     func getTypeArticle() -> TypesArticle {

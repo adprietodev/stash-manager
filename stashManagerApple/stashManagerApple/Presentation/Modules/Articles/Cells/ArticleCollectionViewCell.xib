@@ -169,7 +169,9 @@
                 <outlet property="articleNameLabel" destination="xib-Mn-F4O" id="W6M-Nf-Fdc"/>
                 <outlet property="articleStockLabel" destination="1Eg-zi-JJk" id="t0C-bV-Fnb"/>
                 <outlet property="editArticleImageView" destination="avD-WD-zcu" id="Kne-Ce-fqs"/>
+                <outlet property="editView" destination="skw-X7-6zr" id="N62-Yh-7ey"/>
                 <outlet property="removeArticleImageView" destination="Frv-5h-r88" id="7Ti-2Q-kd3"/>
+                <outlet property="removeOrAddView" destination="FZp-qy-mzP" id="F4W-4Q-Cxg"/>
             </connections>
             <point key="canvasLocation" x="79" y="-11"/>
         </collectionViewCell>

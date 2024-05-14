@@ -18,6 +18,8 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addOrRemoveImageView: UIImageView!
     @IBOutlet weak var editArticleImageView: UIImageView!
     @IBOutlet weak var removeArticleImageView: UIImageView!
+    @IBOutlet weak var removeOrAddView: UIView!
+    @IBOutlet weak var editView: UIView!
 
     // MARK: - Properties
     var delegate: ArticleDelegate?
@@ -52,7 +54,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         addOrRemoveImageView.tintColor = haveArticle ? .selectiveYellow : .prussianBlue
         editArticleImageView.tintColor = .prussianBlue
         removeArticleImageView.tintColor = .utOrange
+        editView.isHidden = !haveArticle
         articleStockLabel.isHidden = !haveArticle
-        addOrRemoveImageView.image = haveArticle ? UIImage(systemName: "minus") : UIImage(systemName: "plus")
-    }
+        addOrRemoveImageView.image = haveArticle ? UIImage(systemName: "minus") : UIImage(systemName: "plus")    }
 }

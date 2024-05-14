@@ -16,5 +16,5 @@ protocol StashEditViewModelProtocol {
 }
 
 protocol StashEditRouterProtocol {
-    func showCustomPickerType(typeScreen: TypesScreens, typeSelected: String)
+    func showCustomPickerType(typeScreen: TypesScreens, typeSelected: String,typeAction: TypeAction, typeButtonPressed: TypeButtonPressed)
 }

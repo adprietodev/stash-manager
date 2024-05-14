@@ -20,20 +20,36 @@ class ArticleEditViewController: UIViewController {
     @IBOutlet weak var saveEditLabel: UILabel!
     @IBOutlet weak var cancelEditView: UIView!
     @IBOutlet weak var cancelEditLabel: UILabel!
+    @IBOutlet weak var roomTitleLabel: UILabel!
+    @IBOutlet weak var roomTextField: UITextField!
+    @IBOutlet weak var stashTitleLabel: UILabel!
+    @IBOutlet weak var stashTextField: UITextField!
+    @IBOutlet weak var roomAndStashStackView: UIStackView!
 
     // MARK: - Properties
     var viewModel: ArticleEditViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setCurrentType()
         configurationNavigationBar()
         configureView()
-        viewModel.setCurrentType()
     }
 
     // MARK: - IBActions
     @IBAction func changeType(_ sender: Any) {
+        viewModel.typeButtonPressed = .type
         viewModel.showCustomPickerType()
+    }
+
+    @IBAction func changeRoom(_ sender: Any) {
+        viewModel.typeButtonPressed = .room
+        viewModel.showCustomPickerRoom()
+    }
+
+    @IBAction func changeStash(_ sender: Any) {
+        viewModel.typeButtonPressed = .stash
+        viewModel.showCustomPickerStash()
     }
 
     @IBAction func cancelEdit(_ sender: Any) {
@@ -57,6 +73,16 @@ class ArticleEditViewController: UIViewController {
         } else {
             articleImageView.loadBase64(viewModel.article.base64image)
         }
+        roomTitleLabel.text = "room".localized
+        roomTitleLabel.font = UIFont().robotoRegular(with: 14)
+        roomTitleLabel.textColor = .blueGreen
+        roomTextField.text = viewModel.selectedRoom.name
+        roomTextField.font = UIFont().robotoRegular(with: 16)
+        stashTitleLabel.text = "Stash"
+        stashTitleLabel.font = UIFont().robotoRegular(with: 14)
+        stashTitleLabel.textColor = .blueGreen
+        stashTextField.text = viewModel.selectedStash.name
+        stashTextField.font = UIFont().robotoRegular(with: 16)
         nameTitleLabel.text = "name".localized
         nameTitleLabel.font = UIFont().robotoRegular(with: 14)
         nameTitleLabel.textColor = .blueGreen
@@ -65,7 +91,7 @@ class ArticleEditViewController: UIViewController {
         typeTitleLabel.text = "type".localized
         typeTitleLabel.textColor = .blueGreen
         typeTitleLabel.font = UIFont().robotoRegular(with: 14)
-        articleTypeTextField.text = viewModel.typesArticle.filter { $0.id == viewModel.article.idTypeArticle }.first?.name.rawValue.localized
+        articleTypeTextField.text = viewModel.currentType.localized
         articleTypeTextField.font = UIFont().robotoRegular(with: 16)
         descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 14)
@@ -85,12 +111,24 @@ class ArticleEditViewController: UIViewController {
         saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
+        roomAndStashStackView.isHidden = viewModel.selectedRoom.id == 0
     }
 }
 
 extension ArticleEditViewController: CustomPickerViewControllerDelegate {
     func changeType(customPicker: UIPickerView, typeText: String) {
-        articleTypeTextField.inputView = customPicker
-        articleTypeTextField.text = typeText
+        switch viewModel.typeButtonPressed {
+        case .type:
+            articleTypeTextField.inputView = customPicker
+            articleTypeTextField.text = typeText
+        case .room:
+            roomTextField.inputView = customPicker
+            roomTextField.text = typeText
+        case .stash:
+            stashTextField.inputView = customPicker
+            stashTextField.text = typeText
+        case .none:
+            break
+        }
     }
 }
