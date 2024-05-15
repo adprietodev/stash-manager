@@ -105,4 +105,30 @@ extension ArticlesViewModel: ArticleDelegate {
         }
         router.goToEditArticle(article, typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
+
+    func addArticle(_ article: Article) {
+        if isSelectedRoom, !isSelectedStash {
+            for (index, articleInContent) in selectedRoom.articles.enumerated() {
+                if articleInContent.article.id == article.id {
+                    selectedRoom.articles[index].stock +=  1
+                    break
+                }
+                if index == selectedRoom.articles.count-1 {
+                    selectedRoom.articles.append(ArticleWithStock(article: article, stock: 1))
+                }
+            }
+        }
+
+        if isSelectedRoom, isSelectedStash {
+            for (index, articleInContent) in selectedStash.articles.enumerated() {
+                if articleInContent.article.id == article.id {
+                    selectedRoom.articles[index].stock +=  1
+                    break
+                }
+                if index == selectedRoom.articles.count-1 {
+                    selectedRoom.articles.append(ArticleWithStock(article: article, stock: 1))
+                }
+            }
+        }
+    }
 }

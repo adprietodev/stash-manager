@@ -15,5 +15,5 @@ protocol StashDetailViewModelProtocol {
 }
 
 protocol StashDetailRouterProtocol {
-    func goToEditStash(stash: Stash, typesStash: [TypeStash])
+    func goToEditStash(stash: Stash, typesStash: [TypeStash], room: Room)
 }

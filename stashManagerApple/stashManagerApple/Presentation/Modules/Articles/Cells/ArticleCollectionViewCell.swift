@@ -28,6 +28,11 @@ class ArticleCollectionViewCell: UICollectionViewCell {
 
     // MARK: - IBActions
     @IBAction func addOrRemoveStock(_ sender: Any) {
+        if haveArticle {
+            // TODO: - Remove
+        } else {
+            // TODO: - Add
+        }
     }
 
     @IBAction func goToEditArticle(_ sender: Any) {

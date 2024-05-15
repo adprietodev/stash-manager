@@ -14,8 +14,8 @@ class StashDetailRouter: StashDetailRouterProtocol {
         self.viewController = viewController
     }
 
-    func goToEditStash(stash: Stash, typesStash: [TypeStash]) {
-        let stashEditViewController = StashEditBuilder().build(stash: stash, typesStash: typesStash, typeAction: .edit)
+    func goToEditStash(stash: Stash, typesStash: [TypeStash], room: Room) {
+        let stashEditViewController = StashEditBuilder().build(stash: stash, typesStash: typesStash, typeAction: .edit, room: room)
         viewController.navigationController?.pushViewController(stashEditViewController, animated: true)
     }
 

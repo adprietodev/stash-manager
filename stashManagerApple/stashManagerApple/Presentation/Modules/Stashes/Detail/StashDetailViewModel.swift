@@ -28,7 +28,7 @@ class StashDetailViewModel: StashDetailViewModelProtocol {
 
     // MARK: - Functions
     func goToEditStash() {
-        router.goToEditStash(stash: stash, typesStash: typesStash)
+        router.goToEditStash(stash: stash, typesStash: typesStash, room: room)
     }
 
     func goToArticleInStash() {
