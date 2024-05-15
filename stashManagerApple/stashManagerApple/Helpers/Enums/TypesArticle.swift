@@ -8,7 +8,7 @@
 import Foundation
 
 enum TypesArticle: String {
-    case electronics = "electronis"
+    case electronics = "electronics"
     case clothing = "clothing"
     case food = "food"
     case books = "books"

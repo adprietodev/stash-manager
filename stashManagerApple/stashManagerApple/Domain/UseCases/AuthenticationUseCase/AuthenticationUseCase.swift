@@ -20,4 +20,8 @@ extension AuthenticationUseCase: AuthenticationUseCaseProtocol {
     func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session {
         try await repository.signInWithEmailAndPassword(email, password)
     }
+
+    func signOutCurrentUser() async throws {
+        try await repository.signOutCurrentUser()
+    }
 }

@@ -36,6 +36,11 @@ class ArticleEditViewController: UIViewController {
         configureView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+
     // MARK: - IBActions
     @IBAction func changeType(_ sender: Any) {
         viewModel.typeButtonPressed = .type
@@ -60,7 +65,7 @@ class ArticleEditViewController: UIViewController {
     func configurationNavigationBar() {
         self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = viewModel.typeAction == .edit ? UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil) : UIBarButtonItem(image: UIImage(systemName: ""), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

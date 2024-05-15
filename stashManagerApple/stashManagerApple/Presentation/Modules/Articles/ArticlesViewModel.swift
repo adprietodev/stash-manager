@@ -15,6 +15,7 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     let linksUseCase: LinkUseCaseProtocol
     let articleUseCase: ArticlesUseCaseProtocol
     let router: ArticlesRouterProtocol
+    var contentsRoom: [ContentRoom]!
     var selectedRoom: ContentRoom!
     var selectedStash: ContentStash!
     var articlesWithStock = [ArticleWithStock]()
@@ -29,6 +30,7 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     var filteredArticles = [Article]()
     var filteredArticlesWithStock = [ArticleWithStock]()
     var isFiltering: Bool = false
+    var articleVoid: Article = Article(id: 0, name: "", base64image: "", description: "", idUser: 0, idTypeArticle: 0)
 
     init(router: ArticlesRouterProtocol, usersUseCase: UsersUseCase, roomsUseCase: RoomsUseCaseProtocol, stashesUseCase: StashesUseCaseProtocol, linksUseCase: LinkUseCaseProtocol, articlesUseCase: ArticlesUseCaseProtocol) {
         self.usersUseCase = usersUseCase
@@ -43,7 +45,7 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     func getData() {
         Task {
             do {
-                let contentsRoom = try linksUseCase.getLocalContentRooms()!
+                contentsRoom = try linksUseCase.getLocalContentRooms()!
                 if showAllArticles {
                     let currentUser = try usersUseCase.getCurrentUser()
                     userArticles = try await articleUseCase.getArticles(at: currentUser.id)
@@ -86,9 +88,20 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
         }
     }
 
-    func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash)  {
+    func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash) {
         goingIntoDetailOrEdit = true
         router.goToDetail(article: article , typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
+    }
+
+    func goToAddArticle() {
+        goingIntoDetailOrEdit = true
+        if selectedRoom == nil {
+            selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), stashes: [], articles: [])
+        }
+        if selectedStash == nil {
+            selectedStash = ContentStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0), articles: [])
+        }
+        router.goToAddArticle(Article(id: 0, name: "", base64image: "", description: "", idUser: 0, idTypeArticle: 0), typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
 
     func clearSelectedRoomAndStash() {
@@ -98,6 +111,10 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
 }
 
 extension ArticlesViewModel: ArticleDelegate {
+    func checkIsSelectedRoom() -> Bool {
+        isSelectedRoom
+    }
+
     func goToEditArticle(_ article: Article) {
         goingIntoDetailOrEdit = true
         if selectedStash == nil {
@@ -106,29 +123,46 @@ extension ArticlesViewModel: ArticleDelegate {
         router.goToEditArticle(article, typesArticle: typesArticle, selectedRoom: selectedRoom, selectedStash: selectedStash)
     }
 
-    func addArticle(_ article: Article) {
-        if isSelectedRoom, !isSelectedStash {
-            for (index, articleInContent) in selectedRoom.articles.enumerated() {
-                if articleInContent.article.id == article.id {
-                    selectedRoom.articles[index].stock +=  1
-                    break
-                }
-                if index == selectedRoom.articles.count-1 {
-                    selectedRoom.articles.append(ArticleWithStock(article: article, stock: 1))
+    func modifyArticleStock(_ article: Article, increment: Int) {
+        guard isSelectedRoom else { return }
+        for (index, contentRoom) in contentsRoom.enumerated() {
+            guard contentRoom.room.id == selectedRoom.room.id else { continue }
+            if !isSelectedStash {
+                modifyArticleInList(&contentsRoom[index].articles, article: article, increment: increment)
+            } else {
+                guard isSelectedStash else { return }
+                for (indexStash, contentStash) in contentsRoom[index].stashes.enumerated() {
+                    guard contentStash.stash.id == selectedStash.stash.id else { continue }
+                    modifyArticleInList(&contentsRoom[index].stashes[indexStash].articles, article: article, increment: increment)
                 }
             }
+            break
         }
+        do {
+            try linksUseCase.setContentRooms(contentsRoom)
+            getData()
+            refreshCollectionView?()
+        } catch {
+            // Handle error
+        }
+    }
 
-        if isSelectedRoom, isSelectedStash {
-            for (index, articleInContent) in selectedStash.articles.enumerated() {
-                if articleInContent.article.id == article.id {
-                    selectedRoom.articles[index].stock +=  1
-                    break
-                }
-                if index == selectedRoom.articles.count-1 {
-                    selectedRoom.articles.append(ArticleWithStock(article: article, stock: 1))
-                }
+    func modifyArticleInList(_ articles: inout [ArticleWithStock], article: Article, increment: Int) {
+        if let index = articles.firstIndex(where: { $0.article.id == article.id }) {
+            articles[index].stock += increment
+            if articles[index].stock <= 0 {
+                articles.remove(at: index)
             }
+        } else if increment > 0 {
+            articles.append(ArticleWithStock(article: article, stock: 1))
         }
+    }
+
+    func addArticleStock(_ article: Article) {
+        modifyArticleStock(article, increment: 1)
+    }
+
+    func removeArticleStock(_ article: Article) {
+        modifyArticleStock(article, increment: -1)
     }
 }

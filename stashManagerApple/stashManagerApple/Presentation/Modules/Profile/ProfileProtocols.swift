@@ -12,8 +12,10 @@ protocol ProfileViewModelProtocol {
     var user: User! { get set }
     func loadUserData()
     func goToEditProfile()
+    func goToLogout()
 }
 
 protocol ProfileRouterProtocol {
     func goToEditProfile(user: User)
+    func goToLogout()
 }

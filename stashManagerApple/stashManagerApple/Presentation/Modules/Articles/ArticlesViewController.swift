@@ -48,6 +48,8 @@ class ArticlesViewController: UIViewController {
     }
     // MARK: - IBActions
     @IBAction func changeContainer(_ sender: Any) {
+        searchTextField.text = ""
+        viewModel.isFiltering = viewModel.isFilterArticle(by: searchTextField.text ?? "")
         viewModel.showAllArticles  = collectionSegmentControl.selectedSegmentIndex == 1 ? true : false
         viewModel.currentSegmentSelected = collectionSegmentControl.selectedSegmentIndex
         viewModel.getData()
@@ -57,7 +59,7 @@ class ArticlesViewController: UIViewController {
     func configurationView() {
         self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddArticle))
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -66,6 +68,10 @@ class ArticlesViewController: UIViewController {
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
         searcherImageView.tintColor = .prussianBlue
+    }
+
+    @objc func goToAddArticle() {
+        viewModel.goToAddArticle()
     }
 
     func checkIsInsideOfRoomOrStash() {

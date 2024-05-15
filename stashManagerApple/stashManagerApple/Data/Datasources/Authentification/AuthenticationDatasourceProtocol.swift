@@ -10,4 +10,5 @@ import Supabase
 
 protocol AuthenticationDatasourceProtocol{
     func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session
+    func signOutCurrentUser() async throws
 }

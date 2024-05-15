@@ -137,6 +137,9 @@
                                         <constraint firstAttribute="height" constant="36" id="po4-gG-JuF"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="logoutUser:" destination="-1" eventType="touchUpInside" id="jDE-6G-3dt"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -36,6 +36,11 @@ class ProfileViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
 
+    // MARK: - IBActions
+    @IBAction func logoutUser(_ sender: Any) {
+        viewModel.goToLogout()
+    }
+
     // MARK: - Functions
     func configureNavigationBar() {
         self.navigationItem.title = "PROFILE"

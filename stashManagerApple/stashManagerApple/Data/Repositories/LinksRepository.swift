@@ -135,15 +135,6 @@ fileprivate extension ArticleDTO {
                 name: self.name,
                 base64image: self.base64image ?? "",
                 description: self.description ?? "",
-                color: self.color ?? "",
-                expirationDate: self.expirationDate ?? "",
-                isAlcoholic: self.isAlcoholic ?? false,
-                mililitres: self.mililitres ?? 0,
-                weight: self.weight ?? 0,
-                brand: self.brand ?? "",
-                isSpice: self.isSpice ?? false,
-                isSpicy: self.isSpicy ?? false,
-                material: self.material ?? "",
                 idUser: self.idUser,
                 idTypeArticle: self.idTypeArticle)
     }
@@ -155,15 +146,6 @@ fileprivate extension Article {
                    name: self.name,
                    base64image: self.base64image,
                    description: self.description,
-                   color: self.color,
-                   expirationDate: self.expirationDate,
-                   isAlcoholic: self.isAlcoholic,
-                   mililitres: self.mililitres,
-                   weight: self.weight,
-                   brand: self.brand,
-                   isSpice: self.isSpice,
-                   isSpicy: self.isSpicy,
-                   material: self.material,
                    idUser: self.idUser,
                    idTypeArticle: self.idTypeArticle)
     }

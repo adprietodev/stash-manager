@@ -14,6 +14,7 @@ protocol ArticleEditViewModelProtocol {
     var typeButtonPressed: TypeButtonPressed? { get set }
     var selectedRoom: Room { get set }
     var selectedStash: Stash { get set }
+    var typeAction: TypeAction { get set }
     func showCustomPickerType()
     func setCurrentType() 
     func showCustomPickerRoom()

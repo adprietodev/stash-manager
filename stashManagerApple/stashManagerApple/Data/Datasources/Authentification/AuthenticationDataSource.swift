@@ -16,4 +16,8 @@ class AuthenticationDataSource: AuthenticationDatasourceProtocol {
     func signInWithEmailAndPassword(_ email: String, _ password: String) async throws -> Session {
         try await supabase.auth.signIn(email: email, password: password)
     }
+
+    func signOutCurrentUser() async throws {
+        try await supabase.auth.signOut()
+    }
 }

@@ -9,6 +9,9 @@ import UIKit
 
 protocol ArticleDelegate {
     func goToEditArticle(_ article: Article)
+    func addArticleStock(_ article: Article)
+    func checkIsSelectedRoom() -> Bool
+    func removeArticleStock(_ article: Article)
 }
 
 class ArticleCollectionViewCell: UICollectionViewCell {
@@ -29,9 +32,9 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     // MARK: - IBActions
     @IBAction func addOrRemoveStock(_ sender: Any) {
         if haveArticle {
-            // TODO: - Remove
+            delegate?.removeArticleStock(article)
         } else {
-            // TODO: - Add
+            delegate?.addArticleStock(article)
         }
     }
 
@@ -60,6 +63,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         editArticleImageView.tintColor = .prussianBlue
         removeArticleImageView.tintColor = .utOrange
         editView.isHidden = !haveArticle
+        addOrRemoveImageView.isHidden = !delegate.checkIsSelectedRoom()
         articleStockLabel.isHidden = !haveArticle
         addOrRemoveImageView.image = haveArticle ? UIImage(systemName: "minus") : UIImage(systemName: "plus")    }
 }

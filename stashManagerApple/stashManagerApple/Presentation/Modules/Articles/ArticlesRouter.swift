@@ -23,4 +23,9 @@ class ArticlesRouter: ArticlesRouterProtocol {
         let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .edit, selectedRoom: selectedRoom, selectedStash: selectedStash)
         viewController.navigationController?.pushViewController(articleEditViewController, animated: true)
     }
+
+    func goToAddArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash) {
+        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .add, selectedRoom: selectedRoom, selectedStash: selectedStash)
+        viewController.navigationController?.pushViewController(articleEditViewController, animated: true)
+    }
 }
