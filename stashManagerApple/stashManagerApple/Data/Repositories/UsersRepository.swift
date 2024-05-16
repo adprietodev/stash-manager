@@ -29,6 +29,14 @@ extension UsersRepository: UsersRepositoryProtocol {
         return userDTO.toDomain()
     }
 
+    func updateUser(_ user: User) async throws {
+        try await remoteDatasource.updateUser(user.toDTO())
+    }
+
+    func insertUser(_ user: User) async throws {
+        try await remoteDatasource.insertUser(user.toDTO())
+    }
+
     func setLocalCurrentUser(_ user: User) throws {
         try localDatasource.setLocalCurrentUser(user.toDTO())
     }

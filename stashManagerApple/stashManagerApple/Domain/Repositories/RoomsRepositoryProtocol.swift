@@ -13,4 +13,6 @@ protocol RoomsRepositoryProtocol {
     func getLocalSelectedRoom() throws -> Room?
     func setLocalSelectedRoom(_ room: Room) throws
     func removeLocalSelectedRoom()
+    func updateRoom(_ room: Room) async throws
+    func insertRoom(_ room: Room) async throws
 }

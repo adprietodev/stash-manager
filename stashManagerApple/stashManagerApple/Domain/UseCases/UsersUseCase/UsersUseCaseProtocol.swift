@@ -12,4 +12,6 @@ protocol UsersUseCaseProtocol {
     func getCurrentUser() throws -> User
     func setCurrentUser(_ user: User) throws
     func removeCurrentUser()
+    func updateUser(_ user: User) async throws
+    func insertUser(_ user: User) async throws 
 }

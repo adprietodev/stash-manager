@@ -20,6 +20,14 @@ extension UsersUseCase: UsersUseCaseProtocol {
         try await repository.getRemoteUser(at: authIDUser)
     }
 
+    func updateUser(_ user: User) async throws {
+        try await repository.insertUser(user)
+    }
+
+    func insertUser(_ user: User) async throws {
+        try await repository.updateUser(user)
+    }
+
     func getCurrentUser() throws -> User {
         try repository.getLocalCurrentUser()
     }

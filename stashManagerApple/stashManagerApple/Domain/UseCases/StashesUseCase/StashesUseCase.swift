@@ -18,6 +18,14 @@ class StashesUseCase: StashesUseCaseProtocol {
         try await repository.getRemoteStashes()
     }
 
+    func updateStash(_ stash: Stash) async throws {
+        try await repository.updateStash(stash)
+    }
+
+    func insertStash(_ stash: Stash) async throws {
+        try await repository.insertStash(stash)
+    }
+
     func getTypesStash() async throws -> [TypeStash] {
         try await repository.getRemoteTypesStash()
     }

@@ -26,6 +26,14 @@ class RoomsRepository:RoomsRepositoryProtocol {
         return typeRoomDTO.map {$0.toDomain()}
     }
 
+    func updateRoom(_ room: Room) async throws {
+        try await remoteDatasource.updateRoom(room.toDTO())
+    }
+
+    func insertRoom(_ room: Room) async throws {
+        try await remoteDatasource.insertRoom(room.toDTO())
+    }
+
     func getLocalSelectedRoom() throws -> Room? {
         let roomDTO = try localDatasource.getSelectedRoom()
         return roomDTO?.toDomain()

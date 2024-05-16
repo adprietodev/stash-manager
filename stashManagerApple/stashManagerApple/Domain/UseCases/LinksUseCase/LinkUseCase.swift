@@ -27,6 +27,14 @@ class LinkUseCase: LinkUseCaseProtocol {
         return contentRoom
     }
 
+    func updateLink(_ link: Link) async throws {
+        try await repository.updateLink(link)
+    }
+
+    func insertLink(_ link: Link) async throws {
+        try await repository.insertLink(link)
+    }
+    
     func getLocalContentRooms() throws -> [ContentRoom]? {
         try repository.getContentRoom()
     }

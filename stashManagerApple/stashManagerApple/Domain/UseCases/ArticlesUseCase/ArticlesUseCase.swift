@@ -21,4 +21,12 @@ class ArticlesUseCase: ArticlesUseCaseProtocol {
     func getTypesArticle() async throws -> [TypeArticle] {
         try await repository.getTypesArticle()
     }
+
+    func updateArticle(_ article: Article) async throws {
+        try await repository.updateArticle(article)
+    }
+
+    func insertArticle(_ article: Article) async throws {
+        try await repository.insertArticle(article)
+    }
 }

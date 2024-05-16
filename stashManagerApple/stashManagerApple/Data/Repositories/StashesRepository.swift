@@ -21,6 +21,14 @@ class StashesRepository: StashesRepositoryProtocol {
         return stashDTO.map { $0.toDomain() }
     }
 
+    func updateStash(_ stash: Stash) async throws {
+        try await remoteDatasource.updateStash(stash.toDTO())
+    }
+
+    func insertStash(_ stash: Stash) async throws {
+        try await remoteDatasource.insertStash(stash.toDTO())
+    }
+
     func getRemoteTypesStash() async throws -> [TypeStash] {
         let typeStashDTO = try await remoteDatasource.getTypesStash()
         return typeStashDTO.map { $0.toDomain() }

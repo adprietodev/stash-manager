@@ -13,4 +13,6 @@ protocol RoomsUseCaseProtocol {
     func getSelectedRoom() throws -> Room?
     func setSelectedRoom(_ room: Room) throws
     func removeSelectedRoom()
+    func updateRoom(_ room: Room) async throws
+    func insertRoom(_ room: Room) async throws
 }

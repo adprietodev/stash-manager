@@ -17,4 +17,12 @@ class StashesRemoteDatasource: StashesRemoteDatasourceProtocol {
     func getTypesStash() async throws -> [TypeStashDTO] {
         try await supabase.from("types_stash").select().execute().value
     }
+
+    func updateStash(_ stash: StashDTO) async throws {
+        try await supabase.from("stashes").update(stash).eq("id", value: stash.id).execute()
+    }
+
+    func insertStash(_ stash: StashDTO) async throws {
+        try await supabase.from("stashes").insert(stash).execute()
+    }
 }

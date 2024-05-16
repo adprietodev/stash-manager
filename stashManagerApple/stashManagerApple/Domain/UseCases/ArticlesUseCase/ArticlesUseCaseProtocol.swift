@@ -10,4 +10,6 @@ import Foundation
 protocol ArticlesUseCaseProtocol {
     func getArticles(at userID: Int) async throws -> [Article]
     func getTypesArticle() async throws -> [TypeArticle]
+    func updateArticle(_ article: Article) async throws
+    func insertArticle(_ article: Article) async throws
 }

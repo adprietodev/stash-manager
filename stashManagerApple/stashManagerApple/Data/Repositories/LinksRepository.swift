@@ -22,6 +22,14 @@ class LinksRepository: LinksRepositoryProtocol {
         return link
     }
 
+    func updateLink(_ link: Link) async throws {
+        try await remoteDatasource.updateLink(link.toDTO())
+    }
+
+    func insertLink(_ link: Link) async throws {
+        try await remoteDatasource.insertLink(link.toDTO())
+    }
+
     func getContentRoom() throws -> [ContentRoom]? {
         let contentRoomDTO = try localDatasource.getContentRoom()
         return contentRoomDTO?.map { $0.toDomain() }

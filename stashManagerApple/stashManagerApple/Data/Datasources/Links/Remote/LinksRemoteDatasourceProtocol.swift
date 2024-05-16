@@ -9,4 +9,6 @@ import Foundation
 
 protocol LinksRemoteDatasourceProtocol {
     func getLinks(at roomID: Int) async throws -> [LinkDTO]
+    func updateLink(_ link: LinkDTO) async throws
+    func insertLink(_ link: LinkDTO) async throws 
 }

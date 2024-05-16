@@ -12,4 +12,6 @@ protocol LinksRepositoryProtocol {
     func getContentRoom() throws -> [ContentRoom]?
     func setContentRoom(_ contentRoom: [ContentRoom]) throws
     func removeContentRoom()
+    func updateLink(_ link: Link) async throws
+    func insertLink(_ link: Link) async throws
 }

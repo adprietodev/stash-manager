@@ -17,4 +17,12 @@ class ArticlesDatasource: ArticlesDatasourceProtocol {
     func getTypesArticles() async throws -> [TypeArticleDTO] {
         try await supabase.from("types_article").select().execute().value
     }
+
+    func updateArticle(_ article: ArticleDTO) async throws  {
+        try await supabase.from("articles").update(article).eq("id", value: article.id).execute()
+    }
+
+    func insertArticle(_ article: ArticleDTO) async throws {
+        try await supabase.from("articles").insert(article).execute()
+    }
 }

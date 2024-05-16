@@ -20,4 +20,12 @@ class RoomsRemoteDatasource: RoomsRemoteDatasourceProtocol {
     func getTypesRoom() async throws -> [TypesRoomDTO] {
         try await supabase.from("types_room").select().execute().value
     }
+
+    func updateRoom(_ room: RoomDTO) async throws {
+        try await supabase.from("rooms").update(room).eq("id", value: room.id).execute()
+    }
+
+    func insertRoom(_ room: RoomDTO) async throws {
+        try await supabase.from("rooms").insert(room).execute()
+    }
 }
