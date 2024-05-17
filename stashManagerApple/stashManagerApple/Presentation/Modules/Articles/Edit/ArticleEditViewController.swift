@@ -65,11 +65,23 @@ class ArticleEditViewController: UIViewController {
     func configurationNavigationBar() {
         self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = viewModel.typeAction == .edit ? UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil) : UIBarButtonItem(image: UIImage(systemName: ""), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = viewModel.typeAction == .edit ? UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(showDeleteConfirmationAlert)) : UIBarButtonItem(image: UIImage(systemName: ""), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = .prussianBlue
+    }
+
+    @objc func showDeleteConfirmationAlert() {
+        let alertController = UIAlertController(title: "Eliminar articulo", message: "Estas apunto de eliminar el articulo \(viewModel.article.name)", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
+            // delete action self.delete
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func configureView() {

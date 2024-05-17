@@ -14,4 +14,5 @@ protocol LinksRepositoryProtocol {
     func removeContentRoom()
     func updateLink(_ link: Link) async throws
     func insertLink(_ link: Link) async throws
+    func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link]
 }

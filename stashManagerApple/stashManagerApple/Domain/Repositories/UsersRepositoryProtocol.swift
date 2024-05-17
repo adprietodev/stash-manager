@@ -14,4 +14,5 @@ protocol UsersRepositoryProtocol {
     func removeCurrentUser()
     func updateUser(_ user: User) async throws 
     func insertUser(_ user: User) async throws
+    func deleteUser(_ user: User) async throws
 }

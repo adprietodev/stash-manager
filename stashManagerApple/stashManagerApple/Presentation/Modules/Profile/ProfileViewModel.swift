@@ -40,9 +40,7 @@ class ProfileViewModel: ProfileViewModelProtocol {
                 try await authUseCase.signOutCurrentUser()
                 router.goToLogout()
             } catch {
-                
             }
         }
-        
     }
 }

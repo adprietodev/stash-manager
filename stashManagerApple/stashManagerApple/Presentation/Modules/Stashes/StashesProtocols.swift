@@ -20,8 +20,10 @@ protocol StashesViewModelProtocol {
     func goToDetail(stash: Stash)
     func checkSelectedStash()
     func isFilterStashes(by name: String) -> Bool
+    func goToAddStash()
 }
 
 protocol StashesRouterProtocol {
     func goToDetail(room: Room, stash: Stash, typesStash: [TypeStash])
+    func goToAddStash(stash: Stash, typesStash: [TypeStash], typeAction: TypeAction, room: Room)
 }

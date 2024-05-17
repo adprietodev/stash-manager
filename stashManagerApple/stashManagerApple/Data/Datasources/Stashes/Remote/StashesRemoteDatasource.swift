@@ -23,6 +23,11 @@ class StashesRemoteDatasource: StashesRemoteDatasourceProtocol {
     }
 
     func insertStash(_ stash: StashDTO) async throws {
-        try await supabase.from("stashes").insert(stash).execute()
+        let newStash = NewStashDTO(name: stash.name, description: stash.description, base64image: stash.base64image, idTypeStash: stash.idTypeStash, idRoom: stash.idRoom)
+        try await supabase.from("stashes").insert(newStash).execute()
+    }
+
+    func deleteStash(_ stash: StashDTO) async throws {
+        try await supabase.from("stashes").delete().eq("id", value: stash.id).execute()
     }
 }

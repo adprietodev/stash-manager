@@ -29,4 +29,8 @@ class ArticlesUseCase: ArticlesUseCaseProtocol {
     func insertArticle(_ article: Article) async throws {
         try await repository.insertArticle(article)
     }
+
+    func deleteArticle(_ article: Article) async throws {
+        try await repository.deleteArticle(article)
+    }
 }

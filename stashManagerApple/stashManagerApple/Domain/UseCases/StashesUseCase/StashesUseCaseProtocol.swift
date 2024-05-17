@@ -15,4 +15,5 @@ protocol StashesUseCaseProtocol {
     func removeSelectedStash()
     func updateStash(_ stash: Stash) async throws
     func insertStash(_ stash: Stash) async throws
+    func deleteStash(_ stash: Stash) async throws
 }

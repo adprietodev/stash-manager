@@ -117,6 +117,9 @@
 		CC777F012BE967BA0055C0FC /* HomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */; };
 		CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */; };
 		CC777F052BE967F90055C0FC /* HomeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */; };
+		CC7D99702BF7CCD200FF3A60 /* NewArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7D996F2BF7CCD200FF3A60 /* NewArticleDTO.swift */; };
+		CC7D99722BF7CEFF00FF3A60 /* NewStashDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7D99712BF7CEFF00FF3A60 /* NewStashDTO.swift */; };
+		CC7D99742BF7D0DE00FF3A60 /* NewRoomDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7D99732BF7D0DE00FF3A60 /* NewRoomDTO.swift */; };
 		CC828A7F2BF3C42F0022257D /* TypeButtonPressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC828A7E2BF3C42F0022257D /* TypeButtonPressed.swift */; };
 		CCA252802BE214EB00CFF515 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA2527F2BE214EB00CFF515 /* Link.swift */; };
 		CCA252822BE2196D00CFF515 /* LinksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA252812BE2196D00CFF515 /* LinksRepository.swift */; };
@@ -331,6 +334,9 @@
 		CC777F002BE967BA0055C0FC /* HomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailRouter.swift; sourceTree = "<group>"; };
 		CC777F022BE967CE0055C0FC /* HomeDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailBuilder.swift; sourceTree = "<group>"; };
 		CC777F042BE967F90055C0FC /* HomeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailProtocols.swift; sourceTree = "<group>"; };
+		CC7D996F2BF7CCD200FF3A60 /* NewArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewArticleDTO.swift; sourceTree = "<group>"; };
+		CC7D99712BF7CEFF00FF3A60 /* NewStashDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStashDTO.swift; sourceTree = "<group>"; };
+		CC7D99732BF7D0DE00FF3A60 /* NewRoomDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoomDTO.swift; sourceTree = "<group>"; };
 		CC828A7E2BF3C42F0022257D /* TypeButtonPressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeButtonPressed.swift; sourceTree = "<group>"; };
 		CCA2527F2BE214EB00CFF515 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		CCA252812BE2196D00CFF515 /* LinksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksRepository.swift; sourceTree = "<group>"; };
@@ -753,6 +759,7 @@
 			children = (
 				CCDB78FC2BDBF62800B551D3 /* RoomDTO.swift */,
 				CCDB78FE2BDBF64000B551D3 /* TypesRoomDTO.swift */,
+				CC7D99732BF7D0DE00FF3A60 /* NewRoomDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -762,6 +769,7 @@
 			children = (
 				CCDB78F82BDBF40800B551D3 /* StashDTO.swift */,
 				CCDB78FA2BDBF46800B551D3 /* TypeStashDTO.swift */,
+				CC7D99712BF7CEFF00FF3A60 /* NewStashDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -771,6 +779,7 @@
 			children = (
 				CCDB78F42BDBF1CA00B551D3 /* ArticleDTO.swift */,
 				CCDB78F62BDBF3B700B551D3 /* TypeArticleDTO.swift */,
+				CC7D996F2BF7CCD200FF3A60 /* NewArticleDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1371,6 +1380,7 @@
 				CC14BCD42BD99C5000D0F4BC /* User.swift in Sources */,
 				CC14BCB02BD997D500D0F4BC /* UsersRepository.swift in Sources */,
 				CCCD14E12BEC0B74003DCBB5 /* ArticleDetailBuilder.swift in Sources */,
+				CC7D99722BF7CEFF00FF3A60 /* NewStashDTO.swift in Sources */,
 				CCD8D8AD2BDE5BC7008EBDE4 /* AuthenticationRepository.swift in Sources */,
 				CCB2EF572BE4C3740059CA24 /* ArticlesWithStockDTO.swift in Sources */,
 				CC777EED2BE8C1960055C0FC /* ArticlesProtocols.swift in Sources */,
@@ -1452,9 +1462,11 @@
 				CC828A7F2BF3C42F0022257D /* TypeButtonPressed.swift in Sources */,
 				CC14BCF42BD99F2000D0F4BC /* LoginViewModel.swift in Sources */,
 				CCB2EF692BE4C6040059CA24 /* StashesLocalDatasourceProtocol.swift in Sources */,
+				CC7D99742BF7D0DE00FF3A60 /* NewRoomDTO.swift in Sources */,
 				CCB1981D2BEFC3230097B26E /* CustomPickerBuild.swift in Sources */,
 				CCD8D8BF2BDEB30B008EBDE4 /* SplashViewModel.swift in Sources */,
 				CCDB78F52BDBF1CA00B551D3 /* ArticleDTO.swift in Sources */,
+				CC7D99702BF7CCD200FF3A60 /* NewArticleDTO.swift in Sources */,
 				CCDB78F32BDBF1B500B551D3 /* UserDTO.swift in Sources */,
 				CC777F032BE967CE0055C0FC /* HomeDetailBuilder.swift in Sources */,
 				CCCD14C82BEBEFD4003DCBB5 /* ArticleDetailViewController.swift in Sources */,

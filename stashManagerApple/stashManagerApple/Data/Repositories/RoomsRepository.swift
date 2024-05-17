@@ -34,6 +34,11 @@ class RoomsRepository:RoomsRepositoryProtocol {
         try await remoteDatasource.insertRoom(room.toDTO())
     }
 
+    func deleteRoom(_ room: Room) async throws {
+        let roomDTO = room.toDTO()
+        try await remoteDatasource.deleteRoom(roomDTO)
+    }
+
     func getLocalSelectedRoom() throws -> Room? {
         let roomDTO = try localDatasource.getSelectedRoom()
         return roomDTO?.toDomain()

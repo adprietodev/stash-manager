@@ -12,4 +12,5 @@ protocol LinkUseCaseProtocol {
     func setContentRooms(_ contentRoom: [ContentRoom]) throws
     func removeContentRooms()
     func getLocalContentRooms() throws -> [ContentRoom]?
+    func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link]
 }

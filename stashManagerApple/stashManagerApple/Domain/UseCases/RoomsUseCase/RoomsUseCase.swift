@@ -27,9 +27,13 @@ class RoomsUseCase: RoomsUseCaseProtocol {
     func updateRoom(_ room: Room) async throws {
         try await repository.updateRoom(room)
     }
-    
+
     func insertRoom(_ room: Room) async throws {
         try await repository.insertRoom(room)
+    }
+
+    func deleteRoom(_ room: Room) async throws {
+        try await repository.deleteRoom(room)
     }
 
     func getSelectedRoom() throws -> Room? {

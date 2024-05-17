@@ -23,6 +23,11 @@ class ArticlesDatasource: ArticlesDatasourceProtocol {
     }
 
     func insertArticle(_ article: ArticleDTO) async throws {
-        try await supabase.from("articles").insert(article).execute()
+        let newArticle = NewArticleDTO(name: article.name, base64image: article.base64image, description: article.description, idUser: article.idUser, idTypeArticle: article.idTypeArticle)
+        try await supabase.from("articles").insert(newArticle).execute()
+    }
+
+    func deleteArticle(_ article: ArticleDTO) async throws {
+        try await supabase.from("article").delete().eq("id", value: article.id).execute()
     }
 }

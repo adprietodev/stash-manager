@@ -26,6 +26,10 @@ class StashesUseCase: StashesUseCaseProtocol {
         try await repository.insertStash(stash)
     }
 
+    func deleteStash(_ stash: Stash) async throws {
+        try await repository.deleteStash(stash)
+    }
+
     func getTypesStash() async throws -> [TypeStash] {
         try await repository.getRemoteTypesStash()
     }

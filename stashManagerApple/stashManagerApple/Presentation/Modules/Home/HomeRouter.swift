@@ -18,4 +18,9 @@ class HomeRouter: HomeRouterProtocol {
         let homeDetailViewController = HomeDetailBuilder().build(room: room, typesRoom: typesRoom)
         viewController.navigationController?.pushViewController(homeDetailViewController, animated: true)
     }
+
+    func goToAddRoom(room: Room, typesRoom: [TypeRoom], typeAction: TypeAction) {
+        let homeEditViewController = HomeEditBuilder().build(room: room, typesRoom: typesRoom, typeAction: typeAction)
+        viewController.navigationController?.pushViewController(homeEditViewController, animated: true)
+    }
 }

@@ -42,7 +42,7 @@ class HomeViewController: UIViewController {
     func configurationView() {
         self.navigationItem.title = "home".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddRoom))
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -67,6 +67,10 @@ class HomeViewController: UIViewController {
                 roomsCollectionView.reloadData()
             }
         }
+    }
+
+    @objc func goToAddRoom() {
+        viewModel.goToAddRoom()
     }
 }
 

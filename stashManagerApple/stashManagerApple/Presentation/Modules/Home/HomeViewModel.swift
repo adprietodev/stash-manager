@@ -52,6 +52,10 @@ class HomeViewModel: HomeViewModelProtocol {
         router.goToRoomDetail(room: room, typesRoom: typesRoom)
     }
 
+    func goToAddRoom() {
+        router.goToAddRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), typesRoom: typesRoom, typeAction: .add)
+    }
+
     func removeSelectedRoom() {
         roomsUseCase.removeSelectedRoom()
     }

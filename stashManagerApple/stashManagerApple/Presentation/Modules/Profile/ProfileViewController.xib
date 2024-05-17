@@ -92,10 +92,10 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="B8V-sg-X43">
-                    <rect key="frame" x="16" y="682" width="361" height="136"/>
+                    <rect key="frame" x="16" y="742" width="361" height="76"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hU-Dz-gbL">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="36"/>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hU-Dz-gbL">
+                            <rect key="frame" x="0.0" y="-36" width="361" height="36"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRI-19-MoA">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="36"/>
@@ -122,7 +122,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBv-jB-VoQ">
-                            <rect key="frame" x="0.0" y="60" width="361" height="36"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="36"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bP-U7-a7C">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="36"/>
@@ -152,7 +152,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCA-0v-rKi">
-                            <rect key="frame" x="0.0" y="120" width="361" height="16"/>
+                            <rect key="frame" x="0.0" y="60" width="361" height="16"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="j56-T9-6In"/>

@@ -70,6 +70,13 @@ class StashesViewModel: StashesViewModelProtocol {
         router.goToDetail(room: room, stash: stash, typesStash: typesStash)
     }
 
+    func goToAddStash() {
+        if selectedRoom == nil {
+            selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), stashes: [], articles: [])
+        }
+        router.goToAddStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0, idRoom: 0), typesStash: typesStash, typeAction: .add, room: selectedRoom!.room)
+    }
+
     func checkSelectedStash() {
         do {
             if try stashesUseCase.getSelectedStash() == nil {

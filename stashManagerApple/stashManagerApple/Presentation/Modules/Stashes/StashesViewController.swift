@@ -44,7 +44,7 @@ class StashesViewController: UIViewController {
     func configurationView() {
         self.navigationItem.title = "STASHES"
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(goToAddStash))
         rightAddRoomBarButton.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
@@ -53,6 +53,10 @@ class StashesViewController: UIViewController {
         searchView.layer.cornerRadius = 8
         searchTextField.font = UIFont().robotoRegular(with: 14)
         searcherImageView.tintColor = .prussianBlue
+    }
+
+    @objc func goToAddStash() {
+        viewModel.goToAddStash()
     }
 
     func configurationStashesCollectionView() {

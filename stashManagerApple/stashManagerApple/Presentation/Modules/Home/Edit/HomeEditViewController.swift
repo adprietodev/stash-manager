@@ -46,9 +46,10 @@ class HomeEditViewController: UIViewController {
 
     // MARK: - Functions
     func configurationNavigationBar() {
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = "room".localized
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: nil)
+        let rightAddRoomBarButton = viewModel.typeAction == .edit ? UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(showDeleteConfirmationAlert)) : UIBarButtonItem(image: UIImage(systemName: ""), style: .plain, target: self, action: nil)
         rightAddRoomBarButton.tintColor = .prussianBlue
         self.navigationController?.navigationBar.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
@@ -94,6 +95,18 @@ class HomeEditViewController: UIViewController {
         saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
+    }
+
+    @objc func showDeleteConfirmationAlert() {
+        let alertController = UIAlertController(title: "Eliminar habitación", message: "Estas apunto de eliminar la habitación \(viewModel.room!.name)", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
+            // delete action self.delete
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

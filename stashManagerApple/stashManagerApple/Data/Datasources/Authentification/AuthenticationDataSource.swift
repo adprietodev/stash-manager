@@ -20,4 +20,8 @@ class AuthenticationDataSource: AuthenticationDatasourceProtocol {
     func signOutCurrentUser() async throws {
         try await supabase.auth.signOut()
     }
+
+    func deleteUserAuth(_ UUID: String) async throws {
+        try await supabase.auth.admin.deleteUser(id: UUID)
+    }
 }

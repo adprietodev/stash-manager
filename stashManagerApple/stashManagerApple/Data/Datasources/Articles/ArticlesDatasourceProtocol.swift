@@ -12,4 +12,5 @@ protocol ArticlesDatasourceProtocol {
     func getTypesArticles() async throws -> [TypeArticleDTO]
     func updateArticle(_ article: ArticleDTO) async throws
     func insertArticle(_ article: ArticleDTO) async throws
+    func deleteArticle(_ article: ArticleDTO) async throws
 }

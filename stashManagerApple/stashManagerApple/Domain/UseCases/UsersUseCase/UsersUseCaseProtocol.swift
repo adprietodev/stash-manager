@@ -13,5 +13,6 @@ protocol UsersUseCaseProtocol {
     func setCurrentUser(_ user: User) throws
     func removeCurrentUser()
     func updateUser(_ user: User) async throws
-    func insertUser(_ user: User) async throws 
+    func insertUser(_ user: User) async throws
+    func deleteUser(_ user: User) async throws
 }

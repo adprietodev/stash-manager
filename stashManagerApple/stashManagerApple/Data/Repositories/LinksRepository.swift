@@ -30,6 +30,17 @@ class LinksRepository: LinksRepositoryProtocol {
         try await remoteDatasource.insertLink(link.toDTO())
     }
 
+    func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link] {
+        var convertStash: Int?
+        if stashID == 0 {
+            convertStash = nil
+        } else {
+            convertStash = stashID
+        }
+        let linksDTO = try await remoteDatasource.getIdLinkToModify(roomID: roomID, stashID: convertStash, articleID: articleID, typeScreen: typeScreen)
+        return linksDTO.map { $0.toDomain() }
+    }
+
     func getContentRoom() throws -> [ContentRoom]? {
         let contentRoomDTO = try localDatasource.getContentRoom()
         return contentRoomDTO?.map { $0.toDomain() }

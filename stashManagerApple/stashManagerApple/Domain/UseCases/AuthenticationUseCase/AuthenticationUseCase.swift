@@ -24,4 +24,8 @@ extension AuthenticationUseCase: AuthenticationUseCaseProtocol {
     func signOutCurrentUser() async throws {
         try await repository.signOutCurrentUser()
     }
+
+    func deleteUserAuth(_ UUID: String) async throws {
+        try await repository.deleteUserAuth(UUID)
+    }
 }

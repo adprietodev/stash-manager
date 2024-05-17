@@ -21,4 +21,8 @@ class UsersRemoteDatasource: UsersRemoteDatasourceProtocol {
     func insertUser(_ user: UserDTO) async throws {
         try await supabase.from("users").insert(user).execute()
     }
+
+    func deleteUser(_ user: UserDTO) async throws {
+        try await supabase.from("users").delete().eq("id", value: user.id).execute()
+    }
 }

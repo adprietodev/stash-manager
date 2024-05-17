@@ -27,6 +27,10 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
         try await datasource.insertArticle(article.toDTO())
     }
 
+    func deleteArticle(_ article: Article) async throws {
+        try await datasource.deleteArticle(article.toDTO())
+    }
+
     func getTypesArticle() async throws -> [TypeArticle] {
         let typesArticleDTO = try await datasource.getTypesArticles()
         return typesArticleDTO.map { $0.toDomain() }

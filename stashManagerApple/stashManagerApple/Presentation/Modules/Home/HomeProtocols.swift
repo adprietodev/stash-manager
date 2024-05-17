@@ -18,8 +18,10 @@ protocol HomeViewModelProtocol {
     func goToRoomDetail(room: Room)
     func removeSelectedRoom()
     func isFilterRoom(by name: String) -> Bool
+    func goToAddRoom()
 }
 
 protocol HomeRouterProtocol {
     func goToRoomDetail(room: Room, typesRoom: [TypeRoom])
+    func goToAddRoom(room: Room, typesRoom: [TypeRoom], typeAction: TypeAction)
 }

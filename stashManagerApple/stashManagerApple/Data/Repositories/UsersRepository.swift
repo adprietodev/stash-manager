@@ -37,6 +37,10 @@ extension UsersRepository: UsersRepositoryProtocol {
         try await remoteDatasource.insertUser(user.toDTO())
     }
 
+    func deleteUser(_ user: User) async throws {
+        try await remoteDatasource.deleteUser(user.toDTO())
+    }
+
     func setLocalCurrentUser(_ user: User) throws {
         try localDatasource.setLocalCurrentUser(user.toDTO())
     }

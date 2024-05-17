@@ -25,4 +25,8 @@ extension AuthenticationRepository: AuthenticationRepositoryProtocol {
     func signOutCurrentUser() async throws {
         try await datasource.signOutCurrentUser()
     }
+
+    func deleteUserAuth(_ UUID: String) async throws {
+        try await datasource.deleteUserAuth(UUID)
+    }
 }

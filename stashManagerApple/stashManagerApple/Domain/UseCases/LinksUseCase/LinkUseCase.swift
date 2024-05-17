@@ -43,6 +43,10 @@ class LinkUseCase: LinkUseCaseProtocol {
         try repository.setContentRoom(contentRoom)
     }
 
+    func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link] {
+        try await repository.getIdLinkToModify(roomID: roomID, stashID: stashID, articleID: articleID, typeScreen: typeScreen)
+    }
+
     func removeContentRooms() {
         repository.removeContentRoom()
     }

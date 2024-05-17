@@ -28,6 +28,10 @@ extension UsersUseCase: UsersUseCaseProtocol {
         try await repository.updateUser(user)
     }
 
+    func deleteUser(_ user: User) async throws {
+        try await repository.deleteUser(user)
+    }
+
     func getCurrentUser() throws -> User {
         try repository.getLocalCurrentUser()
     }

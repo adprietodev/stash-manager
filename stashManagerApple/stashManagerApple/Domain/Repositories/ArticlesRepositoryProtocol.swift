@@ -12,4 +12,5 @@ protocol ArticlesRepositoryProtocol {
     func getTypesArticle() async throws -> [TypeArticle]
     func updateArticle(_ article: Article) async throws
     func insertArticle(_ article: Article) async throws
+    func deleteArticle(_ article: Article) async throws
 }
