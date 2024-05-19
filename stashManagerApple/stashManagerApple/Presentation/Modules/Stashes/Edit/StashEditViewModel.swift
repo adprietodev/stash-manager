@@ -99,7 +99,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
                 try await updateLocalContentRoom()
                 router.finisUpdateStash()
             } catch {
-                print(error)
             }
         }
     }
@@ -112,7 +111,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
                 try await updateLocalContentRoom()
                 router.finishToInserOrDeletetStash()
             } catch {
-                print(error)
             }
         }
     }
@@ -144,7 +142,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
                     do {
                         try await group.waitForAll()
                     } catch {
-                        print("Error uno: \(error)")
                     }
                 }
                 links = try await linksUseCase.getLinksStash(at: stash.id)
@@ -154,7 +151,6 @@ class StashEditViewModel: StashEditViewModelProtocol {
                 try await updateLocalContentRoom()
                 router.finishToInserOrDeletetStash()
             } catch {
-                print("Error dos: \(error)")
             }
         }
     }

@@ -43,7 +43,6 @@ class SplashViewModel: SplashViewModelProtocol {
                 finishLoad?()
                 router.goToTabBar()
             } catch {
-                print(error)
             }
         }
     }

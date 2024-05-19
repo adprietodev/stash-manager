@@ -53,7 +53,6 @@ class HomeViewModel: HomeViewModelProtocol {
     }
 
     func goToAddRoom() {
-        print(currentUser.id)
         router.goToAddRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0, idUser: currentUser.id), typesRoom: typesRoom, typeAction: .add)
     }
 

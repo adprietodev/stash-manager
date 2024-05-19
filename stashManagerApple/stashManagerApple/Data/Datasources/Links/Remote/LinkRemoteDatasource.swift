@@ -39,7 +39,6 @@ class LinkRemoteDatasource: LinksRemoteDatasourceProtocol {
     }
 
     func insertLink(_ link: LinkDTO, typeScreen: TypesScreens) async throws {
-        print(link)
         var newLink = NewLinkDTO(id: nil, idRoom: nil, idStash: nil, idArticle: nil, stockArticle: nil)
         switch typeScreen {
         case .stash:

@@ -119,7 +119,6 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     func removeArticleUser(_ article: Article) {
         Task {
             do {
-                print(article)
                 for (index, articleInside) in userArticles.enumerated() {
                     if article.id == articleInside.id {
                         userArticles.remove(at: index)
@@ -138,7 +137,6 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
                 try await articleUseCase.deleteArticle(article)
                 refreshCollectionView?()
             } catch {
-                print(error)
             }
         }
     }
@@ -146,7 +144,6 @@ class ArticlesViewModel: ArticlesViewModelProtocol {
     func removeArticleLink(_ article: Article) {
         Task {
             do {
-                print(article)
                 for (index, articleInside) in filteredArticles.enumerated() {
                     if article.id == articleInside.id {
                         filteredArticles.remove(at: index)

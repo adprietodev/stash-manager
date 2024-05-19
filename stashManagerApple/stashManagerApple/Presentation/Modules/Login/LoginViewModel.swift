@@ -29,7 +29,6 @@ class LoginViewModel: LoginViewModelProtocol {
                 let login = try await authUseCase.signInWithEmailAndPassword(email, password)
                 goToSplashLoadData(uuid: login.user.id)
             } catch {
-                print(error)
                 loginError?()
             }
         }

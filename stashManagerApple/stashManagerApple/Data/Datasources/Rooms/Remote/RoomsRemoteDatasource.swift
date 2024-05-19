@@ -22,7 +22,6 @@ class RoomsRemoteDatasource: RoomsRemoteDatasourceProtocol {
     }
 
     func updateRoom(_ room: RoomDTO) async throws {
-        print(room)
         try await supabase.from("rooms").update(room).eq("id", value: room.id).execute()
     }
 
