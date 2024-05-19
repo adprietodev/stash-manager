@@ -10,8 +10,8 @@ import Foundation
 struct User {
     let id: Int
     let idAuth: String
-    let name: String
-    let lastname: String
-    let base64image: String
+    var name: String
+    var lastname: String
+    var base64image: String
     let email: String
 }

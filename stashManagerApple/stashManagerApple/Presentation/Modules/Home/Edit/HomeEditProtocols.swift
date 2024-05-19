@@ -14,8 +14,15 @@ protocol HomeEditViewModelProtocol {
     var typeAction: TypeAction { get set }
     func setCurrentType()
     func showCustomPickerType()
+    func setTypeRoom(_ nameType: String)
+    func setNameRoom(_ nameRoom: String)
+    func updateRoom()
+    func addRoom()
+    func deleteRoom() 
 }
 
 protocol HomeEditRouterProtocol {
     func showCustomPickerType(typeScreen: TypesScreens, typeSelected: String,typeAction: TypeAction, typeButtonPressed: TypeButtonPressed)
+    func finishEditOrAddRoom() 
+    func deleteRoom()
 }

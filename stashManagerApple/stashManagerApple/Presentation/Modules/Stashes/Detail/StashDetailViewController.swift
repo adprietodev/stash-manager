@@ -24,14 +24,16 @@ class StashDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
         configurationNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupBindings()
+        viewModel.updateStash()
         self.tabBarController?.tabBar.isHidden = true
         viewModel.isGoingToArticle = false
+        configureView()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -45,6 +47,15 @@ class StashDetailViewController: UIViewController {
     }
 
     // MARK: - Funtions
+    func setupBindings() {
+        viewModel.uploadView = {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                configureView()
+            }
+        }
+    }
+
     func configureView() {
         let stash = self.viewModel.stash
         if stash.base64image == "" {

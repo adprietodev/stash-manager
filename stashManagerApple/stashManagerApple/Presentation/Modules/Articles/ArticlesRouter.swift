@@ -19,13 +19,13 @@ class ArticlesRouter: ArticlesRouterProtocol {
         viewController.navigationController?.pushViewController(articleDetailViewController, animated: true)
     }
 
-    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash) {
-        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .edit, selectedRoom: selectedRoom, selectedStash: selectedStash)
+    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle]) {
+        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .edit)
         viewController.navigationController?.pushViewController(articleEditViewController, animated: true)
     }
 
-    func goToAddArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash) {
-        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .add, selectedRoom: selectedRoom, selectedStash: selectedStash)
+    func goToAddArticle(_ article: Article, typesArticle: [TypeArticle]) {
+        let articleEditViewController = ArticleEditBuilder().build(article: article, typesArticle: typesArticle, typeAction: .add)
         viewController.navigationController?.pushViewController(articleEditViewController, animated: true)
     }
 }

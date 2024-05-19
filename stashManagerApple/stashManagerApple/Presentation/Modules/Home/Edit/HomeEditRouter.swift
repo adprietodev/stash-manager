@@ -20,4 +20,18 @@ class HomeEditRouter: HomeEditRouterProtocol {
         customPickerViewController.modalPresentationStyle = .overCurrentContext
         viewController.navigationController?.present(customPickerViewController, animated: true)
     }
+
+    func finishEditOrAddRoom() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            viewController.navigationController?.popViewController(animated: true)
+        }
+    }
+
+    func deleteRoom() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            viewController.navigationController?.popToRootViewController(animated: true)
+        }
+    }
 }

@@ -9,9 +9,9 @@ import Foundation
 
 struct Article {
     let id: Int
-    let name: String
-    let base64image: String
-    let description: String
-    let idUser: Int
-    let idTypeArticle: Int
+    var name: String
+    var base64image: String
+    var description: String
+    var idUser: Int
+    var idTypeArticle: Int
 }

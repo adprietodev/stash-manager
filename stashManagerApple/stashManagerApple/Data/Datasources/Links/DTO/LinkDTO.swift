@@ -10,6 +10,7 @@ import Foundation
 struct LinkDTO: Codable {
     let id, idRoom: Int
     let idStash: Int?
-    let idArticle: Int
-    let stockArticle: Int
+    let idArticle: Int?
+    let stockArticle: Int?
 }
+

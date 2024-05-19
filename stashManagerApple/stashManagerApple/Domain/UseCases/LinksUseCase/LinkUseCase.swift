@@ -27,14 +27,19 @@ class LinkUseCase: LinkUseCaseProtocol {
         return contentRoom
     }
 
-    func updateLink(_ link: Link) async throws {
-        try await repository.updateLink(link)
+    func getLinksStash(at stashID: Int) async throws -> [Link] {
+        try await repository.getLinksStash(at: stashID)
     }
 
-    func insertLink(_ link: Link) async throws {
-        try await repository.insertLink(link)
+    func updateLink(_ link: Link, typeScreens: TypesScreens) async throws {
+        try await deleteLink(at: link.id)
+        try await insertLink(link, typeScreen: typeScreens)
     }
-    
+
+    func insertLink(_ link: Link, typeScreen: TypesScreens) async throws {
+        try await repository.insertLink(link, typeScreen: typeScreen)
+    }
+
     func getLocalContentRooms() throws -> [ContentRoom]? {
         try repository.getContentRoom()
     }
@@ -45,6 +50,10 @@ class LinkUseCase: LinkUseCaseProtocol {
 
     func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link] {
         try await repository.getIdLinkToModify(roomID: roomID, stashID: stashID, articleID: articleID, typeScreen: typeScreen)
+    }
+
+    func deleteLink(at linkID: Int) async throws {
+        try await repository.deleteLink(at: linkID)
     }
 
     func removeContentRooms() {
@@ -76,7 +85,7 @@ class LinkUseCase: LinkUseCaseProtocol {
             let articleID = link.idArticle
             let stockArticle = link.stockArticle
 
-            guard let room = roomsDict[roomID], let article = articlesDict[articleID] else {
+            guard let room = roomsDict[roomID] else {
                 continue
             }
 
@@ -86,30 +95,43 @@ class LinkUseCase: LinkUseCaseProtocol {
                 stash?.idRoom = roomID
             }
 
-            let articleWithStock = ArticleWithStock(article: article, stock: stockArticle)
+            var articleWithStock: ArticleWithStock? = nil
+            if let articleID = articleID, let stockArticle = stockArticle, let article = articlesDict[articleID] {
+                articleWithStock = ArticleWithStock(article: article, stock: stockArticle)
+            }
 
-            if let existingContentRoom =  contentRooms.first(where: {$0.room.id == roomID}) {
+            if let existingContentRoom = contentRooms.first(where: { $0.room.id == roomID }) {
                 if let stash = stash {
                     if let existingContentStash = existingContentRoom.stashes.first(where: { $0.stash.id == stashID }) {
-                        existingContentStash.articles.append(articleWithStock)
+                        if let articleWithStock = articleWithStock {
+                            existingContentStash.articles.append(articleWithStock)
+                        }
                     } else {
-                        var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                        var newContentStash = ContentStash(stash: stash, articles: [])
+                        if let articleWithStock = articleWithStock {
+                            newContentStash.articles.append(articleWithStock)
+                        }
                         existingContentRoom.stashes.append(newContentStash)
                     }
                 } else {
-                    existingContentRoom.articles.append(articleWithStock)
+                    if let articleWithStock = articleWithStock {
+                        existingContentRoom.articles.append(articleWithStock)
+                    }
                 }
             } else {
                 var contentStashes = [ContentStash]()
                 if let stash = stash {
-                    var newContentStash = ContentStash(stash: stash, articles: [articleWithStock])
+                    var newContentStash = ContentStash(stash: stash, articles: [])
+                    if let articleWithStock = articleWithStock {
+                        newContentStash.articles.append(articleWithStock)
+                    }
                     contentStashes.append(newContentStash)
-                } else {
-                    let newContentRoom = ContentRoom(room: room, stashes: contentStashes, articles: [articleWithStock])
-                    contentRooms.append(newContentRoom)
-                    continue
+                    articleWithStock = nil
                 }
-                let newContentRoom = ContentRoom(room: room, stashes: contentStashes, articles: [])
+                var newContentRoom = ContentRoom(room: room, stashes: contentStashes, articles: [])
+                if let articleWithStock = articleWithStock {
+                    newContentRoom.articles.append(articleWithStock)
+                }
                 contentRooms.append(newContentRoom)
             }
         }

@@ -59,7 +59,8 @@ fileprivate extension RoomDTO {
              name: self.name,
              base64image: self.base64image ?? "",
              description: self.description ?? "",
-             idTypeRoom: self.idTypeRoom)
+             idTypeRoom: self.idTypeRoom,
+             idUser: self.idUser)
     }
 }
 
@@ -75,6 +76,7 @@ fileprivate extension Room {
                 name: self.name,
                 base64image: self.base64image,
                 description: self.description,
-                idTypeRoom: self.idTypeRoom)
+                idTypeRoom: self.idTypeRoom,
+                idUser: self.idUser)
     }
 }

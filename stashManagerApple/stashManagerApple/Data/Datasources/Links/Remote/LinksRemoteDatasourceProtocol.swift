@@ -8,8 +8,10 @@
 import Foundation
 
 protocol LinksRemoteDatasourceProtocol {
-    func getLinks(at roomID: Int) async throws -> [LinkDTO]
+    func getLinksRoom(at roomID: Int) async throws -> [LinkDTO]
     func updateLink(_ link: LinkDTO) async throws
-    func insertLink(_ link: LinkDTO) async throws 
+    func insertLink(_ link: LinkDTO, typeScreen: TypesScreens) async throws
     func getIdLinkToModify(roomID: Int, stashID: Int?, articleID: Int, typeScreen: TypesScreens) async throws -> [LinkDTO]
+    func deleteLink(at linkID: Int) async throws
+    func getLinksStash(at stashID: Int) async throws -> [LinkDTO]?
 }

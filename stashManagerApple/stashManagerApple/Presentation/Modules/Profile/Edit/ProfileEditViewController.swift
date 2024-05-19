@@ -25,6 +25,7 @@ class ProfileEditViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: ProfileEditViewModelProtocol!
+    let customImagePickerManager = CustomImagePickerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,42 @@ class ProfileEditViewController: UIViewController {
         configurationNavigationBar()
     }
 
+    @IBAction func changeOrEditImageButtonView(_ sender: Any) {
+        customImagePickerManager.pickImage(self) { [weak self] selectedImage in
+            guard let self else { return }
+            let resizedImage =  self.customImagePickerManager.resizeImage(image: selectedImage, targetSize: CGSize(width: 300, height: 300))
+            if let imageData = resizedImage.pngData() {
+                let base64String = imageData.base64EncodedString()
+                viewModel.imageBase64 = base64String
+                userImageView.loadBase64(base64String)
+            }
+        }
+    }
+    @IBAction func changeOrEditImageButtonText(_ sender: Any) {
+        customImagePickerManager.pickImage(self) { [weak self] selectedImage in
+            guard let self else { return }
+            let resizedImage =  self.customImagePickerManager.resizeImage(image: selectedImage, targetSize: CGSize(width: 300, height: 300))
+            if let imageData = resizedImage.pngData() {
+                let base64String = imageData.base64EncodedString()
+                viewModel.imageBase64 = base64String
+                userImageView.loadBase64(base64String)
+            }
+        }
+    }
+
+    @IBAction func saveEdit(_ sender: Any) {
+        guard let userName = userNameTextField.text, !userName.isEmpty,
+              let userLastName = userLastnameTextFiled.text, !userLastName.isEmpty else {
+                  showAlertForEmptyFields()
+                  return
+              }
+        viewModel.editUser(nameUser: userName, lastName: userLastName)
+    }
+    
+    @IBAction func cancelEdit(_ sender: Any) {
+        viewModel.finishEditUser()
+    }
+    
     // MARK: - Functions
     func configureView() {
         mainUserImageView.layer.cornerRadius = mainUserImageView.frame.width/2
@@ -77,6 +114,12 @@ class ProfileEditViewController: UIViewController {
         saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
+    }
+
+    func showAlertForEmptyFields() {
+        let alert = UIAlertController(title: "Error", message: "Todos los campos deben estar llenos", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func configurationNavigationBar() {

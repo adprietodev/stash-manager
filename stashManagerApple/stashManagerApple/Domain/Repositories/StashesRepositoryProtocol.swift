@@ -14,6 +14,6 @@ protocol StashesRepositoryProtocol {
     func setSelectedStash(_ stash: Stash) throws
     func removeSelectedStash()
     func updateStash(_ stash: Stash) async throws
-    func insertStash(_ stash: Stash) async throws
+    func insertStash(_ stash: Stash) async throws -> Int
     func deleteStash(_ stash: Stash) async throws
 }

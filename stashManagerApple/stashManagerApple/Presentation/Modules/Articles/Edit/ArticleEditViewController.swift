@@ -20,14 +20,9 @@ class ArticleEditViewController: UIViewController {
     @IBOutlet weak var saveEditLabel: UILabel!
     @IBOutlet weak var cancelEditView: UIView!
     @IBOutlet weak var cancelEditLabel: UILabel!
-    @IBOutlet weak var roomTitleLabel: UILabel!
-    @IBOutlet weak var roomTextField: UITextField!
-    @IBOutlet weak var stashTitleLabel: UILabel!
-    @IBOutlet weak var stashTextField: UITextField!
-    @IBOutlet weak var roomAndStashStackView: UIStackView!
-
     // MARK: - Properties
     var viewModel: ArticleEditViewModelProtocol!
+    let customImagePickerManager = CustomImagePickerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,41 +42,50 @@ class ArticleEditViewController: UIViewController {
         viewModel.showCustomPickerType()
     }
 
-    @IBAction func changeRoom(_ sender: Any) {
-        viewModel.typeButtonPressed = .room
-        viewModel.showCustomPickerRoom()
+    @IBAction func changeNameArticle(_ sender: Any) {
+        guard let name = articleNameTextField.text else { return }
+        viewModel.setNameArticle(name)
     }
-
-    @IBAction func changeStash(_ sender: Any) {
-        viewModel.typeButtonPressed = .stash
-        viewModel.showCustomPickerStash()
+    
+    @IBAction func saveEdit(_ sender: Any) {
+        guard let nameArticle = articleNameTextField.text, !nameArticle.isEmpty,
+              let description = articleDescriptionTextView.text, !description.isEmpty,
+              let articleType = articleTypeTextField.text, !articleType.isEmpty else {
+            showAlertForEmptyFields()
+            return
+        }
+        viewModel.setDescription(articleDescriptionTextView.text)
+        switch viewModel.typeAction {
+        case .edit:
+            viewModel.updateArticle()
+        case .add:
+            viewModel.addArticleUser()
+        }
     }
+    
 
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func selectImage(_ sender: Any) {
+        customImagePickerManager.pickImage(self) { [weak self] selectedImage in
+            guard let self else { return }
+            let resizedImage =  self.customImagePickerManager.resizeImage(image: selectedImage, targetSize: CGSize(width: 300, height: 300))
+            if let imageData = resizedImage.pngData() {
+                let base64String = imageData.base64EncodedString()
+                viewModel.article.base64image = base64String
+                articleImageView.loadBase64(base64String)
+            }
+        }
     }
 
     // MARK: - Functions
     func configurationNavigationBar() {
         self.navigationItem.title = "articles".localized.uppercased()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont().robotoBold(with: 20), NSAttributedString.Key.foregroundColor: UIColor.prussianBlue ]
-        let rightAddRoomBarButton = viewModel.typeAction == .edit ? UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(showDeleteConfirmationAlert)) : UIBarButtonItem(image: UIImage(systemName: ""), style: .plain, target: self, action: nil)
-        rightAddRoomBarButton.tintColor = .prussianBlue
-        navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = .prussianBlue
-    }
-
-    @objc func showDeleteConfirmationAlert() {
-        let alertController = UIAlertController(title: "Eliminar articulo", message: "Estas apunto de eliminar el articulo \(viewModel.article.name)", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
-            // delete action self.delete
-        }
-
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
-        alertController.addAction(deleteAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
     }
 
     func configureView() {
@@ -90,16 +94,6 @@ class ArticleEditViewController: UIViewController {
         } else {
             articleImageView.loadBase64(viewModel.article.base64image)
         }
-        roomTitleLabel.text = "room".localized
-        roomTitleLabel.font = UIFont().robotoRegular(with: 14)
-        roomTitleLabel.textColor = .blueGreen
-        roomTextField.text = viewModel.selectedRoom.name
-        roomTextField.font = UIFont().robotoRegular(with: 16)
-        stashTitleLabel.text = "Stash"
-        stashTitleLabel.font = UIFont().robotoRegular(with: 14)
-        stashTitleLabel.textColor = .blueGreen
-        stashTextField.text = viewModel.selectedStash.name
-        stashTextField.font = UIFont().robotoRegular(with: 16)
         nameTitleLabel.text = "name".localized
         nameTitleLabel.font = UIFont().robotoRegular(with: 14)
         nameTitleLabel.textColor = .blueGreen
@@ -128,7 +122,12 @@ class ArticleEditViewController: UIViewController {
         saveEditLabel.text = "save".localized
         saveEditLabel.font = UIFont().robotoBold(with: 20)
         saveEditLabel.textColor = .white
-        roomAndStashStackView.isHidden = viewModel.selectedRoom.id == 0
+    }
+
+    func showAlertForEmptyFields() {
+        let alert = UIAlertController(title: "Error", message: "Todos los campos deben estar llenos", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -138,13 +137,8 @@ extension ArticleEditViewController: CustomPickerViewControllerDelegate {
         case .type:
             articleTypeTextField.inputView = customPicker
             articleTypeTextField.text = typeText
-        case .room:
-            roomTextField.inputView = customPicker
-            roomTextField.text = typeText
-        case .stash:
-            stashTextField.inputView = customPicker
-            stashTextField.text = typeText
-        case .none:
+            viewModel.setTypeArticle(typeText)
+        default:
             break
         }
     }

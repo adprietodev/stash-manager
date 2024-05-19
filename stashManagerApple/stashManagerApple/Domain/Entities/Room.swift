@@ -9,8 +9,9 @@ import Foundation
 
 struct Room {
     let id: Int
-    let name: String
-    let base64image: String
-    let description: String
-    let idTypeRoom: Int
+    var name: String
+    var base64image: String
+    var description: String
+    var idTypeRoom: Int
+    var idUser: Int
 }

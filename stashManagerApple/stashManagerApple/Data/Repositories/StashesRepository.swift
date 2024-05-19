@@ -25,7 +25,7 @@ class StashesRepository: StashesRepositoryProtocol {
         try await remoteDatasource.updateStash(stash.toDTO())
     }
 
-    func insertStash(_ stash: Stash) async throws {
+    func insertStash(_ stash: Stash) async throws -> Int {
         try await remoteDatasource.insertStash(stash.toDTO())
     }
 

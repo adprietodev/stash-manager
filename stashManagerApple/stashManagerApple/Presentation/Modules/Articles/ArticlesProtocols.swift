@@ -19,10 +19,13 @@ protocol ArticlesViewModelProtocol {
     func goToAddArticle()
     func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash)
     func isFilterArticle(by name: String) -> Bool
+    var showAlertRemoveArtilce:((Article) -> Void)? { get set }
+    func removeArticleUser(_ article: Article)
+    func removeArticleLink(_ article: Article)
 }
 
 protocol ArticlesRouterProtocol {
     func goToDetail(article: Article, typesArticle: [TypeArticle],selectedRoom: ContentRoom, selectedStash: ContentStash)
-    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash)
-    func goToAddArticle(_ article: Article, typesArticle: [TypeArticle], selectedRoom: ContentRoom, selectedStash: ContentStash)
+    func goToEditArticle(_ article: Article, typesArticle: [TypeArticle])
+    func goToAddArticle(_ article: Article, typesArticle: [TypeArticle])
 }

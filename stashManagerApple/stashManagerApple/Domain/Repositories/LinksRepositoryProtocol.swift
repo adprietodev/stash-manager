@@ -13,6 +13,8 @@ protocol LinksRepositoryProtocol {
     func setContentRoom(_ contentRoom: [ContentRoom]) throws
     func removeContentRoom()
     func updateLink(_ link: Link) async throws
-    func insertLink(_ link: Link) async throws
+    func insertLink(_ link: Link, typeScreen: TypesScreens) async throws
     func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link]
+    func deleteLink(at linkID: Int) async throws
+    func getLinksStash(at stashID: Int) async throws -> [Link]
 }

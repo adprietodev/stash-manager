@@ -24,6 +24,7 @@ class HomeEditViewController: UIViewController {
 
     // MARK: - Properties
     var viewModel: HomeEditViewModelProtocol!
+    var customImagePickerManager = CustomImagePickerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +38,41 @@ class HomeEditViewController: UIViewController {
         viewModel.showCustomPickerType()
     }
 
+    @IBAction func changeName(_ sender: Any) {
+        viewModel.setNameRoom(roomNameTextField.text!)
+    }
+
     @IBAction func saveRoom(_ sender: Any) {
+        guard let nameRoom = roomNameTextField.text, !nameRoom.isEmpty,
+              let descriptionName = roomDescriptionTextView.text, !descriptionName.isEmpty,
+              let typeRoom = roomTypeTextField.text, !typeRoom.isEmpty else {
+            showAlertForEmptyFields()
+            return
+        }
+        switch viewModel.typeAction {
+        case .edit:
+            viewModel.room?.description = roomDescriptionTextView.text
+            viewModel.updateRoom()
+        case .add:
+            viewModel.room?.description = roomDescriptionTextView.text
+            viewModel.addRoom()
+        }
     }
 
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func selectImage(_ sender: Any) {
+        customImagePickerManager.pickImage(self) { [weak self] selectedImage in
+            guard let self else { return }
+            let resizedImage =  self.customImagePickerManager.resizeImage(image: selectedImage, targetSize: CGSize(width: 300, height: 300))
+            if let imageData = resizedImage.pngData() {
+                let base64String = imageData.base64EncodedString()
+                viewModel.room?.base64image = base64String
+                roomImageView.loadBase64(base64String)
+            }
+        }
     }
 
     // MARK: - Functions
@@ -53,6 +84,12 @@ class HomeEditViewController: UIViewController {
         rightAddRoomBarButton.tintColor = .prussianBlue
         self.navigationController?.navigationBar.tintColor = .prussianBlue
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
+    }
+
+    func showAlertForEmptyFields() {
+        let alert = UIAlertController(title: "Error", message: "Todos los campos deben estar llenos", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func configureView() {
@@ -100,7 +137,8 @@ class HomeEditViewController: UIViewController {
     @objc func showDeleteConfirmationAlert() {
         let alertController = UIAlertController(title: "Eliminar habitación", message: "Estas apunto de eliminar la habitación \(viewModel.room!.name)", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
-            // delete action self.delete
+            guard let self else { return }
+            viewModel.deleteRoom()
         }
 
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
@@ -114,6 +152,7 @@ extension HomeEditViewController: CustomPickerViewControllerDelegate {
     func changeType(customPicker: UIPickerView, typeText: String) {
         roomTypeTextField.inputView = customPicker
         roomTypeTextField.text = typeText
+        viewModel.setTypeRoom(typeText)
     }
 
 }

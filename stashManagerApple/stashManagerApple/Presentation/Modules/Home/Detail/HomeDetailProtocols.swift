@@ -12,7 +12,8 @@ protocol HomeDetailViewModelProtocol {
     var typesRoom: [TypeRoom] { get set }
     func goToEditRoom()
     func goToStashesRoom()
-    func goToArticlesInRoom() 
+    func goToArticlesInRoom()
+    func updateRoom()
 }
 
 protocol HomeDetailRouterProtocol {

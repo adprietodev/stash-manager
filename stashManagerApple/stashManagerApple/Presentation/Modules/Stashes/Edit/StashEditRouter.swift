@@ -33,4 +33,19 @@ class StashEditRouter: StashEditRouterProtocol {
             viewController.navigationController?.present(customPickerViewController, animated: true)
         }
     }
+
+    func finishToInserOrDeletetStash()  {
+        DispatchQueue.main.async { [weak self] in
+            guard let self =  self else { return }
+            viewController.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+
+    func finisUpdateStash() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self =  self else { return }
+            viewController.navigationController?.popViewController(animated: true)
+        }
+    }
+    
 }

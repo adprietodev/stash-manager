@@ -19,6 +19,11 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
         return articleDTO.map { $0.toDomain() }
     }
 
+    func getArticle(at articleID: Int) async throws -> Article {
+        let articleDTO = try await datasource.getArticle(at: articleID)
+        return articleDTO.map({ $0.toDomain() })[0]
+    }
+
     func updateArticle(_ article: Article) async throws {
         try await datasource.updateArticle(article.toDTO())
     }

@@ -24,12 +24,13 @@ class HomeDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurationView()
         configurationNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.updateRoom()
+        configurationView()
         self.tabBarController?.tabBar.isHidden = true
     }
 

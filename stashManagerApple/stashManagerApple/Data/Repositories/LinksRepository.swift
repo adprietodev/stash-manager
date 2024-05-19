@@ -17,7 +17,7 @@ class LinksRepository: LinksRepositoryProtocol {
     }
 
     func getRemoteLink(at roomID: Int) async throws -> [Link]? {
-        let linkDTO = try await remoteDatasource.getLinks(at: roomID)
+        let linkDTO = try await remoteDatasource.getLinksRoom(at: roomID)
         let link = linkDTO.map({ $0.toDomain() })
         return link
     }
@@ -26,8 +26,8 @@ class LinksRepository: LinksRepositoryProtocol {
         try await remoteDatasource.updateLink(link.toDTO())
     }
 
-    func insertLink(_ link: Link) async throws {
-        try await remoteDatasource.insertLink(link.toDTO())
+    func insertLink(_ link: Link, typeScreen: TypesScreens) async throws {
+        try await remoteDatasource.insertLink(link.toDTO(), typeScreen: typeScreen)
     }
 
     func getIdLinkToModify(roomID: Int, stashID: Int, articleID: Int, typeScreen: TypesScreens) async throws -> [Link] {
@@ -46,12 +46,21 @@ class LinksRepository: LinksRepositoryProtocol {
         return contentRoomDTO?.map { $0.toDomain() }
     }
 
+    func getLinksStash(at stashID: Int) async throws -> [Link] {
+        guard let linkDTO = try await remoteDatasource.getLinksStash(at: stashID) else { return [] }
+        return linkDTO.compactMap { $0.toDomain() }
+    }
+
     func setContentRoom(_ contentRoom: [ContentRoom]) throws {
         try localDatasource.setContentRoom(contentRoom.map { $0.toDTO() })
     }
 
     func removeContentRoom() {
         localDatasource.removeContentRoom()
+    }
+
+    func deleteLink(at linkID: Int) async throws {
+        try await remoteDatasource.deleteLink(at: linkID)
     }
 }
 
@@ -67,7 +76,7 @@ fileprivate extension LinkDTO {
 
 fileprivate extension Link {
     func toDTO() -> LinkDTO {
-        LinkDTO(id: self.id, idRoom: self.idRoom, idStash: self.idStash, idArticle: self.idArticle, stockArticle: self.stockArticle)
+        LinkDTO(id: self.id, idRoom: self.idRoom, idStash: self.idStash ?? nil, idArticle: self.idArticle ?? nil, stockArticle: self.stockArticle ?? nil)
     }
 }
 
@@ -89,7 +98,8 @@ fileprivate extension RoomDTO {
              name: self.name,
              base64image: self.base64image ?? "",
              description: self.description ?? "",
-             idTypeRoom: self.idTypeRoom)
+             idTypeRoom: self.idTypeRoom,
+             idUser: self.idUser)
     }
 }
 
@@ -99,7 +109,8 @@ fileprivate extension Room {
                 name: self.name,
                 base64image: self.base64image,
                 description: self.description,
-                idTypeRoom: self.idTypeRoom)
+                idTypeRoom: self.idTypeRoom,
+                idUser: self.idUser)
     }
 }
 

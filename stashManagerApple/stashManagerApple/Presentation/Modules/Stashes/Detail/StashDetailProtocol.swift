@@ -11,7 +11,9 @@ protocol StashDetailViewModelProtocol {
     var stash: Stash { get set }
     var typesStash: [TypeStash] { get set }
     var isGoingToArticle: Bool { get set }
+    var uploadView: (() -> Void)? { get set }
     func goToEditStash()
+    func updateStash()
 }
 
 protocol StashDetailRouterProtocol {

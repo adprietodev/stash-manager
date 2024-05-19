@@ -9,23 +9,31 @@ import Foundation
 
 class ArticleEditViewModel: ArticleEditViewModelProtocol {
     let linksUseCase: LinkUseCaseProtocol
+    let articleUseCase: ArticlesUseCaseProtocol
+    let userUseCase: UsersUseCaseProtocol
     var article: Article
     var typesArticle: [TypeArticle]
     var currentType: String = ""
     let router:  ArticleEditRouterProtocol
     var typeAction: TypeAction
     var typeButtonPressed: TypeButtonPressed?
-    var selectedRoom: Room
-    var selectedStash: Stash
 
-    init(router: ArticleEditRouterProtocol, linksUseCase: LinkUseCaseProtocol, article: Article, typesArticle: [TypeArticle], typeAction: TypeAction, selectedRoom: ContentRoom, selectedStash: ContentStash) {
+    init(router: ArticleEditRouterProtocol, linksUseCase: LinkUseCaseProtocol, articleUseCase: ArticlesUseCaseProtocol, userUseCase: UsersUseCaseProtocol, article: Article, typesArticle: [TypeArticle], typeAction: TypeAction) {
         self.linksUseCase = linksUseCase
         self.router = router
         self.article = article
         self.typesArticle = typesArticle
         self.typeAction = typeAction
-        self.selectedRoom = selectedRoom.room
-        self.selectedStash = selectedStash.stash
+        self.articleUseCase = articleUseCase
+        self.userUseCase = userUseCase
+    }
+
+    func setNameArticle(_ name: String) {
+        article.name = name
+    }
+
+    func setDescription(_ description: String) {
+        article.description = description
     }
 
     func setCurrentType() {
@@ -33,34 +41,38 @@ class ArticleEditViewModel: ArticleEditViewModelProtocol {
         currentType = type
     }
 
+    func setTypeArticle(_ nameType: String) {
+        typesArticle.forEach( {
+            if $0.name.rawValue.localized == nameType {
+                article.idTypeArticle = $0.id
+            }
+        })
+    }
+
     func showCustomPickerType() {
         router.showCustomPickerType(typeScreen: .article, typeSelected: currentType, typeAction: typeAction, typeButtonPressed: .type)
     }
-
-    func showCustomPickerRoom() {
+    
+    func updateArticle() {
         Task {
             do {
-                let contentRooms = try self.linksUseCase.getLocalContentRooms()
-                guard let rooms = contentRooms?.compactMap({ $0.room }) else { return }
-                router.showCustomPickerRoom(typeScreen: .article, typeAction: typeAction, rooms: rooms, typeButtonPressed: .room, roomSelectedName: selectedRoom.name)
+                try await articleUseCase.updateArticle(article)
+                router.finishEditOrAddArticle()
             } catch {
-                // TODO: - Control Error
+                // TODO: - Control error
             }
         }
     }
 
-    func showCustomPickerStash() {
+    func addArticleUser() {
         Task {
             do {
-                guard let contentRooms = try self.linksUseCase.getLocalContentRooms() else { return }
-                var stashes = [Stash]()
-                for contentRoom in contentRooms {
-                    let stash = contentRoom.stashes.compactMap { $0.stash }
-                    stashes.append(contentsOf: stash)
-                }
-                router.showCustomPickerStash(typeScreen: .article, typeAction: typeAction, stashes: stashes, typeButtonPressed: .stash, stashSelectedName: selectedStash.name)
+                let user = try userUseCase.getCurrentUser()
+                article.idUser = user.id
+                try await articleUseCase.insertArticle(article)
+                router.finishEditOrAddArticle()
             } catch {
-                // TODO: - Control Error
+                // TODO: - Control error
             }
         }
     }

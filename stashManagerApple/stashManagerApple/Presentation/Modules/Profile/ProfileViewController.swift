@@ -27,12 +27,12 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-        viewModel.loadUserData()
-        setupBinding()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.loadUserData()
+        setupBinding()
         self.tabBarController?.tabBar.isHidden = false
     }
 

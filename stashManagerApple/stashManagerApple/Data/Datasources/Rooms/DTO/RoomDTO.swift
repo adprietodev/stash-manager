@@ -13,4 +13,5 @@ struct RoomDTO: Codable {
     let base64image: String?
     let description: String?
     let idTypeRoom: Int
+    let idUser: Int
 }

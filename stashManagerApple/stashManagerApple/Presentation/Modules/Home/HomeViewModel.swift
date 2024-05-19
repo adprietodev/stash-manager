@@ -32,8 +32,8 @@ class HomeViewModel: HomeViewModelProtocol {
             typesRoom = try await roomsUseCase.getTypesRoom()
             guard let contentRooms = try linksUseCase.getLocalContentRooms() else { return }
             contentrooms = contentRooms
-            rooms = contentrooms.map { $0.room }
             currentUser = try usersUseCase.getCurrentUser()
+            rooms = try await roomsUseCase.getRooms(at: currentUser.id)
             refreshCollectionView?()
         }
     }
@@ -53,7 +53,8 @@ class HomeViewModel: HomeViewModelProtocol {
     }
 
     func goToAddRoom() {
-        router.goToAddRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), typesRoom: typesRoom, typeAction: .add)
+        print(currentUser.id)
+        router.goToAddRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0, idUser: currentUser.id), typesRoom: typesRoom, typeAction: .add)
     }
 
     func removeSelectedRoom() {

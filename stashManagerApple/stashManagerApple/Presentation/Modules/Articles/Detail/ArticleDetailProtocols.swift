@@ -11,6 +11,7 @@ protocol ArticleDetailViewModelProtocol  {
     var article: Article { get set }
     var typesArticle: [TypeArticle] { get set }
     func goToEdit()
+    var loadView: (() -> Void)? { get set }
 }
 
 protocol ArticleDetailRouterProtocol {

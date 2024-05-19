@@ -21,11 +21,11 @@ extension UsersUseCase: UsersUseCaseProtocol {
     }
 
     func updateUser(_ user: User) async throws {
-        try await repository.insertUser(user)
+        try await repository.updateUser(user)
     }
 
     func insertUser(_ user: User) async throws {
-        try await repository.updateUser(user)
+        try await repository.insertUser(user)
     }
 
     func deleteUser(_ user: User) async throws {

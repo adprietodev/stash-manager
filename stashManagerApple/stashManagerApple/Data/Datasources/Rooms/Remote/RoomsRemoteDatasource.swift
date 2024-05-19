@@ -22,12 +22,13 @@ class RoomsRemoteDatasource: RoomsRemoteDatasourceProtocol {
     }
 
     func updateRoom(_ room: RoomDTO) async throws {
+        print(room)
         try await supabase.from("rooms").update(room).eq("id", value: room.id).execute()
     }
 
     func insertRoom(_ room: RoomDTO) async throws {
-        let newRoom = NewRoomDTO(name: room.name, base64image: room.base64image, description: room.description, idTypeRoom: room.idTypeRoom)
-        try await supabase.from("rooms").insert(room).execute()
+        let newRoom = NewRoomDTO(name: room.name, base64image: room.base64image, description: room.description, idTypeRoom: room.idTypeRoom, idUser: room.idUser)
+        try await supabase.from("rooms").insert(newRoom).execute()
     }
 
     func deleteRoom(_ room: RoomDTO) async throws {

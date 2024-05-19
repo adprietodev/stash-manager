@@ -8,7 +8,6 @@
 import Foundation
 
 class StashesViewModel: StashesViewModelProtocol {
-    
     // MARK: - Properties
     let roomsUseCase: RoomsUseCaseProtocol
     let stashesUseCase: StashesUseCaseProtocol
@@ -40,8 +39,8 @@ class StashesViewModel: StashesViewModelProtocol {
                     typesStash = try await stashesUseCase.getTypesStash()
                 }
                 if let room = try roomsUseCase.getSelectedRoom() {
-                    selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first
-                    stashes = selectedRoom!.stashes.map { $0.stash }
+                    guard let selectedRoom = contentsRoom.filter { $0.room.id == room.id }.first else { return }
+                    stashes = selectedRoom.stashes.map { $0.stash }
                     isSelectedRoom = true
                 } else {
                     stashes = [Stash]()
@@ -72,7 +71,7 @@ class StashesViewModel: StashesViewModelProtocol {
 
     func goToAddStash() {
         if selectedRoom == nil {
-            selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), stashes: [], articles: [])
+            selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0, idUser: 0), stashes: [], articles: [])
         }
         router.goToAddStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0, idRoom: 0), typesStash: typesStash, typeAction: .add, room: selectedRoom!.room)
     }

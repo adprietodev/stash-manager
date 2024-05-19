@@ -87,6 +87,23 @@ class ArticlesViewController: UIViewController {
         }
     }
 
+    func showDeleteConfirmationAlert(article: Article) {
+        let alertController = UIAlertController(title: "Eliminar articulo", message: "Estas apunto de eliminar el articulo \(article.name)", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
+            guard let self else { return }
+            if viewModel.showAllArticles {
+                viewModel.removeArticleUser(article)
+            } else {
+                viewModel.removeArticleLink(article)
+            }
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        alertController.addAction(deleteAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     func configurationArticlesCollectionView() {
         articlesCollectionView.delegate = self
         articlesCollectionView.dataSource = self
@@ -100,6 +117,11 @@ class ArticlesViewController: UIViewController {
                 articlesCollectionView.reloadData()
                 checkIsInsideOfRoomOrStash()
             }
+        }
+
+        viewModel.showAlertRemoveArtilce =  { [weak self] article in
+            guard let self else { return }
+            self.showDeleteConfirmationAlert(article: article)
         }
     }
 }
@@ -136,21 +158,21 @@ extension ArticlesViewController: UICollectionViewDelegate,UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if viewModel.selectedRoom == nil {
-            viewModel.selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), stashes: [], articles: [])
+            viewModel.selectedRoom = ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0, idUser: 0), stashes: [], articles: [])
         }
         if viewModel.selectedStash == nil {
             viewModel.selectedStash = ContentStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0), articles: [])
         }
         if !viewModel.isSelectedRoom, !viewModel.isSelectedStash {
             let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
-            viewModel.goToDetail(article: article , typesArticle: viewModel.typesArticle, selectedRoom: viewModel.selectedRoom, selectedStash: viewModel.selectedStash)
+            viewModel.goToDetail(article: article , typesArticle: viewModel.typesArticle, selectedRoom: viewModel.selectedRoom, selectedStash: viewModel.selectedStash!)
         } else {
             if viewModel.showAllArticles {
                 let article = viewModel.isFiltering ? viewModel.filteredArticles[indexPath.row] : viewModel.userArticles[indexPath.row]
-                viewModel.goToDetail(article: article , typesArticle: viewModel.typesArticle, selectedRoom: ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0), stashes: [], articles: []), selectedStash: ContentStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0), articles: []))
+                viewModel.goToDetail(article: article , typesArticle: viewModel.typesArticle, selectedRoom: ContentRoom(room: Room(id: 0, name: "", base64image: "", description: "", idTypeRoom: 0, idUser: 0), stashes: [], articles: []), selectedStash: ContentStash(stash: Stash(id: 0, name: "", description: "", base64image: "", idTypeStash: 0), articles: []))
             } else {
                 let articleWithStock = viewModel.isFiltering ? viewModel.filteredArticlesWithStock[indexPath.row] : viewModel.articlesWithStock[indexPath.row]
-                viewModel.goToDetail(article: articleWithStock.article , typesArticle: viewModel.typesArticle, selectedRoom: viewModel.selectedRoom, selectedStash: viewModel.selectedStash)
+                viewModel.goToDetail(article: articleWithStock.article , typesArticle: viewModel.typesArticle, selectedRoom: viewModel.selectedRoom, selectedStash: viewModel.selectedStash!)
             }
         }
     }

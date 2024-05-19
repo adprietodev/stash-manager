@@ -25,6 +25,7 @@ class StashEditViewController: UIViewController {
     
     // MARK: - Properties
     var viewModel: StashEditViewModelProtocol!
+    var customImagePickerManager = CustomImagePickerManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,11 +45,50 @@ class StashEditViewController: UIViewController {
         viewModel.showCustomPickerRoom()
     }
 
+    @IBAction func changeName(_ sender: Any) {
+        guard let nameStash = stashNameTextField.text else { return }
+        viewModel.stash.name = nameStash
+    }
+    
     @IBAction func saveEdit(_ sender: Any) {
+        guard let stashName = stashNameTextField.text, !stashName.isEmpty,
+              let stashType = stashTypeTextField.text, !stashType.isEmpty,
+              let stashNameRoom = roomTextField.text, !stashNameRoom.isEmpty,
+              let stashDescription = stashDescriptionTextView.text, !stashDescription.isEmpty else { 
+            showAlertForEmptyFields()
+            return
+        }
+        switch viewModel.typeAction {
+        case .edit:
+            viewModel.stash.description = stashDescription
+            viewModel.updateStash()
+        case .add:
+            viewModel.stash.description = stashDescription
+            viewModel.insertStash()
+        }
     }
 
     @IBAction func cancelEdit(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func selectImage(_ sender: Any) {
+        customImagePickerManager.pickImage(self) { [weak self] selectedImage in
+            guard let self else { return }
+            let resizedImage =  self.customImagePickerManager.resizeImage(image: selectedImage, targetSize: CGSize(width: 300, height: 300))
+            if let imageData = resizedImage.pngData() {
+                let base64String = imageData.base64EncodedString()
+                viewModel.stash.base64image = base64String
+                stashImageView.loadBase64(base64String)
+            }
+        }
+    }
+
+    // MARK: - Functions
+    func showAlertForEmptyFields() {
+        let alert = UIAlertController(title: "Error", message: "Todos los campos deben estar llenos", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func configureView() {
@@ -110,7 +150,8 @@ class StashEditViewController: UIViewController {
     @objc func showDeleteConfirmationAlert() {
         let alertController = UIAlertController(title: "Eliminar stash", message: "Estas apunto de eliminar el stash \(viewModel.stash.name)", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Eliminar", style: .destructive) { [weak self] _ in
-            // delete action self.delete
+            guard let self else { return }
+            viewModel.deleteStash()
         }
 
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
@@ -126,9 +167,11 @@ extension StashEditViewController: CustomPickerViewControllerDelegate {
         case .type:
             stashTypeTextField.inputView = customPicker
             stashTypeTextField.text = typeText
+            viewModel.setTypeStash(typeText)
         case .room:
             roomTextField.inputView = customPicker
             roomTextField.text = typeText
+            viewModel.setRoom(typeText)
         case .stash:
             break
         case .none:

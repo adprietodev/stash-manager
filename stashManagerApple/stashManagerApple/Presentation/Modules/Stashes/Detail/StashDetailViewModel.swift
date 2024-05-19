@@ -16,6 +16,7 @@ class StashDetailViewModel: StashDetailViewModelProtocol {
     var room: Room
     var typesStash: [TypeStash]
     var isGoingToArticle = false
+    var uploadView: (() -> Void)?
 
     init(roomUseCase: RoomsUseCase, stashesUseCase: StashesUseCase, room: Room, router: StashDetailRouter, stash: Stash, typesStash: [TypeStash]) {
         self.router = router
@@ -29,6 +30,18 @@ class StashDetailViewModel: StashDetailViewModelProtocol {
     // MARK: - Functions
     func goToEditStash() {
         router.goToEditStash(stash: stash, typesStash: typesStash, room: room)
+    }
+
+    func updateStash() {
+        Task {
+            do {
+                if let stashSelected = try stashesUseCase.getSelectedStash() {
+                    stash = stashSelected
+                    uploadView?()
+                }
+            } catch {
+            }
+        }
     }
 
     func goToArticleInStash() {

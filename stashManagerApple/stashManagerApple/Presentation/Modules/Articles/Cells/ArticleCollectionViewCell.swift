@@ -12,6 +12,7 @@ protocol ArticleDelegate {
     func addArticleStock(_ article: Article)
     func checkIsSelectedRoom() -> Bool
     func removeArticleStock(_ article: Article)
+    func alertToRemoveArticle(_ article: Article)
 }
 
 class ArticleCollectionViewCell: UICollectionViewCell {
@@ -43,6 +44,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func removeArticle(_ sender: Any) {
+        delegate?.alertToRemoveArticle(article)
     }
 
     // MARK: - Functions
@@ -62,7 +64,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         addOrRemoveImageView.tintColor = haveArticle ? .selectiveYellow : .prussianBlue
         editArticleImageView.tintColor = .prussianBlue
         removeArticleImageView.tintColor = .utOrange
-        editView.isHidden = !haveArticle
         addOrRemoveImageView.isHidden = !delegate.checkIsSelectedRoom()
         articleStockLabel.isHidden = !haveArticle
         addOrRemoveImageView.image = haveArticle ? UIImage(systemName: "minus") : UIImage(systemName: "plus")    }

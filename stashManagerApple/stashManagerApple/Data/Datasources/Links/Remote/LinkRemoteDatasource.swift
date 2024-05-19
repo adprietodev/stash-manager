@@ -10,7 +10,7 @@ import Foundation
 class LinkRemoteDatasource: LinksRemoteDatasourceProtocol {
     let supabase = SupabaseConfig.shared.supabase
 
-    func getLinks(at roomID: Int) async throws -> [LinkDTO] {
+    func getLinksRoom(at roomID: Int) async throws -> [LinkDTO] {
         try await supabase.from("links").select().eq("idRoom", value: roomID).execute().value
     }
 
@@ -30,11 +30,33 @@ class LinkRemoteDatasource: LinksRemoteDatasourceProtocol {
         }
     }
 
+    func getLinksStash(at stashID: Int) async throws -> [LinkDTO]? {
+        try await supabase.from("links").select().eq("idStash", value: stashID).execute().value
+    }
+
     func updateLink(_ link: LinkDTO) async throws {
         try await supabase.from("links").update(link).eq("id", value: link.id).execute()
     }
 
-    func insertLink(_ link: LinkDTO) async throws {
-        try await supabase.from("links").insert(link).execute()
+    func insertLink(_ link: LinkDTO, typeScreen: TypesScreens) async throws {
+        print(link)
+        var newLink = NewLinkDTO(id: nil, idRoom: nil, idStash: nil, idArticle: nil, stockArticle: nil)
+        switch typeScreen {
+        case .stash:
+            if link.idArticle == nil, link.stockArticle == nil {
+                newLink = NewLinkDTO(idRoom: link.idRoom, idStash: link.idStash)
+            } else {
+                newLink = NewLinkDTO(idRoom: link.idRoom, idStash: link.idStash, idArticle: link.idArticle, stockArticle: link.stockArticle)
+            }
+        case .article:
+            newLink = NewLinkDTO(idRoom: link.idRoom, idStash: link.idStash, idArticle: link.idArticle, stockArticle: link.stockArticle)
+        default:
+            break
+        }
+        try await supabase.from("links").insert(newLink).execute()
+    }
+
+    func deleteLink(at linkID: Int) async throws {
+        try await supabase.from("links").delete().eq("id", value: linkID).execute()
     }
 }

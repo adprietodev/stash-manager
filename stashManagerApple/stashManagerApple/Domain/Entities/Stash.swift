@@ -9,9 +9,9 @@ import Foundation
 
 struct Stash {
     let id: Int
-    let name: String
-    let description: String
-    let base64image: String
-    let idTypeStash: Int
+    var name: String
+    var description: String
+    var base64image: String
+    var idTypeStash: Int
     var idRoom: Int?
 }

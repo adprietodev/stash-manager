@@ -18,7 +18,11 @@ class ArticlesDatasource: ArticlesDatasourceProtocol {
         try await supabase.from("types_article").select().execute().value
     }
 
-    func updateArticle(_ article: ArticleDTO) async throws  {
+    func getArticle(at articleID: Int) async throws -> [ArticleDTO] {
+        try await supabase.from("articles").select().eq("id", value: articleID).execute().value
+    }
+
+    func updateArticle(_ article: ArticleDTO) async throws {
         try await supabase.from("articles").update(article).eq("id", value: article.id).execute()
     }
 
@@ -28,6 +32,6 @@ class ArticlesDatasource: ArticlesDatasourceProtocol {
     }
 
     func deleteArticle(_ article: ArticleDTO) async throws {
-        try await supabase.from("article").delete().eq("id", value: article.id).execute()
+        try await supabase.from("articles").delete().eq("id", value: article.id).execute()
     }
 }

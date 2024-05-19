@@ -25,6 +25,15 @@ class HomeDetailViewModel: HomeDetailViewModelProtocol {
         router.goToEditRoom(room: self.room, typesRoom: self.typesRoom)
     }
 
+    func updateRoom() {
+        do {
+            guard let selectedRoom = try roomsUseCase.getSelectedRoom() else { return }
+            room = selectedRoom
+        } catch {
+
+        }
+    }
+
     func goToStashesRoom() {
         do {
             try roomsUseCase.setSelectedRoom(room)

@@ -22,7 +22,7 @@ class StashesUseCase: StashesUseCaseProtocol {
         try await repository.updateStash(stash)
     }
 
-    func insertStash(_ stash: Stash) async throws {
+    func insertStash(_ stash: Stash) async throws -> Int{
         try await repository.insertStash(stash)
     }
 

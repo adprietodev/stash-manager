@@ -20,12 +20,13 @@ class ArticleDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
         configurationNavigationBar()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupBindings()
+        viewModel.updateArticle()
         self.tabBarController?.tabBar.isHidden = true
     }
 
@@ -37,6 +38,15 @@ class ArticleDetailViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightAddRoomBarButton
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.tintColor = .prussianBlue
+    }
+
+    func setupBindings() {
+        viewModel.loadView = {
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                configureView()
+            }
+        }
     }
 
     func configureView() {
