@@ -58,13 +58,16 @@ class ArticleDetailViewController: UIViewController {
         }
         articleNameLabel.text = article.name
         articleNameLabel.font = UIFont().robotoRegular(with: 18)
+        articleNameLabel.textColor = .prussianBlue
         articleTypeLabel.text = viewModel.getTypeArticle().rawValue.localized
         articleTypeLabel.font = UIFont().robotoRegular(with: 18)
+        articleTypeLabel.textColor = .prussianBlue
         descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.textColor = .blueGreen
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 16)
         articleDescriptionLabel.text = article.description
         articleDescriptionLabel.font = UIFont().robotoRegular(with: 18)
+        articleDescriptionLabel.textColor = .prussianBlue
     }
 
     @objc func goToEdit() {

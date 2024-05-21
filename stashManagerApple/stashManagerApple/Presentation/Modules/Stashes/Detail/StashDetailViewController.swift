@@ -73,11 +73,13 @@ class StashDetailViewController: UIViewController {
         stashNameLabel.font = UIFont().robotoRegular(with: 18)
         stashTypeLabel.text = viewModel.typesStash.filter { $0.id == stash.idTypeStash }.first?.name.rawValue.localized
         stashTypeLabel.font = UIFont().robotoRegular(with: 18)
+        stashTypeLabel.textColor = .prussianBlue
         descriptionTitleLabel.text = "description".localized
         descriptionTitleLabel.textColor = .blueGreen
         descriptionTitleLabel.font = UIFont().robotoRegular(with: 16)
         stashDescriptionLabel.text = stash.description
         stashDescriptionLabel.font = UIFont().robotoRegular(with: 18)
+        stashDescriptionLabel.textColor = .prussianBlue
 
         articlesView.layer.cornerRadius = 4
         articlesStashButtonLabel.text = "articles".localized

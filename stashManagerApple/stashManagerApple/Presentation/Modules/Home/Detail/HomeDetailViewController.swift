@@ -67,7 +67,11 @@ class HomeDetailViewController: UIViewController {
         roomTypeLabel.text = type?.rawValue.localized
         roomTypeLabel.textColor = .prussianBlue
         descriptionTitleLabel.text = "description".localized
+        descriptionTitleLabel.font = UIFont().robotoRegular(with: 16)
+        descriptionTitleLabel.textColor = .blueGreen
         roomDescriptionLabel.text = room.description
+        roomDescriptionLabel.font = UIFont().robotoRegular(with: 16)
+        roomDescriptionLabel.tintColor = .prussianBlue
 
         stashesView.layer.cornerRadius = 4
         articlesView.layer.cornerRadius = 4
