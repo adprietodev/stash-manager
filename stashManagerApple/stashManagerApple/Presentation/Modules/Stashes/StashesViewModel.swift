@@ -33,6 +33,7 @@ class StashesViewModel: StashesViewModelProtocol {
         isSelectedRoom = false
         Task {
             do {
+                stashesUseCase.removeSelectedStash()
                 selectedRoom = nil
                 contentsRoom = try linksUseCase.getLocalContentRooms() ?? []
                 if typesStash.isEmpty {

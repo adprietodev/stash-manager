@@ -11,6 +11,7 @@ class HomeViewModel: HomeViewModelProtocol {
     let usersUseCase: UsersUseCaseProtocol
     let roomsUseCase: RoomsUseCaseProtocol
     let linksUseCase: LinkUseCaseProtocol
+    let stashesUseCase: StashesUseCaseProtocol
     let router: HomeRouterProtocol
     var currentUser: User!
     var contentrooms = [ContentRoom]()
@@ -20,15 +21,17 @@ class HomeViewModel: HomeViewModelProtocol {
     var typesRoom = [TypeRoom]()
     var refreshCollectionView: (() -> Void)?
 
-    init(router: HomeRouterProtocol, usersUseCase: UsersUseCaseProtocol, roomsUseCase: RoomsUseCaseProtocol, linksUseCase: LinkUseCaseProtocol) {
+    init(router: HomeRouterProtocol, usersUseCase: UsersUseCaseProtocol, roomsUseCase: RoomsUseCaseProtocol, linksUseCase: LinkUseCaseProtocol,stashesUseCase: StashesUseCaseProtocol) {
         self.usersUseCase = usersUseCase
         self.roomsUseCase = roomsUseCase
         self.linksUseCase = linksUseCase
+        self.stashesUseCase = stashesUseCase
         self.router = router
     }
 
     func getRoomsAndTypesRoom() {
         Task {
+            stashesUseCase.removeSelectedStash()
             typesRoom = try await roomsUseCase.getTypesRoom()
             guard let contentRooms = try linksUseCase.getLocalContentRooms() else { return }
             contentrooms = contentRooms

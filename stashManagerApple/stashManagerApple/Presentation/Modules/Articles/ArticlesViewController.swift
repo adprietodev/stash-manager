@@ -28,6 +28,8 @@ class ArticlesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.idRoom = 0
+        viewModel.idStash = 0
         self.tabBarController?.tabBar.isHidden = false
         collectionSegmentControl.selectedSegmentIndex = viewModel.currentSegmentSelected
         viewModel.getData()

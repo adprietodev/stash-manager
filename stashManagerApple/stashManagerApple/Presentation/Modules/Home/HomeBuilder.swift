@@ -26,8 +26,13 @@ class HomeBuilder {
         let linksRepository = LinksRepository(remoteDatasource: linksRemoteDatasource, localDatasource: linksLocalDatasource)
         let linksUseCase = LinkUseCase(repository: linksRepository)
 
+        let stashesRemoteDatasource = StashesRemoteDatasource()
+        let stashesLocalDatasource = StashesLocalDatasource()
+        let stashesRepository = StashesRepository(remoteDatasource: stashesRemoteDatasource, localDatasource: stashesLocalDatasource)
+        let stashesUseCase = StashesUseCase(repository: stashesRepository)
+
         let router = HomeRouter(viewController: viewController)
-        viewController.viewModel = HomeViewModel(router: router, usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, linksUseCase: linksUseCase)
+        viewController.viewModel = HomeViewModel(router: router, usersUseCase: usersUseCase, roomsUseCase: roomsUseCase, linksUseCase: linksUseCase, stashesUseCase: stashesUseCase)
         return viewController
     }
 }
